@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10 Golden Rules for Designing a Walk-In Closet | MODULARIS Journal</title>
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        amber: {
+                            500: '#d4af37',
+                            600: '#c59b27',
+                            700: '#aa7c11',
+                        },
+                        wood: {
+                            800: '#2b2520',
+                            900: '#181512',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome 6 Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="bg-gray-50 dark:bg-stone-950 text-gray-800 dark:text-gray-100 transition-colors duration-300 font-sans antialiased selection:bg-amber-500 selection:text-white">
+
+
+
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-50 bg-white/95 dark:bg-stone-900/95 backdrop-blur-md border-b border-stone-200 dark:border-stone-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Brand Logo -->
+                <a href="index.html" class="flex items-center space-x-3 rtl:space-x-reverse">
+                    <div class="w-10 h-10 bg-amber-600 rounded-xl flex items-center justify-center text-white font-bold shadow-md shadow-amber-600/30">
+                        <i class="fa-solid fa-layer-group text-xl"></i>
+                    </div>
+                    <div class="leading-none">
+                        <span class="text-lg sm:text-xl xl:text-2xl font-black font-heading tracking-wider text-stone-900 dark:text-amber-400">MODULARIS</span>
+                        <span class="hidden sm:block text-[10px] tracking-widest uppercase text-stone-500 dark:text-stone-400 font-bold mt-0.5">Wardrobe & Cabinetry</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Menu -->
+                <nav class="hidden lg:flex items-center space-x-6 xl:space-x-7 rtl:space-x-reverse text-xs xl:text-sm">
+                    <div class="relative group py-4">
+                        <a href="index.html" class="text-stone-700 dark:text-stone-200 hover:text-amber-600 dark:hover:text-amber-400 font-semibold flex items-center transition">
+                            Home 1 <i class="fa-solid fa-chevron-down text-[10px] ml-1.5 transition group-hover:rotate-180"></i>
+                        </a>
+                        <div class="absolute left-0 top-full hidden group-hover:block w-48 bg-white dark:bg-stone-800 shadow-xl rounded-xl border border-stone-100 dark:border-stone-700 py-2 z-50">
+                            <a href="index.html" class="block px-4 py-2 text-xs hover:bg-amber-50 dark:hover:bg-stone-700 text-stone-700 dark:text-stone-200 hover:text-amber-600">Home 1 - General Services</a>
+                            <a href="home-niche.html" class="block px-4 py-2 text-xs hover:bg-amber-50 dark:hover:bg-stone-700 text-stone-700 dark:text-stone-200 hover:text-amber-600">Home 2 - Custom Wardrobes</a>
+                        </div>
+                    </div>
+                    <a href="about.html" class="text-stone-700 dark:text-stone-200 hover:text-amber-600 dark:hover:text-amber-400 font-semibold transition">About Us</a>
+                    <a href="services.html" class="text-stone-700 dark:text-stone-200 hover:text-amber-600 dark:hover:text-amber-400 font-semibold transition">Services</a>
+                    
+                    <a href="pricing.html" class="text-stone-700 dark:text-stone-200 hover:text-amber-600 dark:hover:text-amber-400 font-semibold transition">Pricing</a>
+                    <a href="blog.html" class="text-amber-600 dark:text-amber-400 font-bold border-b-2 border-amber-600 pb-1 transition">Blog</a>
+                    <a href="contact.html" class="text-stone-700 dark:text-stone-200 hover:text-amber-600 dark:hover:text-amber-400 font-semibold transition">Contact</a>
+                </nav>
+
+                <!-- Right Utilities Bar -->
+                <div class="flex items-center space-x-2 rtl:space-x-reverse">
+                    <!-- LTR / RTL Toggle (Desktop) -->
+                    <button class="rtl-toggle-btn hidden lg:flex items-center gap-1.5 border border-stone-200 dark:border-stone-700 bg-white dark:bg-stone-800 rounded-full px-3 py-2 text-[11px] font-bold text-stone-600 dark:text-stone-300 hover:border-amber-500 transition focus:outline-none">
+                        <span class="ltr-label text-amber-600">LTR</span>
+                        <i class="fa-solid fa-arrow-right-arrow-left text-[10px] text-stone-400"></i>
+                        <span class="rtl-label text-stone-400 dark:text-stone-500">RTL</span>
+                    </button>
+
+                    <!-- Dark Mode Toggle (Desktop) -->
+                    <button class="theme-toggle-btn hidden lg:flex w-9 h-9 rounded-full border border-stone-200 dark:border-stone-700 bg-white dark:bg-stone-800 items-center justify-center text-stone-600 dark:text-stone-300 shadow-sm transition-all focus:outline-none" title="Toggle Light/Dark Mode">
+                        <i class="theme-toggle-icon fa-solid fa-moon text-sm"></i>
+                    </button>
+
+                    <!-- Login Button (Desktop) -->
+                    <a href="login.html" class="hidden lg:inline-flex items-center gap-1.5 border border-stone-200 dark:border-stone-700 bg-white dark:bg-stone-800 text-stone-700 dark:text-stone-200 text-xs font-bold px-4 py-2 rounded-full hover:border-amber-500 transition">
+                        <i class="fa-solid fa-plus text-[10px] text-amber-500"></i>
+                        <span>Login</span>
+                    </a>
+
+                    <!-- Get Proposal CTA -->
+                    <a href="contact.html" class="hidden sm:inline-flex items-center space-x-2 bg-gradient-to-r from-amber-600 to-amber-500 hover:from-amber-500 hover:to-amber-600 text-white text-xs uppercase font-extrabold tracking-wider px-5 py-2.5 rounded-full shadow-md shadow-amber-600/25 hover:shadow-lg transition-all transform hover:-translate-y-0.5 active:translate-y-0">
+                        <i class="fa-solid fa-paper-plane text-xs"></i>
+                        <span>Get Proposal</span>
+                    </a>
+
+                    <!-- Mobile Theme Toggle -->
+                    <button class="theme-toggle-btn lg:hidden w-10 h-10 rounded-2xl border border-stone-200 dark:border-stone-700 bg-white dark:bg-stone-800 flex items-center justify-center text-stone-600 dark:text-stone-300 shadow-sm transition-all focus:outline-none" title="Toggle Light/Dark Mode">
+                        <i class="theme-toggle-icon fa-solid fa-moon text-sm"></i>
+                    </button>
+
+                    <!-- Mobile Menu Toggle -->
+                    <button id="mobile-menu-toggle" class="lg:hidden w-10 h-10 rounded-2xl border border-stone-200 dark:border-stone-700 bg-white dark:bg-stone-800 flex items-center justify-center text-stone-600 dark:text-stone-300 shadow-sm focus:outline-none ml-1 transition-all">
+                        <i class="fa-solid fa-bars text-sm"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-stone-50 dark:bg-stone-950 px-4 pt-4 pb-8 max-h-[calc(100vh-80px)] overflow-y-auto">
+            <div class="space-y-3">
+                <a href="index.html" class="flex justify-between items-center bg-white dark:bg-stone-900 rounded-2xl shadow-sm border border-stone-200 dark:border-stone-800 px-5 py-4 text-stone-900 dark:text-white font-bold text-[13px] transition-all hover:border-amber-500">
+                    <span>Home 1 (General)</span>
+                    <i class="fa-solid fa-house text-stone-400"></i>
+                </a>
+                <a href="home-niche.html" class="flex justify-between items-center bg-white dark:bg-stone-900 rounded-2xl shadow-sm border border-stone-200 dark:border-stone-800 px-5 py-4 text-stone-900 dark:text-white font-bold text-[13px] transition-all hover:border-amber-500">
+                    <span>Home 2 (Wardrobes)</span>
+                    <i class="fa-solid fa-pen-nib text-stone-400"></i>
+                </a>
+                <a href="about.html" class="flex justify-between items-center bg-white dark:bg-stone-900 rounded-2xl shadow-sm border border-stone-200 dark:border-stone-800 px-5 py-4 text-stone-900 dark:text-white font-bold text-[13px] transition-all hover:border-amber-500">
+                    <span>About Us</span>
+                    <i class="fa-regular fa-circle-info text-stone-400"></i>
+                </a>
+                <a href="services.html" class="flex justify-between items-center bg-white dark:bg-stone-900 rounded-2xl shadow-sm border border-stone-200 dark:border-stone-800 px-5 py-4 text-stone-900 dark:text-white font-bold text-[13px] transition-all hover:border-amber-500">
+                    <span>Services</span>
+                    <i class="fa-solid fa-border-all text-stone-400"></i>
+                </a>
+                
+                <a href="pricing.html" class="flex justify-between items-center bg-white dark:bg-stone-900 rounded-2xl shadow-sm border border-stone-200 dark:border-stone-800 px-5 py-4 text-stone-900 dark:text-white font-bold text-[13px] transition-all hover:border-amber-500">
+                    <span>Pricing</span>
+                    <i class="fa-solid fa-tag text-stone-400"></i>
+                </a>
+                <a href="blog.html" class="flex justify-between items-center bg-white dark:bg-stone-900 rounded-2xl shadow-sm border border-stone-200 dark:border-stone-800 px-5 py-4 text-stone-900 dark:text-white font-bold text-[13px] transition-all hover:border-amber-500">
+                    <span>Blog</span>
+                    <i class="fa-regular fa-newspaper text-stone-400"></i>
+                </a>
+                <a href="contact.html" class="flex justify-between items-center bg-white dark:bg-stone-900 rounded-2xl shadow-sm border border-stone-200 dark:border-stone-800 px-5 py-4 text-stone-900 dark:text-white font-bold text-[13px] transition-all hover:border-amber-500">
+                    <span>Contact</span>
+                    <i class="fa-regular fa-envelope text-stone-400"></i>
+                </a>
+                <a href="admin-dashboard.html" class="flex justify-between items-center bg-white dark:bg-stone-900 rounded-2xl shadow-sm border border-stone-200 dark:border-stone-800 px-5 py-4 text-indigo-600 dark:text-indigo-400 font-bold text-[13px] transition-all hover:border-indigo-500">
+                    <span>Admin Dashboard</span>
+                    <i class="fa-solid fa-shield-halved text-indigo-500/70"></i>
+                </a>
+            </div>
+
+            <!-- Mobile Drawer Bottom Actions -->
+            <div class="mt-8 space-y-3 pt-6 border-t border-stone-200 dark:border-stone-800">
+                <a href="contact.html" class="w-full flex justify-center items-center gap-2 bg-amber-600 hover:bg-amber-700 text-white font-bold text-sm rounded-xl py-3.5 shadow-md transition">
+                    <i class="fa-regular fa-paper-plane text-xs"></i>
+                    <span>Get Proposal</span>
+                </a>
+                
+                <div class="grid grid-cols-2 gap-3">
+                    <a href="login.html" class="flex justify-center items-center gap-2 bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-xl py-3 text-stone-900 dark:text-white font-bold text-xs transition hover:border-amber-500">
+                        <i class="fa-solid fa-arrow-right-to-bracket text-amber-500"></i>
+                        <span>Login</span>
+                    </a>
+                    
+                    <button class="rtl-toggle-btn flex justify-center items-center gap-1.5 bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-xl py-3 text-xs transition hover:border-amber-500 focus:outline-none">
+                        <span class="ltr-label font-bold text-amber-500">LTR</span>
+                        <i class="fa-solid fa-arrow-right-arrow-left text-[10px] text-stone-300"></i>
+                        <span class="rtl-label text-stone-400 dark:text-stone-500 font-bold">RTL</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Grid -->
+    <section class="py-16 bg-white dark:bg-stone-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                
+                <!-- Article Body -->
+                <div class="lg:col-span-8 space-y-6">
+                    <span id="art-category" class="bg-amber-600 text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full"></span>
+                    
+                    <h1 id="art-title" class="text-3xl sm:text-4xl font-bold font-heading text-stone-900 dark:text-white leading-tight"></h1>
+
+                    <div class="flex items-center space-x-4 text-xs text-stone-500 dark:text-stone-400 border-y border-gray-100 dark:border-stone-800 py-3">
+                        <span id="art-author"><i class="fa-solid fa-user text-amber-500 mr-1"></i></span>
+                        <span>•</span>
+                        <span id="art-date"><i class="fa-solid fa-calendar text-amber-500 mr-1"></i></span>
+                        <span>•</span>
+                        <span id="art-read"><i class="fa-solid fa-clock text-amber-500 mr-1"></i></span>
+                    </div>
+
+                    <img id="art-img" src="" alt="" class="w-full h-96 object-cover rounded-2xl border border-gray-200 dark:border-stone-800 shadow-lg">
+
+                    <div id="art-body" class="prose dark:prose-invert text-stone-600 dark:text-stone-300 text-sm leading-relaxed space-y-4"></div>
+
+                    <!-- Author Bio -->
+                    <div class="bg-gray-50 dark:bg-stone-800/60 p-6 rounded-2xl border border-gray-200 dark:border-stone-700 flex items-center space-x-4 mt-8">
+                        <img id="art-author-img" src="" alt="" class="w-16 h-16 rounded-full object-cover ring-2 ring-amber-500">
+                        <div>
+                            <h4 id="art-author-name" class="font-bold text-stone-900 dark:text-white text-sm"></h4>
+                            <p id="art-author-bio" class="text-xs text-stone-500 dark:text-stone-400 mt-1"></p>
+                        </div>
+                    </div>
+                </div>
+
+                <script>
+                    const articles = {
+                        1: {
+                            category: 'Wardrobe Trends',
+                            title: 'Concealed Coplanar Tracks vs Traditional Hinges',
+                            author: 'By Henrik Vance',
+                            date: 'August 28, 2026',
+                            read: '5 Min Read',
+                            img: 'assets/concealed-coplanar-tracks.png',
+                            authorImg: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=200&auto=format&fit=crop',
+                            authorName: 'Henrik Vance',
+                            authorBio: 'Founder & Lead Architectural Designer at MODULARIS with 15+ years of custom joinery experience.',
+                            body: `<p>Sliding wardrobe door systems have evolved dramatically. Coplanar doors sit flush in the same plane when both open and closed — eliminating the overlapping profile of traditional bifold or sliding bypass systems.</p>
+                            <h3 class="text-xl font-bold text-stone-900 dark:text-white font-heading">Why Coplanar Outperforms Bypass</h3>
+                            <p>Traditional bypass doors always block 50% of the wardrobe opening. With a coplanar system, both panels slide back independently, giving you full access to the entire interior width — critical for walk-in configurations exceeding 3 metres.</p>
+                            <blockquote class="p-4 border-l-4 border-amber-500 bg-gray-50 dark:bg-stone-800 italic font-serif text-stone-800 dark:text-stone-200">"Coplanar hardware is the single biggest upgrade you can make to a sliding wardrobe — it transforms daily use entirely."</blockquote>
+                            <h3 class="text-xl font-bold text-stone-900 dark:text-white font-heading">Soft-Close Damper Integration</h3>
+                            <p>Blum's TANDEM plus BLUMOTION runner systems deliver whisper-quiet deceleration across 40kg door panels. The damper engages in the final 30mm of travel, preventing slam and protecting the aluminium track from long-term fatigue.</p>
+                            <h3 class="text-xl font-bold text-stone-900 dark:text-white font-heading">Material Compatibility</h3>
+                            <p>Coplanar systems support glass, solid timber veneer, mirror-back, and leatherette panel inserts up to 12mm thickness. Aluminium edge profiles in bronze anodised or brushed satin nickel finishes complete the luxury aesthetic.</p>`
+                        },
+                        2: {
+                            category: 'Material Guides',
+                            title: 'Maintaining Natural Walnut & Oak Veneers',
+                            author: 'By Marcus Thorne',
+                            date: 'August 14, 2026',
+                            read: '6 Min Read',
+                            img: 'assets/maintaining-walnut-oak-veneers.png',
+                            authorImg: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=200&auto=format&fit=crop',
+                            authorName: 'Marcus Thorne',
+                            authorBio: 'Senior Materials Consultant at MODULARIS. Specialist in timber veneer sourcing, FSC certification, and finish durability testing.',
+                            body: `<p>Natural timber veneers are living surfaces that respond to humidity, UV exposure, and contact chemistry. Understanding their care requirements ensures decades of beauty without premature ageing or delamination.</p>
+                            <h3 class="text-xl font-bold text-stone-900 dark:text-white font-heading">Moisture Balance Control</h3>
+                            <p>Maintain ambient humidity between 45–60% RH year-round. Seasonal swings beyond this range cause veneer sheets to expand and contract at different rates than the substrate, leading to micro-fractures in the lacquer surface and eventual lifting at edges.</p>
+                            <blockquote class="p-4 border-l-4 border-amber-500 bg-gray-50 dark:bg-stone-800 italic font-serif text-stone-800 dark:text-stone-200">"A hygrometer in your wardrobe room is more valuable than any polish or maintenance product on the market."</blockquote>
+                            <h3 class="text-xl font-bold text-stone-900 dark:text-white font-heading">UV Protection</h3>
+                            <p>Walnut veneers will amber over time when exposed to direct UV. Install UV-blocking film on adjacent windows and use internal LED strip lighting rather than external spots that rake the surface. Annual application of a UV-inhibiting furniture wax restores oxidised tones.</p>
+                            <h3 class="text-xl font-bold text-stone-900 dark:text-white font-heading">Cleaning Protocol</h3>
+                            <p>Wipe with a barely-damp microfibre cloth, always working with the grain direction. Avoid silicone-based polishes as they create a build-up layer that progressively yellows. A pH-neutral wood soap diluted 1:20 in water is all you need quarterly.</p>`
+                        },
+                        3: {
+                            category: 'Storage Hacks',
+                            title: 'Unlocking Hidden Storage in Sloped Attic Alcoves',
+                            author: 'By Sophia Chen',
+                            date: 'July 30, 2026',
+                            read: '4 Min Read',
+                            img: 'assets/sloped-attic-alcoves-storage.png',
+                            authorImg: 'https://images.unsplash.com/photo-1607746882042-944635dfe10e?q=80&w=200&auto=format&fit=crop',
+                            authorName: 'Sophia Chen',
+                            authorBio: 'Space Planning Architect at MODULARIS. Expert in maximising storage potential in attic conversions and architecturally challenging rooms.',
+                            body: `<p>Sloped attic ceilings are typically dismissed as unusable — but with custom-scribed cabinetry, they represent some of the most valuable storage real estate in any home.</p>
+                            <h3 class="text-xl font-bold text-stone-900 dark:text-white font-heading">The Knee-Wall Approach</h3>
+                            <p>Where a ceiling drops below 1.4m, install a run of low-profile drawer towers behind a flush door panel. These knee-wall units are ideal for folded knitwear, shoe boxes, and seasonal bedding — items that don't require vertical hanging clearance.</p>
+                            <blockquote class="p-4 border-l-4 border-amber-500 bg-gray-50 dark:bg-stone-800 italic font-serif text-stone-800 dark:text-stone-200">"Every attic conversion we complete reveals at least 30% more storage than the client expected. The slope is not your enemy — it defines your layout."</blockquote>
+                            <h3 class="text-xl font-bold text-stone-900 dark:text-white font-heading">Custom Scribed Filler Panels</h3>
+                            <p>Our joiners use a scribing compass to trace the exact roof pitch angle onto the cabinet end panel. After cutting, the panel presses flush against the sloped plasterboard with zero visible gap — eliminating the dust trap that open gaps create.</p>
+                            <h3 class="text-xl font-bold text-stone-900 dark:text-white font-heading">Chimney Breast Integration</h3>
+                            <p>Twin alcoves flanking a chimney breast are perfect for tall hanging towers. Box in the chimney breast itself with matching door fronts and use the void above for a secure document drawer with a concealed lock cylinder.</p>`
+                        },
+                        4: {
+                            category: 'Wardrobe Trends',
+                            title: 'Island Units & Jewellery Drawers: The Luxury Standard',
+                            author: 'By Elena Rostova',
+                            date: 'July 10, 2026',
+                            read: '7 Min Read',
+                            img: 'assets/island-units-jewellery-drawers.png',
+                            authorImg: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=200&auto=format&fit=crop',
+                            authorName: 'Elena Rostova',
+                            authorBio: 'Head of 3D Design at MODULARIS. Specialises in luxury master suite wardrobe experiences and bespoke island dresser configurations.',
+                            body: `<p>A central island dresser transforms a walk-in wardrobe from a storage room into a personal boutique. When specified correctly, it becomes the most-used piece of furniture in any master suite.</p>
+                            <h3 class="text-xl font-bold text-stone-900 dark:text-white font-heading">Optimal Island Dimensions</h3>
+                            <p>For comfortable bilateral access, an island should be no wider than 900mm (allowing 750mm clearance on each side). Height at 850mm is standard for standing use; a 150mm plinth lifts it off floor level for easier cleaning access.</p>
+                            <blockquote class="p-4 border-l-4 border-amber-500 bg-gray-50 dark:bg-stone-800 italic font-serif text-stone-800 dark:text-stone-200">"The island is the anchor point of the entire wardrobe — everything else radiates from it. Get the dimensions wrong and the whole room suffers."</blockquote>
+                            <h3 class="text-xl font-bold text-stone-900 dark:text-white font-heading">Velvet-Lined Jewellery Drawers</h3>
+                            <p>Specify Blum TANDEM runners with internal divider kits. Line drawer bases with 3mm PETG anti-tarnish velvet in storm grey or midnight navy. Include a padded ring roll insert and a watch cushion compartment as standard. LED strip inside the drawer cavity illuminates the contents when opened.</p>
+                            <h3 class="text-xl font-bold text-stone-900 dark:text-white font-heading">Smoked Glass Top Surface</h3>
+                            <p>A 10mm tempered smoked glass top on the island allows you to view watch boxes or sunglasses stored below without opening a drawer. It's a functional luxury that clients consistently rate as their favourite detail post-installation.</p>`
+                        },
+                        5: {
+                            category: 'Material Guides',
+                            title: 'Italian PU Lacquer vs Melamine: A Finish Comparison',
+                            author: 'By Marcus Thorne',
+                            date: 'June 22, 2026',
+                            read: '5 Min Read',
+                            img: 'assets/italian-pu-lacquer-vs-melamine.png',
+                            authorImg: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=200&auto=format&fit=crop',
+                            authorName: 'Marcus Thorne',
+                            authorBio: 'Senior Materials Consultant at MODULARIS. Specialist in timber veneer sourcing, FSC certification, and finish durability testing.',
+                            body: `<p>When selecting a cabinet door finish, the choice between Italian polyurethane lacquer and standard melamine-faced board represents a significant difference in quality, longevity, and tactile experience.</p>
+                            <h3 class="text-xl font-bold text-stone-900 dark:text-white font-heading">Italian PU Lacquer: The Premium Choice</h3>
+                            <p>Sprayed in a dust-free booth at 22°C, Italian PU lacquer delivers a depth of colour and surface tension unachievable with paper-bonded finishes. The 5-layer application process (primer, sealer, two colour coats, UV-hardened topcoat) produces a surface hardness of 3H pencil rating — resistant to key scratches and hand cream oils.</p>
+                            <blockquote class="p-4 border-l-4 border-amber-500 bg-gray-50 dark:bg-stone-800 italic font-serif text-stone-800 dark:text-stone-200">"Melamine is the airport departure lounge of finishes. PU lacquer is a private members' club — you feel the difference the moment you touch it."</blockquote>
+                            <h3 class="text-xl font-bold text-stone-900 dark:text-white font-heading">Melamine: The Practical Choice</h3>
+                            <p>Melamine-faced MDF offers excellent value for secondary storage zones — laundry rooms, utility wardrobes, and children's bedrooms. The paper foil is thermally fused under 300-bar pressure, producing a stable, moisture-resistant surface in a wide range of woodgrain and solid colour options.</p>
+                            <h3 class="text-xl font-bold text-stone-900 dark:text-white font-heading">Our Recommendation</h3>
+                            <p>Use PU lacquer for all visible door fronts and drawer faces. Specify melamine for interior carcasses, shelving, and drawer boxes where cost efficiency matters without sacrificing finish quality in primary viewing zones.</p>`
+                        },
+                        6: {
+                            category: 'Storage Hacks',
+                            title: 'Modular Pull-Out Shoe Racks & Drawer Towers',
+                            author: 'By Sophia Chen',
+                            date: 'June 5, 2026',
+                            read: '3 Min Read',
+                            img: 'assets/modular-pull-out-shoe-racks.png',
+                            authorImg: 'https://images.unsplash.com/photo-1607746882042-944635dfe10e?q=80&w=200&auto=format&fit=crop',
+                            authorName: 'Sophia Chen',
+                            authorBio: 'Space Planning Architect at MODULARIS. Expert in maximising storage potential in attic conversions and architecturally challenging rooms.',
+                            body: `<p>Shoe storage is consistently the most-requested wardrobe feature — and the most poorly resolved in standard flat-pack systems. Our modular pull-out approach transforms footwear management into a curated display experience.</p>
+                            <h3 class="text-xl font-bold text-stone-900 dark:text-white font-heading">Angled Pull-Out Shoe Shelves</h3>
+                            <p>Shelves angled at 15° towards the user allow shoes to be displayed toe-forward — you can identify every pair at a glance without crouching. The angled profile also reduces the front-to-back depth requirement from 380mm to 290mm, freeing a full 90mm for an additional shelf row in the same height.</p>
+                            <blockquote class="p-4 border-l-4 border-amber-500 bg-gray-50 dark:bg-stone-800 italic font-serif text-stone-800 dark:text-stone-200">"Angled shoe shelves increase visible capacity by 40% compared to flat shelving — without adding a single millimetre of wardrobe depth."</blockquote>
+                            <h3 class="text-xl font-bold text-stone-900 dark:text-white font-heading">Clear-Front Acrylic Drawer Inserts</h3>
+                            <p>For boot and sneaker storage, deep pull-out drawers with 6mm clear acrylic front panels allow visual identification without opening. Label slots on the acrylic face complete the boutique store aesthetic.</p>
+                            <h3 class="text-xl font-bold text-stone-900 dark:text-white font-heading">Motion-Activated LED Strips</h3>
+                            <p>Fit PIR motion sensors to the underside of each shelf. When the pull-out extends, the LED strip activates — illuminating the shoe collection in warm 3000K light. The effect is dramatic and immediately practical in early-morning or low-light dressing scenarios.</p>`
+                        }
+                    };
+
+                    const id = parseInt(new URLSearchParams(window.location.search).get('id')) || 1;
+                    const art = articles[id] || articles[1];
+
+                    document.title = art.title + ' | MODULARIS Journal';
+                    document.getElementById('art-category').textContent = art.category;
+                    document.getElementById('art-title').textContent = art.title;
+                    document.getElementById('art-author').innerHTML = '<i class="fa-solid fa-user text-amber-500 mr-1"></i>' + art.author;
+                    document.getElementById('art-date').innerHTML = '<i class="fa-solid fa-calendar text-amber-500 mr-1"></i>' + art.date;
+                    document.getElementById('art-read').innerHTML = '<i class="fa-solid fa-clock text-amber-500 mr-1"></i>' + art.read;
+                    document.getElementById('art-img').src = art.img;
+                    document.getElementById('art-img').alt = art.title;
+                    document.getElementById('art-body').innerHTML = art.body;
+                    document.getElementById('art-author-img').src = art.authorImg;
+                    document.getElementById('art-author-img').alt = art.authorName;
+                    document.getElementById('art-author-name').textContent = art.authorName;
+                    document.getElementById('art-author-bio').textContent = art.authorBio;
+                </script>
+
+                <!-- Sidebar -->
+                <div class="lg:col-span-4 space-y-8">
+                    <!-- Download Guide Box -->
+                    <div class="bg-stone-900 text-white p-6 rounded-2xl border border-stone-800 text-center shadow-xl">
+                        <i class="fa-solid fa-file-pdf text-4xl text-amber-400 mb-3"></i>
+                        <h4 class="text-lg font-bold font-heading mb-2">Free 2026 Closet Lookbook</h4>
+                        <p class="text-xs text-stone-400 mb-4">Download our 45-page catalog featuring 3D layout blueprints and material guides.</p>
+                        <a href="contact.html" class="block w-full bg-amber-600 hover:bg-amber-500 text-white font-bold py-3 rounded-lg text-xs uppercase tracking-wider transition">
+                            Download PDF Guide
+                        </a>
+                    </div>
+
+                    <!-- Popular Posts -->
+                    <div class="bg-gray-50 dark:bg-stone-800 p-6 rounded-2xl border border-gray-200 dark:border-stone-700">
+                        <h4 class="font-bold text-stone-900 dark:text-white text-sm mb-4">Popular Articles</h4>
+                        <div class="space-y-4">
+                            <a href="blog-details.html" class="flex items-center space-x-3 group">
+                                <img src="assets/bedroom-storage.png" alt="Bedroom Storage" class="w-12 h-12 rounded-lg object-cover">
+                                <div>
+                                    <h5 class="text-xs font-bold text-stone-900 dark:text-white group-hover:text-amber-500 transition line-clamp-1">Matte PU vs High Gloss Acrylic</h5>
+                                    <span class="text-[10px] text-stone-400">Aug 28, 2026</span>
+                                </div>
+                            </a>
+                            <a href="blog-details.html" class="flex items-center space-x-3 group">
+                                <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?q=80&w=200&auto=format&fit=crop" class="w-12 h-12 rounded-lg object-cover">
+                                <div>
+                                    <h5 class="text-xs font-bold text-stone-900 dark:text-white group-hover:text-amber-500 transition line-clamp-1">Small Room Storage Hacks</h5>
+                                    <span class="text-[10px] text-stone-400">Aug 15, 2026</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Master Footer Component -->
+    <footer class="bg-[#040814] text-stone-400 pt-16 pb-8 border-t border-stone-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+                <!-- Col 1: Brand & Socials -->
+                <div class="space-y-4">
+                    <a href="index.html" class="flex items-center space-x-3 rtl:space-x-reverse mb-4">
+                        <div class="w-8 h-8 bg-gradient-to-tr from-amber-600 to-amber-400 rounded-lg flex items-center justify-center text-white shadow-[0_0_15px_rgba(245,158,11,0.4)]">
+                            <i class="fa-solid fa-cube text-sm"></i>
+                        </div>
+                        <span class="text-xl font-bold font-heading text-white tracking-wide">MODULARIS</span>
+                    </a>
+                    <p class="text-xs text-stone-400 leading-relaxed max-w-xs">
+                        Enterprise architectural joinery & custom modular cabinetry fulfillment platform.
+                    </p>
+                    <div class="flex space-x-3 rtl:space-x-reverse pt-3">
+                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-xl border border-stone-700/80 bg-stone-800/40 text-stone-400 hover:text-white hover:bg-stone-700 flex items-center justify-center transition-all"><i class="fa-brands fa-instagram text-sm"></i></a>
+                        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-xl border border-stone-700/80 bg-stone-800/40 text-stone-400 hover:text-white hover:bg-stone-700 flex items-center justify-center transition-all"><i class="fa-brands fa-facebook-f text-sm"></i></a>
+                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-xl border border-stone-700/80 bg-stone-800/40 text-stone-400 hover:text-white hover:bg-stone-700 flex items-center justify-center transition-all"><i class="fa-brands fa-linkedin-in text-sm"></i></a>
+                        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-xl border border-stone-700/80 bg-stone-800/40 text-stone-400 hover:text-white hover:bg-stone-700 flex items-center justify-center transition-all"><svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 1200 1227" xmlns="http://www.w3.org/2000/svg"><path d="M714.163 519.284L1160.89 0H1055.03L667.137 450.887L357.328 0H0L468.492 681.821L0 1226.37H105.866L515.491 750.218L842.672 1226.37H1200L714.137 519.284H714.163ZM569.165 687.828L521.697 619.934L144.011 79.6944H306.615L611.412 515.685L658.88 583.579L1055.08 1150.3H892.476L569.165 687.854V687.828Z"/></svg></a>
+                    </div>
+                </div>
+
+                <!-- Col 2: NAVIGATION -->
+                <div>
+                    <h4 class="text-white text-[11px] font-bold uppercase tracking-widest mb-6">Navigation</h4>
+                    <ul class="space-y-3 text-xs text-stone-400">
+                        <li><a href="index.html" class="hover:text-amber-400 transition">Home</a></li>
+                        <li><a href="about.html" class="hover:text-amber-400 transition">About Us</a></li>
+                        <li><a href="services.html" class="hover:text-amber-400 transition">Services</a></li>
+                        <li><a href="pricing.html" class="hover:text-amber-400 transition">Pricing Tiers</a></li>
+                        <li><a href="blog.html" class="hover:text-amber-400 transition">Blog & Journal</a></li>
+                        <li><a href="contact.html" class="hover:text-amber-400 transition">Contact Sales</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: PRODUCTION SLA -->
+                <div>
+                    <h4 class="text-white text-[11px] font-bold uppercase tracking-widest mb-6">Production SLA</h4>
+                    <ul class="space-y-3 text-xs text-stone-400">
+                        <li><span class="text-amber-500 font-bold">48h Express</span> CNC Dispatch SLA</li>
+                        <li><span class="text-green-500 font-bold">100% Optical</span> QC Inspection</li>
+                        <li><span class="text-purple-400 font-bold">Automated</span> Dimension Matching</li>
+                        <li><span class="text-amber-600 font-bold">5 Regional</span> Assembly Hubs</li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: ENTERPRISE SALES -->
+                <div>
+                    <h4 class="text-white text-[11px] font-bold uppercase tracking-widest mb-6">Enterprise Sales</h4>
+                    <div class="space-y-3 text-xs text-stone-400 mb-6">
+                        <div class="flex items-center space-x-3"><i class="fa-regular fa-envelope text-amber-500"></i> <span>corporate@modularis.com</span></div>
+                        <div class="flex items-center space-x-3"><i class="fa-solid fa-phone text-amber-500"></i> <span>+1 (800) 555-0198</span></div>
+                    </div>
+                    <a href="contact.html" class="inline-block w-full text-center bg-gradient-to-r from-amber-600 to-amber-500 hover:from-amber-500 hover:to-amber-400 text-white text-xs font-bold rounded-lg px-6 py-3.5 shadow-[0_0_15px_rgba(245,158,11,0.3)] transition">Connect Sales Team</a>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="border-t border-stone-800/60 pt-6 flex justify-center items-center text-[10px] text-stone-500">
+                <p class="text-center">&copy; 2026 MODULARIS Joinery Ltd. All rights reserved.</p>
+                
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

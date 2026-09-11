@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modular Wardrobe Design | Service Details | MODULARIS</title>
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        amber: { 500: '#d4af37', 600: '#c59b27', 700: '#aa7c11' },
+                        wood:  { 800: '#2b2520', 900: '#181512' }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="bg-gray-50 dark:bg-stone-950 text-gray-800 dark:text-gray-100 transition-colors duration-300 font-sans antialiased selection:bg-amber-500 selection:text-white">
+
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-50 bg-white/95 dark:bg-stone-900/95 backdrop-blur-md border-b border-stone-200 dark:border-stone-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="index.html" class="flex items-center space-x-3 rtl:space-x-reverse">
+                    <div class="w-10 h-10 bg-amber-600 rounded-xl flex items-center justify-center text-white font-bold shadow-md shadow-amber-600/30">
+                        <i class="fa-solid fa-layer-group text-xl"></i>
+                    </div>
+                    <div class="leading-none">
+                        <span class="text-lg sm:text-xl xl:text-2xl font-black font-heading tracking-wider text-stone-900 dark:text-amber-400">MODULARIS</span>
+                        <span class="hidden sm:block text-[10px] tracking-widest uppercase text-stone-500 dark:text-stone-400 font-bold mt-0.5">Wardrobe &amp; Cabinetry</span>
+                    </div>
+                </a>
+                <nav class="hidden lg:flex items-center space-x-6 xl:space-x-7 rtl:space-x-reverse text-xs xl:text-sm">
+                    <div class="relative group py-4">
+                        <a href="index.html" class="text-stone-700 dark:text-stone-200 hover:text-amber-600 font-semibold flex items-center transition">
+                            Home <i class="fa-solid fa-chevron-down text-[10px] ml-1.5 transition group-hover:rotate-180"></i>
+                        </a>
+                        <div class="absolute left-0 top-full hidden group-hover:block w-48 bg-white dark:bg-stone-800 shadow-xl rounded-xl border border-stone-100 dark:border-stone-700 py-2 z-50">
+                            <a href="index.html" class="block px-4 py-2 text-xs hover:bg-amber-50 dark:hover:bg-stone-700 text-stone-700 dark:text-stone-200 hover:text-amber-600">Home 1 - General Services</a>
+                            <a href="home-niche.html" class="block px-4 py-2 text-xs hover:bg-amber-50 dark:hover:bg-stone-700 text-stone-700 dark:text-stone-200 hover:text-amber-600">Home 2 - Custom Wardrobes</a>
+                        </div>
+                    </div>
+                    <a href="about.html" class="text-stone-700 dark:text-stone-200 hover:text-amber-600 font-semibold transition">About Us</a>
+                    <a href="services.html" class="text-amber-600 dark:text-amber-400 font-bold border-b-2 border-amber-600 pb-1 transition">Services</a>
+                    
+                    <a href="pricing.html" class="text-stone-700 dark:text-stone-200 hover:text-amber-600 font-semibold transition">Pricing</a>
+                    <a href="blog.html" class="text-stone-700 dark:text-stone-200 hover:text-amber-600 font-semibold transition">Blog</a>
+                    <a href="contact.html" class="text-stone-700 dark:text-stone-200 hover:text-amber-600 font-semibold transition">Contact</a>
+                </nav>
+                <!-- Right Utilities Bar -->
+                <div class="flex items-center space-x-2 rtl:space-x-reverse">
+                    <!-- LTR / RTL Toggle (Desktop) -->
+                    <button class="rtl-toggle-btn hidden lg:flex items-center gap-1.5 border border-stone-200 dark:border-stone-700 bg-white dark:bg-stone-800 rounded-full px-3 py-2 text-[11px] font-bold text-stone-600 dark:text-stone-300 hover:border-amber-500 transition focus:outline-none">
+                        <span class="ltr-label text-amber-600">LTR</span>
+                        <i class="fa-solid fa-arrow-right-arrow-left text-[10px] text-stone-400"></i>
+                        <span class="rtl-label text-stone-400 dark:text-stone-500">RTL</span>
+                    </button>
+
+                    <!-- Dark Mode Toggle (Desktop) -->
+                    <button class="theme-toggle-btn hidden lg:flex w-9 h-9 rounded-full border border-stone-200 dark:border-stone-700 bg-white dark:bg-stone-800 items-center justify-center text-stone-600 dark:text-stone-300 shadow-sm transition-all focus:outline-none" title="Toggle Light/Dark Mode">
+                        <i class="theme-toggle-icon fa-solid fa-moon text-sm"></i>
+                    </button>
+
+                    <!-- Login Button (Desktop) -->
+                    <a href="login.html" class="hidden lg:inline-flex items-center gap-1.5 border border-stone-200 dark:border-stone-700 bg-white dark:bg-stone-800 text-stone-700 dark:text-stone-200 text-xs font-bold px-4 py-2 rounded-full hover:border-amber-500 transition">
+                        <i class="fa-solid fa-plus text-[10px] text-amber-500"></i>
+                        <span>Login</span>
+                    </a>
+
+                    <!-- Get Proposal CTA -->
+                    <a href="contact.html" class="hidden sm:inline-flex items-center space-x-2 bg-gradient-to-r from-amber-600 to-amber-500 hover:from-amber-500 hover:to-amber-600 text-white text-xs uppercase font-extrabold tracking-wider px-5 py-2.5 rounded-full shadow-md shadow-amber-600/25 hover:shadow-lg transition-all transform hover:-translate-y-0.5 active:translate-y-0">
+                        <i class="fa-solid fa-paper-plane text-xs"></i>
+                        <span>Get Proposal</span>
+                    </a>
+
+                    <!-- Mobile Theme Toggle -->
+                    <button class="theme-toggle-btn lg:hidden w-10 h-10 rounded-2xl border border-stone-200 dark:border-stone-700 bg-white dark:bg-stone-800 flex items-center justify-center text-stone-600 dark:text-stone-300 shadow-sm transition-all focus:outline-none" title="Toggle Light/Dark Mode">
+                        <i class="theme-toggle-icon fa-solid fa-moon text-sm"></i>
+                    </button>
+
+                    <!-- Mobile Menu Toggle -->
+                    <button id="mobile-menu-toggle" class="lg:hidden w-10 h-10 rounded-2xl border border-stone-200 dark:border-stone-700 bg-white dark:bg-stone-800 flex items-center justify-center text-stone-600 dark:text-stone-300 shadow-sm focus:outline-none ml-1 transition-all">
+                        <i class="fa-solid fa-bars text-sm"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden lg:hidden bg-stone-50 dark:bg-stone-950 px-4 pt-4 pb-8 max-h-[calc(100vh-80px)] overflow-y-auto">
+            <div class="space-y-3">
+                <a href="index.html" class="flex justify-between items-center bg-white dark:bg-stone-900 rounded-2xl shadow-sm border border-stone-200 dark:border-stone-800 px-5 py-4 text-stone-900 dark:text-white font-bold text-[13px] transition-all hover:border-amber-500"><span>Home 1 (General)</span><i class="fa-solid fa-house text-stone-400"></i></a>
+                <a href="home-niche.html" class="flex justify-between items-center bg-white dark:bg-stone-900 rounded-2xl shadow-sm border border-stone-200 dark:border-stone-800 px-5 py-4 text-stone-900 dark:text-white font-bold text-[13px] transition-all hover:border-amber-500"><span>Home 2 (Wardrobes)</span><i class="fa-solid fa-pen-nib text-stone-400"></i></a>
+                <a href="about.html" class="flex justify-between items-center bg-white dark:bg-stone-900 rounded-2xl shadow-sm border border-stone-200 dark:border-stone-800 px-5 py-4 text-stone-900 dark:text-white font-bold text-[13px] transition-all hover:border-amber-500"><span>About Us</span><i class="fa-regular fa-circle-info text-stone-400"></i></a>
+                <a href="services.html" class="flex justify-between items-center bg-white dark:bg-stone-900 rounded-2xl shadow-sm border border-stone-200 dark:border-stone-800 px-5 py-4 text-stone-900 dark:text-white font-bold text-[13px] transition-all hover:border-amber-500"><span>Services</span><i class="fa-solid fa-border-all text-stone-400"></i></a>
+                
+                <a href="pricing.html" class="flex justify-between items-center bg-white dark:bg-stone-900 rounded-2xl shadow-sm border border-stone-200 dark:border-stone-800 px-5 py-4 text-stone-900 dark:text-white font-bold text-[13px] transition-all hover:border-amber-500"><span>Pricing</span><i class="fa-solid fa-tag text-stone-400"></i></a>
+                <a href="blog.html" class="flex justify-between items-center bg-white dark:bg-stone-900 rounded-2xl shadow-sm border border-stone-200 dark:border-stone-800 px-5 py-4 text-stone-900 dark:text-white font-bold text-[13px] transition-all hover:border-amber-500"><span>Blog</span><i class="fa-regular fa-newspaper text-stone-400"></i></a>
+                <a href="contact.html" class="flex justify-between items-center bg-white dark:bg-stone-900 rounded-2xl shadow-sm border border-stone-200 dark:border-stone-800 px-5 py-4 text-stone-900 dark:text-white font-bold text-[13px] transition-all hover:border-amber-500"><span>Contact</span><i class="fa-regular fa-envelope text-stone-400"></i></a>
+                <a href="admin-dashboard.html" class="flex justify-between items-center bg-white dark:bg-stone-900 rounded-2xl shadow-sm border border-stone-200 dark:border-stone-800 px-5 py-4 text-indigo-600 dark:text-indigo-400 font-bold text-[13px] transition-all hover:border-indigo-500"><span>Admin Dashboard</span><i class="fa-solid fa-shield-halved text-indigo-500/70"></i></a>
+            </div>
+            <div class="mt-8 space-y-3 pt-6 border-t border-stone-200 dark:border-stone-800">
+                <a href="contact.html" class="w-full flex justify-center items-center gap-2 bg-amber-600 hover:bg-amber-700 text-white font-bold text-sm rounded-xl py-3.5 shadow-md transition"><i class="fa-regular fa-paper-plane text-xs"></i><span>Get Proposal</span></a>
+                <div class="grid grid-cols-2 gap-3">
+                    <a href="login.html" class="flex justify-center items-center gap-2 bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-xl py-3 text-stone-900 dark:text-white font-bold text-xs transition hover:border-amber-500"><i class="fa-solid fa-arrow-right-to-bracket text-amber-500"></i><span>Login</span></a>
+                    <button class="rtl-toggle-btn flex justify-center items-center gap-1.5 bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-xl py-3 text-xs transition hover:border-amber-500 focus:outline-none"><span class="ltr-label font-bold text-amber-500">LTR</span><i class="fa-solid fa-arrow-right-arrow-left text-[10px] text-stone-300"></i><span class="rtl-label text-stone-400 dark:text-stone-500 font-bold">RTL</span></button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Service Header Banner -->
+    <section class="bg-stone-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <span class="text-xs font-bold text-amber-400 uppercase tracking-widest block mb-2">Service Breakdown</span>
+            <h1 id="service-banner-title" class="text-4xl font-bold font-heading">Modular Wardrobe Design</h1>
+            <p id="service-banner-desc" class="text-stone-400 text-sm mt-3 max-w-xl mx-auto">Tailor-made luxury wardrobe solutions configured precisely to your wardrobe inventory and bedroom layout.</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="py-20 bg-white dark:bg-stone-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                <div class="lg:col-span-8 space-y-8">
+                    <img id="service-main-img" src="assets/custom-wardrobes.png" alt="Service Image" class="w-full h-96 object-cover rounded-2xl border border-gray-200 dark:border-stone-800 shadow-xl">
+                    <h2 id="service-main-heading" class="text-2xl font-bold font-heading text-stone-900 dark:text-white">Next-Generation Wardrobe Architecture</h2>
+                    <p id="service-main-text" class="text-stone-600 dark:text-stone-400 text-sm leading-relaxed">Our modular wardrobe design service combines high-end European aesthetics with practical storage organization. Whether you require sliding frosted glass doors for compact apartments or floor-to-ceiling walk-in suites, every module is engineered for maximum space efficiency.</p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+                        <div class="p-5 rounded-xl bg-gray-50 dark:bg-stone-800 border border-gray-200 dark:border-stone-700"><i class="fa-solid fa-lightbulb text-amber-600 text-xl mb-2"></i><h4 class="font-bold text-stone-900 dark:text-white text-sm">Smart Motion Lighting</h4><p class="text-xs text-stone-500 dark:text-stone-400 mt-1">Concealed warm LED aluminum profiles with motion sensor triggers.</p></div>
+                        <div class="p-5 rounded-xl bg-gray-50 dark:bg-stone-800 border border-gray-200 dark:border-stone-700"><i class="fa-solid fa-gem text-amber-600 text-xl mb-2"></i><h4 class="font-bold text-stone-900 dark:text-white text-sm">Custom Accessory Trays</h4><p class="text-xs text-stone-500 dark:text-stone-400 mt-1">Italian velvet-lined drawers for watches, sunglasses, and jewelry.</p></div>
+                        <div class="p-5 rounded-xl bg-gray-50 dark:bg-stone-800 border border-gray-200 dark:border-stone-700"><i class="fa-solid fa-arrows-up-to-line text-amber-600 text-xl mb-2"></i><h4 class="font-bold text-stone-900 dark:text-white text-sm">Hydraulic Lift Rods</h4><p class="text-xs text-stone-500 dark:text-stone-400 mt-1">Easily lower high hanging suits without needing step stools.</p></div>
+                        <div class="p-5 rounded-xl bg-gray-50 dark:bg-stone-800 border border-gray-200 dark:border-stone-700"><i class="fa-solid fa-shield text-amber-600 text-xl mb-2"></i><h4 class="font-bold text-stone-900 dark:text-white text-sm">10-Year Warranty</h4><p class="text-xs text-stone-500 dark:text-stone-400 mt-1">Full structural coverage on all frames, hinges, and sliding tracks.</p></div>
+                    </div>
+                    <div class="bg-gray-50 dark:bg-stone-800/80 p-6 rounded-2xl border border-gray-200 dark:border-stone-700 space-y-4">
+                        <h3 class="text-lg font-bold font-heading text-stone-900 dark:text-white">Ergonomic Compartment Sizing Guidelines</h3>
+                        <p class="text-xs text-stone-600 dark:text-stone-400">Our wardrobe architects design internal layouts based on standardized clothing hanging standards:</p>
+                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 text-center text-xs">
+                            <div class="bg-white dark:bg-stone-900 p-3 rounded-xl border border-gray-200 dark:border-stone-700"><strong class="text-amber-600 block text-sm">160 cm (63")</strong><span class="text-stone-500">Long Coats &amp; Gowns</span></div>
+                            <div class="bg-white dark:bg-stone-900 p-3 rounded-xl border border-gray-200 dark:border-stone-700"><strong class="text-amber-600 block text-sm">110 cm (43")</strong><span class="text-stone-500">Suit Jackets &amp; Shirts</span></div>
+                            <div class="bg-white dark:bg-stone-900 p-3 rounded-xl border border-gray-200 dark:border-stone-700"><strong class="text-amber-600 block text-sm">90 cm (35")</strong><span class="text-stone-500">Trouser Pull-outs</span></div>
+                            <div class="bg-white dark:bg-stone-900 p-3 rounded-xl border border-gray-200 dark:border-stone-700"><strong class="text-amber-600 block text-sm">35 cm (14")</strong><span class="text-stone-500">Folded Sweater Shelves</span></div>
+                        </div>
+                    </div>
+                    <div class="pt-6">
+                        <h3 class="text-xl font-bold font-heading text-stone-900 dark:text-white mb-6">Service Execution Workflow</h3>
+                        <ol class="relative border-l border-amber-600/30 dark:border-amber-600/20 ml-3 space-y-6 text-xs text-stone-600 dark:text-stone-400">
+                            <li class="pl-6 relative"><span class="absolute -left-2.5 top-0 w-5 h-5 rounded-full bg-amber-600 text-white flex items-center justify-center text-[10px] font-bold">1</span><strong class="text-stone-900 dark:text-white text-sm block">Laser Measurement &amp; Inventory Audit</strong>We inspect room dimensions and catalog your clothing storage ratio (hanging vs folded vs footwear).</li>
+                            <li class="pl-6 relative"><span class="absolute -left-2.5 top-0 w-5 h-5 rounded-full bg-amber-600 text-white flex items-center justify-center text-[10px] font-bold">2</span><strong class="text-stone-900 dark:text-white text-sm block">3D Proposal &amp; Material Swatch Selection</strong>Review photorealistic 3D CAD renders and select board finishes, handles, and glass types.</li>
+                            <li class="pl-6 relative"><span class="absolute -left-2.5 top-0 w-5 h-5 rounded-full bg-amber-600 text-white flex items-center justify-center text-[10px] font-bold">3</span><strong class="text-stone-900 dark:text-white text-sm block">CNC Manufacturing &amp; On-Site Installation</strong>Precision cut in our factory and assembled in your home by master carpenters in 1-2 days.</li>
+                        </ol>
+                    </div>
+                    <div class="pt-8">
+                        <h3 class="text-xl font-bold font-heading text-stone-900 dark:text-white mb-4">Package Rates Overview</h3>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-left text-xs border-collapse">
+                                <thead><tr class="bg-gray-100 dark:bg-stone-800 text-stone-900 dark:text-amber-400"><th class="p-3 border border-gray-200 dark:border-stone-700">Package Tier</th><th class="p-3 border border-gray-200 dark:border-stone-700">Recommended Size</th><th class="p-3 border border-gray-200 dark:border-stone-700">Included Hardware</th><th class="p-3 border border-gray-200 dark:border-stone-700">Est. Price</th></tr></thead>
+                                <tbody>
+                                    <tr class="border-b border-gray-200 dark:border-stone-800"><td class="p-3 font-bold">Essential Modular</td><td class="p-3">6 ft - 8 ft Width</td><td class="p-3">Soft-Close Hinges, Standard LED</td><td class="p-3 text-amber-600 font-bold">$2,200</td></tr>
+                                    <tr class="border-b border-gray-200 dark:border-stone-800"><td class="p-3 font-bold">Signature Custom</td><td class="p-3">8 ft - 12 ft Width</td><td class="p-3">Blum Motion, Glass Drawers, Motion LED</td><td class="p-3 text-amber-600 font-bold">$4,500</td></tr>
+                                    <tr class="border-b border-gray-200 dark:border-stone-800"><td class="p-3 font-bold">Royal Walk-In Luxury</td><td class="p-3">Full Master Suite</td><td class="p-3">Fluted Glass, Island Vanity, Leather Trays</td><td class="p-3 text-amber-600 font-bold">$8,900+</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:col-span-4 space-y-8">
+                    <div class="bg-stone-900 text-white p-6 rounded-2xl border border-stone-800 text-center shadow-xl">
+                        <i class="fa-solid fa-headset text-3xl text-amber-400 mb-3"></i>
+                        <h4 class="text-lg font-bold font-heading mb-2">Need Custom Advice?</h4>
+                        <p class="text-xs text-stone-400 mb-4">Speak directly with a senior wardrobe architect today.</p>
+                        <a href="contact.html" class="block w-full bg-amber-600 hover:bg-amber-500 text-white font-bold py-3 rounded-lg text-xs uppercase tracking-wider transition">Schedule Call</a>
+                    </div>
+                    <div class="bg-gray-50 dark:bg-stone-800 p-6 rounded-2xl border border-gray-200 dark:border-stone-700">
+                        <h4 class="font-bold text-stone-900 dark:text-white text-sm mb-4">Related Joinery Services</h4>
+                        <ul class="space-y-3 text-xs">
+                            <li><a href="service-details.html" class="text-stone-600 dark:text-stone-300 hover:text-amber-600 font-semibold block"><i class="fa-solid fa-chevron-right text-[10px] text-amber-500 mr-2"></i> Custom Kitchen Cabinets</a></li>
+                            <li><a href="service-details.html" class="text-stone-600 dark:text-stone-300 hover:text-amber-600 font-semibold block"><i class="fa-solid fa-chevron-right text-[10px] text-amber-500 mr-2"></i> Walk-in Closet Islands</a></li>
+                            <li><a href="service-details.html" class="text-stone-600 dark:text-stone-300 hover:text-amber-600 font-semibold block"><i class="fa-solid fa-chevron-right text-[10px] text-amber-500 mr-2"></i> 3D VR Space Modeling</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#040814] text-stone-400 pt-16 pb-8 border-t border-stone-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+                <div class="space-y-4">
+                    <a href="index.html" class="flex items-center space-x-3 mb-4"><div class="w-8 h-8 bg-gradient-to-tr from-amber-600 to-amber-400 rounded-lg flex items-center justify-center text-white"><i class="fa-solid fa-cube text-sm"></i></div><span class="text-xl font-bold font-heading text-white tracking-wide">MODULARIS</span></a>
+                    <p class="text-xs text-stone-400 leading-relaxed max-w-xs">Enterprise architectural joinery &amp; custom modular cabinetry fulfillment platform.</p>
+                    <div class="flex space-x-3 pt-3">
+                        <a href="#" class="w-9 h-9 rounded-xl border border-stone-700/80 bg-stone-800/40 text-stone-400 hover:text-white hover:bg-stone-700 flex items-center justify-center transition-all"><i class="fa-brands fa-instagram text-sm"></i></a>
+                        <a href="#" class="w-9 h-9 rounded-xl border border-stone-700/80 bg-stone-800/40 text-stone-400 hover:text-white hover:bg-stone-700 flex items-center justify-center transition-all"><i class="fa-brands fa-facebook-f text-sm"></i></a>
+                        <a href="#" class="w-9 h-9 rounded-xl border border-stone-700/80 bg-stone-800/40 text-stone-400 hover:text-white hover:bg-stone-700 flex items-center justify-center transition-all"><i class="fa-brands fa-linkedin-in text-sm"></i></a>
+                    </div>
+                </div>
+                <div><h4 class="text-white text-[11px] font-bold uppercase tracking-widest mb-6">Navigation</h4><ul class="space-y-3 text-xs text-stone-400"><li><a href="index.html" class="hover:text-amber-400 transition">Home</a></li><li><a href="about.html" class="hover:text-amber-400 transition">About Us</a></li><li><a href="services.html" class="hover:text-amber-400 transition">Services</a></li><li><a href="pricing.html" class="hover:text-amber-400 transition">Pricing Tiers</a></li><li><a href="blog.html" class="hover:text-amber-400 transition">Blog &amp; Journal</a></li><li><a href="contact.html" class="hover:text-amber-400 transition">Contact Sales</a></li></ul></div>
+                <div><h4 class="text-white text-[11px] font-bold uppercase tracking-widest mb-6">Production SLA</h4><ul class="space-y-3 text-xs text-stone-400"><li><span class="text-amber-500 font-bold">48h Express</span> CNC Dispatch SLA</li><li><span class="text-green-500 font-bold">100% Optical</span> QC Inspection</li><li><span class="text-purple-400 font-bold">Automated</span> Dimension Matching</li><li><span class="text-amber-600 font-bold">5 Regional</span> Assembly Hubs</li></ul></div>
+                <div><h4 class="text-white text-[11px] font-bold uppercase tracking-widest mb-6">Enterprise Sales</h4><div class="space-y-3 text-xs text-stone-400 mb-6"><div class="flex items-center space-x-3"><i class="fa-regular fa-envelope text-amber-500"></i><span>corporate@modularis.com</span></div><div class="flex items-center space-x-3"><i class="fa-solid fa-phone text-amber-500"></i><span>+1 (800) 555-0198</span></div></div><a href="contact.html" class="inline-block w-full text-center bg-gradient-to-r from-amber-600 to-amber-500 hover:from-amber-500 hover:to-amber-400 text-white text-xs font-bold rounded-lg px-6 py-3.5 transition">Connect Sales Team</a></div>
+            </div>
+            <div class="border-t border-stone-800/60 pt-6 flex justify-center items-center text-[10px] text-stone-500"><p class="text-center">&copy; 2026 MODULARIS Joinery Ltd. All rights reserved.</p></div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const params = new URLSearchParams(window.location.search);
+            const service = params.get('service');
+            const titleEl = document.getElementById('service-banner-title');
+            const descEl = document.getElementById('service-banner-desc');
+            const headingEl = document.getElementById('service-main-heading');
+            const serviceData = {
+                wardrobes: { img: 'assets/custom-wardrobes.png', title: 'Custom Wardrobes', desc: 'Floor-to-ceiling sliding and hinged wardrobe configurations with internal organizing trays.', heading: 'Bespoke Custom Wardrobe Solutions' },
+                bedroom:   { img: 'assets/bedroom-storage.png',  title: 'Bedroom Storage',  desc: 'Integrated bed backrest storage, floating nightstands, and dressing table units.',          heading: 'Smart Bedroom Storage Systems' }
+            };
+            if (service && serviceData[service]) {
+                const d = serviceData[service];
+                const imgEl = document.getElementById('service-main-img');
+                if (imgEl)     { imgEl.src = d.img; imgEl.alt = d.title; }
+                if (titleEl)   titleEl.textContent = d.title;
+                if (descEl)    descEl.textContent  = d.desc;
+                if (headingEl) headingEl.textContent = d.heading;
+            }
+        });
+    </script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
+

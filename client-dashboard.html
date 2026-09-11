@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Project Portal | MODULARIS</title>
+    <meta name="description" content="Track your bespoke wardrobe production, 3D proposals, installation schedule, and payment milestones.">
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        amber: { 500: '#d4af37', 600: '#c59b27', 700: '#aa7c11' }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="bg-gray-100 dark:bg-stone-950 text-gray-800 dark:text-gray-100 transition-colors duration-300 font-sans antialiased min-h-screen flex selection:bg-amber-500 selection:text-white">
+
+    <!-- Left Client Sidebar (Matching Referral Layout) -->
+    <aside class="w-64 bg-white dark:bg-stone-900 border-r border-stone-200 dark:border-stone-800 hidden lg:flex flex-col justify-between p-6 shrink-0 min-h-screen sticky top-0 h-screen">
+        <div class="space-y-8">
+            <!-- Sidebar Logo -->
+            <a href="index.html" class="flex items-center space-x-3 rtl:space-x-reverse">
+                <div class="w-9 h-9 bg-amber-600 rounded-xl flex items-center justify-center text-white font-bold shadow-md shadow-amber-600/30">
+                    <i class="fa-solid fa-user-gear text-lg"></i>
+                </div>
+                <div class="leading-none">
+                    <span class="text-lg font-black font-heading tracking-wider text-stone-900 dark:text-amber-400">CLIENT.MODULARIS</span>
+                </div>
+            </a>
+
+            <!-- Vertical Navigation Menu -->
+            <nav class="space-y-1.5 text-xs font-bold">
+                <button class="dashboard-tab-btn w-full flex items-center space-x-3 px-4 py-3 rounded-2xl transition text-left bg-amber-600 text-white" data-tab="tab-overview">
+                    <i class="fa-solid fa-gauge text-sm"></i>
+                    <span>Overview</span>
+                </button>
+
+                <button class="dashboard-tab-btn w-full flex items-center space-x-3 px-4 py-3 rounded-2xl transition text-left text-stone-600 dark:text-stone-400 hover:bg-stone-100 dark:hover:bg-stone-800 hover:text-amber-600 dark:hover:text-amber-400" data-tab="tab-submit-req">
+                    <i class="fa-solid fa-ruler-combined text-sm"></i>
+                    <span>Submit Requirements</span>
+                </button>
+
+                <button class="dashboard-tab-btn w-full flex items-center space-x-3 px-4 py-3 rounded-2xl transition text-left text-stone-600 dark:text-stone-400 hover:bg-stone-100 dark:hover:bg-stone-800 hover:text-amber-600 dark:hover:text-amber-400" data-tab="tab-3d-proposals">
+                    <i class="fa-solid fa-cube text-sm"></i>
+                    <span>3D Proposals</span>
+                </button>
+
+                <button class="dashboard-tab-btn w-full flex items-center space-x-3 px-4 py-3 rounded-2xl transition text-left text-stone-600 dark:text-stone-400 hover:bg-stone-100 dark:hover:bg-stone-800 hover:text-amber-600 dark:hover:text-amber-400" data-tab="tab-track-order">
+                    <i class="fa-solid fa-industry text-sm"></i>
+                    <span>Track Production</span>
+                </button>
+
+                <button class="dashboard-tab-btn w-full flex items-center space-x-3 px-4 py-3 rounded-2xl transition text-left text-stone-600 dark:text-stone-400 hover:bg-stone-100 dark:hover:bg-stone-800 hover:text-amber-600 dark:hover:text-amber-400" data-tab="tab-installation">
+                    <i class="fa-solid fa-calendar-check text-sm"></i>
+                    <span>Installation Schedule</span>
+                </button>
+
+                <button class="dashboard-tab-btn w-full flex items-center space-x-3 px-4 py-3 rounded-2xl transition text-left text-stone-600 dark:text-stone-400 hover:bg-stone-100 dark:hover:bg-stone-800 hover:text-amber-600 dark:hover:text-amber-400" data-tab="tab-payments">
+                    <i class="fa-solid fa-credit-card text-sm"></i>
+                    <span>Payment Milestones</span>
+                </button>
+
+                <button class="dashboard-tab-btn w-full flex items-center space-x-3 px-4 py-3 rounded-2xl transition text-left text-stone-600 dark:text-stone-400 hover:bg-stone-100 dark:hover:bg-stone-800 hover:text-amber-600 dark:hover:text-amber-400" data-tab="tab-warranty">
+                    <i class="fa-solid fa-shield-check text-sm"></i>
+                    <span>Warranty & Care</span>
+                </button>
+            </nav>
+        </div>
+
+        <!-- Sidebar Logout Button -->
+        <div class="pt-6 border-t border-stone-200 dark:border-stone-800">
+            <a href="login.html" class="w-full inline-flex items-center justify-center space-x-2 py-3 px-4 rounded-2xl border border-red-200 dark:border-red-500/30 text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-950/30 text-xs font-bold transition">
+                <i class="fa-solid fa-right-from-bracket text-xs"></i>
+                <span>Logout Portal</span>
+            </a>
+        </div>
+    </aside>
+
+    <!-- Main Content Container -->
+    <div class="flex-1 flex flex-col min-w-0">
+        
+        <!-- Top Client Header Bar -->
+        <header class="bg-white/90 dark:bg-stone-900/90 backdrop-blur-md border-b border-stone-200 dark:border-stone-800 sticky top-0 z-40 px-6 py-4">
+            <div class="flex flex-col sm:flex-row justify-between items-center gap-4">
+                
+                <!-- Search / Project ID Pill -->
+                <div class="relative w-full sm:w-80">
+                    <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-3 text-xs text-stone-400"></i>
+                    <input type="text" placeholder="Search project files & renders..." class="w-full pl-10 pr-4 py-2.5 rounded-2xl bg-stone-100 dark:bg-stone-800 border border-stone-200 dark:border-stone-700 text-xs text-stone-900 dark:text-white placeholder-stone-400 focus:outline-none focus:ring-2 focus:ring-amber-500 transition">
+                </div>
+
+                <!-- Utilities & Profile -->
+                <div class="flex items-center space-x-2 sm:space-x-3 rtl:space-x-reverse w-full sm:w-auto justify-end">
+                    
+                    <!-- Mobile Sidebar Toggle -->
+                    <button class="lg:hidden w-10 h-10 rounded-2xl border border-stone-200 dark:border-stone-700 bg-white dark:bg-stone-800 flex items-center justify-center text-stone-600 dark:text-stone-300 shadow-sm focus:outline-none transition hover:border-amber-500">
+                        <i class="fa-solid fa-bars text-sm"></i>
+                    </button>
+
+                    <!-- LTR / RTL Toggle Button -->
+                    <button class="rtl-toggle-btn px-3 py-2 rounded-2xl bg-white dark:bg-stone-800 text-xs font-bold flex items-center border border-stone-200 dark:border-stone-700 shadow-sm transition hover:border-amber-500" title="Switch Direction LTR/RTL">
+                        <span class="ltr-label font-extrabold text-amber-500">LTR</span>
+                        <i class="fa-solid fa-arrow-right-arrow-left text-[10px] mx-1.5 text-amber-500"></i>
+                        <span class="rtl-label text-stone-400 dark:text-stone-500 opacity-60 font-semibold">RTL</span>
+                    </button>
+
+                    <!-- Dark/Light Theme Toggle Button -->
+                    <button class="theme-toggle-btn w-10 h-10 rounded-2xl border border-stone-200 dark:border-stone-700 bg-white dark:bg-stone-800 flex items-center justify-center text-stone-600 dark:text-stone-300 shadow-sm hover:border-amber-500 transition-all" title="Toggle Light/Dark Mode">
+                        <i class="theme-toggle-icon fa-solid fa-moon text-sm"></i>
+                    </button>
+
+                    <!-- Divider -->
+                    <div class="h-6 w-px bg-stone-200 dark:bg-stone-700 mx-1"></div>
+
+                    <!-- Client Profile Badge -->
+                    <div class="flex items-center">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=200&auto=format&fit=crop" alt="Victoria Vance" class="w-10 h-10 rounded-full object-cover ring-2 ring-amber-500 shadow-md">
+                    </div>
+                </div></div></header>
+
+        <!-- Main Portal Container -->
+        <main class="p-6 sm:p-8 space-y-8 flex-1">
+            
+            <!-- Welcome Banner -->
+            <div class="bg-stone-900 text-white p-6 sm:p-8 rounded-3xl border border-stone-800 shadow-xl flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+                <div>
+                    <span class="bg-amber-500/10 text-amber-400 border border-amber-500/20 text-[10px] uppercase font-bold px-3 py-1 rounded-full">Project ID: #MOD-9402</span>
+                    <h1 class="text-2xl sm:text-3xl font-bold font-heading text-white mt-2">Master Walk-In Suite Project</h1>
+                    <p class="text-xs text-stone-400 mt-1">Lead Architect: Henrik Vance | Target Installation: Sep 18, 2026</p>
+                </div>
+                
+                <div class="w-full md:w-64 bg-stone-950 p-4 rounded-2xl border border-stone-800">
+                    <div class="flex justify-between items-center text-xs font-bold mb-2">
+                        <span class="text-stone-400">Current Phase:</span>
+                        <span class="text-amber-400">65% (Manufacturing)</span>
+                    </div>
+                    <div class="w-full bg-stone-800 h-2.5 rounded-full overflow-hidden">
+                        <div class="bg-amber-500 h-full rounded-full" style="width: 65%;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB 1: OVERVIEW -->
+            <div id="tab-overview" class="dashboard-tab-pane space-y-8">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-white dark:bg-stone-900 p-6 rounded-2xl border border-stone-200 dark:border-stone-800 shadow-sm">
+                        <span class="text-xs text-stone-400 block font-bold uppercase">Design Status</span>
+                        <h3 class="text-xl font-bold text-stone-900 dark:text-white mt-1">3D Renders Approved</h3>
+                        <p class="text-xs text-amber-600 font-semibold mt-2"><i class="fa-solid fa-circle-check mr-1"></i> Signed on Aug 30, 2026</p>
+                    </div>
+
+                    <div class="bg-white dark:bg-stone-900 p-6 rounded-2xl border border-stone-200 dark:border-stone-800 shadow-sm">
+                        <span class="text-xs text-stone-400 block font-bold uppercase">Factory Status</span>
+                        <h3 class="text-xl font-bold text-stone-900 dark:text-white mt-1">CNC Edge-Banding</h3>
+                        <p class="text-xs text-stone-400 mt-2">Homag 5-Axis Machine #4</p>
+                    </div>
+
+                    <div class="bg-white dark:bg-stone-900 p-6 rounded-2xl border border-stone-200 dark:border-stone-800 shadow-sm">
+                        <span class="text-xs text-stone-400 block font-bold uppercase">Payment Balance</span>
+                        <h3 class="text-xl font-bold text-stone-900 dark:text-white mt-1">$1,800 Remaining</h3>
+                        <p class="text-xs text-green-600 font-semibold mt-2"><i class="fa-solid fa-lock mr-1"></i> Due on Installation Handover</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB 2: SUBMIT REQUIREMENTS -->
+            <div id="tab-submit-req" class="dashboard-tab-pane hidden bg-white dark:bg-stone-900 p-8 rounded-3xl border border-stone-200 dark:border-stone-800 shadow-sm">
+                <h3 class="text-xl font-bold font-heading text-stone-900 dark:text-white mb-2">Submit New Space Requirements</h3>
+                <p class="text-xs text-stone-500 dark:text-stone-400 mb-6">Upload measurements or additional storage requests for our design team.</p>
+                <form class="space-y-4 max-w-xl" onsubmit="showToast('Requirements Submitted', 'Your design preferences have been sent to your senior architect.', 'fa-ruler-combined'); return false;">
+                    <div>
+                        <label class="block text-xs font-bold uppercase text-stone-600 dark:text-stone-300 mb-1">Room Dimensions (L x W x H)</label>
+                        <input type="text" placeholder="e.g. 12ft x 10ft x 9ft ceiling" class="w-full px-4 py-3 rounded-xl bg-stone-50 dark:bg-stone-800 border border-stone-300 dark:border-stone-700 text-xs">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold uppercase text-stone-600 dark:text-stone-300 mb-1">Special Storage Requests</label>
+                        <textarea rows="4" placeholder="Mention tie racks, glass display shelves, sensor LED lighting..." class="w-full px-4 py-3 rounded-xl bg-stone-50 dark:bg-stone-800 border border-stone-300 dark:border-stone-700 text-xs"></textarea>
+                    </div>
+                    <button type="submit" class="bg-amber-600 hover:bg-amber-500 text-white font-bold text-xs uppercase px-6 py-3 rounded-xl shadow-md">Submit Preferences</button>
+                </form>
+            </div>
+
+            <!-- TAB 3: 3D PROPOSALS -->
+            <div id="tab-3d-proposals" class="dashboard-tab-pane hidden bg-white dark:bg-stone-900 p-8 rounded-3xl border border-stone-200 dark:border-stone-800 shadow-sm">
+                <h3 class="text-xl font-bold font-heading text-stone-900 dark:text-white mb-6">Approved 3D VR Renders</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="rounded-2xl overflow-hidden border border-stone-200 dark:border-stone-800">
+                        <img src="assets/custom-wardrobes.png" alt="3D Render View 1" class="w-full h-56 object-cover">
+                        <div class="p-4 bg-stone-50 dark:bg-stone-800/80">
+                            <h4 class="font-bold text-xs">Main Walk-In Suite View</h4>
+                            <p class="text-[10px] text-stone-400 mt-1">Fluted bronze glass doors & motion sensor LEDs</p>
+                        </div>
+                    </div>
+                    <div class="rounded-2xl overflow-hidden border border-stone-200 dark:border-stone-800">
+                        <img src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?q=80&w=800&auto=format&fit=crop" alt="3D Render View 2" class="w-full h-56 object-cover">
+                        <div class="p-4 bg-stone-50 dark:bg-stone-800/80">
+                            <h4 class="font-bold text-xs">Center Island & Velvet Drawers</h4>
+                            <p class="text-[10px] text-stone-400 mt-1">Saddle leather drawer face inserts</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB 4: TRACK PRODUCTION -->
+            <div id="tab-track-order" class="dashboard-tab-pane hidden bg-white dark:bg-stone-900 p-8 rounded-3xl border border-stone-200 dark:border-stone-800 shadow-sm">
+                <h3 class="text-xl font-bold font-heading text-stone-900 dark:text-white mb-6">Factory Production Roadmap</h3>
+                <div class="space-y-6">
+                    <div class="flex items-center space-x-4">
+                        <div class="w-8 h-8 rounded-full bg-green-500 text-white flex items-center justify-center text-xs font-bold"><i class="fa-solid fa-check"></i></div>
+                        <div>
+                            <strong class="text-xs font-bold text-stone-900 dark:text-white">Phase 1: Kiln-Dried Timber Selection</strong>
+                            <p class="text-[10px] text-stone-400">Completed Aug 22, 2026</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center space-x-4">
+                        <div class="w-8 h-8 rounded-full bg-green-500 text-white flex items-center justify-center text-xs font-bold"><i class="fa-solid fa-check"></i></div>
+                        <div>
+                            <strong class="text-xs font-bold text-stone-900 dark:text-white">Phase 2: 5-Axis CNC Precision Router Milling</strong>
+                            <p class="text-[10px] text-stone-400">Completed Aug 28, 2026</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center space-x-4">
+                        <div class="w-8 h-8 rounded-full bg-amber-500 text-white flex items-center justify-center text-xs font-bold"><i class="fa-solid fa-gear fa-spin"></i></div>
+                        <div>
+                            <strong class="text-xs font-bold text-amber-600 dark:text-amber-400">Phase 3: Zero-VOC Polyurethane Lacquer Finishing</strong>
+                            <p class="text-[10px] text-stone-400">Currently in process at Plant #2</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB 5: INSTALLATION SCHEDULE -->
+            <div id="tab-installation" class="dashboard-tab-pane hidden bg-white dark:bg-stone-900 p-8 rounded-3xl border border-stone-200 dark:border-stone-800 shadow-sm">
+                <h3 class="text-xl font-bold font-heading text-stone-900 dark:text-white mb-2">On-Site Installation Timeline</h3>
+                <p class="text-xs text-stone-400 mb-6">White-glove assembly scheduled for September 18, 2026.</p>
+                <div class="p-6 rounded-2xl bg-stone-50 dark:bg-stone-800 border border-stone-200 dark:border-stone-700">
+                    <div class="flex items-center space-x-3 text-amber-600 text-sm font-bold mb-2">
+                        <i class="fa-solid fa-truck-ramp-box"></i>
+                        <span>White-Glove Delivery Team Assigned</span>
+                    </div>
+                    <p class="text-xs text-stone-600 dark:text-stone-300">Lead Installer: Sophia Chen | HEPA Dust Control Equipment Included</p>
+                </div>
+            </div>
+
+            <!-- TAB 6: PAYMENT MILESTONES -->
+            <div id="tab-payments" class="dashboard-tab-pane hidden bg-white dark:bg-stone-900 p-8 rounded-3xl border border-stone-200 dark:border-stone-800 shadow-sm">
+                <h3 class="text-xl font-bold font-heading text-stone-900 dark:text-white mb-6">Payment Ledger & Receipts</h3>
+                <div class="space-y-4 text-xs">
+                    <div class="flex justify-between items-center p-4 rounded-xl bg-stone-50 dark:bg-stone-800 border border-stone-200 dark:border-stone-700">
+                        <div>
+                            <strong class="block text-stone-900 dark:text-white">Initial 40% Design Deposit</strong>
+                            <span class="text-[10px] text-stone-400">Paid via Wire Transfer • Receipt #REC-8841</span>
+                        </div>
+                        <span class="text-green-600 font-bold">$2,400 (Paid)</span>
+                    </div>
+
+                    <div class="flex justify-between items-center p-4 rounded-xl bg-stone-50 dark:bg-stone-800 border border-stone-200 dark:border-stone-700">
+                        <div>
+                            <strong class="block text-stone-900 dark:text-white">Factory Production 50% Milestone</strong>
+                            <span class="text-[10px] text-stone-400">Paid via Credit Card • Receipt #REC-8902</span>
+                        </div>
+                        <span class="text-green-600 font-bold">$3,000 (Paid)</span>
+                    </div>
+
+                    <div class="flex justify-between items-center p-4 rounded-xl bg-stone-50 dark:bg-stone-800 border border-stone-200 dark:border-stone-700">
+                        <div>
+                            <strong class="block text-stone-900 dark:text-white">Final 10% On-Site Handover Balance</strong>
+                            <span class="text-[10px] text-stone-400">Due upon installation sign-off</span>
+                        </div>
+                        <span class="text-amber-600 font-bold">$1,800 (Pending)</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB 7: WARRANTY & CARE -->
+            <div id="tab-warranty" class="dashboard-tab-pane hidden bg-white dark:bg-stone-900 p-8 rounded-3xl border border-stone-200 dark:border-stone-800 shadow-sm">
+                <h3 class="text-xl font-bold font-heading text-stone-900 dark:text-white mb-2">10-Year Structural Warranty Certificate</h3>
+                <p class="text-xs text-stone-400 mb-6">Your warranty policy certificate #WARR-9402 is registered with Blum Motion & MODULARIS.</p>
+                <button onclick="showToast('Downloading Certificate', 'Downloading your 10-Year Structural Warranty PDF...', 'fa-file-pdf')" class="bg-amber-600 hover:bg-amber-500 text-white text-xs font-bold uppercase px-6 py-3 rounded-xl shadow-md">
+                    <i class="fa-solid fa-download mr-1.5"></i> Download Warranty Certificate PDF
+                </button>
+            </div>
+
+        </main>
+
+        <!-- Master Footer Component -->
+        <footer class="bg-[#040814] text-stone-400 pt-16 pb-8 border-t border-stone-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+                <!-- Col 1: Brand & Socials -->
+                <div class="space-y-4">
+                    <a href="index.html" class="flex items-center space-x-3 rtl:space-x-reverse mb-4">
+                        <div class="w-8 h-8 bg-gradient-to-tr from-amber-600 to-amber-400 rounded-lg flex items-center justify-center text-white shadow-[0_0_15px_rgba(245,158,11,0.4)]">
+                            <i class="fa-solid fa-cube text-sm"></i>
+                        </div>
+                        <span class="text-xl font-bold font-heading text-white tracking-wide">MODULARIS</span>
+                    </a>
+                    <p class="text-xs text-stone-400 leading-relaxed max-w-xs">
+                        Enterprise architectural joinery & custom modular cabinetry fulfillment platform.
+                    </p>
+                    <div class="flex space-x-3 rtl:space-x-reverse pt-3">
+                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-xl border border-stone-700/80 bg-stone-800/40 text-stone-400 hover:text-white hover:bg-stone-700 flex items-center justify-center transition-all"><i class="fa-brands fa-instagram text-sm"></i></a>
+                        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-xl border border-stone-700/80 bg-stone-800/40 text-stone-400 hover:text-white hover:bg-stone-700 flex items-center justify-center transition-all"><i class="fa-brands fa-facebook-f text-sm"></i></a>
+                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-xl border border-stone-700/80 bg-stone-800/40 text-stone-400 hover:text-white hover:bg-stone-700 flex items-center justify-center transition-all"><i class="fa-brands fa-linkedin-in text-sm"></i></a>
+                        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-xl border border-stone-700/80 bg-stone-800/40 text-stone-400 hover:text-white hover:bg-stone-700 flex items-center justify-center transition-all"><svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 1200 1227" xmlns="http://www.w3.org/2000/svg"><path d="M714.163 519.284L1160.89 0H1055.03L667.137 450.887L357.328 0H0L468.492 681.821L0 1226.37H105.866L515.491 750.218L842.672 1226.37H1200L714.137 519.284H714.163ZM569.165 687.828L521.697 619.934L144.011 79.6944H306.615L611.412 515.685L658.88 583.579L1055.08 1150.3H892.476L569.165 687.854V687.828Z"/></svg></a>
+                    </div>
+                </div>
+
+                <!-- Col 2: NAVIGATION -->
+                <div>
+                    <h4 class="text-white text-[11px] font-bold uppercase tracking-widest mb-6">Navigation</h4>
+                    <ul class="space-y-3 text-xs text-stone-400">
+                        <li><a href="index.html" class="hover:text-amber-400 transition">Home</a></li>
+                        <li><a href="about.html" class="hover:text-amber-400 transition">About Us</a></li>
+                        <li><a href="services.html" class="hover:text-amber-400 transition">Services</a></li>
+                        <li><a href="pricing.html" class="hover:text-amber-400 transition">Pricing Tiers</a></li>
+                        <li><a href="blog.html" class="hover:text-amber-400 transition">Blog & Journal</a></li>
+                        <li><a href="contact.html" class="hover:text-amber-400 transition">Contact Sales</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: PRODUCTION SLA -->
+                <div>
+                    <h4 class="text-white text-[11px] font-bold uppercase tracking-widest mb-6">Production SLA</h4>
+                    <ul class="space-y-3 text-xs text-stone-400">
+                        <li><span class="text-amber-500 font-bold">48h Express</span> CNC Dispatch SLA</li>
+                        <li><span class="text-green-500 font-bold">100% Optical</span> QC Inspection</li>
+                        <li><span class="text-purple-400 font-bold">Automated</span> Dimension Matching</li>
+                        <li><span class="text-amber-600 font-bold">5 Regional</span> Assembly Hubs</li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: ENTERPRISE SALES -->
+                <div>
+                    <h4 class="text-white text-[11px] font-bold uppercase tracking-widest mb-6">Enterprise Sales</h4>
+                    <div class="space-y-3 text-xs text-stone-400 mb-6">
+                        <div class="flex items-center space-x-3"><i class="fa-regular fa-envelope text-amber-500"></i> <span>corporate@modularis.com</span></div>
+                        <div class="flex items-center space-x-3"><i class="fa-solid fa-phone text-amber-500"></i> <span>+1 (800) 555-0198</span></div>
+                    </div>
+                    <a href="contact.html" class="inline-block w-full text-center bg-gradient-to-r from-amber-600 to-amber-500 hover:from-amber-500 hover:to-amber-400 text-white text-xs font-bold rounded-lg px-6 py-3.5 shadow-[0_0_15px_rgba(245,158,11,0.3)] transition">Connect Sales Team</a>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="border-t border-stone-800/60 pt-6 flex justify-center items-center text-[10px] text-stone-500">
+                <p class="text-center">&copy; 2026 MODULARIS Joinery Ltd. All rights reserved.</p>
+                
+            </div>
+        </div>
+    </footer>
+    </div>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

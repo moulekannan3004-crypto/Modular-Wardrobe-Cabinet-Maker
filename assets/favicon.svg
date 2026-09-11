@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <rect width="512" height="512" rx="110" fill="#c59b27" />
+  <g fill="#ffffff">
+    <!-- Top Layer -->
+    <path d="M256 110 L400 180 L256 250 L112 180 Z" fill="#ffffff"/>
+    
+    <!-- Middle Layer -->
+    <path d="M112 215 L256 285 L400 215 L400 245 L256 315 L112 245 Z" fill="#ffffff" opacity="0.95"/>
+    
+    <!-- Bottom Layer -->
+    <path d="M112 280 L256 350 L400 280 L400 310 L256 380 L112 310 Z" fill="#ffffff" opacity="0.90"/>
+  </g>
+</svg>

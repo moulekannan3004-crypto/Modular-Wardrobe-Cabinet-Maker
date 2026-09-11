@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products Catalog | MODULARIS Bespoke Cabinet Maker</title>
+    <meta name="description" content="Explore our luxury custom wardrobe collections, walk-in closets, fluted glass armoires, and modular storage solutions.">
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        amber: { 500: '#d4af37', 600: '#c59b27', 700: '#aa7c11' }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="bg-gray-50 dark:bg-stone-950 text-gray-800 dark:text-gray-100 transition-colors duration-300 font-sans antialiased selection:bg-amber-500 selection:text-white">
+
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-50 bg-white/95 dark:bg-stone-900/95 backdrop-blur-md border-b border-stone-200 dark:border-stone-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Brand Logo -->
+                <a href="index.html" class="flex items-center space-x-3 rtl:space-x-reverse">
+                    <div class="w-10 h-10 bg-amber-600 rounded-xl flex items-center justify-center text-white font-bold shadow-md shadow-amber-600/30">
+                        <i class="fa-solid fa-layer-group text-xl"></i>
+                    </div>
+                    <div class="leading-none">
+                        <span class="text-lg sm:text-xl xl:text-2xl font-black font-heading tracking-wider text-stone-900 dark:text-amber-400">MODULARIS</span>
+                        <span class="hidden sm:block text-[10px] tracking-widest uppercase text-stone-500 dark:text-stone-400 font-bold mt-0.5">Wardrobe & Cabinetry</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Menu -->
+                <nav class="hidden lg:flex items-center space-x-6 xl:space-x-7 rtl:space-x-reverse text-xs xl:text-sm">
+                    <div class="relative group py-4">
+                        <a href="index.html" class="text-stone-700 dark:text-stone-200 hover:text-amber-600 dark:hover:text-amber-400 font-semibold flex items-center transition">
+                            Home 1 <i class="fa-solid fa-chevron-down text-[10px] ml-1.5 transition group-hover:rotate-180"></i>
+                        </a>
+                        <div class="absolute left-0 top-full hidden group-hover:block w-48 bg-white dark:bg-stone-800 shadow-xl rounded-xl border border-stone-100 dark:border-stone-700 py-2 z-50">
+                            <a href="index.html" class="block px-4 py-2 text-xs hover:bg-amber-50 dark:hover:bg-stone-700 text-stone-700 dark:text-stone-200 hover:text-amber-600">Home 1 - General Services</a>
+                            <a href="home-niche.html" class="block px-4 py-2 text-xs hover:bg-amber-50 dark:hover:bg-stone-700 text-stone-700 dark:text-stone-200 hover:text-amber-600">Home 2 - Custom Wardrobes</a>
+                        </div>
+                    </div>
+                    <a href="about.html" class="text-stone-700 dark:text-stone-200 hover:text-amber-600 dark:hover:text-amber-400 font-semibold transition">About Us</a>
+                    <a href="services.html" class="text-stone-700 dark:text-stone-200 hover:text-amber-600 dark:hover:text-amber-400 font-semibold transition">Services</a>
+                    
+                    <a href="pricing.html" class="text-stone-700 dark:text-stone-200 hover:text-amber-600 dark:hover:text-amber-400 font-semibold transition">Pricing</a>
+                    <a href="blog.html" class="text-stone-700 dark:text-stone-200 hover:text-amber-600 dark:hover:text-amber-400 font-semibold transition">Blog</a>
+                    <a href="contact.html" class="text-stone-700 dark:text-stone-200 hover:text-amber-600 dark:hover:text-amber-400 font-semibold transition">Contact</a>
+                </nav>
+
+                <!-- Right Utilities Bar -->
+                <div class="flex items-center space-x-2 rtl:space-x-reverse">
+                    <!-- LTR / RTL Toggle (Desktop) -->
+                    <button class="rtl-toggle-btn hidden lg:flex items-center gap-1.5 border border-stone-200 dark:border-stone-700 bg-white dark:bg-stone-800 rounded-full px-3 py-2 text-[11px] font-bold text-stone-600 dark:text-stone-300 hover:border-amber-500 transition focus:outline-none">
+                        <span class="ltr-label text-amber-600">LTR</span>
+                        <i class="fa-solid fa-arrow-right-arrow-left text-[10px] text-stone-400"></i>
+                        <span class="rtl-label text-stone-400 dark:text-stone-500">RTL</span>
+                    </button>
+
+                    <!-- Dark Mode Toggle (Desktop) -->
+                    <button class="theme-toggle-btn hidden lg:flex w-9 h-9 rounded-full border border-stone-200 dark:border-stone-700 bg-white dark:bg-stone-800 items-center justify-center text-stone-600 dark:text-stone-300 shadow-sm transition-all focus:outline-none" title="Toggle Light/Dark Mode">
+                        <i class="theme-toggle-icon fa-solid fa-moon text-sm"></i>
+                    </button>
+
+                    <!-- Login Button (Desktop) -->
+                    <a href="login.html" class="hidden lg:inline-flex items-center gap-1.5 border border-stone-200 dark:border-stone-700 bg-white dark:bg-stone-800 text-stone-700 dark:text-stone-200 text-xs font-bold px-4 py-2 rounded-full hover:border-amber-500 transition">
+                        <i class="fa-solid fa-plus text-[10px] text-amber-500"></i>
+                        <span>Login</span>
+                    </a>
+
+                    <!-- Get Proposal CTA -->
+                    <a href="contact.html" class="hidden sm:inline-flex items-center space-x-2 bg-gradient-to-r from-amber-600 to-amber-500 hover:from-amber-500 hover:to-amber-600 text-white text-xs uppercase font-extrabold tracking-wider px-5 py-2.5 rounded-full shadow-md shadow-amber-600/25 hover:shadow-lg transition-all transform hover:-translate-y-0.5 active:translate-y-0">
+                        <i class="fa-solid fa-paper-plane text-xs"></i>
+                        <span>Get Proposal</span>
+                    </a>
+
+                    <!-- Mobile Theme Toggle -->
+                    <button class="theme-toggle-btn lg:hidden w-10 h-10 rounded-2xl border border-stone-200 dark:border-stone-700 bg-white dark:bg-stone-800 flex items-center justify-center text-stone-600 dark:text-stone-300 shadow-sm transition-all focus:outline-none" title="Toggle Light/Dark Mode">
+                        <i class="theme-toggle-icon fa-solid fa-moon text-sm"></i>
+                    </button>
+
+                    <!-- Mobile Menu Toggle -->
+                    <button id="mobile-menu-toggle" class="lg:hidden w-10 h-10 rounded-2xl border border-stone-200 dark:border-stone-700 bg-white dark:bg-stone-800 flex items-center justify-center text-stone-600 dark:text-stone-300 shadow-sm focus:outline-none ml-1 transition-all">
+                        <i class="fa-solid fa-bars text-sm"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-stone-50 dark:bg-stone-950 px-4 pt-4 pb-8 max-h-[calc(100vh-80px)] overflow-y-auto">
+            <div class="space-y-3">
+                <a href="index.html" class="flex justify-between items-center bg-white dark:bg-stone-900 rounded-2xl shadow-sm border border-stone-200 dark:border-stone-800 px-5 py-4 text-stone-900 dark:text-white font-bold text-[13px] transition-all hover:border-amber-500">
+                    <span>Home 1 (General)</span>
+                    <i class="fa-solid fa-house text-stone-400"></i>
+                </a>
+                <a href="home-niche.html" class="flex justify-between items-center bg-white dark:bg-stone-900 rounded-2xl shadow-sm border border-stone-200 dark:border-stone-800 px-5 py-4 text-stone-900 dark:text-white font-bold text-[13px] transition-all hover:border-amber-500">
+                    <span>Home 2 (Wardrobes)</span>
+                    <i class="fa-solid fa-pen-nib text-stone-400"></i>
+                </a>
+                <a href="about.html" class="flex justify-between items-center bg-white dark:bg-stone-900 rounded-2xl shadow-sm border border-stone-200 dark:border-stone-800 px-5 py-4 text-stone-900 dark:text-white font-bold text-[13px] transition-all hover:border-amber-500">
+                    <span>About Us</span>
+                    <i class="fa-regular fa-circle-info text-stone-400"></i>
+                </a>
+                <a href="services.html" class="flex justify-between items-center bg-white dark:bg-stone-900 rounded-2xl shadow-sm border border-stone-200 dark:border-stone-800 px-5 py-4 text-stone-900 dark:text-white font-bold text-[13px] transition-all hover:border-amber-500">
+                    <span>Services</span>
+                    <i class="fa-solid fa-border-all text-stone-400"></i>
+                </a>
+                
+                <a href="pricing.html" class="flex justify-between items-center bg-white dark:bg-stone-900 rounded-2xl shadow-sm border border-stone-200 dark:border-stone-800 px-5 py-4 text-stone-900 dark:text-white font-bold text-[13px] transition-all hover:border-amber-500">
+                    <span>Pricing</span>
+                    <i class="fa-solid fa-tag text-stone-400"></i>
+                </a>
+                <a href="blog.html" class="flex justify-between items-center bg-white dark:bg-stone-900 rounded-2xl shadow-sm border border-stone-200 dark:border-stone-800 px-5 py-4 text-stone-900 dark:text-white font-bold text-[13px] transition-all hover:border-amber-500">
+                    <span>Blog</span>
+                    <i class="fa-regular fa-newspaper text-stone-400"></i>
+                </a>
+                <a href="contact.html" class="flex justify-between items-center bg-white dark:bg-stone-900 rounded-2xl shadow-sm border border-stone-200 dark:border-stone-800 px-5 py-4 text-stone-900 dark:text-white font-bold text-[13px] transition-all hover:border-amber-500">
+                    <span>Contact</span>
+                    <i class="fa-regular fa-envelope text-stone-400"></i>
+                </a>
+                <a href="admin-dashboard.html" class="flex justify-between items-center bg-white dark:bg-stone-900 rounded-2xl shadow-sm border border-stone-200 dark:border-stone-800 px-5 py-4 text-indigo-600 dark:text-indigo-400 font-bold text-[13px] transition-all hover:border-indigo-500">
+                    <span>Admin Dashboard</span>
+                    <i class="fa-solid fa-shield-halved text-indigo-500/70"></i>
+                </a>
+            </div>
+
+            <!-- Mobile Drawer Bottom Actions -->
+            <div class="mt-8 space-y-3 pt-6 border-t border-stone-200 dark:border-stone-800">
+                <a href="contact.html" class="w-full flex justify-center items-center gap-2 bg-amber-600 hover:bg-amber-700 text-white font-bold text-sm rounded-xl py-3.5 shadow-md transition">
+                    <i class="fa-regular fa-paper-plane text-xs"></i>
+                    <span>Get Proposal</span>
+                </a>
+                
+                <div class="grid grid-cols-2 gap-3">
+                    <a href="login.html" class="flex justify-center items-center gap-2 bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-xl py-3 text-stone-900 dark:text-white font-bold text-xs transition hover:border-amber-500">
+                        <i class="fa-solid fa-arrow-right-to-bracket text-amber-500"></i>
+                        <span>Login</span>
+                    </a>
+                    
+                    <button class="rtl-toggle-btn flex justify-center items-center gap-1.5 bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-xl py-3 text-xs transition hover:border-amber-500 focus:outline-none">
+                        <span class="ltr-label font-bold text-amber-500">LTR</span>
+                        <i class="fa-solid fa-arrow-right-arrow-left text-[10px] text-stone-300"></i>
+                        <span class="rtl-label text-stone-400 dark:text-stone-500 font-bold">RTL</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header Banner -->
+    <section class="bg-stone-900 text-white py-16 text-center">
+        <span class="text-xs font-bold text-amber-400 uppercase tracking-widest block mb-2">Showroom Collections</span>
+        <h1 class="text-4xl font-bold font-heading">Modular Wardrobe Catalog</h1>
+        <p class="text-stone-400 text-sm mt-2 max-w-xl mx-auto">Explore custom walk-in suites, sliding door armoires, and alcove wardrobes filterable by style and material finish.</p>
+    </section>
+
+    <!-- Filter Control Toolbar -->
+    <section class="py-6 bg-white dark:bg-stone-900 border-b border-gray-200 dark:border-stone-800 sticky top-20 z-40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col sm:flex-row justify-between items-center gap-4">
+                <!-- Single Unified Filter Button Dropdown -->
+                <div class="flex items-center space-x-3 rtl:space-x-reverse w-full sm:w-auto">
+                    <span class="text-xs font-bold uppercase text-stone-500 dark:text-stone-400 flex items-center gap-1.5">
+                        <i class="fa-solid fa-sliders text-amber-500"></i> Filter Collection:
+                    </span>
+                    <select id="catalog-filter" class="bg-gray-100 dark:bg-stone-800 border border-gray-300 dark:border-stone-700 rounded-xl px-4 py-2.5 text-xs font-bold focus:outline-none focus:ring-2 focus:ring-amber-500 text-stone-800 dark:text-stone-200 cursor-pointer shadow-sm">
+                        <option value="all">All Wardrobes (9)</option>
+                        <option value="luxury">Luxury Glass & Metal</option>
+                        <option value="shaker">Classic Shaker</option>
+                        <option value="modern">Modern Minimalist</option>
+                        <option value="contemporary">Contemporary Handleless</option>
+                        <option value="oak">Natural Oak Veneer</option>
+                        <option value="pu">Matte Polyurethane</option>
+                    </select>
+                </div>
+
+                <div class="text-xs text-stone-500 dark:text-stone-400 font-semibold">
+                    Showing <span id="catalog-count" class="text-amber-600 font-bold">9</span> Collections
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Grid Section -->
+    <section class="py-16 bg-gray-50 dark:bg-stone-950">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div id="product-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Product Card 1 -->
+                <div class="product-card bg-white dark:bg-stone-900 rounded-2xl overflow-hidden shadow-lg border border-gray-200 dark:border-stone-800 flex flex-col justify-between" data-style="luxury" data-material="glass">
+                    <div>
+                        <div class="relative overflow-hidden h-64">
+                            <img src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?q=80&w=800&auto=format&fit=crop" alt="The Grand Master Walk-In Suite" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                            <span class="absolute top-3 left-3 bg-amber-600 text-white text-[10px] uppercase font-bold px-2.5 py-1 rounded-md shadow">Walk-In Suite</span>
+                            <span class="absolute top-3 right-3 bg-stone-900/80 backdrop-blur-md text-amber-400 text-[10px] font-bold px-2.5 py-1 rounded-md border border-stone-700">$350 / ft</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-bold text-lg font-heading text-stone-900 dark:text-white mb-2">The Grand Master Walk-In Suite</h3>
+                            <p class="text-xs text-stone-600 dark:text-stone-400 mb-4 leading-relaxed">
+                                Integrated island dresser, fluted bronze glass wardrobe doors, and warm 3000K motion-sensor LED vertical channels.
+                            </p>
+                            <div class="flex flex-wrap gap-2 text-[10px] font-semibold text-stone-500 dark:text-stone-400 mb-4">
+                                <span class="bg-gray-100 dark:bg-stone-800 px-2 py-1 rounded">Fluted Glass</span>
+                                <span class="bg-gray-100 dark:bg-stone-800 px-2 py-1 rounded">Bronze Frame</span>
+                                <span class="bg-gray-100 dark:bg-stone-800 px-2 py-1 rounded">LED Strip</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <button data-product-modal="The Grand Master Walk-In Suite" data-product-img="https://images.unsplash.com/photo-1595428774223-ef52624120d2?q=80&w=800&auto=format&fit=crop" data-product-price="$350 / linear ft" data-product-desc="Comprehensive floor-to-ceiling walk-in suite featuring a center island display case with velvet drawer inserts, fluted tempered safety glass doors, and integrated automatic motion-sensor LED vertical lighting." class="w-full bg-amber-600 hover:bg-amber-500 text-white text-xs font-bold uppercase tracking-wider py-3 rounded-xl transition shadow-md flex items-center justify-center space-x-2">
+                            <span>View Specifications</span>
+                            <i class="fa-solid fa-expand text-[10px]"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product Card 2 -->
+                <div class="product-card bg-white dark:bg-stone-900 rounded-2xl overflow-hidden shadow-lg border border-gray-200 dark:border-stone-800 flex flex-col justify-between" data-style="contemporary" data-material="pu">
+                    <div>
+                        <div class="relative overflow-hidden h-64">
+                            <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=800&auto=format&fit=crop" alt="Matte PU Minimalist Closet" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                            <span class="absolute top-3 left-3 bg-amber-600 text-white text-[10px] uppercase font-bold px-2.5 py-1 rounded-md shadow">Sliding Door</span>
+                            <span class="absolute top-3 right-3 bg-stone-900/80 backdrop-blur-md text-amber-400 text-[10px] font-bold px-2.5 py-1 rounded-md border border-stone-700">$280 / ft</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-bold text-lg font-heading text-stone-900 dark:text-white mb-2">Matte PU Minimalist Closet</h3>
+                            <p class="text-xs text-stone-600 dark:text-stone-400 mb-4 leading-relaxed">
+                                Italian matte polyurethane finish with J-pull handleless integration, soft-close dividers, and anti-dust gasket seals.
+                            </p>
+                            <div class="flex flex-wrap gap-2 text-[10px] font-semibold text-stone-500 dark:text-stone-400 mb-4">
+                                <span class="bg-gray-100 dark:bg-stone-800 px-2 py-1 rounded">Matte Polyurethane</span>
+                                <span class="bg-gray-100 dark:bg-stone-800 px-2 py-1 rounded">J-Pull Handle</span>
+                                <span class="bg-gray-100 dark:bg-stone-800 px-2 py-1 rounded">Soft-Close</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <button data-product-modal="Matte PU Minimalist Closet" data-product-img="https://images.unsplash.com/photo-1595428774223-ef52624120d2?q=80&w=800&auto=format&fit=crop" data-product-price="$280 / linear ft" data-product-desc="Minimalist coplanar sliding wardrobe featuring zero-fingerprint matte polyurethane lacquer, concealed soft-close track runners, and modular interior shoe racks." class="w-full bg-amber-600 hover:bg-amber-500 text-white text-xs font-bold uppercase tracking-wider py-3 rounded-xl transition shadow-md flex items-center justify-center space-x-2">
+                            <span>View Specifications</span>
+                            <i class="fa-solid fa-expand text-[10px]"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product Card 3 -->
+                <div class="product-card bg-white dark:bg-stone-900 rounded-2xl overflow-hidden shadow-lg border border-gray-200 dark:border-stone-800 flex flex-col justify-between" data-style="shaker" data-material="oak">
+                    <div>
+                        <div class="relative overflow-hidden h-64">
+                            <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=800&auto=format&fit=crop" alt="Heritage Oak Shaker Armoire" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                            <span class="absolute top-3 left-3 bg-amber-600 text-white text-[10px] uppercase font-bold px-2.5 py-1 rounded-md shadow">Classic Shaker</span>
+                            <span class="absolute top-3 right-3 bg-stone-900/80 backdrop-blur-md text-amber-400 text-[10px] font-bold px-2.5 py-1 rounded-md border border-stone-700">$310 / ft</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-bold text-lg font-heading text-stone-900 dark:text-white mb-2">Heritage Oak Shaker Armoire</h3>
+                            <p class="text-xs text-stone-600 dark:text-stone-400 mb-4 leading-relaxed">
+                                Solid American natural oak veneer with 5-piece recessed panel shaker doors, antique brass hardware, and cedar lining.
+                            </p>
+                            <div class="flex flex-wrap gap-2 text-[10px] font-semibold text-stone-500 dark:text-stone-400 mb-4">
+                                <span class="bg-gray-100 dark:bg-stone-800 px-2 py-1 rounded">Natural Oak</span>
+                                <span class="bg-gray-100 dark:bg-stone-800 px-2 py-1 rounded">Shaker Panel</span>
+                                <span class="bg-gray-100 dark:bg-stone-800 px-2 py-1 rounded">Cedar Lining</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <button data-product-modal="Heritage Oak Shaker Armoire" data-product-img="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=800&auto=format&fit=crop" data-product-price="$310 / linear ft" data-product-desc="Traditional 5-piece shaker door wardrobe constructed from hand-selected natural oak veneer, featuring solid cedar interior backing and solid brass hardware." class="w-full bg-amber-600 hover:bg-amber-500 text-white text-xs font-bold uppercase tracking-wider py-3 rounded-xl transition shadow-md flex items-center justify-center space-x-2">
+                            <span>View Specifications</span>
+                            <i class="fa-solid fa-expand text-[10px]"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product Card 4 -->
+                <div class="product-card bg-white dark:bg-stone-900 rounded-2xl overflow-hidden shadow-lg border border-gray-200 dark:border-stone-800 flex flex-col justify-between" data-style="modern" data-material="acrylic">
+                    <div>
+                        <div class="relative overflow-hidden h-64">
+                            <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=800&auto=format&fit=crop" alt="High Gloss Acrylic Alcove Unit" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                            <span class="absolute top-3 left-3 bg-amber-600 text-white text-[10px] uppercase font-bold px-2.5 py-1 rounded-md shadow">Alcove Built-In</span>
+                            <span class="absolute top-3 right-3 bg-stone-900/80 backdrop-blur-md text-amber-400 text-[10px] font-bold px-2.5 py-1 rounded-md border border-stone-700">$240 / ft</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-bold text-lg font-heading text-stone-900 dark:text-white mb-2">High Gloss Acrylic Alcove Unit</h3>
+                            <p class="text-xs text-stone-600 dark:text-stone-400 mb-4 leading-relaxed">
+                                Reflective high-gloss acrylic panels tailored for alcove wall niches, featuring push-to-open touch latches.
+                            </p>
+                            <div class="flex flex-wrap gap-2 text-[10px] font-semibold text-stone-500 dark:text-stone-400 mb-4">
+                                <span class="bg-gray-100 dark:bg-stone-800 px-2 py-1 rounded">Gloss Acrylic</span>
+                                <span class="bg-gray-100 dark:bg-stone-800 px-2 py-1 rounded">Push-to-Open</span>
+                                <span class="bg-gray-100 dark:bg-stone-800 px-2 py-1 rounded">Alcove Fit</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <button data-product-modal="High Gloss Acrylic Alcove Unit" data-product-img="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?q=80&w=800&auto=format&fit=crop" data-product-price="$240 / linear ft" data-product-desc="Modern high-gloss acrylic built-in closet designed for bedroom alcoves with push-to-open hardware, concealed hinges, and customized shoe pull-outs." class="w-full bg-amber-600 hover:bg-amber-500 text-white text-xs font-bold uppercase tracking-wider py-3 rounded-xl transition shadow-md flex items-center justify-center space-x-2">
+                            <span>View Specifications</span>
+                            <i class="fa-solid fa-expand text-[10px]"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product Card 5 -->
+                <div class="product-card bg-white dark:bg-stone-900 rounded-2xl overflow-hidden shadow-lg border border-gray-200 dark:border-stone-800 flex flex-col justify-between" data-style="luxury" data-material="glass">
+                    <div>
+                        <div class="relative overflow-hidden h-64">
+                            <img src="https://images.unsplash.com/photo-1507089947368-19c1da9775ae?q=80&w=800&auto=format&fit=crop" alt="Italian Leather & Glass Showcase" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                            <span class="absolute top-3 left-3 bg-amber-600 text-white text-[10px] uppercase font-bold px-2.5 py-1 rounded-md shadow">Bespoke Suite</span>
+                            <span class="absolute top-3 right-3 bg-stone-900/80 backdrop-blur-md text-amber-400 text-[10px] font-bold px-2.5 py-1 rounded-md border border-stone-700">$420 / ft</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-bold text-lg font-heading text-stone-900 dark:text-white mb-2">Italian Leather & Glass Showcase</h3>
+                            <p class="text-xs text-stone-600 dark:text-stone-400 mb-4 leading-relaxed">
+                                Stitched saddle leather drawer faces, smoked tempered glass fronts, and motorized watch winder modules.
+                            </p>
+                            <div class="flex flex-wrap gap-2 text-[10px] font-semibold text-stone-500 dark:text-stone-400 mb-4">
+                                <span class="bg-gray-100 dark:bg-stone-800 px-2 py-1 rounded">Saddle Leather</span>
+                                <span class="bg-gray-100 dark:bg-stone-800 px-2 py-1 rounded">Smoked Glass</span>
+                                <span class="bg-gray-100 dark:bg-stone-800 px-2 py-1 rounded">Watch Winder</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <button data-product-modal="Italian Leather & Glass Showcase" data-product-img="https://images.unsplash.com/photo-1507089947368-19c1da9775ae?q=80&w=800&auto=format&fit=crop" data-product-price="$420 / linear ft" data-product-desc="Bespoke luxury wardrobe showcasing hand-stitched Italian saddle leather, dark smoked tempered glass doors, motorized accessory drawers, and secret lock safes." class="w-full bg-amber-600 hover:bg-amber-500 text-white text-xs font-bold uppercase tracking-wider py-3 rounded-xl transition shadow-md flex items-center justify-center space-x-2">
+                            <span>View Specifications</span>
+                            <i class="fa-solid fa-expand text-[10px]"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product Card 6 -->
+                <div class="product-card bg-white dark:bg-stone-900 rounded-2xl overflow-hidden shadow-lg border border-gray-200 dark:border-stone-800 flex flex-col justify-between" data-style="contemporary" data-material="oak">
+                    <div>
+                        <div class="relative overflow-hidden h-64">
+                            <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=800&auto=format&fit=crop" alt="Nordic Light Oak Modular Wall" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                            <span class="absolute top-3 left-3 bg-amber-600 text-white text-[10px] uppercase font-bold px-2.5 py-1 rounded-md shadow">Modular Wall</span>
+                            <span class="absolute top-3 right-3 bg-stone-900/80 backdrop-blur-md text-amber-400 text-[10px] font-bold px-2.5 py-1 rounded-md border border-stone-700">$290 / ft</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-bold text-lg font-heading text-stone-900 dark:text-white mb-2">Nordic Light Oak Modular Wall</h3>
+                            <p class="text-xs text-stone-600 dark:text-stone-400 mb-4 leading-relaxed">
+                                Scandinavian light oak veneer modular system with reconfigurable hanging rods, shoe shelves, and concealed laundry hampers.
+                            </p>
+                            <div class="flex flex-wrap gap-2 text-[10px] font-semibold text-stone-500 dark:text-stone-400 mb-4">
+                                <span class="bg-gray-100 dark:bg-stone-800 px-2 py-1 rounded">Nordic Oak</span>
+                                <span class="bg-gray-100 dark:bg-stone-800 px-2 py-1 rounded">Reconfigurable</span>
+                                <span class="bg-gray-100 dark:bg-stone-800 px-2 py-1 rounded">Laundry Hamper</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <button data-product-modal="Nordic Light Oak Modular Wall" data-product-img="assets/bedroom-storage.png" data-product-price="$290 / linear ft" data-product-desc="Flexible modular storage wall in Scandinavian light oak finish, featuring tool-free height adjustment for shelving and integrated tilt-out laundry hampers." class="w-full bg-amber-600 hover:bg-amber-500 text-white text-xs font-bold uppercase tracking-wider py-3 rounded-xl transition shadow-md flex items-center justify-center space-x-2">
+                            <span>View Specifications</span>
+                            <i class="fa-solid fa-expand text-[10px]"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product Card 7: Shaker Style + Matte PU Material -->
+                <div class="product-card bg-white dark:bg-stone-900 rounded-2xl overflow-hidden shadow-lg border border-gray-200 dark:border-stone-800 flex flex-col justify-between" data-style="shaker" data-material="pu">
+                    <div>
+                        <div class="relative overflow-hidden h-64">
+                            <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=800&auto=format&fit=crop" alt="Matte Shaker Custom Armoire" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                            <span class="absolute top-3 left-3 bg-amber-600 text-white text-[10px] uppercase font-bold px-2.5 py-1 rounded-md shadow">Classic Shaker</span>
+                            <span class="absolute top-3 right-3 bg-stone-900/80 backdrop-blur-md text-amber-400 text-[10px] font-bold px-2.5 py-1 rounded-md border border-stone-700">$320 / ft</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-bold text-lg font-heading text-stone-900 dark:text-white mb-2">Matte Shaker Custom Armoire</h3>
+                            <p class="text-xs text-stone-600 dark:text-stone-400 mb-4 leading-relaxed">
+                                Italian matte polyurethane finish applied over traditional 5-piece recessed shaker panel doors with brushed brass handles.
+                            </p>
+                            <div class="flex flex-wrap gap-2 text-[10px] font-semibold text-stone-500 dark:text-stone-400 mb-4">
+                                <span class="bg-gray-100 dark:bg-stone-800 px-2 py-1 rounded">Matte Polyurethane</span>
+                                <span class="bg-gray-100 dark:bg-stone-800 px-2 py-1 rounded">Shaker Panel</span>
+                                <span class="bg-gray-100 dark:bg-stone-800 px-2 py-1 rounded">Brushed Brass</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <button data-product-modal="Matte Shaker Custom Armoire" data-product-img="https://images.unsplash.com/photo-1556912173-3bb406ef7e77?q=80&w=800&auto=format&fit=crop" data-product-price="$320 / linear ft" data-product-desc="Elegant fusion of traditional 5-piece shaker door framing coated in silky Italian zero-VOC matte polyurethane lacquer, featuring integrated soft-close Blum hinges and interior cedar backing." class="w-full bg-amber-600 hover:bg-amber-500 text-white text-xs font-bold uppercase tracking-wider py-3 rounded-xl transition shadow-md flex items-center justify-center space-x-2">
+                            <span>View Specifications</span>
+                            <i class="fa-solid fa-expand text-[10px]"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product Card 8: Modern Style + Oak Material -->
+                <div class="product-card bg-white dark:bg-stone-900 rounded-2xl overflow-hidden shadow-lg border border-gray-200 dark:border-stone-800 flex flex-col justify-between" data-style="modern" data-material="oak">
+                    <div>
+                        <div class="relative overflow-hidden h-64">
+                            <img src="assets/custom-wardrobes.png" alt="Bespoke Curved Wardrobe & Niche" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                            <span class="absolute top-3 left-3 bg-amber-600 text-white text-[10px] uppercase font-bold px-2.5 py-1 rounded-md shadow">Modern Minimalist</span>
+                            <span class="absolute top-3 right-3 bg-stone-900/80 backdrop-blur-md text-amber-400 text-[10px] font-bold px-2.5 py-1 rounded-md border border-stone-700">$330 / ft</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-bold text-lg font-heading text-stone-900 dark:text-white mb-2">Bespoke Curved Wardrobe & Niche</h3>
+                            <p class="text-xs text-stone-600 dark:text-stone-400 mb-4 leading-relaxed">
+                                Architectural curved arch corner design with integrated warm LED display niche, smooth push drawers, and seamless floor-to-ceiling doors.
+                            </p>
+                            <div class="flex flex-wrap gap-2 text-[10px] font-semibold text-stone-500 dark:text-stone-400 mb-4">
+                                <span class="bg-gray-100 dark:bg-stone-800 px-2 py-1 rounded">Curved Arch</span>
+                                <span class="bg-gray-100 dark:bg-stone-800 px-2 py-1 rounded">LED Niche</span>
+                                <span class="bg-gray-100 dark:bg-stone-800 px-2 py-1 rounded">Lower Drawers</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <button data-product-modal="Bespoke Curved Wardrobe & Niche" data-product-img="assets/custom-wardrobes.png" data-product-price="$330 / linear ft" data-product-desc="Architectural curved arch corner design with integrated warm LED display niche, smooth push drawers, and seamless floor-to-ceiling doors." class="w-full bg-amber-600 hover:bg-amber-500 text-white text-xs font-bold uppercase tracking-wider py-3 rounded-xl transition shadow-md flex items-center justify-center space-x-2">
+                            <span>View Specifications</span>
+                            <i class="fa-solid fa-expand text-[10px]"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product Card 9: Luxury Style + Glass Material -->
+                <div class="product-card bg-white dark:bg-stone-900 rounded-2xl overflow-hidden shadow-lg border border-gray-200 dark:border-stone-800 flex flex-col justify-between" data-style="luxury" data-material="glass">
+                    <div>
+                        <div class="relative overflow-hidden h-64">
+                            <img src="assets/stuttgart-fluted-glass-suite.png" alt="Venetian Mirror & Bronze Wardrobe" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                            <span class="absolute top-3 left-3 bg-amber-600 text-white text-[10px] uppercase font-bold px-2.5 py-1 rounded-md shadow">Sliding Door</span>
+                            <span class="absolute top-3 right-3 bg-stone-900/80 backdrop-blur-md text-amber-400 text-[10px] font-bold px-2.5 py-1 rounded-md border border-stone-700">$390 / ft</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-bold text-lg font-heading text-stone-900 dark:text-white mb-2">Venetian Mirror & Bronze Wardrobe</h3>
+                            <p class="text-xs text-stone-600 dark:text-stone-400 mb-4 leading-relaxed">
+                                Antique Venetian smoked mirror doors with hand-crafted bronze geometric fretwork and soft-close coplanar sliding mechanism.
+                            </p>
+                            <div class="flex flex-wrap gap-2 text-[10px] font-semibold text-stone-500 dark:text-stone-400 mb-4">
+                                <span class="bg-gray-100 dark:bg-stone-800 px-2 py-1 rounded">Venetian Mirror</span>
+                                <span class="bg-gray-100 dark:bg-stone-800 px-2 py-1 rounded">Bronze Fretwork</span>
+                                <span class="bg-gray-100 dark:bg-stone-800 px-2 py-1 rounded">Coplanar Sliding</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <button data-product-modal="Venetian Mirror & Bronze Wardrobe" data-product-img="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800&auto=format&fit=crop" data-product-price="$390 / linear ft" data-product-desc="Opulent coplanar sliding wardrobe incorporating antique Venetian smoked glass mirrors, laser-cut anodized bronze alloy overlays, and automatic motion-sensor LED lighting channels." class="w-full bg-amber-600 hover:bg-amber-500 text-white text-xs font-bold uppercase tracking-wider py-3 rounded-xl transition shadow-md flex items-center justify-center space-x-2">
+                            <span>View Specifications</span>
+                            <i class="fa-solid fa-expand text-[10px]"></i>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Luxury Material & Swatch Guide Showcase -->
+    <section class="py-20 bg-stone-950 text-white relative overflow-hidden">
+        <!-- Ambient Warm Glow Background -->
+        <div class="absolute inset-0 pointer-events-none opacity-25">
+            <div class="absolute -top-40 -right-40 w-96 h-96 bg-amber-500/30 rounded-full blur-3xl"></div>
+            <div class="absolute -bottom-40 -left-40 w-96 h-96 bg-amber-600/30 rounded-full blur-3xl"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-semibold bg-amber-500/10 text-amber-400 border border-amber-500/30 uppercase tracking-widest mb-3">
+                    <i class="fa-solid fa-swatchbook text-2xs"></i> Tactile Luxury
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-bold font-heading text-white tracking-tight">Material & Finish Swatch Showcase</h2>
+                <p class="text-stone-300 text-xs sm:text-sm mt-3 leading-relaxed">Every MODULARIS cabinet is crafted using eco-certified timber, anti-fingerprint Italian lacquers, ribbed safety glass, and hand-stitched saddle leather.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Swatch Card 1: Walnut Veneer -->
+                <div class="group relative bg-stone-900/90 backdrop-blur-md p-6 sm:p-7 rounded-3xl border border-stone-800 hover:border-amber-500/60 shadow-2xl transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between">
+                    <div>
+                        <!-- Header Badges (No collision) -->
+                        <div class="flex items-center justify-between gap-2 mb-6">
+                            <span class="text-xs font-mono font-bold tracking-wider text-amber-400 uppercase px-2.5 py-1 rounded-md bg-amber-500/10 border border-amber-500/20">SWATCH 01</span>
+                            <span class="text-xs font-mono font-bold text-amber-300 bg-stone-950 px-2.5 py-1 rounded-md border border-amber-500/30">FSC® 100%</span>
+                        </div>
+
+                        <!-- High-Contrast Swatch Picture Disc -->
+                        <div class="relative w-24 h-24 mx-auto mb-6">
+                            <div class="w-full h-full rounded-full bg-gradient-to-br from-amber-700 via-amber-800 to-amber-950 ring-4 ring-amber-500/40 border-2 border-amber-400 shadow-2xl group-hover:scale-110 group-hover:ring-amber-500/80 transition-all duration-300 flex items-center justify-center relative overflow-hidden">
+                                <div class="absolute inset-0 bg-[radial-gradient(circle_at_top,_var(--tw-gradient-stops))] from-amber-400/30 via-transparent to-black/60"></div>
+                                <i class="fa-solid fa-tree text-amber-200 text-3xl drop-shadow-md z-10"></i>
+                            </div>
+                            <span class="absolute -bottom-1 left-1/2 -translate-x-1/2 bg-amber-500 text-stone-950 text-[9px] font-black uppercase px-2 py-0.5 rounded-full shadow-md whitespace-nowrap">Natural Wood</span>
+                        </div>
+
+                        <h3 class="font-bold text-white text-lg text-center mb-2 group-hover:text-amber-400 transition-colors">American Walnut Veneer</h3>
+                        <p class="text-xs text-stone-300 text-center leading-relaxed mb-6">
+                            Book-matched natural crown grain with protective zero-VOC matte lacquer seal and deep amber undertones.
+                        </p>
+                    </div>
+
+                    <div class="pt-4 border-t border-stone-800 flex items-center justify-between text-xs font-mono text-stone-400">
+                        <span>Finish: 5% Matte</span>
+                        <span class="text-amber-400 font-bold">North America</span>
+                    </div>
+                </div>
+
+                <!-- Swatch Card 2: Charcoal PU -->
+                <div class="group relative bg-stone-900/90 backdrop-blur-md p-6 sm:p-7 rounded-3xl border border-stone-800 hover:border-amber-500/60 shadow-2xl transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between">
+                    <div>
+                        <!-- Header Badges -->
+                        <div class="flex items-center justify-between gap-2 mb-6">
+                            <span class="text-xs font-mono font-bold tracking-wider text-amber-400 uppercase px-2.5 py-1 rounded-md bg-amber-500/10 border border-amber-500/20">SWATCH 02</span>
+                            <span class="text-xs font-mono font-bold text-amber-300 bg-stone-950 px-2.5 py-1 rounded-md border border-amber-500/30">Zero VOC</span>
+                        </div>
+
+                        <!-- High-Contrast Swatch Picture Disc -->
+                        <div class="relative w-24 h-24 mx-auto mb-6">
+                            <div class="w-full h-full rounded-full bg-gradient-to-br from-stone-700 via-stone-800 to-stone-950 ring-4 ring-amber-500/40 border-2 border-amber-400 shadow-2xl group-hover:scale-110 group-hover:ring-amber-500/80 transition-all duration-300 flex items-center justify-center relative overflow-hidden">
+                                <div class="absolute inset-0 bg-[radial-gradient(circle_at_top,_var(--tw-gradient-stops))] from-stone-500/40 via-transparent to-black/80"></div>
+                                <i class="fa-solid fa-fingerprint text-stone-100 text-3xl drop-shadow-md z-10"></i>
+                            </div>
+                            <span class="absolute -bottom-1 left-1/2 -translate-x-1/2 bg-amber-500 text-stone-950 text-[9px] font-black uppercase px-2 py-0.5 rounded-full shadow-md whitespace-nowrap">Matte Finish</span>
+                        </div>
+
+                        <h3 class="font-bold text-white text-lg text-center mb-2 group-hover:text-amber-400 transition-colors">Matte Charcoal PU</h3>
+                        <p class="text-xs text-stone-300 text-center leading-relaxed mb-6">
+                            Soft-touch Italian polyurethane finish with anti-fingerprint technology and thermal scratch-healing micro-coating.
+                        </p>
+                    </div>
+
+                    <div class="pt-4 border-t border-stone-800 flex items-center justify-between text-xs font-mono text-stone-400">
+                        <span>Tech: Hydro-Resist</span>
+                        <span class="text-amber-400 font-bold">Milan, Italy</span>
+                    </div>
+                </div>
+
+                <!-- Swatch Card 3: Fluted Bronze Glass -->
+                <div class="group relative bg-stone-900/90 backdrop-blur-md p-6 sm:p-7 rounded-3xl border border-stone-800 hover:border-amber-500/60 shadow-2xl transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between">
+                    <div>
+                        <!-- Header Badges -->
+                        <div class="flex items-center justify-between gap-2 mb-6">
+                            <span class="text-xs font-mono font-bold tracking-wider text-amber-400 uppercase px-2.5 py-1 rounded-md bg-amber-500/10 border border-amber-500/20">SWATCH 03</span>
+                            <span class="text-xs font-mono font-bold text-amber-300 bg-stone-950 px-2.5 py-1 rounded-md border border-amber-500/30">EN 12150</span>
+                        </div>
+
+                        <!-- High-Contrast Swatch Picture Disc -->
+                        <div class="relative w-24 h-24 mx-auto mb-6">
+                            <div class="w-full h-full rounded-full bg-gradient-to-br from-amber-600/40 via-amber-500/20 to-amber-900/60 ring-4 ring-amber-500/40 border-2 border-amber-400 shadow-2xl group-hover:scale-110 group-hover:ring-amber-500/80 transition-all duration-300 flex items-center justify-center relative overflow-hidden backdrop-blur-sm">
+                                <div class="absolute inset-0 bg-[radial-gradient(circle_at_top,_var(--tw-gradient-stops))] from-amber-400/40 via-transparent to-black/60"></div>
+                                <i class="fa-solid fa-border-all text-amber-300 text-3xl drop-shadow-md z-10"></i>
+                            </div>
+                            <span class="absolute -bottom-1 left-1/2 -translate-x-1/2 bg-amber-500 text-stone-950 text-[9px] font-black uppercase px-2 py-0.5 rounded-full shadow-md whitespace-nowrap">Ribbed Glass</span>
+                        </div>
+
+                        <h3 class="font-bold text-white text-lg text-center mb-2 group-hover:text-amber-400 transition-colors">Fluted Bronze Glass</h3>
+                        <p class="text-xs text-stone-300 text-center leading-relaxed mb-6">
+                            6mm architectural ribbed tempered safety glass encased in slim anodized bronze aluminum structural frames.
+                        </p>
+                    </div>
+
+                    <div class="pt-4 border-t border-stone-800 flex items-center justify-between text-xs font-mono text-stone-400">
+                        <span>Glass: 6mm Safety</span>
+                        <span class="text-amber-400 font-bold">Anodized Alum</span>
+                    </div>
+                </div>
+
+                <!-- Swatch Card 4: Italian Saddle Leather -->
+                <div class="group relative bg-stone-900/90 backdrop-blur-md p-6 sm:p-7 rounded-3xl border border-stone-800 hover:border-amber-500/60 shadow-2xl transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between">
+                    <div>
+                        <!-- Header Badges -->
+                        <div class="flex items-center justify-between gap-2 mb-6">
+                            <span class="text-xs font-mono font-bold tracking-wider text-amber-400 uppercase px-2.5 py-1 rounded-md bg-amber-500/10 border border-amber-500/20">SWATCH 04</span>
+                            <span class="text-xs font-mono font-bold text-amber-300 bg-stone-950 px-2.5 py-1 rounded-md border border-amber-500/30">Tuscan Leather</span>
+                        </div>
+
+                        <!-- High-Contrast Swatch Picture Disc -->
+                        <div class="relative w-24 h-24 mx-auto mb-6">
+                            <div class="w-full h-full rounded-full bg-gradient-to-br from-amber-600 via-amber-700 to-amber-900 ring-4 ring-amber-500/40 border-2 border-amber-400 shadow-2xl group-hover:scale-110 group-hover:ring-amber-500/80 transition-all duration-300 flex items-center justify-center relative overflow-hidden">
+                                <div class="absolute inset-0 bg-[radial-gradient(circle_at_top,_var(--tw-gradient-stops))] from-amber-400/40 via-transparent to-black/60"></div>
+                                <i class="fa-solid fa-gem text-amber-200 text-3xl drop-shadow-md z-10"></i>
+                            </div>
+                            <span class="absolute -bottom-1 left-1/2 -translate-x-1/2 bg-amber-500 text-stone-950 text-[9px] font-black uppercase px-2 py-0.5 rounded-full shadow-md whitespace-nowrap">Full-Grain</span>
+                        </div>
+
+                        <h3 class="font-bold text-white text-lg text-center mb-2 group-hover:text-amber-400 transition-colors">Italian Saddle Leather</h3>
+                        <p class="text-xs text-stone-300 text-center leading-relaxed mb-6">
+                            Hand-stitched genuine Tuscan saddle leather drawer liners and bespoke velvet-lined jewelry box dividers.
+                        </p>
+                    </div>
+
+                    <div class="pt-4 border-t border-stone-800 flex items-center justify-between text-xs font-mono text-stone-400">
+                        <span>Tannage: Organic</span>
+                        <span class="text-amber-400 font-bold">Tuscany, Italy</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Custom Dimensions Request Banner CTA -->
+    <section class="py-16 bg-gradient-to-r from-stone-950 via-stone-900 to-amber-950 text-white text-center">
+        <div class="max-w-4xl mx-auto px-4">
+            <span class="text-xs font-bold text-amber-400 uppercase tracking-widest block mb-2">Custom Dimensions Available</span>
+            <h2 class="text-3xl font-bold font-heading mb-4">Require a Tailor-Made Wardrobe Size?</h2>
+            <p class="text-stone-300 text-xs sm:text-sm max-w-xl mx-auto mb-8">All collections can be customized to your room's exact height, depth, and layout configuration.</p>
+            <a href="contact.html" class="inline-flex items-center space-x-2 bg-amber-600 hover:bg-amber-500 text-white text-xs uppercase font-extrabold tracking-wider px-8 py-3.5 rounded-full shadow-lg transition-all">
+                <span>Request Custom Size Quote</span>
+                <i class="fa-solid fa-arrow-right text-xs ml-1"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Dynamic Product Specification Modal -->
+    <div id="3d-viewer-modal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
+        <div class="bg-white dark:bg-stone-900 rounded-3xl max-w-2xl w-full p-6 relative border border-gray-200 dark:border-stone-800 shadow-2xl max-h-[90vh] overflow-y-auto">
+            <button id="close-modal-btn" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-stone-100 dark:bg-stone-800 text-stone-500 dark:text-stone-400 hover:text-amber-600 flex items-center justify-center text-lg transition">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div id="modal-content" class="space-y-4">
+                <div class="h-64 rounded-2xl overflow-hidden bg-stone-100 dark:bg-stone-800">
+                    <img id="modal-img" src="" alt="Product Detail" class="w-full h-full object-cover">
+                </div>
+                <div class="flex justify-between items-start pt-2">
+                    <div>
+                        <h3 id="modal-title" class="text-2xl font-bold font-heading text-stone-900 dark:text-white"></h3>
+                        <p id="modal-price" class="text-amber-600 font-extrabold text-lg mt-1"></p>
+                    </div>
+                    <span class="bg-amber-500/10 text-amber-600 text-[10px] font-bold uppercase px-3 py-1 rounded-full border border-amber-500/20">Bespoke Spec</span>
+                </div>
+                <p id="modal-desc" class="text-xs sm:text-sm text-stone-600 dark:text-stone-300 leading-relaxed"></p>
+                <div class="pt-4 border-t border-gray-200 dark:border-stone-800 flex justify-end space-x-3 rtl:space-x-reverse">
+                    <button id="modal-close-action" class="px-5 py-2.5 rounded-full text-xs font-bold text-stone-600 dark:text-stone-300 hover:bg-stone-100 dark:hover:bg-stone-800 transition">Close</button>
+                    <a href="contact.html" class="px-6 py-2.5 bg-amber-600 hover:bg-amber-500 text-white rounded-full text-xs font-bold uppercase tracking-wider transition shadow-md flex items-center space-x-2">
+                        <span>Book This Design</span>
+                        <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Master Footer Component -->
+    <footer class="bg-[#040814] text-stone-400 pt-16 pb-8 border-t border-stone-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+                <!-- Col 1: Brand & Socials -->
+                <div class="space-y-4">
+                    <a href="index.html" class="flex items-center space-x-3 rtl:space-x-reverse mb-4">
+                        <div class="w-8 h-8 bg-gradient-to-tr from-amber-600 to-amber-400 rounded-lg flex items-center justify-center text-white shadow-[0_0_15px_rgba(245,158,11,0.4)]">
+                            <i class="fa-solid fa-cube text-sm"></i>
+                        </div>
+                        <span class="text-xl font-bold font-heading text-white tracking-wide">MODULARIS</span>
+                    </a>
+                    <p class="text-xs text-stone-400 leading-relaxed max-w-xs">
+                        Enterprise architectural joinery & custom modular cabinetry fulfillment platform.
+                    </p>
+                    <div class="flex space-x-3 rtl:space-x-reverse pt-3">
+                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-xl border border-stone-700/80 bg-stone-800/40 text-stone-400 hover:text-white hover:bg-stone-700 flex items-center justify-center transition-all"><i class="fa-brands fa-instagram text-sm"></i></a>
+                        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-xl border border-stone-700/80 bg-stone-800/40 text-stone-400 hover:text-white hover:bg-stone-700 flex items-center justify-center transition-all"><i class="fa-brands fa-facebook-f text-sm"></i></a>
+                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-xl border border-stone-700/80 bg-stone-800/40 text-stone-400 hover:text-white hover:bg-stone-700 flex items-center justify-center transition-all"><i class="fa-brands fa-linkedin-in text-sm"></i></a>
+                        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-xl border border-stone-700/80 bg-stone-800/40 text-stone-400 hover:text-white hover:bg-stone-700 flex items-center justify-center transition-all"><svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 1200 1227" xmlns="http://www.w3.org/2000/svg"><path d="M714.163 519.284L1160.89 0H1055.03L667.137 450.887L357.328 0H0L468.492 681.821L0 1226.37H105.866L515.491 750.218L842.672 1226.37H1200L714.137 519.284H714.163ZM569.165 687.828L521.697 619.934L144.011 79.6944H306.615L611.412 515.685L658.88 583.579L1055.08 1150.3H892.476L569.165 687.854V687.828Z"/></svg></a>
+                    </div>
+                </div>
+
+                <!-- Col 2: NAVIGATION -->
+                <div>
+                    <h4 class="text-white text-[11px] font-bold uppercase tracking-widest mb-6">Navigation</h4>
+                    <ul class="space-y-3 text-xs text-stone-400">
+                        <li><a href="index.html" class="hover:text-amber-400 transition">Home</a></li>
+                        <li><a href="about.html" class="hover:text-amber-400 transition">About Us</a></li>
+                        <li><a href="services.html" class="hover:text-amber-400 transition">Services</a></li>
+                        <li><a href="pricing.html" class="hover:text-amber-400 transition">Pricing Tiers</a></li>
+                        <li><a href="blog.html" class="hover:text-amber-400 transition">Blog & Journal</a></li>
+                        <li><a href="contact.html" class="hover:text-amber-400 transition">Contact Sales</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: PRODUCTION SLA -->
+                <div>
+                    <h4 class="text-white text-[11px] font-bold uppercase tracking-widest mb-6">Production SLA</h4>
+                    <ul class="space-y-3 text-xs text-stone-400">
+                        <li><span class="text-amber-500 font-bold">48h Express</span> CNC Dispatch SLA</li>
+                        <li><span class="text-green-500 font-bold">100% Optical</span> QC Inspection</li>
+                        <li><span class="text-purple-400 font-bold">Automated</span> Dimension Matching</li>
+                        <li><span class="text-amber-600 font-bold">5 Regional</span> Assembly Hubs</li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: ENTERPRISE SALES -->
+                <div>
+                    <h4 class="text-white text-[11px] font-bold uppercase tracking-widest mb-6">Enterprise Sales</h4>
+                    <div class="space-y-3 text-xs text-stone-400 mb-6">
+                        <div class="flex items-center space-x-3"><i class="fa-regular fa-envelope text-amber-500"></i> <span>corporate@modularis.com</span></div>
+                        <div class="flex items-center space-x-3"><i class="fa-solid fa-phone text-amber-500"></i> <span>+1 (800) 555-0198</span></div>
+                    </div>
+                    <a href="contact.html" class="inline-block w-full text-center bg-gradient-to-r from-amber-600 to-amber-500 hover:from-amber-500 hover:to-amber-400 text-white text-xs font-bold rounded-lg px-6 py-3.5 shadow-[0_0_15px_rgba(245,158,11,0.3)] transition">Connect Sales Team</a>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="border-t border-stone-800/60 pt-6 flex justify-center items-center text-[10px] text-stone-500">
+                <p class="text-center">&copy; 2026 MODULARIS Joinery Ltd. All rights reserved.</p>
+                
+            </div>
+        </div>
+    </footer>
+
+    <!-- Global Product Specification Modal -->
+    <div id="global-modal" class="fixed inset-0 z-[9999] flex items-center justify-center bg-black/70 backdrop-blur-sm hidden" role="dialog" aria-modal="true" aria-labelledby="global-modal-title">
+    </div>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

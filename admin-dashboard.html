@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Command Center | MODULARIS Platform</title>
+    <meta name="description" content="MODULARIS Admin Command Center - Production Telemetry, Orders & Revenue Analytics.">
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        amber: { 500: '#d4af37', 600: '#c59b27', 700: '#aa7c11' }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="bg-gray-100 dark:bg-stone-950 text-gray-800 dark:text-gray-100 transition-colors duration-300 font-sans antialiased min-h-screen flex selection:bg-amber-500 selection:text-white">
+
+    <!-- Left Admin Sidebar (Matching Referral Layout) -->
+    <aside class="w-64 bg-white dark:bg-stone-900 border-r border-stone-200 dark:border-stone-800 hidden lg:flex flex-col justify-between p-6 shrink-0 min-h-screen sticky top-0 h-screen">
+        <div class="space-y-8">
+            <!-- Sidebar Logo -->
+            <a href="index.html" class="flex items-center space-x-3 rtl:space-x-reverse">
+                <div class="w-9 h-9 bg-amber-600 rounded-xl flex items-center justify-center text-white font-bold shadow-md shadow-amber-600/30">
+                    <i class="fa-solid fa-shield-halved text-lg"></i>
+                </div>
+                <div class="leading-none">
+                    <span class="text-lg font-black font-heading tracking-wider text-stone-900 dark:text-amber-400">ADMIN.MODULARIS</span>
+                </div>
+            </a>
+
+            <!-- Vertical Navigation Menu -->
+            <nav class="space-y-2 text-xs font-bold">
+                <button data-tab="dashboard" onclick="switchTab('dashboard')" class="admin-nav-link w-full text-left flex items-center space-x-3 px-4 py-3 rounded-2xl bg-amber-100 dark:bg-amber-500/20 text-amber-700 dark:text-amber-400 transition">
+                    <i class="fa-solid fa-gauge text-sm"></i>
+                    <span>Dashboard</span>
+                </button>
+                <button data-tab="analytics" onclick="switchTab('analytics')" class="admin-nav-link w-full text-left flex items-center space-x-3 px-4 py-3 rounded-2xl text-stone-600 dark:text-stone-400 hover:bg-stone-100 dark:hover:bg-stone-800 hover:text-amber-600 dark:hover:text-amber-400 transition">
+                    <i class="fa-solid fa-chart-line text-sm"></i>
+                    <span>Revenue Analytics</span>
+                </button>
+                <button data-tab="users" onclick="switchTab('users')" class="admin-nav-link w-full text-left flex items-center space-x-3 px-4 py-3 rounded-2xl text-stone-600 dark:text-stone-400 hover:bg-stone-100 dark:hover:bg-stone-800 hover:text-amber-600 dark:hover:text-amber-400 transition">
+                    <i class="fa-solid fa-users text-sm"></i>
+                    <span>Client Users</span>
+                </button>
+                <button data-tab="orders" onclick="switchTab('orders')" class="admin-nav-link w-full text-left flex items-center space-x-3 px-4 py-3 rounded-2xl text-stone-600 dark:text-stone-400 hover:bg-stone-100 dark:hover:bg-stone-800 hover:text-amber-600 dark:hover:text-amber-400 transition">
+                    <i class="fa-solid fa-box-archive text-sm"></i>
+                    <span>Order Manager</span>
+                </button>
+                <button data-tab="support" onclick="switchTab('support')" class="admin-nav-link w-full text-left flex items-center space-x-3 px-4 py-3 rounded-2xl text-stone-600 dark:text-stone-400 hover:bg-stone-100 dark:hover:bg-stone-800 hover:text-amber-600 dark:hover:text-amber-400 transition">
+                    <i class="fa-solid fa-comments text-sm"></i>
+                    <span>Messages &amp; Support</span>
+                </button>
+            </nav>
+        </div>
+
+        <!-- Sidebar Logout Button -->
+        <div class="pt-6 border-t border-stone-200 dark:border-stone-800">
+            <a href="login.html" class="w-full inline-flex items-center justify-center space-x-2 py-3 px-4 rounded-2xl border border-red-200 dark:border-red-500/30 text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-950/30 text-xs font-bold transition">
+                <i class="fa-solid fa-right-from-bracket text-xs"></i>
+                <span>Logout Dashboard</span>
+            </a>
+        </div>
+    </aside>
+
+    <!-- Main Content Container -->
+    <div class="flex-1 flex flex-col min-w-0">
+        
+        <!-- Top Admin Header Bar -->
+        <header class="bg-white/90 dark:bg-stone-900/90 backdrop-blur-md border-b border-stone-200 dark:border-stone-800 sticky top-0 z-40 px-6 py-4">
+            <div class="flex flex-col sm:flex-row justify-between items-center gap-4">
+                
+                <!-- Search Input -->
+                <div class="relative w-full sm:w-80">
+                    <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-3 text-xs text-stone-400"></i>
+                    <input type="text" placeholder="Global admin search..." class="w-full pl-10 pr-4 py-2.5 rounded-2xl bg-stone-100 dark:bg-stone-800 border border-stone-200 dark:border-stone-700 text-xs text-stone-900 dark:text-white placeholder-stone-400 focus:outline-none focus:ring-2 focus:ring-amber-500 transition">
+                </div>
+
+                <!-- Utilities & Profile -->
+                <div class="flex items-center space-x-2 sm:space-x-3 rtl:space-x-reverse w-full sm:w-auto justify-end">
+                    
+                    <!-- Mobile Sidebar Toggle -->
+                    <button class="lg:hidden w-10 h-10 rounded-2xl border border-stone-200 dark:border-stone-700 bg-white dark:bg-stone-800 flex items-center justify-center text-stone-600 dark:text-stone-300 shadow-sm focus:outline-none transition hover:border-indigo-500">
+                        <i class="fa-solid fa-bars text-sm"></i>
+                    </button>
+
+                    <!-- LTR / RTL Toggle Button -->
+                    <button class="rtl-toggle-btn px-3 py-2 rounded-2xl bg-white dark:bg-stone-800 text-xs font-bold flex items-center border border-stone-200 dark:border-stone-700 shadow-sm transition hover:border-indigo-500" title="Switch Direction LTR/RTL">
+                        <span class="ltr-label font-extrabold text-amber-500">LTR</span>
+                        <i class="fa-solid fa-arrow-right-arrow-left text-[10px] mx-1.5 text-amber-500"></i>
+                        <span class="rtl-label text-stone-400 dark:text-stone-500 opacity-60 font-semibold">RTL</span>
+                    </button>
+
+                    <!-- Dark/Light Theme Toggle Button -->
+                    <button class="theme-toggle-btn w-10 h-10 rounded-2xl border border-stone-200 dark:border-stone-700 bg-white dark:bg-stone-800 flex items-center justify-center text-stone-600 dark:text-stone-300 shadow-sm hover:border-indigo-500 transition-all" title="Toggle Light/Dark Mode">
+                        <i class="theme-toggle-icon fa-solid fa-moon text-sm"></i>
+                    </button>
+
+                    <!-- Divider -->
+                    <div class="h-6 w-px bg-stone-200 dark:bg-stone-700 mx-1"></div>
+
+                    <!-- Admin Profile Badge -->
+                    <div class="flex items-center">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=200&auto=format&fit=crop" alt="Henrik Vance" class="w-10 h-10 rounded-full object-cover ring-2 ring-indigo-500 shadow-md">
+                    </div>
+                </div></div></header>
+
+        <!-- Command Center Main Area -->
+        <main class="p-6 sm:p-8 flex-1">
+
+            <!-- ===== PANEL: DASHBOARD ===== -->
+            <div id="panel-dashboard" class="tab-panel space-y-8">
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                    <div>
+                        <span class="inline-flex items-center text-[10px] font-black uppercase tracking-wider text-green-600 dark:text-green-400 bg-green-500/10 border border-green-500/20 px-3 py-1 rounded-full mb-2">
+                            <span class="w-1.5 h-1.5 rounded-full bg-green-500 mr-2 animate-pulse"></span>
+                            SYSTEM STATUS: 99.98% SLA ONLINE
+                        </span>
+                        <h1 class="text-3xl font-black font-heading text-stone-900 dark:text-white">Admin Command Center</h1>
+                        <p class="text-xs text-stone-500 dark:text-stone-400 mt-1">Corporate procurement, live 5-axis CNC production telemetry, and revenue analytics.</p>
+                    </div>
+                    <button onclick="switchTab('analytics')" class="bg-gradient-to-r from-amber-600 to-amber-500 hover:from-amber-500 hover:to-amber-600 text-white text-xs font-bold uppercase tracking-wider px-5 py-2.5 rounded-full shadow-md shadow-amber-600/25 hover:shadow-lg transition flex items-center space-x-2">
+                        <i class="fa-solid fa-plus text-xs"></i>
+                        <span>New Order</span>
+                    </button>
+                </div>
+
+                <!-- 4 KPI Metrics Row -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="bg-white dark:bg-stone-900 p-6 rounded-3xl border border-stone-200 dark:border-stone-800 shadow-sm flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-center mb-3">
+                                <span class="text-[10px] font-bold uppercase tracking-wider text-stone-400">Quarterly Revenue</span>
+                                <div class="w-8 h-8 rounded-xl bg-amber-500/10 text-amber-600 flex items-center justify-center text-xs font-bold"><i class="fa-solid fa-chart-line"></i></div>
+                            </div>
+                            <div class="text-3xl font-black font-heading text-stone-900 dark:text-white">$6.7M</div>
+                        </div>
+                        <div class="flex justify-between items-center mt-4 pt-3 border-t border-stone-100 dark:border-stone-800 text-[10px]">
+                            <span class="text-green-600 font-bold"><i class="fa-solid fa-arrow-trend-up mr-1"></i> +28.4% YoY</span>
+                            <span class="text-stone-400 font-semibold">Target: $7.2M</span>
+                        </div>
+                    </div>
+                    <div class="bg-white dark:bg-stone-900 p-6 rounded-3xl border border-stone-200 dark:border-stone-800 shadow-sm flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-center mb-3">
+                                <span class="text-[10px] font-bold uppercase tracking-wider text-stone-400">Active Platform Orders</span>
+                                <div class="w-8 h-8 rounded-xl bg-blue-500/10 text-blue-600 flex items-center justify-center text-xs font-bold"><i class="fa-solid fa-box"></i></div>
+                            </div>
+                            <div class="text-3xl font-black font-heading text-stone-900 dark:text-white">42 Orders</div>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-stone-100 dark:border-stone-800">
+                            <div class="flex justify-between text-[10px] text-stone-500 font-bold mb-1"><span>18 in Factory CNC Routing</span><span>42.8%</span></div>
+                            <div class="w-full bg-stone-100 dark:bg-stone-800 h-1.5 rounded-full overflow-hidden"><div class="bg-amber-500 h-full rounded-full" style="width:42.8%"></div></div>
+                        </div>
+                    </div>
+                    <div class="bg-white dark:bg-stone-900 p-6 rounded-3xl border border-stone-200 dark:border-stone-800 shadow-sm flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-center mb-3">
+                                <span class="text-[10px] font-bold uppercase tracking-wider text-stone-400">Pending RFQs</span>
+                                <div class="w-8 h-8 rounded-xl bg-purple-500/10 text-purple-600 flex items-center justify-center text-xs font-bold"><i class="fa-solid fa-file-signature"></i></div>
+                            </div>
+                            <div class="text-3xl font-black font-heading text-stone-900 dark:text-white">8 Quotes</div>
+                        </div>
+                        <div class="flex justify-between items-center mt-4 pt-3 border-t border-stone-100 dark:border-stone-800 text-[10px]">
+                            <span class="text-amber-600 font-bold"><i class="fa-solid fa-clock mr-1"></i> Needs Quote</span>
+                            <span class="bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-400 font-extrabold px-2 py-0.5 rounded">18-MIN SLA</span>
+                        </div>
+                    </div>
+                    <div class="bg-white dark:bg-stone-900 p-6 rounded-3xl border border-stone-200 dark:border-stone-800 shadow-sm flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-center mb-3">
+                                <span class="text-[10px] font-bold uppercase tracking-wider text-stone-400">Enterprise Clients</span>
+                                <div class="w-8 h-8 rounded-xl bg-green-500/10 text-green-600 flex items-center justify-center text-xs font-bold"><i class="fa-solid fa-building"></i></div>
+                            </div>
+                            <div class="text-3xl font-black font-heading text-stone-900 dark:text-white">184 Clients</div>
+                        </div>
+                        <div class="flex justify-between items-center mt-4 pt-3 border-t border-stone-100 dark:border-stone-800 text-[10px]">
+                            <span class="text-green-600 font-bold"><i class="fa-solid fa-circle-check mr-1"></i> 100% Retained</span>
+                            <div class="flex -space-x-1.5 rtl:space-x-reverse">
+                                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=100&auto=format&fit=crop" class="w-5 h-5 rounded-full border border-white dark:border-stone-900 object-cover">
+                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=100&auto=format&fit=crop" class="w-5 h-5 rounded-full border border-white dark:border-stone-900 object-cover">
+                                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=100&auto=format&fit=crop" class="w-5 h-5 rounded-full border border-white dark:border-stone-900 object-cover">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Middle Section -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                    <div class="lg:col-span-8 space-y-8">
+                        <div class="bg-white dark:bg-stone-900 p-6 sm:p-8 rounded-3xl border border-stone-200 dark:border-stone-800 shadow-sm">
+                            <div class="flex justify-between items-start mb-6">
+                                <div>
+                                    <div class="flex items-center space-x-2 rtl:space-x-reverse">
+                                        <i class="fa-solid fa-chart-bar text-amber-600 text-sm"></i>
+                                        <h3 class="font-bold text-base font-heading text-stone-900 dark:text-white">Enterprise Revenue &amp; Fulfillment Growth</h3>
+                                    </div>
+                                    <p class="text-xs text-stone-400 mt-1">Quarterly billing trends across wardrobe collections (2025 - 2026)</p>
+                                </div>
+                                <span class="bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-400 text-[10px] font-extrabold uppercase px-3 py-1 rounded-full border border-amber-300 dark:border-amber-700">AUDITED LEDGER</span>
+                            </div>
+                            <div class="pt-6 pb-2">
+                                <div class="flex items-end justify-between h-48 gap-3 sm:gap-6 px-4 border-b border-stone-200 dark:border-stone-800">
+                                    <div class="flex-1 h-full flex flex-col justify-end items-center gap-2 group"><div class="w-full bg-amber-600/80 group-hover:bg-amber-500 rounded-t-lg transition-all" style="height:35%"></div><span class="text-[10px] font-bold text-stone-500">Q1 2025</span></div>
+                                    <div class="flex-1 h-full flex flex-col justify-end items-center gap-2 group"><div class="w-full bg-amber-600/80 group-hover:bg-amber-500 rounded-t-lg transition-all" style="height:48%"></div><span class="text-[10px] font-bold text-stone-500">Q2 2025</span></div>
+                                    <div class="flex-1 h-full flex flex-col justify-end items-center gap-2 group"><div class="w-full bg-amber-600/80 group-hover:bg-amber-500 rounded-t-lg transition-all" style="height:60%"></div><span class="text-[10px] font-bold text-stone-500">Q3 2025</span></div>
+                                    <div class="flex-1 h-full flex flex-col justify-end items-center gap-2 group"><div class="w-full bg-amber-600/80 group-hover:bg-amber-500 rounded-t-lg transition-all" style="height:72%"></div><span class="text-[10px] font-bold text-stone-500">Q4 2025</span></div>
+                                    <div class="flex-1 h-full flex flex-col justify-end items-center gap-2 group"><div class="w-full bg-amber-600 group-hover:bg-amber-500 rounded-t-lg transition-all" style="height:80%"></div><span class="text-[10px] font-bold text-stone-500">Q1 2026</span></div>
+                                    <div class="flex-1 h-full flex flex-col justify-end items-center gap-2 group"><div class="w-full bg-gradient-to-t from-amber-600 to-amber-500 rounded-t-lg transition-all" style="height:95%"></div><span class="text-[10px] font-extrabold text-amber-600 dark:text-amber-400">Q2 2026</span></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-white dark:bg-stone-900 p-6 sm:p-8 rounded-3xl border border-stone-200 dark:border-stone-800 shadow-sm">
+                            <div class="flex justify-between items-center mb-6">
+                                <div class="flex items-center space-x-2 rtl:space-x-reverse">
+                                    <i class="fa-solid fa-microchip text-amber-600 text-sm"></i>
+                                    <h3 class="font-bold text-base font-heading text-stone-900 dark:text-white">Live Production &amp; CNC Telemetry</h3>
+                                </div>
+                                <button onclick="switchTab('orders')" class="text-xs font-bold text-amber-600 dark:text-amber-400 hover:underline">View All 18 Orders →</button>
+                            </div>
+                            <div class="space-y-4">
+                                <div class="p-4 rounded-2xl bg-stone-50 dark:bg-stone-800/80 border border-stone-200 dark:border-stone-700 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
+                                    <div><span class="text-xs font-extrabold text-stone-900 dark:text-white">AXION Tech Solutions • #ORD-9921</span><p class="text-[11px] text-stone-500 dark:text-stone-400">500x Executive Walk-In Suites • Fiber Laser Engraved</p></div>
+                                    <div class="flex items-center space-x-2"><span class="bg-amber-100 dark:bg-amber-900/40 text-amber-700 dark:text-amber-400 text-[10px] font-extrabold px-3 py-1 rounded-full">85% CNC Milled</span><span class="bg-stone-200 dark:bg-stone-700 text-stone-600 dark:text-stone-300 text-[10px] font-bold px-3 py-1 rounded-full">QC Next</span></div>
+                                </div>
+                                <div class="p-4 rounded-2xl bg-stone-50 dark:bg-stone-800/80 border border-stone-200 dark:border-stone-700 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
+                                    <div><span class="text-xs font-extrabold text-stone-900 dark:text-white">Zenith Luxury Suites • #ORD-9920</span><p class="text-[11px] text-stone-500 dark:text-stone-400">250x Fluted Glass Armoires • Anodized Aluminum Frames</p></div>
+                                    <div class="flex items-center space-x-2"><span class="bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-400 text-[10px] font-extrabold px-3 py-1 rounded-full">100% Cured</span><span class="bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-400 text-[10px] font-bold px-3 py-1 rounded-full">In Transit</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lg:col-span-4 space-y-8">
+                        <div class="bg-white dark:bg-stone-900 p-6 rounded-3xl border border-stone-200 dark:border-stone-800 shadow-sm">
+                            <div class="flex items-center space-x-2 rtl:space-x-reverse mb-6"><i class="fa-solid fa-bolt text-amber-600 text-sm"></i><h3 class="font-bold text-base font-heading text-stone-900 dark:text-white">Quick Admin Actions</h3></div>
+                            <div class="space-y-3">
+                                <button onclick="switchTab('orders')" class="w-full flex justify-between items-center p-3.5 rounded-2xl bg-stone-50 dark:bg-stone-800/80 hover:bg-amber-50 dark:hover:bg-amber-950/30 border border-stone-200 dark:border-stone-700 text-xs font-bold text-stone-800 dark:text-stone-200 transition"><span class="flex items-center space-x-2"><i class="fa-solid fa-truck-fast text-amber-600"></i> <span>Dispatch Bulk Order</span></span><i class="fa-solid fa-chevron-right text-[10px] text-stone-400"></i></button>
+                                <button onclick="switchTab('users')" class="w-full flex justify-between items-center p-3.5 rounded-2xl bg-stone-50 dark:bg-stone-800/80 hover:bg-amber-50 dark:hover:bg-amber-950/30 border border-stone-200 dark:border-stone-700 text-xs font-bold text-stone-800 dark:text-stone-200 transition"><span class="flex items-center space-x-2"><i class="fa-solid fa-user-plus text-amber-600"></i> <span>Add Client Account</span></span><i class="fa-solid fa-chevron-right text-[10px] text-stone-400"></i></button>
+                                <button onclick="switchTab('support')" class="w-full flex justify-between items-center p-3.5 rounded-2xl bg-stone-50 dark:bg-stone-800/80 hover:bg-amber-50 dark:hover:bg-amber-950/30 border border-stone-200 dark:border-stone-700 text-xs font-bold text-stone-800 dark:text-stone-200 transition"><span class="flex items-center space-x-2"><i class="fa-solid fa-headset text-amber-600"></i> <span>Review Support Tickets</span></span><i class="fa-solid fa-chevron-right text-[10px] text-stone-400"></i></button>
+                            </div>
+                        </div>
+                        <div class="bg-white dark:bg-stone-900 p-6 rounded-3xl border border-stone-200 dark:border-stone-800 shadow-sm">
+                            <div class="flex items-center space-x-2 rtl:space-x-reverse mb-6"><i class="fa-solid fa-clock-rotate-left text-amber-600 text-sm"></i><h3 class="font-bold text-base font-heading text-stone-900 dark:text-white">Platform Audit Feed</h3></div>
+                            <div class="space-y-4">
+                                <div class="flex items-start space-x-3 rtl:space-x-reverse"><div class="w-2.5 h-2.5 rounded-full bg-amber-500 shrink-0 mt-1.5"></div><div><strong class="text-xs font-bold text-stone-900 dark:text-white block">AXION Tech placed Order #ORD-9921</strong><span class="text-[10px] text-stone-500 dark:text-stone-400 block mt-0.5">500x Executive Walk-In Kits • 10 Mins Ago</span></div></div>
+                                <div class="flex items-start space-x-3 rtl:space-x-reverse"><div class="w-2.5 h-2.5 rounded-full bg-green-500 shrink-0 mt-1.5"></div><div><strong class="text-xs font-bold text-stone-900 dark:text-white block">Vector proof approved by Elena Rostova</strong><span class="text-[10px] text-stone-500 dark:text-stone-400 block mt-0.5">#ART-992 Eco Walnut Veneer • 32 Mins Ago</span></div></div>
+                                <div class="flex items-start space-x-3 rtl:space-x-reverse"><div class="w-2.5 h-2.5 rounded-full bg-blue-500 shrink-0 mt-1.5"></div><div><strong class="text-xs font-bold text-stone-900 dark:text-white block">Courier AWB-99812 delivered</strong><span class="text-[10px] text-stone-500 dark:text-stone-400 block mt-0.5">250 Desk Drops @ London Hub • 1 Hr Ago</span></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== PANEL: REVENUE ANALYTICS ===== -->
+            <div id="panel-analytics" class="tab-panel hidden space-y-8">
+                <div><h1 class="text-3xl font-black font-heading text-stone-900 dark:text-white">Revenue Analytics</h1><p class="text-xs text-stone-500 dark:text-stone-400 mt-1">Full financial performance breakdown across all product lines.</p></div>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                    <div class="bg-white dark:bg-stone-900 p-6 rounded-3xl border border-stone-200 dark:border-stone-800 shadow-sm text-center"><div class="text-3xl font-black text-amber-600 mb-1">$6.7M</div><div class="text-xs text-stone-500 font-semibold">Q2 2026 Revenue</div></div>
+                    <div class="bg-white dark:bg-stone-900 p-6 rounded-3xl border border-stone-200 dark:border-stone-800 shadow-sm text-center"><div class="text-3xl font-black text-green-600 mb-1">+28.4%</div><div class="text-xs text-stone-500 font-semibold">Year-on-Year Growth</div></div>
+                    <div class="bg-white dark:bg-stone-900 p-6 rounded-3xl border border-stone-200 dark:border-stone-800 shadow-sm text-center"><div class="text-3xl font-black text-blue-600 mb-1">$38.2K</div><div class="text-xs text-stone-500 font-semibold">Avg. Order Value</div></div>
+                </div>
+                <div class="bg-white dark:bg-stone-900 p-8 rounded-3xl border border-stone-200 dark:border-stone-800 shadow-sm">
+                    <h3 class="font-bold text-base font-heading text-stone-900 dark:text-white mb-6">Revenue by Product Line</h3>
+                    <div class="space-y-4">
+                        <div><div class="flex justify-between text-xs font-bold text-stone-700 dark:text-stone-300 mb-1.5"><span>Walk-In Wardrobe Suites</span><span>$3.1M (46%)</span></div><div class="w-full bg-stone-100 dark:bg-stone-800 h-3 rounded-full"><div class="bg-amber-500 h-3 rounded-full" style="width:46%"></div></div></div>
+                        <div><div class="flex justify-between text-xs font-bold text-stone-700 dark:text-stone-300 mb-1.5"><span>Fitted Bedroom Furniture</span><span>$1.8M (27%)</span></div><div class="w-full bg-stone-100 dark:bg-stone-800 h-3 rounded-full"><div class="bg-blue-500 h-3 rounded-full" style="width:27%"></div></div></div>
+                        <div><div class="flex justify-between text-xs font-bold text-stone-700 dark:text-stone-300 mb-1.5"><span>Kitchen Cabinet Systems</span><span>$1.1M (16%)</span></div><div class="w-full bg-stone-100 dark:bg-stone-800 h-3 rounded-full"><div class="bg-purple-500 h-3 rounded-full" style="width:16%"></div></div></div>
+                        <div><div class="flex justify-between text-xs font-bold text-stone-700 dark:text-stone-300 mb-1.5"><span>Home Office & Bespoke Units</span><span>$0.7M (11%)</span></div><div class="w-full bg-stone-100 dark:bg-stone-800 h-3 rounded-full"><div class="bg-green-500 h-3 rounded-full" style="width:11%"></div></div></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== PANEL: CLIENT USERS ===== -->
+            <div id="panel-users" class="tab-panel hidden space-y-8">
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                    <div><h1 class="text-3xl font-black font-heading text-stone-900 dark:text-white">Client Users</h1><p class="text-xs text-stone-500 dark:text-stone-400 mt-1">Manage all registered enterprise and retail client accounts.</p></div>
+                    <button onclick="openAddClientModal()" class="bg-amber-600 hover:bg-amber-500 text-white text-xs font-bold uppercase px-5 py-2.5 rounded-full shadow-md transition flex items-center space-x-2"><i class="fa-solid fa-user-plus text-xs"></i><span>Add Client</span></button>
+                </div>
+                <div class="bg-white dark:bg-stone-900 rounded-3xl border border-stone-200 dark:border-stone-800 shadow-sm overflow-hidden">
+                    <div class="p-6 border-b border-stone-100 dark:border-stone-800 flex justify-between items-center">
+                        <h3 class="font-bold text-sm font-heading text-stone-900 dark:text-white">All Client Accounts <span class="text-stone-400 font-normal">(184)</span></h3>
+                        <input type="text" placeholder="Search clients..." class="pl-3 pr-4 py-2 rounded-xl bg-stone-100 dark:bg-stone-800 border border-stone-200 dark:border-stone-700 text-xs focus:outline-none focus:ring-2 focus:ring-amber-500 w-48">
+                    </div>
+                    <div class="divide-y divide-stone-100 dark:divide-stone-800">
+                        <div class="flex items-center justify-between p-4 hover:bg-stone-50 dark:hover:bg-stone-800/50 transition"><div class="flex items-center space-x-3"><img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=100&auto=format&fit=crop" class="w-9 h-9 rounded-full object-cover"><div><div class="text-xs font-bold text-stone-900 dark:text-white">Sarah Mitchell</div><div class="text-[10px] text-stone-400">AXION Tech Solutions • Tier A</div></div></div><span class="bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 text-[10px] font-bold px-3 py-1 rounded-full">Active</span></div>
+                        <div class="flex items-center justify-between p-4 hover:bg-stone-50 dark:hover:bg-stone-800/50 transition"><div class="flex items-center space-x-3"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=100&auto=format&fit=crop" class="w-9 h-9 rounded-full object-cover"><div><div class="text-xs font-bold text-stone-900 dark:text-white">James Worthington</div><div class="text-[10px] text-stone-400">Zenith Luxury Suites • Tier A</div></div></div><span class="bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 text-[10px] font-bold px-3 py-1 rounded-full">Active</span></div>
+                        <div class="flex items-center justify-between p-4 hover:bg-stone-50 dark:hover:bg-stone-800/50 transition"><div class="flex items-center space-x-3"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=100&auto=format&fit=crop" class="w-9 h-9 rounded-full object-cover"><div><div class="text-xs font-bold text-stone-900 dark:text-white">Amara Chen</div><div class="text-[10px] text-stone-400">Vantage Developments • Tier B</div></div></div><span class="bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-400 text-[10px] font-bold px-3 py-1 rounded-full">Pending</span></div>
+                        <div class="flex items-center justify-between p-4 hover:bg-stone-50 dark:hover:bg-stone-800/50 transition"><div class="flex items-center space-x-3"><img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=100&auto=format&fit=crop" class="w-9 h-9 rounded-full object-cover"><div><div class="text-xs font-bold text-stone-900 dark:text-white">Liam Strauss</div><div class="text-[10px] text-stone-400">Nordic Interior Group • Tier A</div></div></div><span class="bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 text-[10px] font-bold px-3 py-1 rounded-full">Active</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== PANEL: ORDER MANAGER ===== -->
+            <div id="panel-orders" class="tab-panel hidden space-y-8">
+                <div><h1 class="text-3xl font-black font-heading text-stone-900 dark:text-white">Order Manager</h1><p class="text-xs text-stone-500 dark:text-stone-400 mt-1">Track and manage all active, pending, and completed production orders.</p></div>
+                <!-- Premium Glassmorphic Grid Layout -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                    
+                    <!-- Order Card 1 -->
+                    <div class="group relative bg-white/80 dark:bg-stone-900/60 backdrop-blur-xl rounded-3xl border border-stone-200 dark:border-stone-800/80 p-6 overflow-hidden shadow-xl hover:border-amber-500/30 transition-all duration-300">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-amber-500/10 dark:bg-amber-500/5 rounded-full blur-3xl group-hover:bg-amber-500/20 dark:group-hover:bg-amber-500/10 transition"></div>
+                        <div class="flex justify-between items-start mb-4 relative z-10">
+                            <div>
+                                <h4 class="text-xs font-bold text-stone-500 dark:text-stone-400 mb-1">#ORD-9921</h4>
+                                <h3 class="text-lg font-black font-heading text-stone-900 dark:text-white">AXION Tech Solutions</h3>
+                            </div>
+                            <span class="bg-amber-100 dark:bg-amber-500/20 border border-amber-200 dark:border-amber-500/30 text-amber-600 dark:text-amber-400 text-[10px] font-bold px-3 py-1.5 rounded-full shadow-sm dark:shadow-[0_0_15px_rgba(245,158,11,0.2)]">In Production</span>
+                        </div>
+                        <p class="text-xs text-stone-600 dark:text-stone-400 mb-6 relative z-10">500x Executive Walk-In Suites • Fiber Laser Engraved</p>
+                        
+                        <div class="relative z-10">
+                            <div class="flex justify-between text-[10px] font-bold text-stone-700 dark:text-stone-300 mb-2">
+                                <span>85% CNC Milled</span>
+                                <span>QC Next</span>
+                            </div>
+                            <div class="w-full bg-stone-200 dark:bg-stone-950 rounded-full h-1.5 overflow-hidden border border-stone-300 dark:border-stone-800">
+                                <div class="bg-gradient-to-r from-amber-500 to-amber-400 h-full rounded-full w-[85%] shadow-sm dark:shadow-[0_0_10px_rgba(245,158,11,0.5)]"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Order Card 2 -->
+                    <div class="group relative bg-white/80 dark:bg-stone-900/60 backdrop-blur-xl rounded-3xl border border-stone-200 dark:border-stone-800/80 p-6 overflow-hidden shadow-xl hover:border-blue-500/30 transition-all duration-300">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 dark:bg-blue-500/5 rounded-full blur-3xl group-hover:bg-blue-500/20 dark:group-hover:bg-blue-500/10 transition"></div>
+                        <div class="flex justify-between items-start mb-4 relative z-10">
+                            <div>
+                                <h4 class="text-xs font-bold text-stone-500 dark:text-stone-400 mb-1">#ORD-9920</h4>
+                                <h3 class="text-lg font-black font-heading text-stone-900 dark:text-white">Zenith Luxury Suites</h3>
+                            </div>
+                            <span class="bg-blue-100 dark:bg-blue-500/20 border border-blue-200 dark:border-blue-500/30 text-blue-600 dark:text-blue-400 text-[10px] font-bold px-3 py-1.5 rounded-full shadow-sm dark:shadow-[0_0_15px_rgba(59,130,246,0.2)]">In Transit</span>
+                        </div>
+                        <p class="text-xs text-stone-600 dark:text-stone-400 mb-6 relative z-10">250x Fluted Glass Armoires • Anodized Aluminum Frames</p>
+                        
+                        <div class="relative z-10">
+                            <div class="flex justify-between text-[10px] font-bold text-stone-700 dark:text-stone-300 mb-2">
+                                <span>100% Cured</span>
+                                <span class="text-blue-600 dark:text-blue-400">En Route</span>
+                            </div>
+                            <div class="w-full bg-stone-200 dark:bg-stone-950 rounded-full h-1.5 overflow-hidden border border-stone-300 dark:border-stone-800">
+                                <div class="bg-gradient-to-r from-blue-500 to-blue-400 h-full rounded-full w-full shadow-sm dark:shadow-[0_0_10px_rgba(59,130,246,0.5)]"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Order Card 3 -->
+                    <div class="group relative bg-white/80 dark:bg-stone-900/60 backdrop-blur-xl rounded-3xl border border-stone-200 dark:border-stone-800/80 p-6 overflow-hidden shadow-xl hover:border-purple-500/30 transition-all duration-300">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-purple-500/10 dark:bg-purple-500/5 rounded-full blur-3xl group-hover:bg-purple-500/20 dark:group-hover:bg-purple-500/10 transition"></div>
+                        <div class="flex justify-between items-start mb-4 relative z-10">
+                            <div>
+                                <h4 class="text-xs font-bold text-stone-500 dark:text-stone-400 mb-1">#ORD-9918</h4>
+                                <h3 class="text-lg font-black font-heading text-stone-900 dark:text-white">Nordic Interior Group</h3>
+                            </div>
+                            <span class="bg-purple-100 dark:bg-purple-500/20 border border-purple-200 dark:border-purple-500/30 text-purple-600 dark:text-purple-400 text-[10px] font-bold px-3 py-1.5 rounded-full shadow-sm dark:shadow-[0_0_15px_rgba(168,85,247,0.2)]">Pending</span>
+                        </div>
+                        <p class="text-xs text-stone-600 dark:text-stone-400 mb-6 relative z-10">120x Oak Veneer Sliding Wardrobes • Soft-Close Hardware</p>
+                        
+                        <div class="relative z-10">
+                            <div class="flex justify-between text-[10px] font-bold text-stone-700 dark:text-stone-300 mb-2">
+                                <span>Awaiting Materials</span>
+                                <span>0%</span>
+                            </div>
+                            <div class="w-full bg-stone-200 dark:bg-stone-950 rounded-full h-1.5 overflow-hidden border border-stone-300 dark:border-stone-800">
+                                <div class="bg-gradient-to-r from-purple-500 to-purple-400 h-full rounded-full w-[5%] shadow-sm dark:shadow-[0_0_10px_rgba(168,85,247,0.5)]"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Order Card 4 -->
+                    <div class="group relative bg-white/80 dark:bg-stone-900/60 backdrop-blur-xl rounded-3xl border border-stone-200 dark:border-stone-800/80 p-6 overflow-hidden shadow-xl hover:border-green-500/30 transition-all duration-300">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-green-500/10 dark:bg-green-500/5 rounded-full blur-3xl group-hover:bg-green-500/20 dark:group-hover:bg-green-500/10 transition"></div>
+                        <div class="flex justify-between items-start mb-4 relative z-10">
+                            <div>
+                                <h4 class="text-xs font-bold text-stone-500 dark:text-stone-400 mb-1">#ORD-9915</h4>
+                                <h3 class="text-lg font-black font-heading text-stone-900 dark:text-white">Vantage Developments</h3>
+                            </div>
+                            <span class="bg-green-100 dark:bg-green-500/20 border border-green-200 dark:border-green-500/30 text-green-600 dark:text-green-400 text-[10px] font-bold px-3 py-1.5 rounded-full shadow-sm dark:shadow-[0_0_15px_rgba(34,197,94,0.2)]">Delivered</span>
+                        </div>
+                        <p class="text-xs text-stone-600 dark:text-stone-400 mb-6 relative z-10">80x Loft Bedroom Units • Matte PU Lacquer Finish</p>
+                        
+                        <div class="relative z-10">
+                            <div class="flex justify-between text-[10px] font-bold text-stone-700 dark:text-stone-300 mb-2">
+                                <span>Completed</span>
+                                <span class="text-green-600 dark:text-green-400"><i class="fa-solid fa-check-double"></i></span>
+                            </div>
+                            <div class="w-full bg-stone-200 dark:bg-stone-950 rounded-full h-1.5 overflow-hidden border border-stone-300 dark:border-stone-800">
+                                <div class="bg-gradient-to-r from-green-500 to-green-400 h-full rounded-full w-full shadow-sm dark:shadow-[0_0_10px_rgba(34,197,94,0.5)]"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <!-- ===== PANEL: MESSAGES & SUPPORT ===== -->
+            <div id="panel-support" class="tab-panel hidden space-y-8">
+                <div class="flex justify-between items-end">
+                    <div>
+                        <h1 class="text-3xl font-black font-heading text-stone-900 dark:text-white">Messages &amp; Support</h1>
+                        <p class="text-xs text-stone-500 dark:text-stone-400 mt-1">View and respond to all client support tickets and enquiries.</p>
+                    </div>
+                    <span class="bg-red-500/20 border border-red-500/30 text-red-500 text-[10px] font-extrabold uppercase px-4 py-1.5 rounded-full shadow-[0_0_15px_rgba(239,68,68,0.3)] animate-pulse">3 Urgent</span>
+                </div>
+                
+                <!-- Premium Glassmorphic Ticket List -->
+                <div class="space-y-4">
+                    
+                    <!-- Ticket 1: Urgent -->
+                    <div class="relative bg-white/90 dark:bg-stone-900/80 backdrop-blur-xl rounded-3xl border-l-4 border-l-red-500 border-y border-r border-stone-200 dark:border-stone-800/80 p-6 shadow-xl flex flex-col sm:flex-row gap-5 items-start">
+                        <div class="w-12 h-12 rounded-2xl bg-red-500/10 border border-red-500/20 flex items-center justify-center shrink-0">
+                            <i class="fa-solid fa-triangle-exclamation text-red-500 text-lg"></i>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex justify-between items-start mb-1">
+                                <h3 class="text-base font-bold text-stone-900 dark:text-white">Delivery delay on #ORD-9918</h3>
+                                <span class="text-[10px] text-stone-500 font-bold uppercase tracking-widest">8 mins ago</span>
+                            </div>
+                            <p class="text-xs text-red-500 dark:text-red-400 font-bold mb-3">Nordic Interior Group</p>
+                            <div class="bg-stone-50 dark:bg-stone-950/50 rounded-xl p-4 border border-stone-200 dark:border-stone-800/50">
+                                <p class="text-sm text-stone-700 dark:text-stone-300 leading-relaxed font-serif italic">"The delivery truck for our Aberdeen site hasn't arrived. We need an updated ETA urgently..."</p>
+                            </div>
+                            <div class="mt-4 flex gap-3">
+                                <button onclick="showToast('Support Center', 'Messaging features are disabled in this preview.', 'fa-comment-dots')" class="bg-stone-200 dark:bg-stone-800 hover:bg-stone-300 dark:hover:bg-stone-700 text-stone-900 dark:text-white text-[10px] font-bold uppercase px-4 py-2 rounded-lg transition">Reply</button>
+                                <button onclick="showToast('Ticket Resolved', 'Support ticket has been marked as resolved.', 'fa-check')" class="text-stone-500 hover:text-stone-700 dark:hover:text-stone-300 text-[10px] font-bold uppercase px-4 py-2 transition">Resolve</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Ticket 2: Medium -->
+                    <div class="relative bg-white/90 dark:bg-stone-900/80 backdrop-blur-xl rounded-3xl border-l-4 border-l-amber-500 border-y border-r border-stone-200 dark:border-stone-800/80 p-6 shadow-xl flex flex-col sm:flex-row gap-5 items-start">
+                        <div class="w-12 h-12 rounded-2xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center shrink-0">
+                            <i class="fa-solid fa-palette text-amber-500 text-lg"></i>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex justify-between items-start mb-1">
+                                <h3 class="text-base font-bold text-stone-900 dark:text-white">Finish colour query — matte vs satin</h3>
+                                <span class="text-[10px] text-stone-500 font-bold uppercase tracking-widest">45 mins ago</span>
+                            </div>
+                            <p class="text-xs text-amber-600 dark:text-amber-400 font-bold mb-3">Vantage Developments</p>
+                            <div class="bg-stone-50 dark:bg-stone-950/50 rounded-xl p-4 border border-stone-200 dark:border-stone-800/50">
+                                <p class="text-sm text-stone-700 dark:text-stone-300 leading-relaxed font-serif italic">"Can you send us physical swatches of the PU lacquer finish options before we confirm our Q3 order?"</p>
+                            </div>
+                            <div class="mt-4 flex gap-3">
+                                <button onclick="showToast('Support Center', 'Messaging features are disabled in this preview.', 'fa-comment-dots')" class="bg-stone-200 dark:bg-stone-800 hover:bg-stone-300 dark:hover:bg-stone-700 text-stone-900 dark:text-white text-[10px] font-bold uppercase px-4 py-2 rounded-lg transition">Reply</button>
+                                <button onclick="showToast('Ticket Resolved', 'Support ticket has been marked as resolved.', 'fa-check')" class="text-stone-500 hover:text-stone-700 dark:hover:text-stone-300 text-[10px] font-bold uppercase px-4 py-2 transition">Resolve</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Ticket 3: Low -->
+                    <div class="relative bg-white/90 dark:bg-stone-900/80 backdrop-blur-xl rounded-3xl border-l-4 border-l-blue-500 border-y border-r border-stone-200 dark:border-stone-800/80 p-6 shadow-xl flex flex-col sm:flex-row gap-5 items-start">
+                        <div class="w-12 h-12 rounded-2xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center shrink-0">
+                            <i class="fa-solid fa-file-invoice text-blue-500 text-lg"></i>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex justify-between items-start mb-1">
+                                <h3 class="text-base font-bold text-stone-900 dark:text-white">Invoice request for #ORD-9920</h3>
+                                <span class="text-[10px] text-stone-500 font-bold uppercase tracking-widest">2 hrs ago</span>
+                            </div>
+                            <p class="text-xs text-blue-600 dark:text-blue-400 font-bold mb-3">Zenith Luxury Suites</p>
+                            <div class="bg-stone-50 dark:bg-stone-950/50 rounded-xl p-4 border border-stone-200 dark:border-stone-800/50">
+                                <p class="text-sm text-stone-700 dark:text-stone-300 leading-relaxed font-serif italic">"Please re-send the VAT invoice for the Fluted Glass Armoire order. Our finance team needs it for month-end."</p>
+                            </div>
+                            <div class="mt-4 flex gap-3">
+                                <button onclick="showToast('Support Center', 'Messaging features are disabled in this preview.', 'fa-comment-dots')" class="bg-stone-200 dark:bg-stone-800 hover:bg-stone-300 dark:hover:bg-stone-700 text-stone-900 dark:text-white text-[10px] font-bold uppercase px-4 py-2 rounded-lg transition">Reply & Attach</button>
+                                <button onclick="showToast('Ticket Resolved', 'Support ticket has been marked as resolved.', 'fa-check')" class="text-stone-500 hover:text-stone-700 dark:hover:text-stone-300 text-[10px] font-bold uppercase px-4 py-2 transition">Resolve</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Tab Switching Script -->
+            <script>
+                const panels = document.querySelectorAll('.tab-panel');
+                const navLinks = document.querySelectorAll('.admin-nav-link');
+
+                function switchTab(tab) {
+                    // Hide all panels
+                    panels.forEach(p => p.classList.add('hidden'));
+                    // Show target panel
+                    const target = document.getElementById('panel-' + tab);
+                    if (target) target.classList.remove('hidden');
+
+                    // Update nav active state
+                    navLinks.forEach(link => {
+                        const isActive = link.dataset.tab === tab;
+                        link.classList.toggle('bg-amber-100', isActive);
+                        link.classList.toggle('dark:bg-amber-500/20', isActive);
+                        link.classList.toggle('text-amber-700', isActive);
+                        link.classList.toggle('dark:text-amber-400', isActive);
+                        link.classList.toggle('text-stone-600', !isActive);
+                        link.classList.toggle('dark:text-stone-400', !isActive);
+                    });
+                }
+            </script>
+        </main>
+    </div>
+
+    <!-- ADD CLIENT MODAL -->
+    <div id="add-client-modal" class="fixed inset-0 z-[9999] bg-stone-950/80 backdrop-blur-sm hidden items-center justify-center p-4">
+        <div class="bg-white dark:bg-stone-900 w-full max-w-md rounded-3xl border border-stone-200 dark:border-stone-800 shadow-2xl overflow-hidden relative transform transition-all">
+            <!-- Header -->
+            <div class="px-6 py-4 border-b border-stone-100 dark:border-stone-800 flex justify-between items-center bg-stone-50 dark:bg-stone-800/50">
+                <h3 class="font-bold text-base font-heading text-stone-900 dark:text-white">Add New Client</h3>
+                <button onclick="closeAddClientModal()" class="text-stone-400 hover:text-stone-600 dark:hover:text-stone-200 transition">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+            </div>
+            
+            <!-- Form Body -->
+            <div class="p-6 space-y-4">
+                <div>
+                    <label class="block text-[10px] font-bold text-stone-500 uppercase tracking-wider mb-1.5">Client Full Name</label>
+                    <input type="text" class="w-full bg-stone-100 dark:bg-stone-800 border border-stone-200 dark:border-stone-700 text-stone-900 dark:text-white rounded-xl px-4 py-2.5 text-xs focus:outline-none focus:ring-2 focus:ring-amber-500" placeholder="e.g. Sarah Mitchell">
+                </div>
+                
+                <div>
+                    <label class="block text-[10px] font-bold text-stone-500 uppercase tracking-wider mb-1.5">Company / Organization</label>
+                    <input type="text" class="w-full bg-stone-100 dark:bg-stone-800 border border-stone-200 dark:border-stone-700 text-stone-900 dark:text-white rounded-xl px-4 py-2.5 text-xs focus:outline-none focus:ring-2 focus:ring-amber-500" placeholder="e.g. AXION Tech Solutions">
+                </div>
+                
+                <div>
+                    <label class="block text-[10px] font-bold text-stone-500 uppercase tracking-wider mb-1.5">Email Address</label>
+                    <input type="email" class="w-full bg-stone-100 dark:bg-stone-800 border border-stone-200 dark:border-stone-700 text-stone-900 dark:text-white rounded-xl px-4 py-2.5 text-xs focus:outline-none focus:ring-2 focus:ring-amber-500" placeholder="sarah.m@axion.com">
+                </div>
+                
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-[10px] font-bold text-stone-500 uppercase tracking-wider mb-1.5">Client Tier</label>
+                        <select class="w-full bg-stone-100 dark:bg-stone-800 border border-stone-200 dark:border-stone-700 text-stone-900 dark:text-white rounded-xl px-4 py-2.5 text-xs focus:outline-none focus:ring-2 focus:ring-amber-500 appearance-none">
+                            <option>Tier A (Enterprise)</option>
+                            <option>Tier B (Commercial)</option>
+                            <option>Tier C (Retail)</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-[10px] font-bold text-stone-500 uppercase tracking-wider mb-1.5">Account Status</label>
+                        <select class="w-full bg-stone-100 dark:bg-stone-800 border border-stone-200 dark:border-stone-700 text-stone-900 dark:text-white rounded-xl px-4 py-2.5 text-xs focus:outline-none focus:ring-2 focus:ring-amber-500 appearance-none">
+                            <option>Active</option>
+                            <option>Pending</option>
+                            <option>Suspended</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Actions -->
+            <div class="px-6 py-4 border-t border-stone-100 dark:border-stone-800 bg-stone-50 dark:bg-stone-800/50 flex justify-end space-x-3">
+                <button onclick="closeAddClientModal()" class="px-5 py-2.5 rounded-full text-xs font-bold text-stone-600 dark:text-stone-300 hover:bg-stone-200 dark:hover:bg-stone-700 transition">Cancel</button>
+                <button onclick="submitAddClientModal()" class="bg-amber-600 hover:bg-amber-500 text-white text-xs font-bold px-6 py-2.5 rounded-full shadow-md transition">Create Account</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const clientModal = document.getElementById('add-client-modal');
+        function openAddClientModal() {
+            clientModal.classList.remove('hidden');
+            clientModal.classList.add('flex');
+        }
+        function closeAddClientModal() {
+            clientModal.classList.add('hidden');
+            clientModal.classList.remove('flex');
+        }
+        function submitAddClientModal() {
+            closeAddClientModal();
+            showToast('Success', 'New client account created successfully.', 'fa-check');
+        }
+    </script>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

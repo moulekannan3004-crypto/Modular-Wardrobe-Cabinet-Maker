@@ -1,0 +1,173 @@
+/* Modular Wardrobe & Cabinet Maker - Master Custom Stylesheet */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Tajawal:wght@400;500;700&display=swap');
+
+:root {
+    --font-heading: 'Playfair Display', Georgia, serif;
+    --font-body: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --font-rtl: 'Tajawal', 'Plus Jakarta Sans', sans-serif;
+    --color-amber-gold: #c59b27;
+    --color-amber-gold-hover: #b0871d;
+    --color-wood-dark: #1e1915;
+    --color-wood-slate: #2b2520;
+}
+
+/* Base setup */
+html {
+    font-family: var(--font-body);
+    scroll-behavior: smooth;
+}
+
+/* RTL Support */
+[dir="rtl"] {
+    font-family: var(--font-rtl);
+}
+
+[dir="rtl"] .rtl-flip {
+    transform: scaleX(-1);
+}
+
+[dir="rtl"] .space-x-reverse > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-x-reverse: 1;
+}
+
+/* Dark Mode Smooth Transitions */
+body {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Custom Typography Classes */
+.font-heading {
+    font-family: var(--font-heading);
+}
+
+/* Premium Wood & Gold Accent Gradients */
+.bg-gradient-gold {
+    background: linear-gradient(135deg, #d4af37 0%, #aa7c11 100%);
+}
+
+.text-gradient-gold {
+    background: linear-gradient(135deg, #d4af37 0%, #f3e5ab 50%, #aa7c11 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.bg-wood-pattern {
+    background-color: #12100e;
+    background-image: radial-gradient(#2b2520 1px, transparent 1px);
+    background-size: 24px 24px;
+}
+
+/* Glassmorphism Cards */
+.glass-panel {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.dark .glass-panel {
+    background: rgba(24, 20, 17, 0.75);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Showroom Hover Zoom & Overlay */
+.product-card {
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+}
+
+.img-zoom-container {
+    overflow: hidden;
+}
+
+.img-zoom-container img {
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.img-zoom-container:hover img {
+    transform: scale(1.08);
+}
+
+/* Swatch Color Indicator */
+.swatch-btn {
+    position: relative;
+    transition: all 0.2s ease;
+}
+
+.swatch-btn.active::after {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    border: 2px solid #d4af37;
+    border-radius: 9999px;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.dark ::-webkit-scrollbar-track {
+    background: #181512;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #c59b27;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #a37f1c;
+}
+
+/* Modal Animations */
+.modal-backdrop {
+    animation: fadeIn 0.25s ease-out forwards;
+}
+
+.modal-content {
+    animation: slideUp 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(20px) scale(0.96); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* Timeline Custom Styles */
+.timeline-line {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 3px;
+    background: #e5e7eb;
+    transform: translateX(-50%);
+}
+
+.dark .timeline-line {
+    background: #374151;
+}
+
+[dir="rtl"] .timeline-line {
+    right: 50%;
+    left: auto;
+    transform: translateX(50%);
+}
+
+

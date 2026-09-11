@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bespoke Custom Wardrobe & Luxury Closet Solutions | MODULARIS</title>
+    <meta name="description" content="Niche custom wardrobe solutions, bedroom storage, walk-in closets, kitchen cabinets, space optimization, and 3D design proposals.">
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        amber: {
+                            500: '#d4af37',
+                            600: '#c59b27',
+                            700: '#aa7c11',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome 6 Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="bg-gray-50 dark:bg-stone-950 text-gray-800 dark:text-gray-100 transition-colors duration-300 font-sans antialiased selection:bg-amber-500 selection:text-white">
+
+<!-- Navigation Header -->
+    <header class="sticky top-0 z-50 bg-white/95 dark:bg-stone-900/95 backdrop-blur-md border-b border-stone-200 dark:border-stone-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Brand Logo -->
+                <a href="index.html" class="flex items-center space-x-3 rtl:space-x-reverse">
+                    <div class="w-10 h-10 bg-amber-600 rounded-xl flex items-center justify-center text-white font-bold shadow-md shadow-amber-600/30">
+                        <i class="fa-solid fa-layer-group text-xl"></i>
+                    </div>
+                    <div class="leading-none">
+                        <span class="text-lg sm:text-xl xl:text-2xl font-black font-heading tracking-wider text-stone-900 dark:text-amber-400">MODULARIS</span>
+                        <span class="hidden sm:block text-[10px] tracking-widest uppercase text-stone-500 dark:text-stone-400 font-bold mt-0.5">Wardrobe & Cabinetry</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Menu -->
+                <nav class="hidden lg:flex items-center space-x-6 xl:space-x-7 rtl:space-x-reverse text-xs xl:text-sm">
+                    <div class="relative group py-4">
+                        <a href="home-niche.html" class="text-amber-600 dark:text-amber-400 font-bold border-b-2 border-amber-600 pb-1 flex items-center transition">
+                            Home 2 <i class="fa-solid fa-chevron-down text-[10px] ml-1.5 transition group-hover:rotate-180"></i>
+                        </a>
+                        <div class="absolute left-0 top-full hidden group-hover:block w-48 bg-white dark:bg-stone-800 shadow-xl rounded-xl border border-stone-100 dark:border-stone-700 py-2 z-50">
+                            <a href="index.html" class="block px-4 py-2 text-xs hover:bg-amber-50 dark:hover:bg-stone-700 text-stone-700 dark:text-stone-200 hover:text-amber-600">Home 1 - General Services</a>
+                            <a href="home-niche.html" class="block px-4 py-2 text-xs hover:bg-amber-50 dark:hover:bg-stone-700 text-stone-700 dark:text-stone-200 hover:text-amber-600">Home 2 - Custom Wardrobes</a>
+                        </div>
+                    </div>
+                    <a href="about.html" class="text-stone-700 dark:text-stone-200 hover:text-amber-600 dark:hover:text-amber-400 font-semibold transition">About Us</a>
+                    <a href="services.html" class="text-stone-700 dark:text-stone-200 hover:text-amber-600 dark:hover:text-amber-400 font-semibold transition">Services</a>
+                    
+                    <a href="pricing.html" class="text-stone-700 dark:text-stone-200 hover:text-amber-600 dark:hover:text-amber-400 font-semibold transition">Pricing</a>
+                    <a href="blog.html" class="text-stone-700 dark:text-stone-200 hover:text-amber-600 dark:hover:text-amber-400 font-semibold transition">Blog</a>
+                    <a href="contact.html" class="text-stone-700 dark:text-stone-200 hover:text-amber-600 dark:hover:text-amber-400 font-semibold transition">Contact</a>
+                </nav>
+
+                <!-- Right Utilities Bar -->
+                <div class="flex items-center space-x-2 rtl:space-x-reverse">
+                    <!-- LTR / RTL Toggle (Desktop) -->
+                    <button class="rtl-toggle-btn hidden lg:flex items-center gap-1.5 border border-stone-200 dark:border-stone-700 bg-white dark:bg-stone-800 rounded-full px-3 py-2 text-[11px] font-bold text-stone-600 dark:text-stone-300 hover:border-amber-500 transition focus:outline-none">
+                        <span class="ltr-label text-amber-600">LTR</span>
+                        <i class="fa-solid fa-arrow-right-arrow-left text-[10px] text-stone-400"></i>
+                        <span class="rtl-label text-stone-400 dark:text-stone-500">RTL</span>
+                    </button>
+
+                    <!-- Dark Mode Toggle (Desktop) -->
+                    <button class="theme-toggle-btn hidden lg:flex w-9 h-9 rounded-full border border-stone-200 dark:border-stone-700 bg-white dark:bg-stone-800 items-center justify-center text-stone-600 dark:text-stone-300 shadow-sm transition-all focus:outline-none" title="Toggle Light/Dark Mode">
+                        <i class="theme-toggle-icon fa-solid fa-moon text-sm"></i>
+                    </button>
+
+                    <!-- Login Button (Desktop) -->
+                    <a href="login.html" class="hidden lg:inline-flex items-center gap-1.5 border border-stone-200 dark:border-stone-700 bg-white dark:bg-stone-800 text-stone-700 dark:text-stone-200 text-xs font-bold px-4 py-2 rounded-full hover:border-amber-500 transition">
+                        <i class="fa-solid fa-plus text-[10px] text-amber-500"></i>
+                        <span>Login</span>
+                    </a>
+
+                    <!-- Get Proposal CTA -->
+                    <a href="contact.html" class="hidden sm:inline-flex items-center space-x-2 bg-gradient-to-r from-amber-600 to-amber-500 hover:from-amber-500 hover:to-amber-600 text-white text-xs uppercase font-extrabold tracking-wider px-5 py-2.5 rounded-full shadow-md shadow-amber-600/25 hover:shadow-lg transition-all transform hover:-translate-y-0.5 active:translate-y-0">
+                        <i class="fa-solid fa-paper-plane text-xs"></i>
+                        <span>Get Proposal</span>
+                    </a>
+
+                    <!-- Mobile Theme Toggle -->
+                    <button class="theme-toggle-btn lg:hidden w-10 h-10 rounded-2xl border border-stone-200 dark:border-stone-700 bg-white dark:bg-stone-800 flex items-center justify-center text-stone-600 dark:text-stone-300 shadow-sm transition-all focus:outline-none" title="Toggle Light/Dark Mode">
+                        <i class="theme-toggle-icon fa-solid fa-moon text-sm"></i>
+                    </button>
+
+                    <!-- Mobile Menu Toggle -->
+                    <button id="mobile-menu-toggle" class="lg:hidden w-10 h-10 rounded-2xl border border-stone-200 dark:border-stone-700 bg-white dark:bg-stone-800 flex items-center justify-center text-stone-600 dark:text-stone-300 shadow-sm focus:outline-none ml-1 transition-all">
+                        <i class="fa-solid fa-bars text-sm"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-stone-50 dark:bg-stone-950 px-4 pt-4 pb-8 max-h-[calc(100vh-80px)] overflow-y-auto">
+            <div class="space-y-3">
+                <a href="index.html" class="flex justify-between items-center bg-white dark:bg-stone-900 rounded-2xl shadow-sm border border-stone-200 dark:border-stone-800 px-5 py-4 text-stone-900 dark:text-white font-bold text-[13px] transition-all hover:border-amber-500">
+                    <span>Home 1 (General)</span>
+                    <i class="fa-solid fa-house text-stone-400"></i>
+                </a>
+                <a href="home-niche.html" class="flex justify-between items-center bg-white dark:bg-stone-900 rounded-2xl shadow-sm border border-stone-200 dark:border-stone-800 px-5 py-4 text-stone-900 dark:text-white font-bold text-[13px] transition-all hover:border-amber-500">
+                    <span>Home 2 (Wardrobes)</span>
+                    <i class="fa-solid fa-pen-nib text-stone-400"></i>
+                </a>
+                <a href="about.html" class="flex justify-between items-center bg-white dark:bg-stone-900 rounded-2xl shadow-sm border border-stone-200 dark:border-stone-800 px-5 py-4 text-stone-900 dark:text-white font-bold text-[13px] transition-all hover:border-amber-500">
+                    <span>About Us</span>
+                    <i class="fa-regular fa-circle-info text-stone-400"></i>
+                </a>
+                <a href="services.html" class="flex justify-between items-center bg-white dark:bg-stone-900 rounded-2xl shadow-sm border border-stone-200 dark:border-stone-800 px-5 py-4 text-stone-900 dark:text-white font-bold text-[13px] transition-all hover:border-amber-500">
+                    <span>Services</span>
+                    <i class="fa-solid fa-border-all text-stone-400"></i>
+                </a>
+                
+                <a href="pricing.html" class="flex justify-between items-center bg-white dark:bg-stone-900 rounded-2xl shadow-sm border border-stone-200 dark:border-stone-800 px-5 py-4 text-stone-900 dark:text-white font-bold text-[13px] transition-all hover:border-amber-500">
+                    <span>Pricing</span>
+                    <i class="fa-solid fa-tag text-stone-400"></i>
+                </a>
+                <a href="blog.html" class="flex justify-between items-center bg-white dark:bg-stone-900 rounded-2xl shadow-sm border border-stone-200 dark:border-stone-800 px-5 py-4 text-stone-900 dark:text-white font-bold text-[13px] transition-all hover:border-amber-500">
+                    <span>Blog</span>
+                    <i class="fa-regular fa-newspaper text-stone-400"></i>
+                </a>
+                <a href="contact.html" class="flex justify-between items-center bg-white dark:bg-stone-900 rounded-2xl shadow-sm border border-stone-200 dark:border-stone-800 px-5 py-4 text-stone-900 dark:text-white font-bold text-[13px] transition-all hover:border-amber-500">
+                    <span>Contact</span>
+                    <i class="fa-regular fa-envelope text-stone-400"></i>
+                </a>
+                <a href="admin-dashboard.html" class="flex justify-between items-center bg-white dark:bg-stone-900 rounded-2xl shadow-sm border border-stone-200 dark:border-stone-800 px-5 py-4 text-indigo-600 dark:text-indigo-400 font-bold text-[13px] transition-all hover:border-indigo-500">
+                    <span>Admin Dashboard</span>
+                    <i class="fa-solid fa-shield-halved text-indigo-500/70"></i>
+                </a>
+            </div>
+
+            <!-- Mobile Drawer Bottom Actions -->
+            <div class="mt-8 space-y-3 pt-6 border-t border-stone-200 dark:border-stone-800">
+                <a href="contact.html" class="w-full flex justify-center items-center gap-2 bg-amber-600 hover:bg-amber-700 text-white font-bold text-sm rounded-xl py-3.5 shadow-md transition">
+                    <i class="fa-regular fa-paper-plane text-xs"></i>
+                    <span>Get Proposal</span>
+                </a>
+                
+                <div class="grid grid-cols-2 gap-3">
+                    <a href="login.html" class="flex justify-center items-center gap-2 bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-xl py-3 text-stone-900 dark:text-white font-bold text-xs transition hover:border-amber-500">
+                        <i class="fa-solid fa-arrow-right-to-bracket text-amber-500"></i>
+                        <span>Login</span>
+                    </a>
+                    
+                    <button class="rtl-toggle-btn flex justify-center items-center gap-1.5 bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-xl py-3 text-xs transition hover:border-amber-500 focus:outline-none">
+                        <span class="ltr-label font-bold text-amber-500">LTR</span>
+                        <i class="fa-solid fa-arrow-right-arrow-left text-[10px] text-stone-300"></i>
+                        <span class="rtl-label text-stone-400 dark:text-stone-500 font-bold">RTL</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Niche Hero Section -->
+    <section class="relative py-20 overflow-hidden bg-stone-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-6 space-y-6">
+                    <div class="inline-flex items-center space-x-2 bg-amber-500/10 text-amber-400 border border-amber-500/20 rounded-full px-4 py-1 text-xs font-semibold uppercase tracking-wider">
+                        <i class="fa-solid fa-sliders"></i>
+                        <span>100% Tailored Space Optimization</span>
+                    </div>
+
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold font-heading leading-tight text-white">
+                        Maximize Space With <span class="text-amber-500">Custom Walk-In</span> Wardrobes
+                    </h1>
+
+                    <p class="text-stone-300 text-base leading-relaxed">
+                        Say goodbye to standard off-the-shelf wardrobes. We measure down to the exact millimeter, eliminating dead corner spaces and creating personalized storage for shoes, suits, dresses, and jewelry.
+                    </p>
+
+                    <div class="grid grid-cols-2 gap-4 pt-4">
+                        <div class="p-4 rounded-xl bg-stone-800/60 border border-stone-700">
+                            <i class="fa-solid fa-ruler-combined text-amber-400 text-xl mb-2"></i>
+                            <h4 class="font-bold text-sm text-white">Zero Dead Corners</h4>
+                            <p class="text-xs text-stone-400 mt-1">Smart pull-out magic corners & blind corner organizers.</p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-stone-800/60 border border-stone-700">
+                            <i class="fa-solid fa-lightbulb text-amber-400 text-xl mb-2"></i>
+                            <h4 class="font-bold text-sm text-white">Concealed LED Strip Light</h4>
+                            <p class="text-xs text-stone-400 mt-1">Auto PIR motion sensors activate when doors slide open.</p>
+                        </div>
+                    </div>
+
+                    <div class="pt-4 flex flex-wrap gap-4">
+                        <a href="contact.html" class="bg-amber-600 hover:bg-amber-500 text-white font-bold px-8 py-4 rounded-xl shadow-xl shadow-amber-600/30 transition text-sm uppercase tracking-wider">
+                            Book In-Home Space Audit
+                        </a>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-6">
+                    <div class="relative rounded-2xl overflow-hidden shadow-2xl border-2 border-stone-700 group">
+                        <img src="assets/royal-penthouse-walkin-suite.jpg" alt="The Royal Penthouse Walk-In Suite" class="w-full h-auto object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-stone-950 via-transparent to-transparent opacity-80"></div>
+                        <div class="absolute bottom-6 left-6 right-6 p-6 bg-stone-900/90 backdrop-blur-md rounded-xl border border-stone-700">
+                            <span class="text-xs font-bold text-amber-400 uppercase tracking-widest block mb-1">Featured Layout #804</span>
+                            <h3 class="text-lg font-bold font-heading text-white">The Royal Penthouse Walk-In Suite</h3>
+                            <p class="text-xs text-stone-300 mt-1">Smoked glass doors, Italian leather drawer linings, and velvet watch cases.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Niche Solution Categories -->
+    <section class="py-24 bg-white dark:bg-stone-950 border-t border-gray-200 dark:border-stone-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-bold text-amber-600 dark:text-amber-400 uppercase tracking-widest block mb-2">Tailored Storage Solutions</span>
+                <h2 class="text-3xl sm:text-4xl font-bold font-heading text-stone-900 dark:text-white">Niche Closet & Cabinetry Categories</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Cat 1 -->
+                <div class="bg-stone-50 dark:bg-stone-900 rounded-2xl p-6 border border-stone-200 dark:border-stone-800 hover:border-amber-500/50 transition product-card shadow-sm">
+                    <img src="assets/custom-wardrobes.png" alt="Custom Wardrobe Solutions" class="w-full h-48 object-cover rounded-xl mb-4">
+                    <h3 class="text-lg font-bold font-heading text-stone-900 dark:text-white mb-2">Custom Wardrobes</h3>
+                    <p class="text-xs text-stone-600 dark:text-stone-400 mb-4">Floor-to-ceiling sliding and hinged wardrobe configurations with internal organizing trays.</p>
+                    <a href="service-details.html?service=wardrobes" class="text-xs font-bold text-amber-600 dark:text-amber-400 hover:underline">Learn More <i class="fa-solid fa-arrow-right ml-1"></i></a>
+                </div>
+
+                <!-- Cat 2 -->
+                <div class="bg-stone-50 dark:bg-stone-900 rounded-2xl p-6 border border-stone-200 dark:border-stone-800 hover:border-amber-500/50 transition product-card shadow-sm">
+                    <img src="assets/bedroom-storage.png" alt="Bedroom Storage Solutions" class="w-full h-48 object-cover rounded-xl mb-4">
+                    <h3 class="text-lg font-bold font-heading text-stone-900 dark:text-white mb-2">Bedroom Storage</h3>
+                    <p class="text-xs text-stone-600 dark:text-stone-400 mb-4">Integrated bed backrest storage, floating nightstands, and dressing table units.</p>
+                    <a href="service-details.html?service=bedroom" class="text-xs font-bold text-amber-600 dark:text-amber-400 hover:underline">Learn More <i class="fa-solid fa-arrow-right ml-1"></i></a>
+                </div>
+
+                <!-- Cat 3 -->
+                <div class="bg-stone-50 dark:bg-stone-900 rounded-2xl p-6 border border-stone-200 dark:border-stone-800 hover:border-amber-500/50 transition product-card shadow-sm">
+                    <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?q=80&w=600&auto=format&fit=crop" alt="Kitchen Cabinets Solutions" class="w-full h-48 object-cover rounded-xl mb-4">
+                    <h3 class="text-lg font-bold font-heading text-stone-900 dark:text-white mb-2">Kitchen Cabinets</h3>
+                    <p class="text-xs text-stone-600 dark:text-stone-400 mb-4">High-capacity tall pull-out pantries, spice drawers, and waterproof under-sink storage.</p>
+                    <a href="service-details.html?service=kitchen" class="text-xs font-bold text-amber-600 dark:text-amber-400 hover:underline">Learn More <i class="fa-solid fa-arrow-right ml-1"></i></a>
+                </div>
+
+                <!-- Cat 4 -->
+                <div class="bg-stone-50 dark:bg-stone-900 rounded-2xl p-6 border border-stone-200 dark:border-stone-800 hover:border-amber-500/50 transition product-card shadow-sm">
+                    <img src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?q=80&w=600&auto=format&fit=crop" alt="Walk-In Wardrobes Solutions" class="w-full h-48 object-cover rounded-xl mb-4">
+                    <h3 class="text-lg font-bold font-heading text-stone-900 dark:text-white mb-2">Walk-In Closets</h3>
+                    <p class="text-xs text-stone-600 dark:text-stone-400 mb-4">Luxury island drawers, glass display cabinets, and integrated vanity mirrors.</p>
+                    <a href="service-details.html?service=walkin" class="text-xs font-bold text-amber-600 dark:text-amber-400 hover:underline">Learn More <i class="fa-solid fa-arrow-right ml-1"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW UNIQUE LUXURY DESIGN: Modular Interior Accessories -->
+    <section class="py-24 bg-gradient-to-b from-stone-100 via-white to-stone-50 dark:from-stone-900 dark:via-stone-950 dark:to-stone-900 border-t border-gray-200 dark:border-stone-800 relative overflow-hidden">
+        <!-- Background Ambient Accents -->
+        <div class="absolute top-1/2 left-0 w-72 h-72 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-0 right-0 w-96 h-96 bg-amber-600/5 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <!-- Header Section -->
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+                <div class="inline-flex items-center space-x-2 bg-amber-600/10 dark:bg-amber-500/20 text-amber-700 dark:text-amber-300 border border-amber-500/30 rounded-full px-4 py-1.5 text-xs font-extrabold uppercase tracking-widest">
+                    <i class="fa-solid fa-layer-group text-amber-500"></i>
+                    <span>Internal Ergonomics & Hardware</span>
+                </div>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-heading text-stone-900 dark:text-white tracking-tight">
+                    Modular Interior <span class="text-amber-600 dark:text-amber-400 underline decoration-amber-500/40 underline-offset-8">Accessories</span>
+                </h2>
+                <p class="text-stone-600 dark:text-stone-300 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
+                    Every drawer, hanging rail, and display shelf is custom-engineered with precision European hardware for your specific clothing inventory.
+                </p>
+            </div>
+
+            <!-- 3 Unique Luxury Cards Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-white dark:bg-stone-900/90 rounded-3xl border border-stone-200 dark:border-stone-800 p-7 shadow-xl hover:shadow-2xl hover:border-amber-500 transition-all duration-300 group flex flex-col justify-between relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-28 h-28 bg-amber-500/10 rounded-bl-full pointer-events-none transition-all group-hover:bg-amber-500/20"></div>
+                    <div>
+                        <!-- Top Header Row -->
+                        <div class="flex justify-between items-center mb-6">
+                            <div class="w-14 h-14 bg-gradient-to-br from-amber-500 to-amber-700 text-white rounded-2xl flex items-center justify-center text-2xl shadow-lg shadow-amber-600/30 group-hover:scale-110 transition-transform duration-300">
+                                <i class="fa-solid fa-gem"></i>
+                            </div>
+                            <span class="text-[11px] font-black uppercase tracking-wider text-amber-900 dark:text-amber-300 bg-amber-100 dark:bg-amber-500/20 px-3 py-1 rounded-full border border-amber-300 dark:border-amber-500/40">ACC-01</span>
+                        </div>
+
+                        <!-- Card Image Preview -->
+                        <div class="relative h-48 rounded-2xl overflow-hidden mb-6 border border-stone-200 dark:border-stone-800 shadow-md">
+                            <img src="assets/italian-velvet-jewelry-trays.jpg" alt="Italian Velvet Jewelry Trays" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                            <span class="absolute bottom-3 left-3 text-[10px] font-extrabold uppercase tracking-widest text-amber-300 bg-black/70 backdrop-blur-md px-2.5 py-1 rounded-md border border-amber-500/40">
+                                <i class="fa-solid fa-lock text-amber-400 mr-1"></i> Biometric Secure
+                            </span>
+                        </div>
+
+                        <h3 class="text-xl font-bold font-heading text-stone-900 dark:text-white mb-2 group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">Italian Velvet Jewelry Trays</h3>
+                        <p class="text-stone-600 dark:text-stone-300 text-xs sm:text-sm font-medium leading-relaxed mb-6">
+                            Soft velvet-lined compartments with integrated biometric fingerprint locks for watches, rings, and fine jewelry.
+                        </p>
+
+                        <!-- Feature Micro-Pills -->
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="text-xs font-bold text-stone-800 dark:text-stone-200 bg-stone-100 dark:bg-stone-800 px-3 py-1 rounded-full border border-stone-300 dark:border-stone-700 shadow-sm">Biometric Lock</span>
+                            <span class="text-xs font-bold text-stone-800 dark:text-stone-200 bg-stone-100 dark:bg-stone-800 px-3 py-1 rounded-full border border-stone-300 dark:border-stone-700 shadow-sm">Italian Velvet</span>
+                            <span class="text-xs font-bold text-stone-800 dark:text-stone-200 bg-stone-100 dark:bg-stone-800 px-3 py-1 rounded-full border border-stone-300 dark:border-stone-700 shadow-sm">Watch Pillows</span>
+                        </div>
+                    </div>
+
+                    <a href="service-details.html?service=accessory-jewelry" class="w-full inline-flex items-center justify-between text-xs font-extrabold uppercase tracking-wider bg-amber-600 hover:bg-amber-700 text-white px-5 py-3.5 rounded-2xl shadow-md shadow-amber-600/30 transition-all duration-300">
+                        <span>Explore Accessory Specs</span>
+                        <i class="fa-solid fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-white dark:bg-stone-900/90 rounded-3xl border border-stone-200 dark:border-stone-800 p-7 shadow-xl hover:shadow-2xl hover:border-amber-500 transition-all duration-300 group flex flex-col justify-between relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-28 h-28 bg-amber-500/10 rounded-bl-full pointer-events-none transition-all group-hover:bg-amber-500/20"></div>
+                    <div>
+                        <!-- Top Header Row -->
+                        <div class="flex justify-between items-center mb-6">
+                            <div class="w-14 h-14 bg-gradient-to-br from-amber-500 to-amber-700 text-white rounded-2xl flex items-center justify-center text-2xl shadow-lg shadow-amber-600/30 group-hover:scale-110 transition-transform duration-300">
+                                <i class="fa-solid fa-arrows-up-down"></i>
+                            </div>
+                            <span class="text-[11px] font-black uppercase tracking-wider text-amber-900 dark:text-amber-300 bg-amber-100 dark:bg-amber-500/20 px-3 py-1 rounded-full border border-amber-300 dark:border-amber-500/40">ACC-02</span>
+                        </div>
+
+                        <!-- Card Image Preview -->
+                        <div class="relative h-48 rounded-2xl overflow-hidden mb-6 border border-stone-200 dark:border-stone-800 shadow-md">
+                            <img src="assets/hydraulic-pull-down-rods.png" alt="Hydraulic Pull-Down Rods" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                            <span class="absolute bottom-3 left-3 text-[10px] font-extrabold uppercase tracking-widest text-amber-300 bg-black/70 backdrop-blur-md px-2.5 py-1 rounded-md border border-amber-500/40">
+                                <i class="fa-solid fa-gauge-high text-amber-400 mr-1"></i> Gas-Lift 15kg Load
+                            </span>
+                        </div>
+
+                        <h3 class="text-xl font-bold font-heading text-stone-900 dark:text-white mb-2 group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">Hydraulic Pull-Down Rods</h3>
+                        <p class="text-stone-600 dark:text-stone-300 text-xs sm:text-sm font-medium leading-relaxed mb-6">
+                            Smooth gas-lift hanging rods that effortlessly bring upper suits down to comfortable arm height with soft-close return damping.
+                        </p>
+
+                        <!-- Feature Micro-Pills -->
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="text-xs font-bold text-stone-800 dark:text-stone-200 bg-stone-100 dark:bg-stone-800 px-3 py-1 rounded-full border border-stone-300 dark:border-stone-700 shadow-sm">Gas-Lift Damping</span>
+                            <span class="text-xs font-bold text-stone-800 dark:text-stone-200 bg-stone-100 dark:bg-stone-800 px-3 py-1 rounded-full border border-stone-300 dark:border-stone-700 shadow-sm">Soft-Return</span>
+                            <span class="text-xs font-bold text-stone-800 dark:text-stone-200 bg-stone-100 dark:bg-stone-800 px-3 py-1 rounded-full border border-stone-300 dark:border-stone-700 shadow-sm">High-Reach Access</span>
+                        </div>
+                    </div>
+
+                    <a href="service-details.html?service=accessory-hydraulic" class="w-full inline-flex items-center justify-between text-xs font-extrabold uppercase tracking-wider bg-amber-600 hover:bg-amber-700 text-white px-5 py-3.5 rounded-2xl shadow-md shadow-amber-600/30 transition-all duration-300">
+                        <span>Explore Accessory Specs</span>
+                        <i class="fa-solid fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-white dark:bg-stone-900/90 rounded-3xl border border-stone-200 dark:border-stone-800 p-7 shadow-xl hover:shadow-2xl hover:border-amber-500 transition-all duration-300 group flex flex-col justify-between relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-28 h-28 bg-amber-500/10 rounded-bl-full pointer-events-none transition-all group-hover:bg-amber-500/20"></div>
+                    <div>
+                        <!-- Top Header Row -->
+                        <div class="flex justify-between items-center mb-6">
+                            <div class="w-14 h-14 bg-gradient-to-br from-amber-500 to-amber-700 text-white rounded-2xl flex items-center justify-center text-2xl shadow-lg shadow-amber-600/30 group-hover:scale-110 transition-transform duration-300">
+                                <i class="fa-solid fa-shoe-prints"></i>
+                            </div>
+                            <span class="text-[11px] font-black uppercase tracking-wider text-amber-900 dark:text-amber-300 bg-amber-100 dark:bg-amber-500/20 px-3 py-1 rounded-full border border-amber-300 dark:border-amber-500/40">ACC-03</span>
+                        </div>
+
+                        <!-- Card Image Preview -->
+                        <div class="relative h-48 rounded-2xl overflow-hidden mb-6 border border-stone-200 dark:border-stone-800 shadow-md">
+                            <img src="assets/sliding-angled-shoe-islands.png" alt="Sliding Angled Shoe Islands" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                            <span class="absolute bottom-3 left-3 text-[10px] font-extrabold uppercase tracking-widest text-amber-300 bg-black/70 backdrop-blur-md px-2.5 py-1 rounded-md border border-amber-500/40">
+                                <i class="fa-solid fa-lightbulb text-amber-400 mr-1"></i> Warm LED 3000K Strip
+                            </span>
+                        </div>
+
+                        <h3 class="text-xl font-bold font-heading text-stone-900 dark:text-white mb-2 group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">Sliding Angled Shoe Islands</h3>
+                        <p class="text-stone-600 dark:text-stone-300 text-xs sm:text-sm font-medium leading-relaxed mb-6">
+                            Sliding shoe shelves with heel-stop barriers and warm LED perimeter lighting to showcase up to 60 pairs in boutique gallery style.
+                        </p>
+
+                        <!-- Feature Micro-Pills -->
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="text-xs font-bold text-stone-800 dark:text-stone-200 bg-stone-100 dark:bg-stone-800 px-3 py-1 rounded-full border border-stone-300 dark:border-stone-700 shadow-sm">45° Angled Trays</span>
+                            <span class="text-xs font-bold text-stone-800 dark:text-stone-200 bg-stone-100 dark:bg-stone-800 px-3 py-1 rounded-full border border-stone-300 dark:border-stone-700 shadow-sm">LED Gallery Lighting</span>
+                            <span class="text-xs font-bold text-stone-800 dark:text-stone-200 bg-stone-100 dark:bg-stone-800 px-3 py-1 rounded-full border border-stone-300 dark:border-stone-700 shadow-sm">60-Pair Capacity</span>
+                        </div>
+                    </div>
+
+                    <a href="service-details.html?service=accessory-shoes" class="w-full inline-flex items-center justify-between text-xs font-extrabold uppercase tracking-wider bg-amber-600 hover:bg-amber-700 text-white px-5 py-3.5 rounded-2xl shadow-md shadow-amber-600/30 transition-all duration-300">
+                        <span>Explore Accessory Specs</span>
+                        <i class="fa-solid fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Material & Finish Swatch Selector Tool -->
+    <section class="py-24 bg-white dark:bg-stone-950 border-t border-gray-200 dark:border-stone-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-bold text-amber-600 dark:text-amber-400 uppercase tracking-widest block mb-2">Material Palette</span>
+                <h2 class="text-3xl sm:text-4xl font-bold font-heading text-stone-900 dark:text-white">Explore Finishes & Texture Swatches</h2>
+                <p class="text-stone-600 dark:text-stone-400 text-sm mt-3">Click on any finish below to preview how it looks on a custom cabinet door.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Swatch Buttons -->
+                <div class="lg:col-span-5 space-y-4">
+                    <button class="swatch-select-btn w-full p-4 rounded-xl bg-stone-50 dark:bg-stone-800 text-left flex items-center space-x-4 border border-stone-200 dark:border-stone-700 hover:border-amber-500 transition ring-4 ring-amber-500 shadow-sm"
+                            data-img="https://images.unsplash.com/photo-1546484475-7f7bd55792da?q=80&w=1000&auto=format&fit=crop"
+                            data-title="Natural Crown Oak Veneer"
+                            data-desc="Hand-selected authentic timber veneer with deep tactile grain and protective matte UV clear coat.">
+                        <span class="w-12 h-12 rounded-full overflow-hidden border-2 border-amber-500 shrink-0 shadow-sm">
+                            <img src="https://images.unsplash.com/photo-1546484475-7f7bd55792da?q=80&w=200&auto=format&fit=crop" alt="Natural Crown Oak Veneer Texture" class="w-full h-full object-cover">
+                        </span>
+                        <div>
+                            <span class="block font-bold text-stone-900 dark:text-white text-sm">Natural Crown Oak Veneer</span>
+                            <span class="text-xs text-amber-600 dark:text-amber-400 font-semibold">Warm organic timber feel</span>
+                        </div>
+                    </button>
+
+                    <button class="swatch-select-btn w-full p-4 rounded-xl bg-stone-50 dark:bg-stone-800 text-left flex items-center space-x-4 border border-stone-200 dark:border-stone-700 hover:border-amber-500 transition shadow-sm"
+                            data-img="assets/images/matte-anti-fingerprint-pu.png"
+                            data-title="Matte Anti-Fingerprint Polyurethane"
+                            data-desc="Smooth velvet-like lacquer available in over 200 RAL custom paint colors with zero fingerprint marks.">
+                        <span class="w-12 h-12 rounded-full overflow-hidden border-2 border-stone-400 shrink-0 shadow-sm">
+                            <img src="assets/images/matte-anti-fingerprint-pu.png" alt="Matte Anti-Fingerprint PU Finish" class="w-full h-full object-cover">
+                        </span>
+                        <div>
+                            <span class="block font-bold text-stone-900 dark:text-white text-sm">Matte Anti-Fingerprint PU</span>
+                            <span class="text-xs text-stone-500 dark:text-stone-400">Sleek non-reflective aesthetic</span>
+                        </div>
+                    </button>
+
+                    <button class="swatch-select-btn w-full p-4 rounded-xl bg-stone-50 dark:bg-stone-800 text-left flex items-center space-x-4 border border-stone-200 dark:border-stone-700 hover:border-amber-500 transition shadow-sm"
+                            data-img="assets/images/fluted-amber-glass.png"
+                            data-title="Fluted Amber Glass & Anodized Bronze"
+                            data-desc="Architectural fluted safety glass paired with lightweight anodized bronze aluminium profiles.">
+                        <span class="w-12 h-12 rounded-full overflow-hidden border-2 border-amber-500 shrink-0 shadow-sm">
+                            <img src="assets/images/fluted-amber-glass.png" alt="Fluted Amber Glass Texture" class="w-full h-full object-cover">
+                        </span>
+                        <div>
+                            <span class="block font-bold text-stone-900 dark:text-white text-sm">Fluted Amber Glass</span>
+                            <span class="text-xs text-stone-500 dark:text-stone-400">Luxury showcase transparency</span>
+                        </div>
+                    </button>
+                </div>
+
+                <!-- Swatch Live Preview Panel -->
+                <div class="lg:col-span-7">
+                    <div class="bg-stone-50 dark:bg-stone-900 p-6 rounded-2xl border border-stone-200 dark:border-stone-800 shadow-xl">
+                        <div class="relative h-96 rounded-xl overflow-hidden mb-6">
+                            <img id="swatch-preview-img" src="https://images.unsplash.com/photo-1546484475-7f7bd55792da?q=80&w=1000&auto=format&fit=crop" alt="Natural Crown Oak Veneer Texture Finish" class="w-full h-full object-cover transition-opacity duration-300">
+                        </div>
+                        <h3 id="swatch-preview-title" class="text-xl font-bold font-heading text-amber-600 dark:text-amber-400">Natural Crown Oak Veneer</h3>
+                        <p id="swatch-preview-desc" class="text-xs text-stone-600 dark:text-stone-400 mt-2 leading-relaxed">Hand-selected authentic timber veneer with deep tactile grain and protective matte UV clear coat.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Consultation CTA -->
+    <section class="py-20 bg-amber-600 text-white text-center">
+        <div class="max-w-4xl mx-auto px-4">
+            <h2 class="text-3xl font-bold font-heading mb-4">Request Your 3D Layout Proposal Today</h2>
+            <p class="text-amber-100 text-sm mb-8">Send us your room dimensions and storage requirements. Our senior design architects will send a 3D layout within 24 hours.</p>
+            <a href="contact.html" class="bg-stone-900 hover:bg-stone-950 text-white font-bold px-8 py-4 rounded-xl text-xs uppercase tracking-wider transition shadow-2xl">
+                Submit Space Requirements
+            </a>
+        </div>
+    </section>
+
+    <!-- Master Footer -->
+    <footer class="bg-[#040814] text-stone-400 pt-16 pb-8 border-t border-stone-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+                <!-- Col 1: Brand & Socials -->
+                <div class="space-y-4">
+                    <a href="index.html" class="flex items-center space-x-3 rtl:space-x-reverse mb-4">
+                        <div class="w-8 h-8 bg-gradient-to-tr from-amber-600 to-amber-400 rounded-lg flex items-center justify-center text-white shadow-[0_0_15px_rgba(245,158,11,0.4)]">
+                            <i class="fa-solid fa-cube text-sm"></i>
+                        </div>
+                        <span class="text-xl font-bold font-heading text-white tracking-wide">MODULARIS</span>
+                    </a>
+                    <p class="text-xs text-stone-400 leading-relaxed max-w-xs">
+                        Enterprise architectural joinery & custom modular cabinetry fulfillment platform.
+                    </p>
+                    <div class="flex space-x-3 rtl:space-x-reverse pt-3">
+                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-xl border border-stone-700/80 bg-stone-800/40 text-stone-400 hover:text-white hover:bg-stone-700 flex items-center justify-center transition-all"><i class="fa-brands fa-instagram text-sm"></i></a>
+                        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-xl border border-stone-700/80 bg-stone-800/40 text-stone-400 hover:text-white hover:bg-stone-700 flex items-center justify-center transition-all"><i class="fa-brands fa-facebook-f text-sm"></i></a>
+                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-xl border border-stone-700/80 bg-stone-800/40 text-stone-400 hover:text-white hover:bg-stone-700 flex items-center justify-center transition-all"><i class="fa-brands fa-linkedin-in text-sm"></i></a>
+                        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-xl border border-stone-700/80 bg-stone-800/40 text-stone-400 hover:text-white hover:bg-stone-700 flex items-center justify-center transition-all"><svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 1200 1227" xmlns="http://www.w3.org/2000/svg"><path d="M714.163 519.284L1160.89 0H1055.03L667.137 450.887L357.328 0H0L468.492 681.821L0 1226.37H105.866L515.491 750.218L842.672 1226.37H1200L714.137 519.284H714.163ZM569.165 687.828L521.697 619.934L144.011 79.6944H306.615L611.412 515.685L658.88 583.579L1055.08 1150.3H892.476L569.165 687.854V687.828Z"/></svg></a>
+                    </div>
+                </div>
+
+                <!-- Col 2: NAVIGATION -->
+                <div>
+                    <h4 class="text-white text-[11px] font-bold uppercase tracking-widest mb-6">Navigation</h4>
+                    <ul class="space-y-3 text-xs text-stone-400">
+                        <li><a href="index.html" class="hover:text-amber-400 transition">Home</a></li>
+                        <li><a href="about.html" class="hover:text-amber-400 transition">About Us</a></li>
+                        <li><a href="services.html" class="hover:text-amber-400 transition">Services</a></li>
+                        <li><a href="pricing.html" class="hover:text-amber-400 transition">Pricing Tiers</a></li>
+                        <li><a href="blog.html" class="hover:text-amber-400 transition">Blog & Journal</a></li>
+                        <li><a href="contact.html" class="hover:text-amber-400 transition">Contact Sales</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: PRODUCTION SLA -->
+                <div>
+                    <h4 class="text-white text-[11px] font-bold uppercase tracking-widest mb-6">Production SLA</h4>
+                    <ul class="space-y-3 text-xs text-stone-400">
+                        <li><span class="text-amber-500 font-bold">48h Express</span> CNC Dispatch SLA</li>
+                        <li><span class="text-green-500 font-bold">100% Optical</span> QC Inspection</li>
+                        <li><span class="text-purple-400 font-bold">Automated</span> Dimension Matching</li>
+                        <li><span class="text-amber-600 font-bold">5 Regional</span> Assembly Hubs</li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: ENTERPRISE SALES -->
+                <div>
+                    <h4 class="text-white text-[11px] font-bold uppercase tracking-widest mb-6">Enterprise Sales</h4>
+                    <div class="space-y-3 text-xs text-stone-400 mb-6">
+                        <div class="flex items-center space-x-3"><i class="fa-regular fa-envelope text-amber-500"></i> <span>corporate@modularis.com</span></div>
+                        <div class="flex items-center space-x-3"><i class="fa-solid fa-phone text-amber-500"></i> <span>+1 (800) 555-0198</span></div>
+                    </div>
+                    <a href="contact.html" class="inline-block w-full text-center bg-gradient-to-r from-amber-600 to-amber-500 hover:from-amber-500 hover:to-amber-400 text-white text-xs font-bold rounded-lg px-6 py-3.5 shadow-[0_0_15px_rgba(245,158,11,0.3)] transition">Connect Sales Team</a>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="border-t border-stone-800/60 pt-6 flex justify-center items-center text-[10px] text-stone-500">
+                <p class="text-center">&copy; 2026 MODULARIS Joinery Ltd. All rights reserved.</p>
+                
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
