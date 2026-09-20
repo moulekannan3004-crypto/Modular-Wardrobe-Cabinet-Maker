@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initFormSubmissions();
     initNameValidation();
     initEmailValidation();
+    initPhoneValidation();
     initGenericButtonHandlers();
     
     initServiceDetailsDynamic();
@@ -832,6 +833,115 @@ function initEmailValidation() {
 }
 
 /* -------------------------------------------------------------------------- */
+/* 11.7 Phone Number Field Validation Engine                                  */
+/* -------------------------------------------------------------------------- */
+function validatePhoneField(input, showErrorToast = false) {
+    if (!input) return true;
+    const rawVal = input.value;
+    const value = rawVal.trim();
+    
+    // Check if required and empty
+    if (!value) {
+        if (input.hasAttribute('required')) {
+            const errorMsg = 'Please enter your phone number.';
+            input.setCustomValidity(errorMsg);
+            if (showErrorToast) showToast('Missing Phone Number', errorMsg, 'fa-circle-exclamation');
+            return false;
+        }
+        input.setCustomValidity('');
+        return true;
+    }
+    
+    // 1. Explicitly check for alphabetic characters
+    if (/[a-zA-Z]/.test(value)) {
+        const errorMsg = 'Phone number cannot contain letters or alphabetic characters.';
+        input.setCustomValidity(errorMsg);
+        if (showErrorToast) showToast('Invalid Phone Number', errorMsg, 'fa-triangle-exclamation');
+        return false;
+    }
+    
+    // 2. Check for disallowed special characters (only digits, +, -, (, ), ., and spaces allowed)
+    if (/[^0-9+\s\-\(\)\.]/.test(value)) {
+        const errorMsg = 'Phone number can only contain numbers and valid symbols (+, -, (, )).';
+        input.setCustomValidity(errorMsg);
+        if (showErrorToast) showToast('Invalid Phone Number', errorMsg, 'fa-triangle-exclamation');
+        return false;
+    }
+    
+    // 3. Country code '+' can only appear once at the beginning
+    if (value.includes('+')) {
+        if (!value.startsWith('+') || (value.match(/\+/g) || []).length > 1) {
+            const errorMsg = 'Country code "+" can only appear once at the beginning of the phone number.';
+            input.setCustomValidity(errorMsg);
+            if (showErrorToast) showToast('Invalid Phone Number', errorMsg, 'fa-triangle-exclamation');
+            return false;
+        }
+    }
+    
+    // 4. Count total digits (standard phone numbers require between 7 and 15 digits)
+    const digits = value.replace(/\D/g, '');
+    if (digits.length < 7) {
+        const errorMsg = 'Please enter a valid phone number with at least 7 digits.';
+        input.setCustomValidity(errorMsg);
+        if (showErrorToast) showToast('Invalid Phone Number', errorMsg, 'fa-triangle-exclamation');
+        return false;
+    }
+    if (digits.length > 15) {
+        const errorMsg = 'Phone number cannot exceed 15 digits.';
+        input.setCustomValidity(errorMsg);
+        if (showErrorToast) showToast('Invalid Phone Number', errorMsg, 'fa-triangle-exclamation');
+        return false;
+    }
+    
+    input.setCustomValidity('');
+    return true;
+}
+
+function initPhoneValidation() {
+    const phoneSelectors = [
+        'input[type="tel"]',
+        'input[name*="phone"]',
+        'input[name*="tel"]',
+        'input[id*="phone"]',
+        'input[placeholder*="000-0000"]',
+        'input[placeholder*="555"]'
+    ];
+    
+    const phoneInputs = document.querySelectorAll(phoneSelectors.join(','));
+    phoneInputs.forEach(input => {
+        if (!input.getAttribute('pattern')) {
+            input.setAttribute('pattern', '^[+]?[0-9\\s\\-\\(\\)\\.]{7,20}$');
+        }
+        input.setAttribute('title', 'Please enter a valid phone number with 7 to 15 digits (numbers only, no letters)');
+        input.setAttribute('inputmode', 'tel');
+        
+        // Block typing alphabetic characters on keydown
+        input.addEventListener('keydown', (e) => {
+            const allowedKeys = ['Backspace', 'Tab', 'Enter', 'Delete', 'ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown', 'Home', 'End', 'Escape'];
+            if (allowedKeys.includes(e.key) || e.ctrlKey || e.metaKey || e.altKey) {
+                return;
+            }
+            if (/^[a-zA-Z]$/.test(e.key)) {
+                e.preventDefault();
+                input.setCustomValidity('Phone number cannot contain letters or alphabetic characters.');
+                input.reportValidity();
+            }
+        });
+        
+        input.addEventListener('input', () => {
+            validatePhoneField(input, false);
+        });
+        
+        input.addEventListener('blur', () => {
+            validatePhoneField(input, false);
+            if (!input.checkValidity() && input.value.trim().length > 0) {
+                input.reportValidity();
+            }
+        });
+    });
+}
+
+/* -------------------------------------------------------------------------- */
 /* 12. Form Submissions Engine                                                */
 /* -------------------------------------------------------------------------- */
 function initFormSubmissions() {
@@ -862,6 +972,16 @@ function initFormSubmissions() {
                 if (!validateEmailField(emailInput, true)) {
                     emailInput.reportValidity();
                     emailInput.focus();
+                    return;
+                }
+            }
+            
+            // Validate all phone fields in this form
+            const phoneInputs = form.querySelectorAll('input[type="tel"], input[name*="phone"], input[name*="tel"], input[id*="phone"]');
+            for (const phoneInput of phoneInputs) {
+                if (!validatePhoneField(phoneInput, true)) {
+                    phoneInput.reportValidity();
+                    phoneInput.focus();
                     return;
                 }
             }
