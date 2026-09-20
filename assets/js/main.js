@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
     init3DViewerModal();
     initCountdownTimer();
     initFormSubmissions();
+    initNameValidation();
     initGenericButtonHandlers();
     
     initServiceDetailsDynamic();
@@ -671,6 +672,94 @@ function initCountdownTimer() {
 }
 
 /* -------------------------------------------------------------------------- */
+/* 11.5 Name Field Validation Engine                                          */
+/* -------------------------------------------------------------------------- */
+function validateNameField(input, showErrorToast = false) {
+    if (!input) return true;
+    const rawVal = input.value;
+    const value = rawVal.trim();
+    
+    // Check if required and empty
+    if (!value) {
+        if (input.hasAttribute('required')) {
+            const errorMsg = 'Please enter your full name.';
+            input.setCustomValidity(errorMsg);
+            if (showErrorToast) showToast('Missing Name', errorMsg, 'fa-circle-exclamation');
+            return false;
+        }
+        input.setCustomValidity('');
+        return true;
+    }
+    
+    // Check for numbers
+    if (/\d/.test(value)) {
+        const errorMsg = 'Name cannot contain numbers. Please enter letters only.';
+        input.setCustomValidity(errorMsg);
+        if (showErrorToast) showToast('Invalid Name', errorMsg, 'fa-triangle-exclamation');
+        return false;
+    }
+    
+    // Check minimum length (must be at least 2 characters)
+    if (value.length < 2) {
+        const errorMsg = 'Name must be at least 2 letters long.';
+        input.setCustomValidity(errorMsg);
+        if (showErrorToast) showToast('Invalid Name', errorMsg, 'fa-triangle-exclamation');
+        return false;
+    }
+    
+    // Check for allowed characters only (letters, spaces, hyphens, apostrophes)
+    const nameRegex = /^[A-Za-zÀ-ÿ\s'-]{2,60}$/;
+    if (!nameRegex.test(value)) {
+        const errorMsg = 'Name can only contain letters, spaces, hyphens, and apostrophes.';
+        input.setCustomValidity(errorMsg);
+        if (showErrorToast) showToast('Invalid Name', errorMsg, 'fa-triangle-exclamation');
+        return false;
+    }
+    
+    // Check that it contains at least 2 alphabetic characters
+    const letterCount = (value.match(/[A-Za-zÀ-ÿ]/g) || []).length;
+    if (letterCount < 2) {
+        const errorMsg = 'Name must contain at least 2 letters.';
+        input.setCustomValidity(errorMsg);
+        if (showErrorToast) showToast('Invalid Name', errorMsg, 'fa-triangle-exclamation');
+        return false;
+    }
+    
+    input.setCustomValidity('');
+    return true;
+}
+
+function initNameValidation() {
+    const nameSelectors = [
+        'input[name="fullName"]',
+        'input[name="name"]',
+        'input[id*="name"]',
+        'input[placeholder*="Name"]',
+        'input[placeholder*="Vance"]',
+        'input[placeholder*="Doe"]',
+        'input[placeholder*="Mitchell"]'
+    ];
+    
+    const nameInputs = document.querySelectorAll(nameSelectors.join(','));
+    nameInputs.forEach(input => {
+        if (!input.getAttribute('minlength')) input.setAttribute('minlength', '2');
+        if (!input.getAttribute('pattern')) input.setAttribute('pattern', "^[A-Za-zÀ-ÿ\\s'-]{2,60}$");
+        input.setAttribute('title', 'Please enter a valid name (at least 2 letters, no numbers)');
+        
+        input.addEventListener('input', () => {
+            validateNameField(input, false);
+        });
+        
+        input.addEventListener('blur', () => {
+            validateNameField(input, false);
+            if (!input.checkValidity() && input.value.trim().length > 0) {
+                input.reportValidity();
+            }
+        });
+    });
+}
+
+/* -------------------------------------------------------------------------- */
 /* 12. Form Submissions Engine                                                */
 /* -------------------------------------------------------------------------- */
 function initFormSubmissions() {
@@ -678,6 +767,23 @@ function initFormSubmissions() {
     forms.forEach(form => {
         form.addEventListener('submit', (e) => {
             e.preventDefault();
+            
+            // Check native HTML5 form validity
+            if (!form.checkValidity()) {
+                form.reportValidity();
+                return;
+            }
+            
+            // Validate all name fields in this form
+            const nameInputs = form.querySelectorAll('input[name="fullName"], input[name="name"], input[id*="name"], input[placeholder*="Name"], input[placeholder*="Vance"], input[placeholder*="Doe"], input[placeholder*="Mitchell"]');
+            for (const nameInput of nameInputs) {
+                if (!validateNameField(nameInput, true)) {
+                    nameInput.reportValidity();
+                    nameInput.focus();
+                    return;
+                }
+            }
+            
             const formId = form.id || 'general';
             
             if (formId === 'cost-estimator-form') {
