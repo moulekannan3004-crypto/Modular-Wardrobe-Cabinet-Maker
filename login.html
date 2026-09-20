@@ -64,7 +64,7 @@
                     <!-- LTR / RTL Toggle (Desktop) -->
                     <button class="rtl-toggle-btn hidden lg:flex items-center gap-1.5 border border-stone-200 dark:border-stone-700 bg-white dark:bg-stone-800 rounded-full px-3 py-2 text-[11px] font-bold text-stone-600 dark:text-stone-300 hover:border-amber-500 transition focus:outline-none">
                         <span class="ltr-label text-amber-600">LTR</span>
-                        <i class="fa-solid fa-arrow-right-arrow-left text-[10px] text-stone-400"></i>
+                        <svg class="rtl-dir-icon w-3.5 h-3.5 text-stone-400 dark:text-stone-500 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path class="dir-arrow" d="M5 19h14m-4-4 4 4-4 4"/><path d="M16 4h-6.5a3.5 3.5 0 0 0 0 7h.5M14 4v10M18 4v10"/></svg>
                         <span class="rtl-label text-stone-400 dark:text-stone-500">RTL</span>
                     </button>
 
@@ -151,7 +151,7 @@
                     
                     <button class="rtl-toggle-btn flex justify-center items-center gap-1.5 bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-xl py-3 text-xs transition hover:border-amber-500 focus:outline-none">
                         <span class="ltr-label font-bold text-amber-500">LTR</span>
-                        <i class="fa-solid fa-arrow-right-arrow-left text-[10px] text-stone-300"></i>
+                        <svg class="rtl-dir-icon w-3.5 h-3.5 text-stone-300 dark:text-stone-500 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path class="dir-arrow" d="M5 19h14m-4-4 4 4-4 4"/><path d="M16 4h-6.5a3.5 3.5 0 0 0 0 7h.5M14 4v10M18 4v10"/></svg>
                         <span class="rtl-label text-stone-400 dark:text-stone-500 font-bold">RTL</span>
                     </button>
                 </div>
@@ -210,7 +210,7 @@
                 <div>
                     <div class="flex justify-between items-center mb-1.5">
                         <label class="block text-xs font-bold text-stone-700 dark:text-stone-300">Password</label>
-                        <a href="#" class="text-[11px] font-bold text-amber-600 dark:text-amber-400 hover:underline">Forgot password?</a>
+                        <a href="javascript:void(0)" onclick="openForgotPasswordModal(event)" class="text-[11px] font-bold text-amber-600 dark:text-amber-400 hover:underline cursor-pointer">Forgot password?</a>
                     </div>
                     <div class="relative">
                         <i class="fa-solid fa-lock absolute left-4 top-3.5 text-xs text-stone-400"></i>
@@ -375,6 +375,53 @@
             }
         }
 
+        function openForgotPasswordModal(e) {
+            if (e) e.preventDefault();
+            const modal = document.getElementById('forgot-password-modal');
+            const loginEmail = document.getElementById('login-email');
+            const resetEmail = document.getElementById('reset-email');
+            if (resetEmail && loginEmail && loginEmail.value) {
+                resetEmail.value = loginEmail.value;
+            }
+            if (modal) {
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+                setTimeout(() => { if (resetEmail) resetEmail.focus(); }, 100);
+            }
+        }
+
+        function closeForgotPasswordModal() {
+            const modal = document.getElementById('forgot-password-modal');
+            if (modal) {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+            }
+        }
+
+        function handleForgotPasswordSubmit(e) {
+            e.preventDefault();
+            const resetEmail = document.getElementById('reset-email');
+            if (!resetEmail) return;
+            
+            if (typeof validateEmailField === 'function') {
+                if (!validateEmailField(resetEmail, true)) {
+                    resetEmail.reportValidity();
+                    return;
+                }
+            } else if (!resetEmail.checkValidity()) {
+                resetEmail.reportValidity();
+                return;
+            }
+            
+            const emailVal = resetEmail.value.trim();
+            closeForgotPasswordModal();
+            if (typeof showToast === 'function') {
+                showToast('Reset Link Sent', `Password reset instructions sent to ${emailVal}. Please check your inbox.`, 'fa-paper-plane');
+            } else {
+                alert(`Password reset instructions sent to ${emailVal}.`);
+            }
+        }
+
         document.addEventListener('DOMContentLoaded', () => {
             const urlParams = new URLSearchParams(window.location.search);
             const role = urlParams.get('role');
@@ -383,8 +430,62 @@
             } else if (role === 'admin') {
                 switchLoginRole('admin');
             }
+            
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') closeForgotPasswordModal();
+            });
+            document.addEventListener('click', (e) => {
+                const modal = document.getElementById('forgot-password-modal');
+                if (modal && e.target === modal) closeForgotPasswordModal();
+            });
         });
     </script>
+
+    <!-- Forgot Password Recovery Modal -->
+    <div id="forgot-password-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-stone-950/70 backdrop-blur-sm transition-all duration-300">
+        <div class="relative w-full max-w-md bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-3xl p-6 sm:p-8 shadow-2xl space-y-6">
+            <!-- Modal Header -->
+            <div class="flex items-start justify-between">
+                <div class="flex items-center space-x-3 rtl:space-x-reverse">
+                    <div class="w-10 h-10 rounded-2xl bg-amber-500/10 text-amber-600 dark:text-amber-400 flex items-center justify-center border border-amber-500/20">
+                        <i class="fa-solid fa-key text-base"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-base font-bold text-stone-900 dark:text-white">Reset Password</h3>
+                        <p class="text-xs text-stone-500 dark:text-stone-400">Account recovery instructions</p>
+                    </div>
+                </div>
+                <button type="button" onclick="closeForgotPasswordModal()" class="w-8 h-8 rounded-full flex items-center justify-center text-stone-400 hover:text-stone-700 dark:hover:text-stone-200 hover:bg-stone-100 dark:hover:bg-stone-800 transition">
+                    <i class="fa-solid fa-xmark text-sm"></i>
+                </button>
+            </div>
+
+            <p class="text-xs text-stone-600 dark:text-stone-400 leading-relaxed">
+                Enter your registered administrator or client email address below. We'll send an encrypted, single-use password reset link.
+            </p>
+
+            <!-- Reset Form -->
+            <form id="forgot-password-form" onsubmit="handleForgotPasswordSubmit(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-bold text-stone-700 dark:text-stone-300 mb-1.5">Registered Email Address</label>
+                    <div class="relative">
+                        <i class="fa-solid fa-envelope absolute left-4 top-3.5 text-xs text-stone-400"></i>
+                        <input type="email" id="reset-email" name="email" required pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" title="Please enter a valid email address (e.g. name@domain.com)" placeholder="name@modulariscabinets.com" class="w-full pl-10 pr-4 py-3 rounded-xl bg-stone-50 dark:bg-stone-950 border border-stone-200 dark:border-stone-800 text-xs text-stone-900 dark:text-white placeholder-stone-400 focus:outline-none focus:ring-2 focus:ring-amber-500 transition">
+                    </div>
+                </div>
+
+                <div class="flex items-center space-x-3 rtl:space-x-reverse pt-2">
+                    <button type="button" onclick="closeForgotPasswordModal()" class="w-1/2 py-3 rounded-xl border border-stone-200 dark:border-stone-700 text-stone-600 dark:text-stone-300 text-xs font-bold hover:bg-stone-100 dark:hover:bg-stone-800 transition">
+                        Cancel
+                    </button>
+                    <button type="submit" class="w-1/2 bg-amber-600 hover:bg-amber-500 text-white font-bold text-xs py-3 rounded-xl shadow-md transition flex items-center justify-center space-x-1.5">
+                        <i class="fa-solid fa-paper-plane text-xs"></i>
+                        <span>Send Reset Link</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
 </body>
 </html>
 

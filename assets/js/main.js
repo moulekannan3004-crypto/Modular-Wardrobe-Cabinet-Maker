@@ -171,6 +171,15 @@ function setDirection(dir, notify = true) {
         } else if (simpleLabel) {
             simpleLabel.textContent = dir === 'rtl' ? 'LTR' : 'RTL';
         }
+
+        // Update directional icon representation (arrow points Left for RTL, Right for LTR)
+        const dirIcon = btn.querySelector('.rtl-dir-icon');
+        if (dirIcon) {
+            const arrow = dirIcon.querySelector('.dir-arrow');
+            if (arrow) {
+                arrow.setAttribute('d', dir === 'rtl' ? 'M5 19h14m-10-4-4 4 4 4' : 'M5 19h14m-4-4 4 4-4 4');
+            }
+        }
     });
 
     if (notify) {
