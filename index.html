@@ -242,22 +242,32 @@
                                 </div>
                                 <div>
                                     <label class="block text-xs font-semibold uppercase text-stone-600 dark:text-stone-300 mb-1">Room Type</label>
-                                    <select class="w-full px-4 py-3 rounded-lg bg-white dark:bg-stone-800 border border-gray-300 dark:border-stone-700 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500">
-                                        <option>Walk-In Wardrobe</option>
-                                        <option>Bedroom Cabinet</option>
-                                        <option>Modular Kitchen</option>
-                                        <option>Living Room Unit</option>
-                                    </select>
+                                    <div class="relative">
+                                        <select class="w-full px-4 py-3 pr-10 rounded-lg bg-white dark:bg-stone-800 border border-gray-300 dark:border-stone-700 text-sm text-stone-900 dark:text-stone-100 focus:outline-none focus:ring-2 focus:ring-amber-500 appearance-none cursor-pointer">
+                                            <option>Walk-In Wardrobe</option>
+                                            <option>Bedroom Cabinet</option>
+                                            <option>Modular Kitchen</option>
+                                            <option>Living Room Unit</option>
+                                        </select>
+                                        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3.5 text-stone-400 dark:text-stone-500">
+                                            <i class="fa-solid fa-chevron-down text-xs"></i>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
 
                             <div>
                                 <label class="block text-xs font-semibold uppercase text-stone-600 dark:text-stone-300 mb-1">Estimated Budget Range</label>
-                                <select class="w-full px-4 py-3 rounded-lg bg-white dark:bg-stone-800 border border-gray-300 dark:border-stone-700 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500">
-                                    <option>$2,500 - $5,000</option>
-                                    <option>$5,000 - $12,000</option>
-                                    <option>$12,000 - $25,000+</option>
-                                </select>
+                                <div class="relative">
+                                    <select class="w-full px-4 py-3 pr-10 rounded-lg bg-white dark:bg-stone-800 border border-gray-300 dark:border-stone-700 text-sm text-stone-900 dark:text-stone-100 focus:outline-none focus:ring-2 focus:ring-amber-500 appearance-none cursor-pointer">
+                                        <option>$2,500 - $5,000</option>
+                                        <option>$5,000 - $12,000</option>
+                                        <option>$12,000 - $25,000+</option>
+                                    </select>
+                                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3.5 text-stone-400 dark:text-stone-500">
+                                        <i class="fa-solid fa-chevron-down text-xs"></i>
+                                    </div>
+                                </div>
                             </div>
 
                             <button type="submit" class="w-full bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-500 hover:to-amber-600 text-white font-bold py-3.5 rounded-lg shadow-lg uppercase text-xs tracking-wider transition">
