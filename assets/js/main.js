@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initCountdownTimer();
     initFormSubmissions();
     initNameValidation();
+    initEmailValidation();
     initGenericButtonHandlers();
     
     initServiceDetailsDynamic();
@@ -760,6 +761,77 @@ function initNameValidation() {
 }
 
 /* -------------------------------------------------------------------------- */
+/* 11.6 Email Field Validation Engine                                         */
+/* -------------------------------------------------------------------------- */
+function validateEmailField(input, showErrorToast = false) {
+    if (!input) return true;
+    const rawVal = input.value;
+    const value = rawVal.trim();
+    
+    // Check if required and empty
+    if (!value) {
+        if (input.hasAttribute('required')) {
+            const errorMsg = 'Please enter your email address.';
+            input.setCustomValidity(errorMsg);
+            if (showErrorToast) showToast('Missing Email', errorMsg, 'fa-circle-exclamation');
+            return false;
+        }
+        input.setCustomValidity('');
+        return true;
+    }
+    
+    // Check for spaces
+    if (/\s/.test(value)) {
+        const errorMsg = 'Email address cannot contain spaces.';
+        input.setCustomValidity(errorMsg);
+        if (showErrorToast) showToast('Invalid Email', errorMsg, 'fa-triangle-exclamation');
+        return false;
+    }
+    
+    // Check for @ symbol
+    if (!value.includes('@')) {
+        const errorMsg = 'Email address must include an "@" symbol.';
+        input.setCustomValidity(errorMsg);
+        if (showErrorToast) showToast('Invalid Email', errorMsg, 'fa-triangle-exclamation');
+        return false;
+    }
+    
+    // Strict RFC 5322 compatible regex with mandatory valid domain and TLD of at least 2 chars
+    // Rejects ice@g, user@domain, user@.com, user@domain..com
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (!emailRegex.test(value) || value.includes('..') || value.includes('@.') || value.startsWith('.')) {
+        const errorMsg = 'Please enter a valid email address with a domain (e.g. name@domain.com).';
+        input.setCustomValidity(errorMsg);
+        if (showErrorToast) showToast('Invalid Email', errorMsg, 'fa-triangle-exclamation');
+        return false;
+    }
+    
+    input.setCustomValidity('');
+    return true;
+}
+
+function initEmailValidation() {
+    const emailInputs = document.querySelectorAll('input[type="email"], input[name*="email"], input[id*="email"]');
+    emailInputs.forEach(input => {
+        if (!input.getAttribute('pattern')) {
+            input.setAttribute('pattern', '^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$');
+        }
+        input.setAttribute('title', 'Please enter a valid email address (e.g. name@domain.com)');
+        
+        input.addEventListener('input', () => {
+            validateEmailField(input, false);
+        });
+        
+        input.addEventListener('blur', () => {
+            validateEmailField(input, false);
+            if (!input.checkValidity() && input.value.trim().length > 0) {
+                input.reportValidity();
+            }
+        });
+    });
+}
+
+/* -------------------------------------------------------------------------- */
 /* 12. Form Submissions Engine                                                */
 /* -------------------------------------------------------------------------- */
 function initFormSubmissions() {
@@ -780,6 +852,16 @@ function initFormSubmissions() {
                 if (!validateNameField(nameInput, true)) {
                     nameInput.reportValidity();
                     nameInput.focus();
+                    return;
+                }
+            }
+            
+            // Validate all email fields in this form
+            const emailInputs = form.querySelectorAll('input[type="email"], input[name*="email"], input[id*="email"]');
+            for (const emailInput of emailInputs) {
+                if (!validateEmailField(emailInput, true)) {
+                    emailInput.reportValidity();
+                    emailInput.focus();
                     return;
                 }
             }

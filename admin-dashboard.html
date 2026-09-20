@@ -531,7 +531,7 @@
                 
                 <div>
                     <label class="block text-[10px] font-bold text-stone-500 uppercase tracking-wider mb-1.5">Email Address</label>
-                    <input type="email" class="w-full bg-stone-100 dark:bg-stone-800 border border-stone-200 dark:border-stone-700 text-stone-900 dark:text-white rounded-xl px-4 py-2.5 text-xs focus:outline-none focus:ring-2 focus:ring-amber-500" placeholder="sarah.m@axion.com">
+                    <input type="email" id="new-client-email" name="email" required pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" title="Please enter a valid email address (e.g. name@domain.com)" class="w-full bg-stone-100 dark:bg-stone-800 border border-stone-200 dark:border-stone-700 text-stone-900 dark:text-white rounded-xl px-4 py-2.5 text-xs focus:outline-none focus:ring-2 focus:ring-amber-500" placeholder="sarah.m@axion.com">
                 </div>
                 
                 <div class="grid grid-cols-2 gap-4">
@@ -578,6 +578,14 @@
                 if (typeof validateNameField === 'function' && !validateNameField(nameInput, true)) {
                     nameInput.reportValidity();
                     nameInput.focus();
+                    return;
+                }
+            }
+            const emailInput = document.getElementById('new-client-email');
+            if (emailInput) {
+                if (typeof validateEmailField === 'function' && !validateEmailField(emailInput, true)) {
+                    emailInput.reportValidity();
+                    emailInput.focus();
                     return;
                 }
             }
