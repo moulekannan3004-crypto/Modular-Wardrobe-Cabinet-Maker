@@ -173,38 +173,26 @@
                 <p class="text-xs text-stone-500 dark:text-stone-400 mt-1 font-medium">Enterprise Wardrobe & Cabinetry Management Platform</p>
             </div>
 
-            <!-- Role Segment Switcher Pill (Matching Referral Image) -->
-            <div class="bg-stone-100 dark:bg-stone-950 p-1.5 rounded-2xl border border-stone-200 dark:border-stone-800 flex items-center text-xs font-bold">
-                <button id="tab-user-login" class="w-1/2 py-2.5 rounded-xl transition-all flex items-center justify-center space-x-2 text-stone-500 dark:text-stone-400 hover:text-stone-900 dark:hover:text-white" onclick="switchLoginRole('user')">
-                    <i class="fa-solid fa-user text-xs"></i>
-                    <span>User Login</span>
-                </button>
-                <button id="tab-admin-login" class="w-1/2 py-2.5 rounded-xl bg-stone-900 dark:bg-stone-800 text-white shadow-md transition-all flex items-center justify-center space-x-2 border border-stone-700/80" onclick="switchLoginRole('admin')">
-                    <i class="fa-solid fa-shield-halved text-xs text-amber-500"></i>
-                    <span>Dashboard</span>
-                </button>
-            </div>
-
             <!-- Title & Status Badge Header -->
             <div>
-                <div class="flex justify-between items-start">
-                    <h2 id="login-title" class="text-xl sm:text-2xl font-black font-heading text-stone-900 dark:text-white">Dashboard / Admin Login</h2>
+                <div class="flex justify-between items-center">
+                    <h2 id="login-title" class="text-xl sm:text-2xl font-black font-heading text-stone-900 dark:text-white">Client Login</h2>
                     <span id="login-badge" class="px-3 py-1 rounded-full text-[10px] font-extrabold uppercase bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/20 whitespace-nowrap">
-                        SYSTEM ADMINISTRATOR
+                        CLIENT PORTAL
                     </span>
                 </div>
                 <p id="login-subtitle" class="text-xs text-stone-500 dark:text-stone-400 mt-1.5 leading-relaxed">
-                    Enter admin credentials to access platform dashboard
+                    Enter your credentials to access your project dashboard
                 </p>
             </div>
 
             <!-- Form Fields -->
-            <form id="login-form" action="admin-dashboard.html" method="GET" class="space-y-4 pt-1">
+            <form id="login-form" action="client-dashboard.html" method="GET" class="space-y-4 pt-1">
                 <div>
-                    <label id="label-email" class="block text-xs font-bold text-stone-700 dark:text-stone-300 mb-1.5">Corporate Work Email</label>
+                    <label id="label-email" class="block text-xs font-bold text-stone-700 dark:text-stone-300 mb-1.5">Email Address</label>
                     <div class="relative">
                         <i class="fa-solid fa-envelope absolute left-4 top-3.5 text-xs text-stone-400"></i>
-                        <input type="email" id="login-email" name="email" required pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" title="Please enter a valid email address (e.g. name@domain.com)" value="admin@modulariscabinets.com" class="w-full pl-10 pr-4 py-3 rounded-xl bg-stone-50 dark:bg-stone-950 border border-stone-200 dark:border-stone-800 text-xs text-stone-900 dark:text-white placeholder-stone-400 focus:outline-none focus:ring-2 focus:ring-amber-500 transition">
+                        <input type="email" id="login-email" name="email" required pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" title="Please enter a valid email address (e.g. name@domain.com)" value="client@modulariscabinets.com" placeholder="name@company.com" class="w-full pl-10 pr-4 py-3 rounded-xl bg-stone-50 dark:bg-stone-950 border border-stone-200 dark:border-stone-800 text-xs text-stone-900 dark:text-white placeholder-stone-400 focus:outline-none focus:ring-2 focus:ring-amber-500 transition">
                     </div>
                 </div>
 
@@ -227,7 +215,7 @@
                 </div>
 
                 <button type="submit" id="submit-btn" class="w-full bg-gradient-to-r from-amber-600 to-amber-500 hover:from-amber-500 hover:to-amber-600 text-white font-extrabold text-xs uppercase tracking-wider py-3.5 rounded-xl shadow-lg shadow-amber-600/25 hover:shadow-xl transition-all flex items-center justify-center space-x-2">
-                    <span id="submit-text">Sign In to Admin Dashboard</span>
+                    <span id="submit-text">Sign In to Client Portal</span>
                     <i class="fa-solid fa-arrow-right text-xs"></i>
                 </button>
             </form>
@@ -263,7 +251,7 @@
             <!-- Footer Links Inside Card -->
             <div class="pt-3 border-t border-stone-200 dark:border-stone-800 text-center space-y-3">
                 <div class="text-xs text-stone-500 dark:text-stone-400">
-                    Platform Security Access. <a href="register.html" class="text-amber-600 dark:text-amber-400 font-extrabold hover:underline">Register Company →</a>
+                    Don't have an account? <a href="register.html" class="text-amber-600 dark:text-amber-400 font-extrabold hover:underline">Register Account →</a>
                 </div>
                 <a href="index.html" class="text-stone-500 dark:text-stone-400 hover:text-amber-600 dark:hover:text-amber-400 text-xs font-semibold flex items-center justify-center space-x-1.5 transition">
                     <i class="fa-solid fa-house text-[11px]"></i>
@@ -343,37 +331,7 @@
     <script src="assets/js/main.js"></script>
     <script>
         function switchLoginRole(role) {
-            const userTab = document.getElementById('tab-user-login');
-            const adminTab = document.getElementById('tab-admin-login');
-            const form = document.getElementById('login-form');
-            const title = document.getElementById('login-title');
-            const badge = document.getElementById('login-badge');
-            const subtitle = document.getElementById('login-subtitle');
-            const emailInput = document.getElementById('login-email');
-            const labelEmail = document.getElementById('label-email');
-            const submitText = document.getElementById('submit-text');
-
-            if (role === 'admin') {
-                adminTab.className = "w-1/2 py-2.5 rounded-xl bg-stone-900 dark:bg-stone-800 text-white shadow-md transition-all flex items-center justify-center space-x-2 border border-stone-700/80";
-                userTab.className = "w-1/2 py-2.5 rounded-xl transition-all flex items-center justify-center space-x-2 text-stone-500 dark:text-stone-400 hover:text-stone-900 dark:hover:text-white";
-                title.textContent = "Dashboard / Admin Login";
-                badge.textContent = "SYSTEM ADMINISTRATOR";
-                subtitle.textContent = "Enter admin credentials to access platform dashboard";
-                labelEmail.textContent = "Corporate Work Email";
-                emailInput.value = "admin@modulariscabinets.com";
-                submitText.textContent = "Sign In to Admin Dashboard";
-                form.setAttribute('action', 'admin-dashboard.html');
-            } else {
-                userTab.className = "w-1/2 py-2.5 rounded-xl bg-amber-600 text-white shadow-md transition-all flex items-center justify-center space-x-2 border border-amber-500/40";
-                adminTab.className = "w-1/2 py-2.5 rounded-xl transition-all flex items-center justify-center space-x-2 text-stone-500 dark:text-stone-400 hover:text-stone-900 dark:hover:text-white";
-                title.textContent = "Client / User Login";
-                badge.textContent = "CLIENT PORTAL";
-                subtitle.textContent = "Enter your credentials to access your project dashboard";
-                labelEmail.textContent = "Client Email Address";
-                emailInput.value = "client@modulariscabinets.com";
-                submitText.textContent = "Sign In to Client Portal";
-                form.setAttribute('action', 'client-dashboard.html');
-            }
+            // Client portal login is primary
         }
 
         function openForgotPasswordModal(e) {
@@ -424,14 +382,6 @@
         }
 
         document.addEventListener('DOMContentLoaded', () => {
-            const urlParams = new URLSearchParams(window.location.search);
-            const role = urlParams.get('role');
-            if (role === 'user') {
-                switchLoginRole('user');
-            } else if (role === 'admin') {
-                switchLoginRole('admin');
-            }
-            
             document.addEventListener('keydown', (e) => {
                 if (e.key === 'Escape') closeForgotPasswordModal();
             });
