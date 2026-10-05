@@ -24,6 +24,71 @@
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body class="bg-gray-100 dark:bg-stone-950 text-gray-800 dark:text-gray-100 transition-colors duration-300 font-sans antialiased min-h-screen flex selection:bg-amber-500 selection:text-white">
+    <!-- Mobile Sidebar Drawer Backdrop (360px & 768px viewports) -->
+    <div id="client-sidebar-backdrop" onclick="closeClientSidebar()" class="fixed inset-0 bg-stone-950/70 backdrop-blur-sm z-50 hidden transition-opacity duration-300"></div>
+
+    <!-- Mobile Off-Canvas Sidebar Drawer -->
+    <aside id="client-sidebar-drawer" class="fixed inset-y-0 left-0 rtl:left-auto rtl:right-0 z-50 w-72 max-w-[85vw] bg-white dark:bg-stone-900 border-r rtl:border-l border-stone-200 dark:border-stone-800 shadow-2xl p-6 flex flex-col justify-between transform -translate-x-full rtl:translate-x-full transition-transform duration-300 ease-in-out lg:hidden overflow-y-auto">
+        <div class="space-y-6">
+            <!-- Mobile Drawer Header with Close Button -->
+            <div class="flex items-center justify-between pb-4 border-b border-stone-200 dark:border-stone-800">
+                <a href="index.html" class="flex items-center space-x-2.5 rtl:space-x-reverse">
+                    <div class="w-8 h-8 bg-amber-600 rounded-xl flex items-center justify-center text-white font-bold shadow-md shadow-amber-600/30">
+                        <i class="fa-solid fa-user-gear text-base"></i>
+                    </div>
+                    <span class="text-base font-black font-heading tracking-wider text-stone-900 dark:text-amber-400">CLIENT.MODULARIS</span>
+                </a>
+                <button type="button" onclick="closeClientSidebar()" class="w-9 h-9 rounded-xl border border-stone-200 dark:border-stone-700 bg-stone-100 dark:bg-stone-800 text-stone-500 hover:text-stone-900 dark:hover:text-white flex items-center justify-center transition" aria-label="Close Sidebar">
+                    <i class="fa-solid fa-xmark text-sm"></i>
+                </button>
+            </div>
+
+            <!-- Navigation Menu inside Drawer -->
+            <nav class="space-y-1.5 text-xs font-bold">
+                <button class="dashboard-tab-btn-mobile w-full flex items-center space-x-3 px-4 py-3 rounded-2xl transition text-left bg-amber-600 text-white" data-tab="tab-overview" onclick="switchClientTabMobile('tab-overview')">
+                    <i class="fa-solid fa-gauge text-sm"></i>
+                    <span>Overview</span>
+                </button>
+                <button class="dashboard-tab-btn-mobile w-full flex items-center space-x-3 px-4 py-3 rounded-2xl transition text-left text-stone-600 dark:text-stone-400 hover:bg-stone-100 dark:hover:bg-stone-800 hover:text-amber-600 dark:hover:text-amber-400" data-tab="tab-submit-req" onclick="switchClientTabMobile('tab-submit-req')">
+                    <i class="fa-solid fa-ruler-combined text-sm"></i>
+                    <span>Submit Requirements</span>
+                </button>
+                <button class="dashboard-tab-btn-mobile w-full flex items-center space-x-3 px-4 py-3 rounded-2xl transition text-left text-stone-600 dark:text-stone-400 hover:bg-stone-100 dark:hover:bg-stone-800 hover:text-amber-600 dark:hover:text-amber-400" data-tab="tab-3d-proposals" onclick="switchClientTabMobile('tab-3d-proposals')">
+                    <i class="fa-solid fa-cube text-sm"></i>
+                    <span>3D Proposals</span>
+                </button>
+                <button class="dashboard-tab-btn-mobile w-full flex items-center space-x-3 px-4 py-3 rounded-2xl transition text-left text-stone-600 dark:text-stone-400 hover:bg-stone-100 dark:hover:bg-stone-800 hover:text-amber-600 dark:hover:text-amber-400" data-tab="tab-track-order" onclick="switchClientTabMobile('tab-track-order')">
+                    <i class="fa-solid fa-industry text-sm"></i>
+                    <span>Track Production</span>
+                </button>
+                <button class="dashboard-tab-btn-mobile w-full flex items-center space-x-3 px-4 py-3 rounded-2xl transition text-left text-stone-600 dark:text-stone-400 hover:bg-stone-100 dark:hover:bg-stone-800 hover:text-amber-600 dark:hover:text-amber-400" data-tab="tab-installation" onclick="switchClientTabMobile('tab-installation')">
+                    <i class="fa-solid fa-calendar-check text-sm"></i>
+                    <span>Installation Schedule</span>
+                </button>
+                <button class="dashboard-tab-btn-mobile w-full flex items-center space-x-3 px-4 py-3 rounded-2xl transition text-left text-stone-600 dark:text-stone-400 hover:bg-stone-100 dark:hover:bg-stone-800 hover:text-amber-600 dark:hover:text-amber-400" data-tab="tab-payments" onclick="switchClientTabMobile('tab-payments')">
+                    <i class="fa-solid fa-credit-card text-sm"></i>
+                    <span>Payment Milestones</span>
+                </button>
+                <button class="dashboard-tab-btn-mobile w-full flex items-center space-x-3 px-4 py-3 rounded-2xl transition text-left text-stone-600 dark:text-stone-400 hover:bg-stone-100 dark:hover:bg-stone-800 hover:text-amber-600 dark:hover:text-amber-400" data-tab="tab-warranty" onclick="switchClientTabMobile('tab-warranty')">
+                    <i class="fa-solid fa-shield-check text-sm"></i>
+                    <span>Warranty &amp; Care</span>
+                </button>
+            </nav>
+        </div>
+
+        <!-- Sidebar Actions -->
+        <div class="pt-6 border-t border-stone-200 dark:border-stone-800 space-y-2">
+            <a href="index.html" class="w-full inline-flex items-center justify-center space-x-2 py-3 px-4 rounded-2xl border border-stone-200 dark:border-stone-700 text-stone-700 dark:text-stone-300 hover:bg-stone-50 dark:hover:bg-stone-800 text-xs font-bold transition">
+                <i class="fa-solid fa-arrow-left text-xs rtl:rotate-180"></i>
+                <span>Back to Website</span>
+            </a>
+            <a href="login.html" class="w-full inline-flex items-center justify-center space-x-2 py-3 px-4 rounded-2xl border border-red-200 dark:border-red-500/30 text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-950/30 text-xs font-bold transition">
+                <i class="fa-solid fa-right-from-bracket text-xs"></i>
+                <span>Logout Portal</span>
+            </a>
+        </div>
+    </aside>
+
 
     <!-- Left Client Sidebar (Matching Referral Layout) -->
     <aside class="w-64 bg-white dark:bg-stone-900 border-r border-stone-200 dark:border-stone-800 hidden lg:flex flex-col justify-between p-6 shrink-0 min-h-screen sticky top-0 h-screen">
@@ -107,7 +172,7 @@
                 <div class="flex items-center space-x-2 sm:space-x-3 rtl:space-x-reverse w-full sm:w-auto justify-end">
                     
                     <!-- Mobile Sidebar Toggle -->
-                    <button class="lg:hidden w-10 h-10 rounded-2xl border border-stone-200 dark:border-stone-700 bg-white dark:bg-stone-800 flex items-center justify-center text-stone-600 dark:text-stone-300 shadow-sm focus:outline-none transition hover:border-amber-500">
+                    <button id="client-sidebar-toggle" type="button" onclick="toggleClientSidebar()" class="lg:hidden w-10 h-10 rounded-2xl border border-stone-200 dark:border-stone-700 bg-white dark:bg-stone-800 flex items-center justify-center text-stone-600 dark:text-stone-300 shadow-sm focus:outline-none transition hover:border-amber-500 active:scale-95" aria-label="Toggle Navigation Sidebar">
                         <i class="fa-solid fa-bars text-sm"></i>
                     </button>
 
@@ -373,6 +438,77 @@
         </div>
     </footer>
     </div>
+
+
+    <script>
+        function openClientSidebar() {
+            const drawer = document.getElementById('client-sidebar-drawer');
+            const backdrop = document.getElementById('client-sidebar-backdrop');
+            if (drawer && backdrop) {
+                backdrop.classList.remove('hidden');
+                drawer.classList.remove('-translate-x-full', 'rtl:translate-x-full');
+                drawer.classList.add('translate-x-0');
+                document.body.classList.add('overflow-hidden');
+            }
+        }
+
+        function closeClientSidebar() {
+            const drawer = document.getElementById('client-sidebar-drawer');
+            const backdrop = document.getElementById('client-sidebar-backdrop');
+            if (drawer && backdrop) {
+                backdrop.classList.add('hidden');
+                drawer.classList.add('-translate-x-full', 'rtl:translate-x-full');
+                drawer.classList.remove('translate-x-0');
+                document.body.classList.remove('overflow-hidden');
+            }
+        }
+
+        function toggleClientSidebar() {
+            const drawer = document.getElementById('client-sidebar-drawer');
+            if (!drawer) return;
+            const isClosed = drawer.classList.contains('-translate-x-full') || drawer.classList.contains('rtl:translate-x-full');
+            if (isClosed) {
+                openClientSidebar();
+            } else {
+                closeClientSidebar();
+            }
+        }
+
+        function switchClientTabMobile(tabId) {
+            const targetBtn = document.querySelector(`.dashboard-tab-btn[data-tab="${tabId}"]`);
+            if (targetBtn) {
+                targetBtn.click();
+            } else {
+                const panes = document.querySelectorAll('.dashboard-tab-pane');
+                panes.forEach(p => {
+                    if (p.id === tabId) p.classList.remove('hidden');
+                    else p.classList.add('hidden');
+                });
+            }
+            const mobileBtns = document.querySelectorAll('.dashboard-tab-btn-mobile');
+            mobileBtns.forEach(btn => {
+                const isActive = btn.getAttribute('data-tab') === tabId;
+                if (isActive) {
+                    btn.className = 'dashboard-tab-btn-mobile w-full flex items-center space-x-3 px-4 py-3 rounded-2xl transition text-left bg-amber-600 text-white';
+                } else {
+                    btn.className = 'dashboard-tab-btn-mobile w-full flex items-center space-x-3 px-4 py-3 rounded-2xl transition text-left text-stone-600 dark:text-stone-400 hover:bg-stone-100 dark:hover:bg-stone-800 hover:text-amber-600 dark:hover:text-amber-400';
+                }
+            });
+            closeClientSidebar();
+        }
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth >= 1024) {
+                closeClientSidebar();
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeClientSidebar();
+            }
+        });
+    </script>
 
     <script src="assets/js/main.js"></script>
 </body>

@@ -24,6 +24,63 @@
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body class="bg-gray-100 dark:bg-stone-950 text-gray-800 dark:text-gray-100 transition-colors duration-300 font-sans antialiased min-h-screen flex selection:bg-amber-500 selection:text-white">
+    <!-- Mobile Sidebar Drawer Backdrop (360px & 768px viewports) -->
+    <div id="admin-sidebar-backdrop" onclick="closeAdminSidebar()" class="fixed inset-0 bg-stone-950/70 backdrop-blur-sm z-50 hidden transition-opacity duration-300"></div>
+
+    <!-- Mobile Off-Canvas Sidebar Drawer -->
+    <aside id="admin-sidebar-drawer" class="fixed inset-y-0 left-0 rtl:left-auto rtl:right-0 z-50 w-72 max-w-[85vw] bg-white dark:bg-stone-900 border-r rtl:border-l border-stone-200 dark:border-stone-800 shadow-2xl p-6 flex flex-col justify-between transform -translate-x-full rtl:translate-x-full transition-transform duration-300 ease-in-out lg:hidden overflow-y-auto">
+        <div class="space-y-6">
+            <!-- Mobile Drawer Header with Close Button -->
+            <div class="flex items-center justify-between pb-4 border-b border-stone-200 dark:border-stone-800">
+                <a href="index.html" class="flex items-center space-x-2.5 rtl:space-x-reverse">
+                    <div class="w-8 h-8 bg-amber-600 rounded-xl flex items-center justify-center text-white font-bold shadow-md shadow-amber-600/30">
+                        <i class="fa-solid fa-shield-halved text-base"></i>
+                    </div>
+                    <span class="text-base font-black font-heading tracking-wider text-stone-900 dark:text-amber-400">ADMIN.MODULARIS</span>
+                </a>
+                <button type="button" onclick="closeAdminSidebar()" class="w-9 h-9 rounded-xl border border-stone-200 dark:border-stone-700 bg-stone-100 dark:bg-stone-800 text-stone-500 hover:text-stone-900 dark:hover:text-white flex items-center justify-center transition" aria-label="Close Sidebar">
+                    <i class="fa-solid fa-xmark text-sm"></i>
+                </button>
+            </div>
+
+            <!-- Vertical Navigation Menu -->
+            <nav class="space-y-2 text-xs font-bold">
+                <button data-tab="dashboard" onclick="switchTabMobile('dashboard')" class="admin-nav-link-mobile w-full text-left flex items-center space-x-3 px-4 py-3 rounded-2xl bg-amber-100 dark:bg-amber-500/20 text-amber-700 dark:text-amber-400 transition">
+                    <i class="fa-solid fa-gauge text-sm"></i>
+                    <span>Dashboard</span>
+                </button>
+                <button data-tab="analytics" onclick="switchTabMobile('analytics')" class="admin-nav-link-mobile w-full text-left flex items-center space-x-3 px-4 py-3 rounded-2xl text-stone-600 dark:text-stone-400 hover:bg-stone-100 dark:hover:bg-stone-800 hover:text-amber-600 dark:hover:text-amber-400 transition">
+                    <i class="fa-solid fa-chart-line text-sm"></i>
+                    <span>Revenue Analytics</span>
+                </button>
+                <button data-tab="users" onclick="switchTabMobile('users')" class="admin-nav-link-mobile w-full text-left flex items-center space-x-3 px-4 py-3 rounded-2xl text-stone-600 dark:text-stone-400 hover:bg-stone-100 dark:hover:bg-stone-800 hover:text-amber-600 dark:hover:text-amber-400 transition">
+                    <i class="fa-solid fa-users text-sm"></i>
+                    <span>Client Users</span>
+                </button>
+                <button data-tab="orders" onclick="switchTabMobile('orders')" class="admin-nav-link-mobile w-full text-left flex items-center space-x-3 px-4 py-3 rounded-2xl text-stone-600 dark:text-stone-400 hover:bg-stone-100 dark:hover:bg-stone-800 hover:text-amber-600 dark:hover:text-amber-400 transition">
+                    <i class="fa-solid fa-box-archive text-sm"></i>
+                    <span>Order Manager</span>
+                </button>
+                <button data-tab="support" onclick="switchTabMobile('support')" class="admin-nav-link-mobile w-full text-left flex items-center space-x-3 px-4 py-3 rounded-2xl text-stone-600 dark:text-stone-400 hover:bg-stone-100 dark:hover:bg-stone-800 hover:text-amber-600 dark:hover:text-amber-400 transition">
+                    <i class="fa-solid fa-comments text-sm"></i>
+                    <span>Messages &amp; Support</span>
+                </button>
+            </nav>
+        </div>
+
+        <!-- Sidebar Actions -->
+        <div class="pt-6 border-t border-stone-200 dark:border-stone-800 space-y-2">
+            <a href="index.html" class="w-full inline-flex items-center justify-center space-x-2 py-3 px-4 rounded-2xl border border-stone-200 dark:border-stone-700 text-stone-700 dark:text-stone-300 hover:bg-stone-50 dark:hover:bg-stone-800 text-xs font-bold transition">
+                <i class="fa-solid fa-arrow-left text-xs rtl:rotate-180"></i>
+                <span>Back to Website</span>
+            </a>
+            <a href="login.html" class="w-full inline-flex items-center justify-center space-x-2 py-3 px-4 rounded-2xl border border-red-200 dark:border-red-500/30 text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-950/30 text-xs font-bold transition">
+                <i class="fa-solid fa-right-from-bracket text-xs"></i>
+                <span>Logout Dashboard</span>
+            </a>
+        </div>
+    </aside>
+
 
     <!-- Left Admin Sidebar (Matching Referral Layout) -->
     <aside class="w-64 bg-white dark:bg-stone-900 border-r border-stone-200 dark:border-stone-800 hidden lg:flex flex-col justify-between p-6 shrink-0 min-h-screen sticky top-0 h-screen">
@@ -93,7 +150,7 @@
                 <div class="flex items-center space-x-2 sm:space-x-3 rtl:space-x-reverse w-full sm:w-auto justify-end">
                     
                     <!-- Mobile Sidebar Toggle -->
-                    <button class="lg:hidden w-10 h-10 rounded-2xl border border-stone-200 dark:border-stone-700 bg-white dark:bg-stone-800 flex items-center justify-center text-stone-600 dark:text-stone-300 shadow-sm focus:outline-none transition hover:border-indigo-500">
+                    <button id="admin-sidebar-toggle" type="button" onclick="toggleAdminSidebar()" class="lg:hidden w-10 h-10 rounded-2xl border border-stone-200 dark:border-stone-700 bg-white dark:bg-stone-800 flex items-center justify-center text-stone-600 dark:text-stone-300 shadow-sm focus:outline-none transition hover:border-amber-500 active:scale-95" aria-label="Toggle Navigation Sidebar">
                         <i class="fa-solid fa-bars text-sm"></i>
                     </button>
 
@@ -525,7 +582,68 @@
                 const panels = document.querySelectorAll('.tab-panel');
                 const navLinks = document.querySelectorAll('.admin-nav-link');
 
-                function switchTab(tab) {
+                
+        function openAdminSidebar() {
+            const drawer = document.getElementById('admin-sidebar-drawer');
+            const backdrop = document.getElementById('admin-sidebar-backdrop');
+            if (drawer && backdrop) {
+                backdrop.classList.remove('hidden');
+                drawer.classList.remove('-translate-x-full', 'rtl:translate-x-full');
+                drawer.classList.add('translate-x-0');
+                document.body.classList.add('overflow-hidden');
+            }
+        }
+
+        function closeAdminSidebar() {
+            const drawer = document.getElementById('admin-sidebar-drawer');
+            const backdrop = document.getElementById('admin-sidebar-backdrop');
+            if (drawer && backdrop) {
+                backdrop.classList.add('hidden');
+                drawer.classList.add('-translate-x-full', 'rtl:translate-x-full');
+                drawer.classList.remove('translate-x-0');
+                document.body.classList.remove('overflow-hidden');
+            }
+        }
+
+        function toggleAdminSidebar() {
+            const drawer = document.getElementById('admin-sidebar-drawer');
+            if (!drawer) return;
+            const isClosed = drawer.classList.contains('-translate-x-full') || drawer.classList.contains('rtl:translate-x-full');
+            if (isClosed) {
+                openAdminSidebar();
+            } else {
+                closeAdminSidebar();
+            }
+        }
+
+        function switchTabMobile(tab) {
+            switchTab(tab);
+            closeAdminSidebar();
+            const mobileLinks = document.querySelectorAll('.admin-nav-link-mobile');
+            mobileLinks.forEach(link => {
+                const isActive = link.dataset.tab === tab;
+                link.classList.toggle('bg-amber-100', isActive);
+                link.classList.toggle('dark:bg-amber-500/20', isActive);
+                link.classList.toggle('text-amber-700', isActive);
+                link.classList.toggle('dark:text-amber-400', isActive);
+                link.classList.toggle('text-stone-600', !isActive);
+                link.classList.toggle('dark:text-stone-400', !isActive);
+            });
+        }
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth >= 1024) {
+                closeAdminSidebar();
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeAdminSidebar();
+            }
+        });
+
+        function switchTab(tab) {
                     // Hide all panels
                     panels.forEach(p => p.classList.add('hidden'));
                     // Show target panel
