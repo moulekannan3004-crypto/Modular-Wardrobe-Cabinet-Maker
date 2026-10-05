@@ -129,19 +129,50 @@
 
             <!-- ===== PANEL: DASHBOARD ===== -->
             <div id="panel-dashboard" class="tab-panel space-y-8">
-                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
-                    <div>
-                        <span class="inline-flex items-center text-[10px] font-black uppercase tracking-wider text-green-600 dark:text-green-400 bg-green-500/10 border border-green-500/20 px-3 py-1 rounded-full mb-2">
-                            <span class="w-1.5 h-1.5 rounded-full bg-green-500 mr-2 animate-pulse"></span>
-                            SYSTEM STATUS: 99.98% SLA ONLINE
-                        </span>
-                        <h1 class="text-3xl font-black font-heading text-stone-900 dark:text-white">Admin Command Center</h1>
-                        <p class="text-xs text-stone-500 dark:text-stone-400 mt-1">Corporate procurement, live 5-axis CNC production telemetry, and revenue analytics.</p>
+                <!-- Executive Welcome Greeting Banner -->
+                <div class="bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 p-6 sm:p-8 rounded-3xl shadow-sm relative overflow-hidden transition-colors duration-300">
+                    <div class="absolute -right-8 -bottom-8 w-60 h-60 bg-amber-500/5 dark:bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
+                    
+                    <div class="relative z-10 flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6">
+                        <div class="space-y-3">
+                            <!-- System & Admin Badges -->
+                            <div class="flex flex-wrap items-center gap-2.5">
+                                <span class="inline-flex items-center text-[10px] font-black uppercase tracking-wider text-green-600 dark:text-green-400 bg-green-500/10 border border-green-500/20 px-3 py-1 rounded-full">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-green-500 mr-2 animate-pulse"></span>
+                                    SYSTEM STATUS: 99.98% SLA ONLINE
+                                </span>
+                                <span class="inline-flex items-center text-[10px] font-bold uppercase tracking-wider text-amber-700 dark:text-amber-400 bg-amber-500/10 border border-amber-500/20 px-3 py-1 rounded-full">
+                                    <i class="fa-solid fa-shield-halved mr-1.5 text-xs"></i> Master Administrator
+                                </span>
+                                <span class="hidden sm:inline-flex items-center text-[10px] font-semibold text-stone-500 dark:text-stone-400 bg-stone-100 dark:bg-stone-800 border border-stone-200 dark:border-stone-700 px-3 py-1 rounded-full">
+                                    <i class="fa-regular fa-calendar mr-1.5 text-amber-500"></i> <span id="admin-live-date">Tuesday, October 6, 2026</span>
+                                </span>
+                            </div>
+
+                            <!-- Welcome Header & Proper Descriptive Text -->
+                            <div>
+                                <h1 class="text-2xl sm:text-3xl lg:text-4xl font-black font-heading text-stone-900 dark:text-white flex items-center gap-2 sm:gap-3">
+                                    <span id="admin-welcome-greeting">Welcome back, Henrik Vance</span>
+                                    <span class="text-2xl sm:text-3xl inline-block transform hover:rotate-12 transition-transform cursor-default">👋</span>
+                                </h1>
+                                <p class="text-xs sm:text-sm text-stone-600 dark:text-stone-300 mt-2 max-w-3xl leading-relaxed">
+                                    Welcome to your <strong>MODULARIS Operations Command Center</strong>. Here is your daily operational briefing across custom wardrobe engineering pipelines, active client orders, CNC milling telemetry, and real-time revenue analytics. All 4 regional fabrication hubs are currently synchronized and running at full capacity.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Action Controls -->
+                        <div class="flex flex-wrap items-center gap-3 shrink-0 w-full sm:w-auto">
+                            <button onclick="switchTab('orders')" class="flex-1 sm:flex-initial inline-flex items-center justify-center space-x-2 bg-gradient-to-r from-amber-600 to-amber-500 hover:from-amber-500 hover:to-amber-600 text-white text-xs font-bold uppercase tracking-wider px-5 py-3 rounded-2xl shadow-md shadow-amber-600/25 hover:shadow-lg transition transform hover:-translate-y-0.5 active:translate-y-0">
+                                <i class="fa-solid fa-plus text-xs"></i>
+                                <span>Create Order</span>
+                            </button>
+                            <button onclick="switchTab('analytics')" class="flex-1 sm:flex-initial inline-flex items-center justify-center space-x-2 bg-stone-100 dark:bg-stone-800 hover:bg-stone-200 dark:hover:bg-stone-700 text-stone-700 dark:text-stone-200 text-xs font-bold uppercase tracking-wider px-5 py-3 rounded-2xl border border-stone-200 dark:border-stone-700 transition">
+                                <i class="fa-solid fa-chart-pie text-xs text-amber-500"></i>
+                                <span>Analytics</span>
+                            </button>
+                        </div>
                     </div>
-                    <button onclick="switchTab('analytics')" class="bg-gradient-to-r from-amber-600 to-amber-500 hover:from-amber-500 hover:to-amber-600 text-white text-xs font-bold uppercase tracking-wider px-5 py-2.5 rounded-full shadow-md shadow-amber-600/25 hover:shadow-lg transition flex items-center space-x-2">
-                        <i class="fa-solid fa-plus text-xs"></i>
-                        <span>New Order</span>
-                    </button>
                 </div>
 
                 <!-- 4 KPI Metrics Row -->
@@ -602,6 +633,26 @@
             closeAddClientModal();
             showToast('Success', 'New client account created successfully.', 'fa-check');
         }
+
+        // Dynamic greeting and date for Admin Dashboard
+        document.addEventListener('DOMContentLoaded', () => {
+            const greetingEl = document.getElementById('admin-welcome-greeting');
+            if (greetingEl) {
+                const hour = new Date().getHours();
+                let timeGreeting = 'Welcome back';
+                if (hour < 12) timeGreeting = 'Good morning';
+                else if (hour < 18) timeGreeting = 'Good afternoon';
+                else timeGreeting = 'Good evening';
+                greetingEl.textContent = `${timeGreeting}, Henrik Vance`;
+            }
+
+            const dateEl = document.getElementById('admin-live-date');
+            if (dateEl) {
+                const now = new Date();
+                const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+                dateEl.textContent = now.toLocaleDateString('en-US', options);
+            }
+        });
     </script>
 
     <script src="assets/js/main.js"></script>
