@@ -218,17 +218,97 @@
             const titleEl = document.getElementById('service-banner-title');
             const descEl = document.getElementById('service-banner-desc');
             const headingEl = document.getElementById('service-main-heading');
+            const mainTextEl = document.getElementById('service-main-text');
+            const imgEl = document.getElementById('service-main-img');
+
             const serviceData = {
-                wardrobes: { img: 'assets/custom-wardrobes.png', title: 'Custom Wardrobes', desc: 'Floor-to-ceiling sliding and hinged wardrobe configurations with internal organizing trays.', heading: 'Bespoke Custom Wardrobe Solutions' },
-                bedroom:   { img: 'assets/bedroom-storage.png',  title: 'Bedroom Storage',  desc: 'Integrated bed backrest storage, floating nightstands, and dressing table units.',          heading: 'Smart Bedroom Storage Systems' }
+                wardrobes: {
+                    img: 'assets/custom-wardrobes.png',
+                    title: 'Modular Hinged & Sliding Wardrobes',
+                    desc: 'Precision factory-built modular carcasses with 110°/165° Blum soft-close hinges, overhead lofts, and top-hung silent tracks.',
+                    heading: 'Factory-Manufactured Modular Wardrobe Solutions',
+                    text: 'Our modular wardrobe manufacturing service replaces noisy on-site carpentry with automated 5-axis CNC precision joinery. Every carcass is crafted from 18mm HDHMR (High Density High Moisture Resistance) with zero-joint industrial PUR edge-banding. Available in hinged swing configurations, top-hung sliding doors, or overhead loft extensions.'
+                },
+                sliding: {
+                    img: 'assets/custom-wardrobes.png',
+                    title: 'Top-Hung Sliding Wardrobes',
+                    desc: 'Concealed ceiling-hung sliding mechanisms with bidirectional soft-dampers and anti-dust brush perimeter seals.',
+                    heading: 'Silent Glide Sliding Door Systems',
+                    text: 'Engineered for smooth, effortless operation with zero bottom-floor track tripping hazards. Featuring German-engineered top-hung rollers rated for 80kg per door leaf, bidirectional hydraulic soft-close braking, and aluminum anti-warp stiffener bars integrated inside every shutter.'
+                },
+                walkin: {
+                    img: 'assets/bespoke-walk-in-suites.png',
+                    title: 'Walk-In Dressing Suites & Island Storage',
+                    desc: 'Architectural dressing rooms featuring central jewelry island chests, tempered glass display vitrines, and sensor LED lighting.',
+                    heading: 'Bespoke Master Walk-In Dressing Suites',
+                    text: 'Designed as personal luxury boutiques, our walk-in wardrobe suites integrate central accessory islands with velvet-lined watch and ring trays, anodized bronze aluminum glass vitrines, motion-triggered warm 3000K LED hanging bays, and concealed security safes.'
+                },
+                alcove: {
+                    img: 'assets/custom-wardrobes.png',
+                    title: 'Floor-to-Ceiling Scribed Alcove Wardrobes',
+                    desc: 'Wall-to-wall scribed cabinetry with zero gaps, compensating for uneven ceiling lines and architectural recesses.',
+                    heading: 'Precision Scribed Alcove Joinery',
+                    text: 'Eliminate awkward recessed spaces and irregular wall deviations. Our 3D laser audit maps wall irregularities to within 0.5mm, producing precision-scribed filler panels and continuous floor-to-ceiling storage that looks built directly into the home architecture.'
+                },
+                kitchen: {
+                    img: 'assets/luxury-kitchen-cabinetry.png',
+                    title: 'Custom Modular Kitchen Cabinetry',
+                    desc: '100% Boiling Water Proof (BWP) Marine ply carcasses, Blum Tandembox drawer runners, and pull-out pantry larders.',
+                    heading: 'Ergonomic Factory-Engineered Modular Kitchens',
+                    text: 'Built to withstand lifetime kitchen demands with high-temperature resistance and zero moisture swelling. Base sink units are fabricated using 100% Boiling Water Proof (BWP) Marine Grade plywood with PUR edge sealing, paired with Austrian Blum soft-close tandembox drawers and heavy-duty pantry larder mechanisms.'
+                },
+                bedroom: {
+                    img: 'assets/bedroom-storage.png',
+                    title: 'Living & Bedroom Custom Cabinetry',
+                    desc: 'Floating entertainment TV consoles, acoustic fluted feature panels, and bedside storage joinery.',
+                    heading: 'Bespoke Living & Bedroom Storage Architecture',
+                    text: 'Custom manufactured living room and bedroom cabinetry engineered with concealed wall cleats, integrated cable management chases, acoustic fluted wall panels, and matching floating bedside consoles.'
+                },
+                entertainment: {
+                    img: 'assets/bedroom-storage.png',
+                    title: 'Living Room TV Consoles & Media Joinery',
+                    desc: 'Floating lowboy entertainment consoles, acoustic fluted wood slats, and concealed cable infrastructure.',
+                    heading: 'Architectural Media Consoles & Living Joinery',
+                    text: 'Sleek, handleless floating media consoles engineered with high-weight wall suspension brackets, ventilated amplifier cabinets, and concealed channel tracks for seamless AV wire routing.'
+                },
+                vanity: {
+                    img: 'assets/luxury-kitchen-cabinetry.png',
+                    title: 'Moisture-Sealed Bathroom Vanities',
+                    desc: 'BWP Marine plywood floating vanity cabinets with zero-joint PUR edge protection against steam and water exposure.',
+                    heading: 'Luxury Waterproof Bathroom Vanity Systems',
+                    text: 'Manufactured exclusively with BWP Marine Grade Plywood and industrial PUR hot-melt edge-banding, our custom vanities provide 100% immunity to bathroom steam, water pooling, and humidity-induced delamination.'
+                },
+                'accessory-jewelry': {
+                    img: 'assets/italian-velvet-jewelry-trays.jpg',
+                    title: 'Italian Velvet Jewelry & Watch Trays',
+                    desc: 'Velvet-lined partitioned jewelry drawers with optional biometric fingerprint locks and anti-tarnish fabric.',
+                    heading: 'Precision Internal Wardrobe Accessories: Jewelry Vitrines',
+                    text: 'Handcrafted drawer inserts partitioned for luxury watches, rings, cufflinks, necklaces, and eyewear. Lined with imported Italian microfiber velvet with optional biometric fingerprint locking drawer systems.'
+                },
+                'accessory-hydraulic': {
+                    img: 'assets/hydraulic-pull-down-rods.png',
+                    title: 'Hydraulic Gas-Lift Pull-Down Wardrobe Rods',
+                    desc: 'Ergonomic gas-lift mechanism capable of holding up to 15kg of hanging suits, lowering effortlessly to arm level.',
+                    heading: 'Ergonomic High-Reach Pull-Down Hanging Rods',
+                    text: 'Utilize upper loft storage without awkward ladders. German hydraulic gas-springs smoothly lower upper clothing rails to arm height with automatic dampening during both downward pull and return release.'
+                },
+                'accessory-shoes': {
+                    img: 'assets/sliding-angled-shoe-islands.png',
+                    title: 'Sliding Angled Illuminated Shoe Shelves',
+                    desc: '45-degree angled shoe display shelves with heel-stop barriers and warm 3000K LED perimeter lighting.',
+                    heading: 'Gallery-Grade Sliding Shoe Island Shelves',
+                    text: 'Showcase your footwear collection in boutique gallery style. Full-extension undermount concealed slides with soft-close motion and 45-degree angled shelves provide effortless visibility for up to 60 pairs.'
+                }
             };
+
             if (service && serviceData[service]) {
                 const d = serviceData[service];
-                const imgEl = document.getElementById('service-main-img');
-                if (imgEl)     { imgEl.src = d.img; imgEl.alt = d.title; }
-                if (titleEl)   titleEl.textContent = d.title;
-                if (descEl)    descEl.textContent  = d.desc;
+                if (imgEl) { imgEl.src = d.img; imgEl.alt = d.title; }
+                if (titleEl) titleEl.textContent = d.title;
+                if (descEl) descEl.textContent = d.desc;
                 if (headingEl) headingEl.textContent = d.heading;
+                if (mainTextEl && d.text) mainTextEl.textContent = d.text;
+                document.title = d.title + ' | MODULARIS Joinery';
             }
         });
     </script>
