@@ -161,248 +161,727 @@
     </header>
 
     <!-- Page Header Banner -->
-    <section class="bg-stone-900 text-white py-16 text-center">
-        <span class="text-xs font-bold text-amber-400 uppercase tracking-widest block mb-2">Transparent Investment</span>
-        <h1 class="text-4xl font-bold font-heading">Pricing Packages & Estimator</h1>
-        <p class="text-stone-400 text-sm mt-2 max-w-xl mx-auto">No hidden fees. Choose a standardized modular package or calculate a custom project quote instantly.</p>
+    <section class="bg-stone-900 text-white py-16 sm:py-20 text-center relative overflow-hidden border-b border-stone-800">
+        <div class="absolute inset-0 bg-gradient-to-b from-stone-950/80 via-stone-900/60 to-stone-900 pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <span class="text-xs font-bold text-amber-400 uppercase tracking-widest block mb-2">Transparent Investment &amp; Price Catalog</span>
+            <h1 class="text-3xl sm:text-5xl font-extrabold font-heading text-white">Pricing by Products &amp; Services Offered</h1>
+            <p class="text-stone-300 text-xs sm:text-base mt-4 max-w-2xl mx-auto leading-relaxed">Direct-from-factory pricing across all 10 modular interior domains. Calculate real-time estimates with our multi-product estimator, review standardized product rate cards, or explore turn-key whole-home packages with zero hidden fees.</p>
+            
+            <div class="flex flex-wrap justify-center gap-2 sm:gap-3 mt-8 text-[11px] sm:text-xs font-bold">
+                <span class="bg-amber-500/10 border border-amber-500/30 text-amber-400 px-3.5 py-1.5 rounded-full flex items-center gap-1.5"><i class="fa-solid fa-receipt"></i> Itemized Rate Cards</span>
+                <span class="bg-amber-500/10 border border-amber-500/30 text-amber-400 px-3.5 py-1.5 rounded-full flex items-center gap-1.5"><i class="fa-solid fa-calculator"></i> Multi-Product Estimator</span>
+                <span class="bg-amber-500/10 border border-amber-500/30 text-amber-400 px-3.5 py-1.5 rounded-full flex items-center gap-1.5"><i class="fa-solid fa-screwdriver-wrench"></i> Turn-Key 48h Assembly Included</span>
+                <span class="bg-amber-500/10 border border-amber-500/30 text-amber-400 px-3.5 py-1.5 rounded-full flex items-center gap-1.5"><i class="fa-solid fa-shield-check"></i> 10-Year Factory Warranty</span>
+            </div>
+        </div>
     </section>
 
-    <!-- Interactive Instant Cost Estimator Calculator Tool -->
-    <section class="py-16 bg-white dark:bg-stone-900 border-b border-gray-200 dark:border-stone-800">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-stone-950 text-white p-8 rounded-3xl border border-stone-800 shadow-2xl">
-                <div class="text-center mb-8">
-                    <span class="bg-amber-500/10 text-amber-400 border border-amber-500/20 text-[10px] uppercase font-bold px-3 py-1 rounded-full">Interactive Tool</span>
-                    <h3 class="text-2xl font-bold font-heading text-white mt-2">Instant Wardrobe Cost Estimator</h3>
-                    <p class="text-xs text-stone-400">Adjust the dimensions and hardware below for a real-time price estimate.</p>
+    <!-- SECTION 1: Interactive Multi-Product Cost Estimator Calculator Tool -->
+    <section class="py-16 sm:py-20 bg-white dark:bg-stone-900 border-b border-stone-200 dark:border-stone-800" id="cost-estimator-section">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-stone-950 text-white p-6 sm:p-10 rounded-3xl border border-stone-800 shadow-2xl relative overflow-hidden">
+                <div class="absolute -right-20 -top-20 w-64 h-64 bg-amber-500/5 rounded-full blur-3xl pointer-events-none"></div>
+                
+                <div class="text-center mb-8 relative z-10">
+                    <span class="bg-amber-500/10 text-amber-400 border border-amber-500/20 text-[10px] uppercase font-extrabold px-3.5 py-1.5 rounded-full tracking-wider">Instant Smart Calculator</span>
+                    <h3 class="text-2xl sm:text-3xl font-extrabold font-heading text-white mt-3">Multi-Product Modular Cost Estimator</h3>
+                    <p class="text-xs sm:text-sm text-stone-400 mt-1 max-w-xl mx-auto">Select any interior product or service below to calculate instant real-time manufacturing and installation pricing.</p>
                 </div>
 
-                <form id="cost-estimator-form" class="space-y-6" onsubmit="return false;">
-                    <!-- Length Slider -->
-                    <div>
-                        <div class="flex justify-between items-center mb-2">
-                            <label class="text-xs font-bold uppercase text-stone-300">Wardrobe Length (Linear Feet):</label>
-                            <span id="calc-length-val" class="text-sm font-bold text-amber-400">8 ft</span>
-                        </div>
-                        <input type="range" id="calc-length" min="4" max="24" value="8" step="1" class="w-full accent-amber-500 bg-stone-800 h-2 rounded-lg cursor-pointer">
-                    </div>
-
-                    <!-- Options Grid -->
+                <form id="cost-estimator-form" class="space-y-6 relative z-10" onsubmit="return false;">
+                    
+                    <!-- Row 1: Product Selection & Scope Dimension -->
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
-                            <label class="block text-xs font-bold uppercase text-stone-300 mb-2">Door Configuration</label>
-                            <select id="calc-door" class="w-full bg-stone-900 border border-stone-700 rounded-xl p-3 text-xs font-semibold focus:outline-none focus:ring-2 focus:ring-amber-500 text-stone-200">
-                                <option value="hinged">Hinged Soft-Close Doors (Base)</option>
-                                <option value="sliding">Concealed Track Sliding Doors (+$45/ft)</option>
-                                <option value="walkin">Open Frame Walk-In Suite (+$85/ft)</option>
+                            <label for="estimator-product" class="block text-xs font-bold uppercase tracking-wider text-stone-300 mb-2">1. Select Interior Product / Service</label>
+                            <select id="estimator-product" class="w-full bg-stone-900 border border-stone-700 rounded-xl p-3.5 text-xs font-semibold focus:outline-none focus:ring-2 focus:ring-amber-500 text-stone-100 transition">
+                                <option value="wardrobes" data-unit="linear ft" data-rate="220" data-min="6" data-max="24" data-default="10">Modular Wardrobes (Hinged, Sliding & Walk-In)</option>
+                                <option value="kitchen" data-unit="linear ft" data-rate="260" data-min="8" data-max="30" data-default="12">Modular Kitchen Cabinetry (BWP Marine & Base/Wall)</option>
+                                <option value="tv" data-unit="feet wide" data-rate="180" data-min="5" data-max="16" data-default="8">TV Showcase &amp; Entertainment Media Units</option>
+                                <option value="living" data-unit="linear ft" data-rate="190" data-min="6" data-max="20" data-default="8">Living Room Partitions &amp; Vitrine Consoles</option>
+                                <option value="dining" data-unit="feet wide" data-rate="195" data-min="4" data-max="14" data-default="6">Dining Crockery Vitrines &amp; Bar Units</option>
+                                <option value="bedroom" data-unit="unit scope" data-rate="320" data-min="1" data-max="4" data-default="1">Bedroom Storage &amp; Hydraulic Gas-Lift Beds</option>
+                                <option value="pooja" data-unit="feet wide" data-rate="240" data-min="3" data-max="10" data-default="4">Pooja Room &amp; Mandir Cabinetry (CNC Jali)</option>
+                                <option value="ceiling" data-unit="sq. ft area" data-rate="110" data-min="100" data-max="1200" data-default="250">False Ceiling &amp; Cove LED Lighting</option>
+                                <option value="kids" data-unit="room setup" data-rate="420" data-min="1" data-max="4" data-default="1">Kids Room Study Desks, Bunks &amp; Wardrobes</option>
+                                <option value="other" data-unit="linear ft" data-rate="160" data-min="4" data-max="18" data-default="6">Foyer Shoe Consoles, Laundry &amp; Vanities</option>
                             </select>
                         </div>
 
                         <div>
-                            <label class="block text-xs font-bold uppercase text-stone-300 mb-2">Material Finish Tier</label>
-                            <select id="calc-material" class="w-full bg-stone-900 border border-stone-700 rounded-xl p-3 text-xs font-semibold focus:outline-none focus:ring-2 focus:ring-amber-500 text-stone-200">
-                                <option value="melamine">CARB Phase 2 Melamine (Standard)</option>
-                                <option value="lacquer">Italian Matte PU Lacquer (+$60/ft)</option>
-                                <option value="wood">Natural Oak / Walnut Veneer (+$95/ft)</option>
-                                <option value="glass">Fluted Tempered Glass & Aluminum (+$140/ft)</option>
+                            <div class="flex justify-between items-center mb-2">
+                                <label for="estimator-dimension" class="text-xs font-bold uppercase tracking-wider text-stone-300">
+                                    2. Scope / Dimensions (<span id="estimator-dimension-label" class="text-amber-400">linear ft</span>):
+                                </label>
+                                <span id="estimator-dimension-val" class="text-sm font-extrabold text-amber-400">10 linear ft</span>
+                            </div>
+                            <input type="range" id="estimator-dimension" min="6" max="24" value="10" step="1" class="w-full accent-amber-500 bg-stone-800 h-2 rounded-lg cursor-pointer my-3">
+                            <div class="flex justify-between text-[10px] text-stone-400 font-medium">
+                                <span id="estimator-dimension-min">Min: 6</span>
+                                <span id="estimator-dimension-max">Max: 24</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Row 2: Material Finish & Hardware Mechanism -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="estimator-material" class="block text-xs font-bold uppercase tracking-wider text-stone-300 mb-2">3. Material &amp; Core Substrate Tier</label>
+                            <select id="estimator-material" class="w-full bg-stone-900 border border-stone-700 rounded-xl p-3.5 text-xs font-semibold focus:outline-none focus:ring-2 focus:ring-amber-500 text-stone-100 transition">
+                                <option value="essential" data-mult="1.0">Essential Tier: CARB-2 Pre-Laminated Engineered Board (Base)</option>
+                                <option value="signature" data-mult="1.25" selected>Signature Tier: 18mm HDHMR (850 kg/m³) + Matte PU / Acrylic (+25%)</option>
+                                <option value="royal" data-mult="1.55">Royal Bespoke: 100% BWP Marine Ply + Veneer / Fluted Glass (+55%)</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="estimator-hardware" class="block text-xs font-bold uppercase tracking-wider text-stone-300 mb-2">4. Hardware &amp; Integrated Accessories</label>
+                            <select id="estimator-hardware" class="w-full bg-stone-900 border border-stone-700 rounded-xl p-3.5 text-xs font-semibold focus:outline-none focus:ring-2 focus:ring-amber-500 text-stone-100 transition">
+                                <option value="standard" data-addon="0">Concealed Soft-Close Mechanisms (Included Base)</option>
+                                <option value="blum" data-addon="350" selected>Authentic Austrian Blum Tandembox &amp; Aventos Dampers (+$350)</option>
+                                <option value="deluxe" data-addon="750">Blum Hardware + 3000K Sensor LEDs + Velvet Organizers (+$750)</option>
+                                <option value="motorized" data-addon="1250">Servo-Drive Touch Electric Openers + Smart LED App Controls (+$1,250)</option>
                             </select>
                         </div>
                     </div>
 
-                    <div>
-                        <label class="block text-xs font-bold uppercase text-stone-300 mb-2">Internal Accessories & Accessories</label>
-                        <select id="calc-hardware" class="w-full bg-stone-900 border border-stone-700 rounded-xl p-3 text-xs font-semibold focus:outline-none focus:ring-2 focus:ring-amber-500 text-stone-200">
-                            <option value="basic">Standard Hanging Rails & Shelves</option>
-                            <option value="led">Integrated Motion-Sensor LED Channels (+$250)</option>
-                            <option value="deluxe">LED Lighting + Velvet Jewelry Drawers + Shoe Racks (+$650)</option>
-                        </select>
-                    </div>
-
-                    <!-- Calculated Total Display -->
-                    <div class="bg-stone-900 p-6 rounded-2xl border border-stone-800 flex flex-col sm:flex-row justify-between items-center gap-4">
-                        <div>
-                            <span class="text-[10px] font-bold uppercase text-stone-400 block">Estimated Investment Range:</span>
-                            <div id="calc-result" class="text-3xl font-extrabold font-heading text-amber-400">$1,840 - $2,100</div>
-                            <span class="text-[10px] text-stone-500">Includes 3D VR design, manufacturing, and white-glove installation.</span>
+                    <!-- Calculated Total Display Box -->
+                    <div class="bg-stone-900/90 p-6 sm:p-7 rounded-2xl border border-stone-800 flex flex-col md:flex-row justify-between items-center gap-6 shadow-inner">
+                        <div class="space-y-1 text-center md:text-left">
+                            <span class="text-[10px] font-extrabold uppercase tracking-widest text-amber-500 block">Estimated Manufacturing &amp; Turnkey Investment:</span>
+                            <div id="estimator-price-display" class="text-3xl sm:text-4xl font-black font-heading text-amber-400 tracking-tight">$3,100 - $3,450</div>
+                            <div class="flex flex-wrap items-center gap-x-3 gap-y-1 text-[11px] text-stone-400">
+                                <span><i class="fa-solid fa-circle-check text-green-400 text-[10px] mr-1"></i> 5-Axis CNC Precision</span>
+                                <span><i class="fa-solid fa-circle-check text-green-400 text-[10px] mr-1"></i> PUR Zero-Joint Edge Banding</span>
+                                <span><i class="fa-solid fa-circle-check text-green-400 text-[10px] mr-1"></i> 48h Dust-Free Assembly</span>
+                            </div>
                         </div>
-                        <a href="contact.html" class="bg-amber-600 hover:bg-amber-500 text-white text-xs font-bold uppercase tracking-wider px-6 py-3 rounded-xl transition shadow-md whitespace-nowrap flex items-center space-x-2">
-                            <span>Lock In This Estimate</span>
-                            <i class="fa-solid fa-arrow-right text-[10px]"></i>
-                        </a>
+                        <div class="flex flex-col sm:flex-row gap-3 w-full md:w-auto">
+                            <a id="estimator-lock-cta" href="contact.html" class="inline-flex items-center justify-center space-x-2 bg-gradient-to-r from-amber-600 to-amber-500 hover:from-amber-500 hover:to-amber-600 text-white text-xs font-extrabold uppercase tracking-wider px-6 py-4 rounded-xl transition shadow-lg shadow-amber-600/30 whitespace-nowrap">
+                                <span>Lock In This Estimate</span>
+                                <i class="fa-solid fa-arrow-right text-xs ml-1"></i>
+                            </a>
+                        </div>
                     </div>
                 </form>
             </div>
         </div>
     </section>
 
-    <!-- Itemized Tier Pricing Cards -->
-    <section class="py-20 bg-gray-50 dark:bg-stone-950">
+    <!-- SECTION 2: Comprehensive Pricing by Products & Services Offered (All 10 Categories) -->
+    <section class="py-20 bg-stone-50 dark:bg-stone-950 border-b border-stone-200 dark:border-stone-800" id="product-pricing-catalog">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-xs font-bold text-amber-600 uppercase tracking-widest block mb-2">Curated Packages</span>
-                <h2 class="text-3xl font-bold font-heading text-stone-900 dark:text-white">Standardized Modular Pricing Tiers</h2>
+            <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+                <span class="inline-block text-[11px] font-extrabold text-amber-600 dark:text-amber-400 uppercase tracking-widest bg-amber-500/10 dark:bg-amber-400/10 px-4 py-1.5 rounded-full mb-3 border border-amber-500/20">Transparent Rate Cards</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold font-heading text-stone-900 dark:text-white tracking-tight">Standardized Product &amp; Service Pricing</h2>
+                <p class="mt-4 text-stone-600 dark:text-stone-400 text-xs sm:text-base leading-relaxed">Direct factory manufacturing prices clearly itemized across our 10 specialized interior joinery categories. Explore transparent pricing per linear foot, square foot, or complete modular installation package.</p>
+                
+                <!-- Filter Tabs for the 10 Products -->
+                <div class="flex flex-wrap justify-center gap-2 mt-8" id="pricing-filter-tabs">
+                    <button type="button" data-pricing-filter="all" class="pricing-filter-btn px-4 py-2 rounded-xl text-xs font-bold transition-all bg-amber-600 text-white shadow-md shadow-amber-600/30">All 10 Products</button>
+                    <button type="button" data-pricing-filter="wardrobes" class="pricing-filter-btn px-4 py-2 rounded-xl text-xs font-bold transition-all bg-white dark:bg-stone-800 text-stone-700 dark:text-stone-300 border border-stone-200 dark:border-stone-700 hover:border-amber-500">Wardrobes</button>
+                    <button type="button" data-pricing-filter="kitchen" class="pricing-filter-btn px-4 py-2 rounded-xl text-xs font-bold transition-all bg-white dark:bg-stone-800 text-stone-700 dark:text-stone-300 border border-stone-200 dark:border-stone-700 hover:border-amber-500">Kitchen</button>
+                    <button type="button" data-pricing-filter="tv" class="pricing-filter-btn px-4 py-2 rounded-xl text-xs font-bold transition-all bg-white dark:bg-stone-800 text-stone-700 dark:text-stone-300 border border-stone-200 dark:border-stone-700 hover:border-amber-500">TV Showcase</button>
+                    <button type="button" data-pricing-filter="living" class="pricing-filter-btn px-4 py-2 rounded-xl text-xs font-bold transition-all bg-white dark:bg-stone-800 text-stone-700 dark:text-stone-300 border border-stone-200 dark:border-stone-700 hover:border-amber-500">Living Room</button>
+                    <button type="button" data-pricing-filter="dining" class="pricing-filter-btn px-4 py-2 rounded-xl text-xs font-bold transition-all bg-white dark:bg-stone-800 text-stone-700 dark:text-stone-300 border border-stone-200 dark:border-stone-700 hover:border-amber-500">Dining Room</button>
+                    <button type="button" data-pricing-filter="bedroom" class="pricing-filter-btn px-4 py-2 rounded-xl text-xs font-bold transition-all bg-white dark:bg-stone-800 text-stone-700 dark:text-stone-300 border border-stone-200 dark:border-stone-700 hover:border-amber-500">Bedroom</button>
+                    <button type="button" data-pricing-filter="pooja" class="pricing-filter-btn px-4 py-2 rounded-xl text-xs font-bold transition-all bg-white dark:bg-stone-800 text-stone-700 dark:text-stone-300 border border-stone-200 dark:border-stone-700 hover:border-amber-500">Pooja Room</button>
+                    <button type="button" data-pricing-filter="ceiling" class="pricing-filter-btn px-4 py-2 rounded-xl text-xs font-bold transition-all bg-white dark:bg-stone-800 text-stone-700 dark:text-stone-300 border border-stone-200 dark:border-stone-700 hover:border-amber-500">False Ceiling</button>
+                    <button type="button" data-pricing-filter="kids" class="pricing-filter-btn px-4 py-2 rounded-xl text-xs font-bold transition-all bg-white dark:bg-stone-800 text-stone-700 dark:text-stone-300 border border-stone-200 dark:border-stone-700 hover:border-amber-500">Kids Room</button>
+                    <button type="button" data-pricing-filter="other" class="pricing-filter-btn px-4 py-2 rounded-xl text-xs font-bold transition-all bg-white dark:bg-stone-800 text-stone-700 dark:text-stone-300 border border-stone-200 dark:border-stone-700 hover:border-amber-500">Other Joinery</button>
+                </div>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- The 10 Product & Service Pricing Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="pricing-cards-container">
                 
-                <!-- Tier 1 -->
-                <div class="bg-white dark:bg-stone-900 rounded-3xl p-8 border border-gray-200 dark:border-stone-800 shadow-xl flex flex-col justify-between hover:border-amber-500 transition-all">
+                <!-- PRODUCT 1: Wardrobes -->
+                <div data-product="wardrobes" class="pricing-card bg-white dark:bg-stone-900 rounded-3xl p-7 sm:p-8 border border-stone-200 dark:border-stone-800 shadow-xl flex flex-col justify-between hover:border-amber-500 transition-all group">
                     <div>
-                        <span class="bg-stone-100 dark:bg-stone-800 text-stone-700 dark:text-stone-300 text-[10px] font-bold uppercase px-3 py-1 rounded-full">Essential Tier</span>
-                        <h3 class="text-2xl font-bold font-heading text-stone-900 dark:text-white mt-4">Essential Wardrobe</h3>
-                        <p class="text-xs text-stone-500 dark:text-stone-400 mt-2 mb-6">Ideal for guest bedrooms and compact reach-in closet conversions.</p>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="bg-amber-100 dark:bg-amber-500/20 text-amber-800 dark:text-amber-300 text-[10px] font-extrabold uppercase px-3 py-1 rounded-lg border border-amber-300 dark:border-amber-500/40">PRODUCT 01 • BEDROOM</span>
+                            <i class="fa-solid fa-door-closed text-amber-600 dark:text-amber-400 text-lg"></i>
+                        </div>
+                        <h3 class="text-xl font-bold font-heading text-stone-900 dark:text-white group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">Modular Wardrobes</h3>
+                        <p class="text-xs text-stone-500 dark:text-stone-400 mt-1 mb-5">Hinged swing doors, top-hung sliding tracks, walk-in suites &amp; overhead lofts.</p>
                         
-                        <div class="flex items-baseline mb-6">
-                            <span class="text-4xl font-extrabold font-heading text-stone-900 dark:text-white">$180</span>
-                            <span class="text-xs text-stone-500 dark:text-stone-400 ml-1">/ linear ft</span>
+                        <div class="bg-stone-50 dark:bg-stone-800/60 p-4 rounded-2xl border border-stone-200 dark:border-stone-700/80 mb-6">
+                            <div class="flex items-baseline">
+                                <span class="text-3xl font-extrabold font-heading text-stone-900 dark:text-white">$180 – $420</span>
+                                <span class="text-xs text-stone-500 dark:text-stone-400 ml-1.5 font-semibold">/ linear ft</span>
+                            </div>
+                            <span class="text-[10px] text-amber-600 dark:text-amber-400 font-bold block mt-1">Typical 8ft Bedroom Suite: $1,800 – $3,600</span>
                         </div>
 
-                        <ul class="space-y-3 text-xs text-stone-600 dark:text-stone-300 mb-8">
-                            <li class="flex items-center"><i class="fa-solid fa-check text-amber-600 mr-2.5"></i> CARB Phase 2 Melamine core</li>
-                            <li class="flex items-center"><i class="fa-solid fa-check text-amber-600 mr-2.5"></i> 12 Matte laminate color finishes</li>
-                            <li class="flex items-center"><i class="fa-solid fa-check text-amber-600 mr-2.5"></i> Soft-close concealed hinges</li>
-                            <li class="flex items-center"><i class="fa-solid fa-check text-amber-600 mr-2.5"></i> Dual hanging rails & fixed shelves</li>
-                            <li class="flex items-center text-stone-400"><i class="fa-solid fa-xmark text-stone-400 mr-2.5"></i> Integrated LED motion channels</li>
-                            <li class="flex items-center"><i class="fa-solid fa-check text-amber-600 mr-2.5"></i> 5-Year Structural Warranty</li>
+                        <ul class="space-y-2.5 text-xs text-stone-600 dark:text-stone-300 mb-6">
+                            <li class="flex items-start"><i class="fa-solid fa-check text-amber-600 mr-2 mt-0.5"></i> <span><strong>Essential:</strong> CARB-2 Melamine, 110° soft-close hinges ($180/ft)</span></li>
+                            <li class="flex items-start"><i class="fa-solid fa-check text-amber-600 mr-2 mt-0.5"></i> <span><strong>Signature:</strong> 18mm HDHMR, Blumotion hinges, LEDs ($280/ft)</span></li>
+                            <li class="flex items-start"><i class="fa-solid fa-check text-amber-600 mr-2 mt-0.5"></i> <span><strong>Royal:</strong> Walk-in suite, glass vitrines, island chest ($420/ft)</span></li>
                         </ul>
                     </div>
-                    <a href="contact.html" class="w-full text-center bg-stone-900 dark:bg-stone-800 hover:bg-amber-600 dark:hover:bg-amber-600 text-white text-xs font-bold uppercase tracking-wider py-3.5 rounded-xl transition">Select Essential Package</a>
+                    <div class="pt-4 border-t border-stone-100 dark:border-stone-800">
+                        <a href="service-details.html?service=wardrobes" class="w-full inline-flex items-center justify-center space-x-1.5 bg-stone-900 dark:bg-stone-800 hover:bg-amber-600 dark:hover:bg-amber-600 text-white text-xs font-bold uppercase tracking-wider py-3 rounded-xl transition shadow-md">
+                            <span>View Wardrobe Specs</span>
+                            <i class="fa-solid fa-arrow-right text-[10px] ml-1"></i>
+                        </a>
+                    </div>
                 </div>
 
-                <!-- Tier 2 (Featured) -->
-                <div class="bg-stone-900 text-white rounded-3xl p-8 border-2 border-amber-500 shadow-2xl flex flex-col justify-between relative transform lg:-translate-y-4">
-                    <div class="absolute -top-4 right-8 bg-amber-600 text-white text-[10px] font-bold uppercase px-3 py-1 rounded-full shadow-lg">Most Popular</div>
+                <!-- PRODUCT 2: Kitchen -->
+                <div data-product="kitchen" class="pricing-card bg-white dark:bg-stone-900 rounded-3xl p-7 sm:p-8 border-2 border-amber-500/80 shadow-2xl flex flex-col justify-between hover:border-amber-500 transition-all group relative">
+                    <div class="absolute -top-3.5 right-6 bg-amber-600 text-white text-[10px] font-bold uppercase px-3 py-1 rounded-full shadow-md">High Demand</div>
                     <div>
-                        <span class="bg-amber-500/20 text-amber-400 text-[10px] font-bold uppercase px-3 py-1 rounded-full border border-amber-500/30">Signature Tier</span>
-                        <h3 class="text-2xl font-bold font-heading text-white mt-4">Signature Luxury Suite</h3>
-                        <p class="text-xs text-stone-400 mt-2 mb-6">Designed for master bedrooms requiring premium finishes and full lighting.</p>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="bg-amber-100 dark:bg-amber-500/20 text-amber-800 dark:text-amber-300 text-[10px] font-extrabold uppercase px-3 py-1 rounded-lg border border-amber-300 dark:border-amber-500/40">PRODUCT 02 • CULINARY</span>
+                            <i class="fa-solid fa-utensils text-amber-600 dark:text-amber-400 text-lg"></i>
+                        </div>
+                        <h3 class="text-xl font-bold font-heading text-stone-900 dark:text-white group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">Modular Kitchen Cabinetry</h3>
+                        <p class="text-xs text-stone-500 dark:text-stone-400 mt-1 mb-5">100% BWP Marine sink units, Blum Tandembox drawers &amp; Aventos lifts.</p>
                         
-                        <div class="flex items-baseline mb-6">
-                            <span class="text-4xl font-extrabold font-heading text-amber-400">$280</span>
-                            <span class="text-xs text-stone-400 ml-1">/ linear ft</span>
+                        <div class="bg-stone-50 dark:bg-stone-800/60 p-4 rounded-2xl border border-stone-200 dark:border-stone-700/80 mb-6">
+                            <div class="flex items-baseline">
+                                <span class="text-3xl font-extrabold font-heading text-amber-600 dark:text-amber-400">$220 – $480</span>
+                                <span class="text-xs text-stone-500 dark:text-stone-400 ml-1.5 font-semibold">/ linear ft</span>
+                            </div>
+                            <span class="text-[10px] text-amber-600 dark:text-amber-400 font-bold block mt-1">Complete Kitchen Package: $3,500 – $9,800</span>
                         </div>
 
-                        <ul class="space-y-3 text-xs text-stone-300 mb-8">
-                            <li class="flex items-center"><i class="fa-solid fa-check text-amber-400 mr-2.5"></i> Moisture-resistant HD plywood core</li>
-                            <li class="flex items-center"><i class="fa-solid fa-check text-amber-400 mr-2.5"></i> Matte PU lacquer or natural oak veneer</li>
-                            <li class="flex items-center"><i class="fa-solid fa-check text-amber-400 mr-2.5"></i> Austrian Blum Motion soft-close slides</li>
-                            <li class="flex items-center"><i class="fa-solid fa-check text-amber-400 mr-2.5"></i> Integrated 3000K warm LED strips</li>
-                            <li class="flex items-center"><i class="fa-solid fa-check text-amber-400 mr-2.5"></i> Velvet jewelry drawers & tie organizers</li>
-                            <li class="flex items-center"><i class="fa-solid fa-check text-amber-400 mr-2.5"></i> 10-Year Structural Warranty</li>
+                        <ul class="space-y-2.5 text-xs text-stone-600 dark:text-stone-300 mb-6">
+                            <li class="flex items-start"><i class="fa-solid fa-check text-amber-600 mr-2 mt-0.5"></i> <span><strong>Straight / Parallel:</strong> Anti-scratch acrylic, soft-close ($220/ft)</span></li>
+                            <li class="flex items-start"><i class="fa-solid fa-check text-amber-600 mr-2 mt-0.5"></i> <span><strong>L-Shaped Luxury:</strong> BWP Marine base, Blum Tandembox ($320/ft)</span></li>
+                            <li class="flex items-start"><i class="fa-solid fa-check text-amber-600 mr-2 mt-0.5"></i> <span><strong>Gourmet Island:</strong> PU Lacquer, Aventos bi-fold lifts ($480/ft)</span></li>
                         </ul>
                     </div>
-                    <a href="contact.html" class="w-full text-center bg-amber-600 hover:bg-amber-500 text-white text-xs font-extrabold uppercase tracking-wider py-3.5 rounded-xl transition shadow-lg">Select Signature Package</a>
+                    <div class="pt-4 border-t border-stone-100 dark:border-stone-800">
+                        <a href="service-details.html?service=kitchen" class="w-full inline-flex items-center justify-center space-x-1.5 bg-amber-600 hover:bg-amber-700 text-white text-xs font-bold uppercase tracking-wider py-3 rounded-xl transition shadow-md">
+                            <span>View Kitchen Specs</span>
+                            <i class="fa-solid fa-arrow-right text-[10px] ml-1"></i>
+                        </a>
+                    </div>
                 </div>
 
-                <!-- Tier 3 -->
-                <div class="bg-white dark:bg-stone-900 rounded-3xl p-8 border border-gray-200 dark:border-stone-800 shadow-xl flex flex-col justify-between hover:border-amber-500 transition-all">
+                <!-- PRODUCT 3: TV Showcase -->
+                <div data-product="tv" class="pricing-card bg-white dark:bg-stone-900 rounded-3xl p-7 sm:p-8 border border-stone-200 dark:border-stone-800 shadow-xl flex flex-col justify-between hover:border-amber-500 transition-all group">
                     <div>
-                        <span class="bg-stone-100 dark:bg-stone-800 text-stone-700 dark:text-stone-300 text-[10px] font-bold uppercase px-3 py-1 rounded-full">Royal Bespoke Tier</span>
-                        <h3 class="text-2xl font-bold font-heading text-stone-900 dark:text-white mt-4">Royal Walk-In Suite</h3>
-                        <p class="text-xs text-stone-500 dark:text-stone-400 mt-2 mb-6">The pinnacle of luxury: fluted glass, leather, island dresser, and smart tech.</p>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="bg-amber-100 dark:bg-amber-500/20 text-amber-800 dark:text-amber-300 text-[10px] font-extrabold uppercase px-3 py-1 rounded-lg border border-amber-300 dark:border-amber-500/40">PRODUCT 03 • ENTERTAINMENT</span>
+                            <i class="fa-solid fa-tv text-amber-600 dark:text-amber-400 text-lg"></i>
+                        </div>
+                        <h3 class="text-xl font-bold font-heading text-stone-900 dark:text-white group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">TV Showcase &amp; Media Units</h3>
+                        <p class="text-xs text-stone-500 dark:text-stone-400 mt-1 mb-5">Floating consoles, fluted acoustic paneling &amp; concealed AV cable channels.</p>
                         
-                        <div class="flex items-baseline mb-6">
-                            <span class="text-4xl font-extrabold font-heading text-stone-900 dark:text-white">$420</span>
-                            <span class="text-xs text-stone-500 dark:text-stone-400 ml-1">/ linear ft</span>
+                        <div class="bg-stone-50 dark:bg-stone-800/60 p-4 rounded-2xl border border-stone-200 dark:border-stone-700/80 mb-6">
+                            <div class="flex items-baseline">
+                                <span class="text-3xl font-extrabold font-heading text-stone-900 dark:text-white">$850 – $2,800</span>
+                                <span class="text-xs text-stone-500 dark:text-stone-400 ml-1.5 font-semibold">/ complete unit</span>
+                            </div>
+                            <span class="text-[10px] text-amber-600 dark:text-amber-400 font-bold block mt-1">Includes 100kg hidden cleat wall installation</span>
                         </div>
 
-                        <ul class="space-y-3 text-xs text-stone-600 dark:text-stone-300 mb-8">
-                            <li class="flex items-center"><i class="fa-solid fa-check text-amber-600 mr-2.5"></i> Solid Baltic birch & timber core</li>
-                            <li class="flex items-center"><i class="fa-solid fa-check text-amber-600 mr-2.5"></i> Fluted bronze glass & Italian leather</li>
-                            <li class="flex items-center"><i class="fa-solid fa-check text-amber-600 mr-2.5"></i> Blum Servo-Drive electric touch opening</li>
-                            <li class="flex items-center"><i class="fa-solid fa-check text-amber-600 mr-2.5"></i> Smart app dimmable RGB-W LED lighting</li>
-                            <li class="flex items-center"><i class="fa-solid fa-check text-amber-600 mr-2.5"></i> Central display island & biometric vault</li>
-                            <li class="flex items-center"><i class="fa-solid fa-check text-amber-600 mr-2.5"></i> Lifetime Structural Warranty</li>
+                        <ul class="space-y-2.5 text-xs text-stone-600 dark:text-stone-300 mb-6">
+                            <li class="flex items-start"><i class="fa-solid fa-check text-amber-600 mr-2 mt-0.5"></i> <span><strong>Floating Credenza:</strong> 6ft wall-hung unit with push-to-open ($850)</span></li>
+                            <li class="flex items-start"><i class="fa-solid fa-check text-amber-600 mr-2 mt-0.5"></i> <span><strong>Fluted Feature Wall:</strong> CNC acoustic wooden slats + credenza ($1,650)</span></li>
+                            <li class="flex items-start"><i class="fa-solid fa-check text-amber-600 mr-2 mt-0.5"></i> <span><strong>Full Media Suite:</strong> Fluted wall, smoked vitrines, LED conduits ($2,800)</span></li>
                         </ul>
                     </div>
-                    <a href="contact.html" class="w-full text-center bg-stone-900 dark:bg-stone-800 hover:bg-amber-600 dark:hover:bg-amber-600 text-white text-xs font-bold uppercase tracking-wider py-3.5 rounded-xl transition">Select Royal Package</a>
+                    <div class="pt-4 border-t border-stone-100 dark:border-stone-800">
+                        <a href="service-details.html?service=tv" class="w-full inline-flex items-center justify-center space-x-1.5 bg-stone-900 dark:bg-stone-800 hover:bg-amber-600 dark:hover:bg-amber-600 text-white text-xs font-bold uppercase tracking-wider py-3 rounded-xl transition shadow-md">
+                            <span>View TV Unit Specs</span>
+                            <i class="fa-solid fa-arrow-right text-[10px] ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- PRODUCT 4: Living Room -->
+                <div data-product="living" class="pricing-card bg-white dark:bg-stone-900 rounded-3xl p-7 sm:p-8 border border-stone-200 dark:border-stone-800 shadow-xl flex flex-col justify-between hover:border-amber-500 transition-all group">
+                    <div>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="bg-amber-100 dark:bg-amber-500/20 text-amber-800 dark:text-amber-300 text-[10px] font-extrabold uppercase px-3 py-1 rounded-lg border border-amber-300 dark:border-amber-500/40">PRODUCT 04 • LIVING JOINERY</span>
+                            <i class="fa-solid fa-couch text-amber-600 dark:text-amber-400 text-lg"></i>
+                        </div>
+                        <h3 class="text-xl font-bold font-heading text-stone-900 dark:text-white group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">Living Room &amp; Partitions</h3>
+                        <p class="text-xs text-stone-500 dark:text-stone-400 mt-1 mb-5">Double-sided divider units, illuminated bookcases &amp; foyer consoles.</p>
+                        
+                        <div class="bg-stone-50 dark:bg-stone-800/60 p-4 rounded-2xl border border-stone-200 dark:border-stone-700/80 mb-6">
+                            <div class="flex items-baseline">
+                                <span class="text-3xl font-extrabold font-heading text-stone-900 dark:text-white">$750 – $2,400</span>
+                                <span class="text-xs text-stone-500 dark:text-stone-400 ml-1.5 font-semibold">/ installed unit</span>
+                            </div>
+                            <span class="text-[10px] text-amber-600 dark:text-amber-400 font-bold block mt-1">Architectural open shelving &amp; concealed doors</span>
+                        </div>
+
+                        <ul class="space-y-2.5 text-xs text-stone-600 dark:text-stone-300 mb-6">
+                            <li class="flex items-start"><i class="fa-solid fa-check text-amber-600 mr-2 mt-0.5"></i> <span><strong>Foyer Entry Console:</strong> Key niche &amp; mirror backing ($750)</span></li>
+                            <li class="flex items-start"><i class="fa-solid fa-check text-amber-600 mr-2 mt-0.5"></i> <span><strong>Divider Partition:</strong> Dual-sided open display divider ($1,450)</span></li>
+                            <li class="flex items-start"><i class="fa-solid fa-check text-amber-600 mr-2 mt-0.5"></i> <span><strong>Vitrine Bookcase:</strong> Aluminum glass display with sensor LEDs ($2,400)</span></li>
+                        </ul>
+                    </div>
+                    <div class="pt-4 border-t border-stone-100 dark:border-stone-800">
+                        <a href="service-details.html?service=living" class="w-full inline-flex items-center justify-center space-x-1.5 bg-stone-900 dark:bg-stone-800 hover:bg-amber-600 dark:hover:bg-amber-600 text-white text-xs font-bold uppercase tracking-wider py-3 rounded-xl transition shadow-md">
+                            <span>View Living Specs</span>
+                            <i class="fa-solid fa-arrow-right text-[10px] ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- PRODUCT 5: Dining Room -->
+                <div data-product="dining" class="pricing-card bg-white dark:bg-stone-900 rounded-3xl p-7 sm:p-8 border border-stone-200 dark:border-stone-800 shadow-xl flex flex-col justify-between hover:border-amber-500 transition-all group">
+                    <div>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="bg-amber-100 dark:bg-amber-500/20 text-amber-800 dark:text-amber-300 text-[10px] font-extrabold uppercase px-3 py-1 rounded-lg border border-amber-300 dark:border-amber-500/40">PRODUCT 05 • DINING &amp; BAR</span>
+                            <i class="fa-solid fa-wine-glass text-amber-600 dark:text-amber-400 text-lg"></i>
+                        </div>
+                        <h3 class="text-xl font-bold font-heading text-stone-900 dark:text-white group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">Dining Room &amp; Bar Units</h3>
+                        <p class="text-xs text-stone-500 dark:text-stone-400 mt-1 mb-5">Crockery display vitrines, buffet sideboards with quartz tops &amp; wine bars.</p>
+                        
+                        <div class="bg-stone-50 dark:bg-stone-800/60 p-4 rounded-2xl border border-stone-200 dark:border-stone-700/80 mb-6">
+                            <div class="flex items-baseline">
+                                <span class="text-3xl font-extrabold font-heading text-stone-900 dark:text-white">$950 – $2,600</span>
+                                <span class="text-xs text-stone-500 dark:text-stone-400 ml-1.5 font-semibold">/ unit</span>
+                            </div>
+                            <span class="text-[10px] text-amber-600 dark:text-amber-400 font-bold block mt-1">Heat-resistant quartz serving tops included</span>
+                        </div>
+
+                        <ul class="space-y-2.5 text-xs text-stone-600 dark:text-stone-300 mb-6">
+                            <li class="flex items-start"><i class="fa-solid fa-check text-amber-600 mr-2 mt-0.5"></i> <span><strong>Buffet Sideboard:</strong> 4-door storage + quartz serving top ($950)</span></li>
+                            <li class="flex items-start"><i class="fa-solid fa-check text-amber-600 mr-2 mt-0.5"></i> <span><strong>Crockery Vitrine:</strong> Fluted glass doors with 3000K warm LEDs ($1,650)</span></li>
+                            <li class="flex items-start"><i class="fa-solid fa-check text-amber-600 mr-2 mt-0.5"></i> <span><strong>Integrated Bar:</strong> Wine rack, stemware hangers &amp; drawer ($2,600)</span></li>
+                        </ul>
+                    </div>
+                    <div class="pt-4 border-t border-stone-100 dark:border-stone-800">
+                        <a href="service-details.html?service=dining" class="w-full inline-flex items-center justify-center space-x-1.5 bg-stone-900 dark:bg-stone-800 hover:bg-amber-600 dark:hover:bg-amber-600 text-white text-xs font-bold uppercase tracking-wider py-3 rounded-xl transition shadow-md">
+                            <span>View Dining Specs</span>
+                            <i class="fa-solid fa-arrow-right text-[10px] ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- PRODUCT 6: Bedroom -->
+                <div data-product="bedroom" class="pricing-card bg-white dark:bg-stone-900 rounded-3xl p-7 sm:p-8 border border-stone-200 dark:border-stone-800 shadow-xl flex flex-col justify-between hover:border-amber-500 transition-all group">
+                    <div>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="bg-amber-100 dark:bg-amber-500/20 text-amber-800 dark:text-amber-300 text-[10px] font-extrabold uppercase px-3 py-1 rounded-lg border border-amber-300 dark:border-amber-500/40">PRODUCT 06 • BEDROOM STORAGE</span>
+                            <i class="fa-solid fa-bed text-amber-600 dark:text-amber-400 text-lg"></i>
+                        </div>
+                        <h3 class="text-xl font-bold font-heading text-stone-900 dark:text-white group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">Bedroom Storage &amp; Beds</h3>
+                        <p class="text-xs text-stone-500 dark:text-stone-400 mt-1 mb-5">Hydraulic gas-lift storage beds, fluted headboards &amp; nightstands.</p>
+                        
+                        <div class="bg-stone-50 dark:bg-stone-800/60 p-4 rounded-2xl border border-stone-200 dark:border-stone-700/80 mb-6">
+                            <div class="flex items-baseline">
+                                <span class="text-3xl font-extrabold font-heading text-stone-900 dark:text-white">$1,200 – $3,200</span>
+                                <span class="text-xs text-stone-500 dark:text-stone-400 ml-1.5 font-semibold">/ bed suite</span>
+                            </div>
+                            <span class="text-[10px] text-amber-600 dark:text-amber-400 font-bold block mt-1">120N German hydraulic gas springs</span>
+                        </div>
+
+                        <ul class="space-y-2.5 text-xs text-stone-600 dark:text-stone-300 mb-6">
+                            <li class="flex items-start"><i class="fa-solid fa-check text-amber-600 mr-2 mt-0.5"></i> <span><strong>Queen Hydraulic Bed:</strong> Easy-lift steel frame + storage box ($1,200)</span></li>
+                            <li class="flex items-start"><i class="fa-solid fa-check text-amber-600 mr-2 mt-0.5"></i> <span><strong>King Bed + Headboard:</strong> Upholstered fluted acoustic backdrop ($2,100)</span></li>
+                            <li class="flex items-start"><i class="fa-solid fa-check text-amber-600 mr-2 mt-0.5"></i> <span><strong>Master Bed Suite:</strong> Bed, fluted panel, 2 nightstands &amp; dresser ($3,200)</span></li>
+                        </ul>
+                    </div>
+                    <div class="pt-4 border-t border-stone-100 dark:border-stone-800">
+                        <a href="service-details.html?service=bedroom" class="w-full inline-flex items-center justify-center space-x-1.5 bg-stone-900 dark:bg-stone-800 hover:bg-amber-600 dark:hover:bg-amber-600 text-white text-xs font-bold uppercase tracking-wider py-3 rounded-xl transition shadow-md">
+                            <span>View Bedroom Specs</span>
+                            <i class="fa-solid fa-arrow-right text-[10px] ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- PRODUCT 7: Pooja Room -->
+                <div data-product="pooja" class="pricing-card bg-white dark:bg-stone-900 rounded-3xl p-7 sm:p-8 border border-stone-200 dark:border-stone-800 shadow-xl flex flex-col justify-between hover:border-amber-500 transition-all group">
+                    <div>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="bg-amber-100 dark:bg-amber-500/20 text-amber-800 dark:text-amber-300 text-[10px] font-extrabold uppercase px-3 py-1 rounded-lg border border-amber-300 dark:border-amber-500/40">PRODUCT 07 • SACRED JOINERY</span>
+                            <i class="fa-solid fa-hands-praying text-amber-600 dark:text-amber-400 text-lg"></i>
+                        </div>
+                        <h3 class="text-xl font-bold font-heading text-stone-900 dark:text-white group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">Pooja Room Mandirs</h3>
+                        <p class="text-xs text-stone-500 dark:text-stone-400 mt-1 mb-5">CNC laser-cut jali lattices, teak/HDHMR units, pull-out bhog trays &amp; backlit altars.</p>
+                        
+                        <div class="bg-stone-50 dark:bg-stone-800/60 p-4 rounded-2xl border border-stone-200 dark:border-stone-700/80 mb-6">
+                            <div class="flex items-baseline">
+                                <span class="text-3xl font-extrabold font-heading text-stone-900 dark:text-white">$650 – $2,400</span>
+                                <span class="text-xs text-stone-500 dark:text-stone-400 ml-1.5 font-semibold">/ mandir</span>
+                            </div>
+                            <span class="text-[10px] text-amber-600 dark:text-amber-400 font-bold block mt-1">Fire-retardant Corian / HDHMR with smoke vents</span>
+                        </div>
+
+                        <ul class="space-y-2.5 text-xs text-stone-600 dark:text-stone-300 mb-6">
+                            <li class="flex items-start"><i class="fa-solid fa-check text-amber-600 mr-2 mt-0.5"></i> <span><strong>Compact Wall-Hung:</strong> CNC jali shutter, bhog tray, LED aura ($650)</span></li>
+                            <li class="flex items-start"><i class="fa-solid fa-check text-amber-600 mr-2 mt-0.5"></i> <span><strong>Floor-Standing Mandir:</strong> Teak veneer, incense drawers, bells ($1,400)</span></li>
+                            <li class="flex items-start"><i class="fa-solid fa-check text-amber-600 mr-2 mt-0.5"></i> <span><strong>Grand Sacred Sanctum:</strong> Corian CNC backdrop, multi-tier altar ($2,400)</span></li>
+                        </ul>
+                    </div>
+                    <div class="pt-4 border-t border-stone-100 dark:border-stone-800">
+                        <a href="service-details.html?service=pooja" class="w-full inline-flex items-center justify-center space-x-1.5 bg-stone-900 dark:bg-stone-800 hover:bg-amber-600 dark:hover:bg-amber-600 text-white text-xs font-bold uppercase tracking-wider py-3 rounded-xl transition shadow-md">
+                            <span>View Mandir Specs</span>
+                            <i class="fa-solid fa-arrow-right text-[10px] ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- PRODUCT 8: False Ceiling -->
+                <div data-product="ceiling" class="pricing-card bg-white dark:bg-stone-900 rounded-3xl p-7 sm:p-8 border border-stone-200 dark:border-stone-800 shadow-xl flex flex-col justify-between hover:border-amber-500 transition-all group">
+                    <div>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="bg-amber-100 dark:bg-amber-500/20 text-amber-800 dark:text-amber-300 text-[10px] font-extrabold uppercase px-3 py-1 rounded-lg border border-amber-300 dark:border-amber-500/40">PRODUCT 08 • CEILINGS</span>
+                            <i class="fa-solid fa-lightbulb text-amber-600 dark:text-amber-400 text-lg"></i>
+                        </div>
+                        <h3 class="text-xl font-bold font-heading text-stone-900 dark:text-white group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">False Ceiling &amp; Lighting</h3>
+                        <p class="text-xs text-stone-500 dark:text-stone-400 mt-1 mb-5">Gypsum coves, wooden rafter beams &amp; recessed magnetic track channels.</p>
+                        
+                        <div class="bg-stone-50 dark:bg-stone-800/60 p-4 rounded-2xl border border-stone-200 dark:border-stone-700/80 mb-6">
+                            <div class="flex items-baseline">
+                                <span class="text-3xl font-extrabold font-heading text-stone-900 dark:text-white">$95 – $190</span>
+                                <span class="text-xs text-stone-500 dark:text-stone-400 ml-1.5 font-semibold">/ sq. ft</span>
+                            </div>
+                            <span class="text-[10px] text-amber-600 dark:text-amber-400 font-bold block mt-1">Includes framing, boards, cove LED channels &amp; paint</span>
+                        </div>
+
+                        <ul class="space-y-2.5 text-xs text-stone-600 dark:text-stone-300 mb-6">
+                            <li class="flex items-start"><i class="fa-solid fa-check text-amber-600 mr-2 mt-0.5"></i> <span><strong>Perimeter Cove LED:</strong> Diffused indirect ambient cove ($95/sq.ft)</span></li>
+                            <li class="flex items-start"><i class="fa-solid fa-check text-amber-600 mr-2 mt-0.5"></i> <span><strong>Wooden Rafter Ceilings:</strong> Factory-veneered timber rafters ($145/sq.ft)</span></li>
+                            <li class="flex items-start"><i class="fa-solid fa-check text-amber-600 mr-2 mt-0.5"></i> <span><strong>Magnetic Track Channels:</strong> Low-voltage movable spotlights ($190/sq.ft)</span></li>
+                        </ul>
+                    </div>
+                    <div class="pt-4 border-t border-stone-100 dark:border-stone-800">
+                        <a href="service-details.html?service=ceiling" class="w-full inline-flex items-center justify-center space-x-1.5 bg-stone-900 dark:bg-stone-800 hover:bg-amber-600 dark:hover:bg-amber-600 text-white text-xs font-bold uppercase tracking-wider py-3 rounded-xl transition shadow-md">
+                            <span>View Ceiling Specs</span>
+                            <i class="fa-solid fa-arrow-right text-[10px] ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- PRODUCT 9: Kids Room -->
+                <div data-product="kids" class="pricing-card bg-white dark:bg-stone-900 rounded-3xl p-7 sm:p-8 border border-stone-200 dark:border-stone-800 shadow-xl flex flex-col justify-between hover:border-amber-500 transition-all group">
+                    <div>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="bg-amber-100 dark:bg-amber-500/20 text-amber-800 dark:text-amber-300 text-[10px] font-extrabold uppercase px-3 py-1 rounded-lg border border-amber-300 dark:border-amber-500/40">PRODUCT 09 • YOUTH ERGONOMICS</span>
+                            <i class="fa-solid fa-child-reaching text-amber-600 dark:text-amber-400 text-lg"></i>
+                        </div>
+                        <h3 class="text-xl font-bold font-heading text-stone-900 dark:text-white group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">Kids Room Furniture</h3>
+                        <p class="text-xs text-stone-500 dark:text-stone-400 mt-1 mb-5">Storage bunk beds, ergonomic study desks &amp; rounded safety wardrobes.</p>
+                        
+                        <div class="bg-stone-50 dark:bg-stone-800/60 p-4 rounded-2xl border border-stone-200 dark:border-stone-700/80 mb-6">
+                            <div class="flex items-baseline">
+                                <span class="text-3xl font-extrabold font-heading text-stone-900 dark:text-white">$850 – $3,800</span>
+                                <span class="text-xs text-stone-500 dark:text-stone-400 ml-1.5 font-semibold">/ module suite</span>
+                            </div>
+                            <span class="text-[10px] text-amber-600 dark:text-amber-400 font-bold block mt-1">Zero-VOC non-toxic boards &amp; anti-pinch hinges</span>
+                        </div>
+
+                        <ul class="space-y-2.5 text-xs text-stone-600 dark:text-stone-300 mb-6">
+                            <li class="flex items-start"><i class="fa-solid fa-check text-amber-600 mr-2 mt-0.5"></i> <span><strong>Study Station:</strong> Ergonomic desk, cable ports &amp; pinboard ($850)</span></li>
+                            <li class="flex items-start"><i class="fa-solid fa-check text-amber-600 mr-2 mt-0.5"></i> <span><strong>Bunk Bed + Staircase:</strong> Pull-out staircase toy drawers ($1,950)</span></li>
+                            <li class="flex items-start"><i class="fa-solid fa-check text-amber-600 mr-2 mt-0.5"></i> <span><strong>Complete Youth Room:</strong> Bunk bed, desk, rounded wardrobe ($3,800)</span></li>
+                        </ul>
+                    </div>
+                    <div class="pt-4 border-t border-stone-100 dark:border-stone-800">
+                        <a href="service-details.html?service=kids" class="w-full inline-flex items-center justify-center space-x-1.5 bg-stone-900 dark:bg-stone-800 hover:bg-amber-600 dark:hover:bg-amber-600 text-white text-xs font-bold uppercase tracking-wider py-3 rounded-xl transition shadow-md">
+                            <span>View Kids Specs</span>
+                            <i class="fa-solid fa-arrow-right text-[10px] ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- PRODUCT 10: Other Joinery -->
+                <div data-product="other" class="pricing-card bg-white dark:bg-stone-900 rounded-3xl p-7 sm:p-8 border border-stone-200 dark:border-stone-800 shadow-xl flex flex-col justify-between hover:border-amber-500 transition-all group">
+                    <div>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="bg-amber-100 dark:bg-amber-500/20 text-amber-800 dark:text-amber-300 text-[10px] font-extrabold uppercase px-3 py-1 rounded-lg border border-amber-300 dark:border-amber-500/40">PRODUCT 10 • UTILITY &amp; VANITY</span>
+                            <i class="fa-solid fa-boxes-packing text-amber-600 dark:text-amber-400 text-lg"></i>
+                        </div>
+                        <h3 class="text-xl font-bold font-heading text-stone-900 dark:text-white group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">Other Interior Solutions</h3>
+                        <p class="text-xs text-stone-500 dark:text-stone-400 mt-1 mb-5">Louvered shoe consoles, laundry utility cabinets &amp; waterproof vanities.</p>
+                        
+                        <div class="bg-stone-50 dark:bg-stone-800/60 p-4 rounded-2xl border border-stone-200 dark:border-stone-700/80 mb-6">
+                            <div class="flex items-baseline">
+                                <span class="text-3xl font-extrabold font-heading text-stone-900 dark:text-white">$550 – $1,800</span>
+                                <span class="text-xs text-stone-500 dark:text-stone-400 ml-1.5 font-semibold">/ unit</span>
+                            </div>
+                            <span class="text-[10px] text-amber-600 dark:text-amber-400 font-bold block mt-1">Waterproof BWP Marine &amp; louvered airflow</span>
+                        </div>
+
+                        <ul class="space-y-2.5 text-xs text-stone-600 dark:text-stone-300 mb-6">
+                            <li class="flex items-start"><i class="fa-solid fa-check text-amber-600 mr-2 mt-0.5"></i> <span><strong>Ventilated Shoe Console:</strong> Louvered doors for 40+ pairs ($550)</span></li>
+                            <li class="flex items-start"><i class="fa-solid fa-check text-amber-600 mr-2 mt-0.5"></i> <span><strong>Waterproof Vanity:</strong> BWP Marine ply + quartz sink mount ($750)</span></li>
+                            <li class="flex items-start"><i class="fa-solid fa-check text-amber-600 mr-2 mt-0.5"></i> <span><strong>Concealed Laundry Tower:</strong> Washer/dryer cabinet + hamper ($1,450)</span></li>
+                        </ul>
+                    </div>
+                    <div class="pt-4 border-t border-stone-100 dark:border-stone-800">
+                        <a href="service-details.html?service=other" class="w-full inline-flex items-center justify-center space-x-1.5 bg-stone-900 dark:bg-stone-800 hover:bg-amber-600 dark:hover:bg-amber-600 text-white text-xs font-bold uppercase tracking-wider py-3 rounded-xl transition shadow-md">
+                            <span>View Utility Specs</span>
+                            <i class="fa-solid fa-arrow-right text-[10px] ml-1"></i>
+                        </a>
+                    </div>
                 </div>
 
             </div>
         </div>
     </section>
 
-    <!-- Pricing FAQs Section -->
-    <section class="py-20 bg-white dark:bg-stone-900">
+    <!-- SECTION 3: Standardized Turnkey Whole-Home Interior Packages -->
+    <section class="py-20 bg-white dark:bg-stone-900 border-b border-stone-200 dark:border-stone-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-bold text-amber-600 dark:text-amber-400 uppercase tracking-widest block mb-2">Turnkey Home Fit-Outs</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold font-heading text-stone-900 dark:text-white">Whole-Home Modular Interior Packages</h2>
+                <p class="text-stone-600 dark:text-stone-400 text-xs sm:text-base mt-3 leading-relaxed">Bundle your modular kitchen, wardrobes, false ceilings, and living joinery into a single transparent turnkey manufacturing contract.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Package 1: 1-BHK -->
+                <div class="bg-stone-50 dark:bg-stone-800/80 rounded-3xl p-8 border border-stone-200 dark:border-stone-700 shadow-xl flex flex-col justify-between hover:border-amber-500 transition-all">
+                    <div>
+                        <span class="bg-stone-200 dark:bg-stone-700 text-stone-700 dark:text-stone-200 text-[10px] font-bold uppercase px-3 py-1 rounded-full">Compact Residence</span>
+                        <h3 class="text-2xl font-bold font-heading text-stone-900 dark:text-white mt-4">1-BHK Essential Fit-Out</h3>
+                        <p class="text-xs text-stone-500 dark:text-stone-400 mt-2 mb-6">Designed for 1-bedroom urban apartments and starter homes.</p>
+                        
+                        <div class="flex items-baseline mb-6">
+                            <span class="text-4xl font-extrabold font-heading text-stone-900 dark:text-white">$7,500</span>
+                            <span class="text-xs text-stone-500 dark:text-stone-400 ml-1.5 font-semibold">starting package</span>
+                        </div>
+
+                        <ul class="space-y-3 text-xs text-stone-600 dark:text-stone-300 mb-8">
+                            <li class="flex items-center"><i class="fa-solid fa-check text-amber-600 mr-2.5"></i> Modular Kitchen (8ft with BWP sink unit)</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-amber-600 mr-2.5"></i> 1 Master Bedroom Wardrobe (7ft hinged)</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-amber-600 mr-2.5"></i> Floating TV Console with wire conduits</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-amber-600 mr-2.5"></i> Foyer Shoe Storage Cabinet</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-amber-600 mr-2.5"></i> 5-Year Structural Warranty</li>
+                        </ul>
+                    </div>
+                    <a href="contact.html" class="w-full text-center bg-stone-900 dark:bg-stone-700 hover:bg-amber-600 dark:hover:bg-amber-600 text-white text-xs font-bold uppercase tracking-wider py-3.5 rounded-xl transition">Request 1-BHK Proposal</a>
+                </div>
+
+                <!-- Package 2: 2-BHK (Featured) -->
+                <div class="bg-stone-900 text-white rounded-3xl p-8 border-2 border-amber-500 shadow-2xl flex flex-col justify-between relative transform lg:-translate-y-3">
+                    <div class="absolute -top-3.5 right-8 bg-amber-600 text-white text-[10px] font-bold uppercase px-3.5 py-1 rounded-full shadow-lg">Most Popular</div>
+                    <div>
+                        <span class="bg-amber-500/20 text-amber-400 text-[10px] font-bold uppercase px-3 py-1 rounded-full border border-amber-500/30">Complete Family Home</span>
+                        <h3 class="text-2xl font-bold font-heading text-white mt-4">2-BHK Signature Package</h3>
+                        <p class="text-xs text-stone-400 mt-2 mb-6">Full modular interior transformation for 2-bedroom family residences.</p>
+                        
+                        <div class="flex items-baseline mb-6">
+                            <span class="text-4xl font-extrabold font-heading text-amber-400">$14,500</span>
+                            <span class="text-xs text-stone-400 ml-1.5 font-semibold">starting package</span>
+                        </div>
+
+                        <ul class="space-y-3 text-xs text-stone-300 mb-8">
+                            <li class="flex items-center"><i class="fa-solid fa-check text-amber-400 mr-2.5"></i> L-Shaped Kitchen with Blum Tandembox</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-amber-400 mr-2.5"></i> 2 Modular Wardrobes (Master Sliding + Guest)</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-amber-400 mr-2.5"></i> Fluted Wall TV Console with warm LEDs</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-amber-400 mr-2.5"></i> Living Room Indirect False Ceiling Coves</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-amber-400 mr-2.5"></i> Foyer Shoe Unit + Pooja Room Mandir</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-amber-400 mr-2.5"></i> 10-Year Factory Warranty</li>
+                        </ul>
+                    </div>
+                    <a href="contact.html" class="w-full text-center bg-amber-600 hover:bg-amber-500 text-white text-xs font-extrabold uppercase tracking-wider py-3.5 rounded-xl transition shadow-lg">Request 2-BHK Proposal</a>
+                </div>
+
+                <!-- Package 3: 3-BHK / Villa -->
+                <div class="bg-stone-50 dark:bg-stone-800/80 rounded-3xl p-8 border border-stone-200 dark:border-stone-700 shadow-xl flex flex-col justify-between hover:border-amber-500 transition-all">
+                    <div>
+                        <span class="bg-stone-200 dark:bg-stone-700 text-stone-700 dark:text-stone-200 text-[10px] font-bold uppercase px-3 py-1 rounded-full">Luxury Penthouse &amp; Villa</span>
+                        <h3 class="text-2xl font-bold font-heading text-stone-900 dark:text-white mt-4">3-BHK &amp; Villa Bespoke</h3>
+                        <p class="text-xs text-stone-500 dark:text-stone-400 mt-2 mb-6">Comprehensive joinery suite with walk-in dressing suites and island kitchen.</p>
+                        
+                        <div class="flex items-baseline mb-6">
+                            <span class="text-4xl font-extrabold font-heading text-stone-900 dark:text-white">$24,500+</span>
+                            <span class="text-xs text-stone-500 dark:text-stone-400 ml-1.5 font-semibold">starting package</span>
+                        </div>
+
+                        <ul class="space-y-3 text-xs text-stone-600 dark:text-stone-300 mb-8">
+                            <li class="flex items-center"><i class="fa-solid fa-check text-amber-600 mr-2.5"></i> Gourmet Island Kitchen + Pantry Tower</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-amber-600 mr-2.5"></i> Master Walk-In Dressing Suite with Island</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-amber-600 mr-2.5"></i> 2 Full-Height Kids &amp; Guest Wardrobes</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-amber-600 mr-2.5"></i> Full-House Gyproc False Ceilings &amp; Tracks</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-amber-600 mr-2.5"></i> Dining Crockery, Grand Mandir &amp; Hydraulic Bed</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-amber-600 mr-2.5"></i> Lifetime Hardware Support &amp; 10-Yr Warranty</li>
+                        </ul>
+                    </div>
+                    <a href="contact.html" class="w-full text-center bg-stone-900 dark:bg-stone-700 hover:bg-amber-600 dark:hover:bg-amber-600 text-white text-xs font-bold uppercase tracking-wider py-3.5 rounded-xl transition">Request Villa Proposal</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: The 4 Pricing Drivers (What Determines Cost) -->
+    <section class="py-20 bg-stone-950 text-white border-b border-stone-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-bold text-amber-400 uppercase tracking-widest block mb-2">Cost Breakdown Transparency</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold font-heading text-white tracking-tight">The 4 Key Factors That Determine Your Price</h2>
+                <p class="text-stone-400 text-xs sm:text-base mt-3 leading-relaxed">Understanding how engineering choices, material substrates, and hardware mechanisms shape your final investment quote.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- Driver 1 -->
+                <div class="bg-stone-900/90 p-7 rounded-3xl border border-stone-800 hover:border-amber-500/50 transition-all">
+                    <div class="w-12 h-12 rounded-2xl bg-amber-600/20 border border-amber-500/40 text-amber-400 flex items-center justify-center text-xl mb-5">
+                        <i class="fa-solid fa-layer-group"></i>
+                    </div>
+                    <h4 class="text-base font-bold font-heading text-white mb-2">1. Core Board Substrate</h4>
+                    <p class="text-xs text-stone-300 leading-relaxed">
+                        CARB-2 Melamine offers the most affordable foundation. High-Density High Moisture Resistant (HDHMR) adds water resistance, while Boiling Water Proof (BWP) Marine Grade 710 ply is essential for sink bases and bathrooms.
+                    </p>
+                </div>
+
+                <!-- Driver 2 -->
+                <div class="bg-stone-900/90 p-7 rounded-3xl border border-stone-800 hover:border-amber-500/50 transition-all">
+                    <div class="w-12 h-12 rounded-2xl bg-amber-600/20 border border-amber-500/40 text-amber-400 flex items-center justify-center text-xl mb-5">
+                        <i class="fa-solid fa-brush"></i>
+                    </div>
+                    <h4 class="text-base font-bold font-heading text-white mb-2">2. Exterior Surface Finish</h4>
+                    <p class="text-xs text-stone-300 leading-relaxed">
+                        Matte factory laminates represent the base tier. Anti-fingerprint acrylic, clean-room Italian PU lacquer, natural smoked oak veneers, and fluted tempered bronze glass represent luxury decorative investments.
+                    </p>
+                </div>
+
+                <!-- Driver 3 -->
+                <div class="bg-stone-900/90 p-7 rounded-3xl border border-stone-800 hover:border-amber-500/50 transition-all">
+                    <div class="w-12 h-12 rounded-2xl bg-amber-600/20 border border-amber-500/40 text-amber-400 flex items-center justify-center text-xl mb-5">
+                        <i class="fa-solid fa-gears"></i>
+                    </div>
+                    <h4 class="text-base font-bold font-heading text-white mb-2">3. Hardware &amp; Mechanisms</h4>
+                    <p class="text-xs text-stone-300 leading-relaxed">
+                        Standard soft-close hinges provide smooth operation. Austrian Blum Tandembox drawer runners, Hettich TopLine XL sliding systems, Aventos bi-fold lifts, and electric Servo-Drive mechanisms increase durability and convenience.
+                    </p>
+                </div>
+
+                <!-- Driver 4 -->
+                <div class="bg-stone-900/90 p-7 rounded-3xl border border-stone-800 hover:border-amber-500/50 transition-all">
+                    <div class="w-12 h-12 rounded-2xl bg-amber-600/20 border border-amber-500/40 text-amber-400 flex items-center justify-center text-xl mb-5">
+                        <i class="fa-solid fa-ruler-combined"></i>
+                    </div>
+                    <h4 class="text-base font-bold font-heading text-white mb-2">4. Architectural Complexity</h4>
+                    <p class="text-xs text-stone-300 leading-relaxed">
+                        Straight rectangular modules require standard machining. Sloped attic ceilings, 3-meter floor-to-ceiling lofts, intricate CNC jali cutwork, and custom corner carousels require specialized parametric CAD scribing.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: All-Inclusive Production Standard (Zero Hidden Costs) -->
+    <section class="py-16 bg-white dark:bg-stone-900 border-b border-stone-200 dark:border-stone-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-amber-500/5 dark:bg-amber-500/10 border border-amber-500/20 rounded-3xl p-8 sm:p-12 text-center max-w-4xl mx-auto">
+                <span class="text-xs font-bold text-amber-600 dark:text-amber-400 uppercase tracking-widest block mb-2">The MODULARIS Assurance</span>
+                <h3 class="text-2xl sm:text-3xl font-extrabold font-heading text-stone-900 dark:text-white">What is Included in Every Single Price Quote</h3>
+                <p class="text-stone-600 dark:text-stone-400 text-xs sm:text-sm mt-3 leading-relaxed">Unlike traditional carpenter estimates that surprise you with extra hardware, adhesive, and transport costs, our pricing is 100% all-inclusive.</p>
+                
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 mt-8 text-left">
+                    <div class="bg-white dark:bg-stone-800 p-4 rounded-2xl border border-stone-200 dark:border-stone-700 shadow-sm">
+                        <i class="fa-solid fa-ruler-combined text-amber-600 text-lg mb-2"></i>
+                        <h5 class="text-xs font-bold text-stone-900 dark:text-white">3D Laser Survey</h5>
+                        <p class="text-[10px] text-stone-500 dark:text-stone-400 mt-1">Precise millimeter laser measurement of walls, plumb &amp; sockets.</p>
+                    </div>
+                    <div class="bg-white dark:bg-stone-800 p-4 rounded-2xl border border-stone-200 dark:border-stone-700 shadow-sm">
+                        <i class="fa-solid fa-vr-cardboard text-amber-600 text-lg mb-2"></i>
+                        <h5 class="text-xs font-bold text-stone-900 dark:text-white">Photorealistic 3D VR</h5>
+                        <p class="text-[10px] text-stone-500 dark:text-stone-400 mt-1">Virtual 3D model with material rendering before fabrication.</p>
+                    </div>
+                    <div class="bg-white dark:bg-stone-800 p-4 rounded-2xl border border-stone-200 dark:border-stone-700 shadow-sm">
+                        <i class="fa-solid fa-truck-ramp-box text-amber-600 text-lg mb-2"></i>
+                        <h5 class="text-xs font-bold text-stone-900 dark:text-white">Crated Delivery</h5>
+                        <p class="text-[10px] text-stone-500 dark:text-stone-400 mt-1">Barcode-tracked honeycomb packaging delivered to your floor.</p>
+                    </div>
+                    <div class="bg-white dark:bg-stone-800 p-4 rounded-2xl border border-stone-200 dark:border-stone-700 shadow-sm">
+                        <i class="fa-solid fa-shield-check text-amber-600 text-lg mb-2"></i>
+                        <h5 class="text-xs font-bold text-stone-900 dark:text-white">10-Year Warranty</h5>
+                        <p class="text-[10px] text-stone-500 dark:text-stone-400 mt-1">Comprehensive structural warranty + lifetime hardware guarantee.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 6: Pricing FAQs Section -->
+    <section class="py-20 bg-gray-50 dark:bg-stone-950">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <span class="text-xs font-bold text-amber-600 uppercase tracking-widest block mb-2">Got Questions?</span>
-                <h2 class="text-3xl font-bold font-heading text-stone-900 dark:text-white">Pricing & Payment FAQs</h2>
+                <h2 class="text-3xl font-bold font-heading text-stone-900 dark:text-white">Pricing &amp; Payment FAQs</h2>
             </div>
 
             <div class="space-y-4" id="faq-accordion">
 
                 <!-- FAQ Item 1 -->
-                <div class="faq-item bg-gray-50 dark:bg-stone-800/80 rounded-2xl border border-stone-200 dark:border-stone-700 overflow-hidden">
+                <div class="faq-item bg-white dark:bg-stone-900 rounded-2xl border border-stone-200 dark:border-stone-800 overflow-hidden shadow-sm">
                     <button class="faq-trigger w-full flex items-center justify-between gap-4 p-6 text-left cursor-pointer group" aria-expanded="false">
-                        <h4 class="font-bold text-stone-900 dark:text-white text-base group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">What is included in the per-linear-foot pricing?</h4>
-                        <span class="faq-chevron flex-shrink-0 w-7 h-7 rounded-full bg-stone-200 dark:bg-stone-700 flex items-center justify-center transition-transform duration-300">
+                        <h4 class="font-bold text-stone-900 dark:text-white text-base group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">How is modular pricing calculated (per linear foot vs. per unit)?</h4>
+                        <span class="faq-chevron flex-shrink-0 w-7 h-7 rounded-full bg-stone-100 dark:bg-stone-800 flex items-center justify-center transition-transform duration-300">
                             <i class="fa-solid fa-chevron-down text-amber-600 dark:text-amber-400 text-xs"></i>
                         </span>
                     </button>
                     <div class="faq-body max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
                         <p class="text-xs text-stone-600 dark:text-stone-400 leading-relaxed px-6 pb-6">
-                            Our per-foot price includes laser room scanning, complete 3D VR CAD modeling, factory CNC milling, soft-close hardware, delivery, and professional white-glove on-site installation.
+                            Continuous run joinery (such as wardrobes and kitchen base/wall runs) is calculated per running linear foot (rft) based on standard 7ft or 9ft ceiling heights. Free-standing or focal items (such as TV showcases, prayer mandirs, crockery vitrines, and hydraulic beds) are priced as complete factory-tested modular units including all internal mechanisms. False ceilings are priced per square foot of total coverage area.
                         </p>
                     </div>
                 </div>
 
                 <!-- FAQ Item 2 -->
-                <div class="faq-item bg-gray-50 dark:bg-stone-800/80 rounded-2xl border border-stone-200 dark:border-stone-700 overflow-hidden">
+                <div class="faq-item bg-white dark:bg-stone-900 rounded-2xl border border-stone-200 dark:border-stone-800 overflow-hidden shadow-sm">
                     <button class="faq-trigger w-full flex items-center justify-between gap-4 p-6 text-left cursor-pointer group" aria-expanded="false">
-                        <h4 class="font-bold text-stone-900 dark:text-white text-base group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">What are the standard project payment milestones?</h4>
-                        <span class="faq-chevron flex-shrink-0 w-7 h-7 rounded-full bg-stone-200 dark:bg-stone-700 flex items-center justify-center transition-transform duration-300">
+                        <h4 class="font-bold text-stone-900 dark:text-white text-base group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">What are the project payment milestones?</h4>
+                        <span class="faq-chevron flex-shrink-0 w-7 h-7 rounded-full bg-stone-100 dark:bg-stone-800 flex items-center justify-center transition-transform duration-300">
                             <i class="fa-solid fa-chevron-down text-amber-600 dark:text-amber-400 text-xs"></i>
                         </span>
                     </button>
                     <div class="faq-body max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
                         <p class="text-xs text-stone-600 dark:text-stone-400 leading-relaxed px-6 pb-6">
-                            We operate on a 40% initial deposit upon 3D CAD design approval, 50% prior to factory shipment, and the remaining 10% upon final installation inspection and white-glove sign-off.
+                            We operate on a transparent 3-stage milestone model: 40% initial deposit upon 3D laser CAD design freeze, 50% prior to dispatch from our automated CNC manufacturing facility, and the final 10% retention upon complete white-glove on-site assembly and your signed satisfaction sign-off.
                         </p>
                     </div>
                 </div>
 
                 <!-- FAQ Item 3 -->
-                <div class="faq-item bg-gray-50 dark:bg-stone-800/80 rounded-2xl border border-stone-200 dark:border-stone-700 overflow-hidden">
+                <div class="faq-item bg-white dark:bg-stone-900 rounded-2xl border border-stone-200 dark:border-stone-800 overflow-hidden shadow-sm">
                     <button class="faq-trigger w-full flex items-center justify-between gap-4 p-6 text-left cursor-pointer group" aria-expanded="false">
-                        <h4 class="font-bold text-stone-900 dark:text-white text-base group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">Is there an additional charge for sloped attic walls or uneven floors?</h4>
-                        <span class="faq-chevron flex-shrink-0 w-7 h-7 rounded-full bg-stone-200 dark:bg-stone-700 flex items-center justify-center transition-transform duration-300">
+                        <h4 class="font-bold text-stone-900 dark:text-white text-base group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">Why does modular kitchen pricing vary between sink base and wall units?</h4>
+                        <span class="faq-chevron flex-shrink-0 w-7 h-7 rounded-full bg-stone-100 dark:bg-stone-800 flex items-center justify-center transition-transform duration-300">
                             <i class="fa-solid fa-chevron-down text-amber-600 dark:text-amber-400 text-xs"></i>
                         </span>
                     </button>
                     <div class="faq-body max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
                         <p class="text-xs text-stone-600 dark:text-stone-400 leading-relaxed px-6 pb-6">
-                            No. Custom scribing and precision filler panels are included in our custom engineering service to ensure a seamless zero-gap floor-to-ceiling fit.
+                            Sink base cabinets require 100% Boiling Water Proof (BWP) Marine Grade 710 Plywood and PUR waterproof edge bonding to withstand water exposure. Base units also incorporate heavy-load Blum Tandembox drawers (50kg capacity) and pull-out organizers, whereas upper wall units use Blum Aventos bi-fold lift-ups with lightweight high-moisture resistant carcasses.
                         </p>
                     </div>
                 </div>
 
                 <!-- FAQ Item 4 -->
-                <div class="faq-item bg-gray-50 dark:bg-stone-800/80 rounded-2xl border border-stone-200 dark:border-stone-700 overflow-hidden">
+                <div class="faq-item bg-white dark:bg-stone-900 rounded-2xl border border-stone-200 dark:border-stone-800 overflow-hidden shadow-sm">
                     <button class="faq-trigger w-full flex items-center justify-between gap-4 p-6 text-left cursor-pointer group" aria-expanded="false">
-                        <h4 class="font-bold text-stone-900 dark:text-white text-base group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">Can I modify or upgrade my configuration after signing?</h4>
-                        <span class="faq-chevron flex-shrink-0 w-7 h-7 rounded-full bg-stone-200 dark:bg-stone-700 flex items-center justify-center transition-transform duration-300">
+                        <h4 class="font-bold text-stone-900 dark:text-white text-base group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">Are on-site installation and delivery fees charged separately?</h4>
+                        <span class="faq-chevron flex-shrink-0 w-7 h-7 rounded-full bg-stone-100 dark:bg-stone-800 flex items-center justify-center transition-transform duration-300">
                             <i class="fa-solid fa-chevron-down text-amber-600 dark:text-amber-400 text-xs"></i>
                         </span>
                     </button>
                     <div class="faq-body max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
                         <p class="text-xs text-stone-600 dark:text-stone-400 leading-relaxed px-6 pb-6">
-                            Minor adjustments to interior layout, finish colour, or hardware selection can be made within 72 hours of the design freeze. Structural changes after CAD approval may incur a revision fee.
+                            No. All formal MODULARIS quotation estimates include factory CNC fabrication, zero-joint PUR edge-banding, barcode honeycomb packaging, regional delivery, and certified dust-free master fitter on-site assembly within 48 hours. There are zero surprise labor or packing surcharges.
                         </p>
                     </div>
                 </div>
 
                 <!-- FAQ Item 5 -->
-                <div class="faq-item bg-gray-50 dark:bg-stone-800/80 rounded-2xl border border-stone-200 dark:border-stone-700 overflow-hidden">
+                <div class="faq-item bg-white dark:bg-stone-900 rounded-2xl border border-stone-200 dark:border-stone-800 overflow-hidden shadow-sm">
                     <button class="faq-trigger w-full flex items-center justify-between gap-4 p-6 text-left cursor-pointer group" aria-expanded="false">
-                        <h4 class="font-bold text-stone-900 dark:text-white text-base group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">What is the typical lead time from sign-off to installation?</h4>
-                        <span class="faq-chevron flex-shrink-0 w-7 h-7 rounded-full bg-stone-200 dark:bg-stone-700 flex items-center justify-center transition-transform duration-300">
+                        <h4 class="font-bold text-stone-900 dark:text-white text-base group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">What happens if my room walls are out of plumb or ceilings are uneven?</h4>
+                        <span class="faq-chevron flex-shrink-0 w-7 h-7 rounded-full bg-stone-100 dark:bg-stone-800 flex items-center justify-center transition-transform duration-300">
                             <i class="fa-solid fa-chevron-down text-amber-600 dark:text-amber-400 text-xs"></i>
                         </span>
                     </button>
                     <div class="faq-body max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
                         <p class="text-xs text-stone-600 dark:text-stone-400 leading-relaxed px-6 pb-6">
-                            Standard production lead time is 6–10 weeks from design approval. Complex bespoke commissions (e.g. full walk-in suites with island units) may require 12–14 weeks. Rush production slots are available upon request.
+                            Our laser surveying captures wall deviations to within 0.1mm. Precision scribing and custom perimeter filler panels are pre-calculated in our automated CAM fabrication files to ensure flawless zero-gap wall-to-wall and floor-to-ceiling alignment without any additional scribing surcharges.
                         </p>
                     </div>
                 </div>
@@ -424,7 +903,6 @@
                                 other.querySelector('.faq-body').style.maxHeight = null;
                                 other.querySelector('.faq-trigger').setAttribute('aria-expanded', 'false');
                                 other.querySelector('.faq-chevron').style.transform = 'rotate(0deg)';
-                                other.querySelector('.faq-item-border')?.classList.remove('border-amber-400');
                             }
                         });
 
@@ -443,7 +921,123 @@
         </div>
     </section>
 
-    <!-- Master Footer Component -->
+    <!-- SECTION 7: Consultation CTA -->
+    <section class="py-16 sm:py-20 bg-stone-900 text-white border-t border-stone-800 text-center">
+        <div class="max-w-4xl mx-auto px-4">
+            <span class="text-xs font-bold text-amber-400 uppercase tracking-widest block mb-2">Have Custom Architectural Plans?</span>
+            <h2 class="text-3xl sm:text-4xl font-extrabold font-heading text-white mb-4">Request a Line-Item BOQ Cost Analysis</h2>
+            <p class="text-stone-300 text-xs sm:text-sm max-w-xl mx-auto mb-8 leading-relaxed">Send your architectural floor plan or sketch to our senior factory estimators for a detailed Bill of Quantities (BOQ) with guaranteed manufacturing pricing within 24 hours.</p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="contact.html" class="inline-flex items-center space-x-2 bg-gradient-to-r from-amber-600 to-amber-500 hover:from-amber-500 hover:to-amber-600 text-white text-xs uppercase font-extrabold tracking-wider px-8 py-4 rounded-full shadow-lg transition-all transform hover:-translate-y-0.5">
+                    <span>Submit Plans for BOQ</span>
+                    <i class="fa-solid fa-file-arrow-up text-xs ml-1"></i>
+                </a>
+                <a href="services.html" class="inline-flex items-center space-x-2 bg-stone-800 hover:bg-stone-700 text-white border border-stone-700 text-xs uppercase font-extrabold tracking-wider px-8 py-4 rounded-full transition-all">
+                    <span>Explore All 10 Services</span>
+                    <i class="fa-solid fa-arrow-right text-xs ml-1"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Client-side script for Multi-Product Estimator and Product Pricing Filter Tabs -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // 1. Multi-Product Cost Estimator Logic
+            const productSelect = document.getElementById('estimator-product');
+            const dimensionSlider = document.getElementById('estimator-dimension');
+            const dimensionVal = document.getElementById('estimator-dimension-val');
+            const dimensionLabel = document.getElementById('estimator-dimension-label');
+            const dimensionMin = document.getElementById('estimator-dimension-min');
+            const dimensionMax = document.getElementById('estimator-dimension-max');
+            const materialSelect = document.getElementById('estimator-material');
+            const hardwareSelect = document.getElementById('estimator-hardware');
+            const priceDisplay = document.getElementById('estimator-price-display');
+
+            function updateSliderBounds() {
+                if (!productSelect || !dimensionSlider) return;
+                const opt = productSelect.options[productSelect.selectedIndex];
+                const unit = opt.getAttribute('data-unit') || 'units';
+                const min = parseInt(opt.getAttribute('data-min')) || 4;
+                const max = parseInt(opt.getAttribute('data-max')) || 24;
+                const def = parseInt(opt.getAttribute('data-default')) || 8;
+
+                dimensionSlider.min = min;
+                dimensionSlider.max = max;
+                if (dimensionSlider.value < min || dimensionSlider.value > max) {
+                    dimensionSlider.value = def;
+                }
+                if (dimensionLabel) dimensionLabel.textContent = unit;
+                if (dimensionMin) dimensionMin.textContent = 'Min: ' + min;
+                if (dimensionMax) dimensionMax.textContent = 'Max: ' + max;
+                if (dimensionVal) dimensionVal.textContent = dimensionSlider.value + ' ' + unit;
+            }
+
+            function calculateInstantEstimate() {
+                if (!productSelect || !dimensionSlider || !materialSelect || !hardwareSelect || !priceDisplay) return;
+                const opt = productSelect.options[productSelect.selectedIndex];
+                const unit = opt.getAttribute('data-unit') || 'units';
+                const baseRate = parseFloat(opt.getAttribute('data-rate')) || 200;
+                const dimension = parseFloat(dimensionSlider.value) || 1;
+
+                if (dimensionVal) dimensionVal.textContent = dimension + ' ' + unit;
+
+                const matOpt = materialSelect.options[materialSelect.selectedIndex];
+                const matMultiplier = parseFloat(matOpt.getAttribute('data-mult')) || 1.0;
+
+                const hardOpt = hardwareSelect.options[hardwareSelect.selectedIndex];
+                const hardAddon = parseFloat(hardOpt.getAttribute('data-addon')) || 0;
+
+                // Base calculation
+                const baseCalculated = (dimension * baseRate * matMultiplier) + hardAddon;
+                const low = Math.round(baseCalculated * 0.95);
+                const high = Math.round(baseCalculated * 1.10);
+
+                priceDisplay.textContent = '$' + low.toLocaleString('en-US') + ' - $' + high.toLocaleString('en-US');
+            }
+
+            if (productSelect && dimensionSlider) {
+                productSelect.addEventListener('change', function() {
+                    updateSliderBounds();
+                    calculateInstantEstimate();
+                });
+
+                dimensionSlider.addEventListener('input', calculateInstantEstimate);
+                materialSelect.addEventListener('change', calculateInstantEstimate);
+                hardwareSelect.addEventListener('change', calculateInstantEstimate);
+
+                updateSliderBounds();
+                calculateInstantEstimate();
+            }
+
+            // 2. Product Pricing Catalog Filter Tabs
+            const filterBtns = document.querySelectorAll('.pricing-filter-btn');
+            const pricingCards = document.querySelectorAll('.pricing-card');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const filter = this.getAttribute('data-pricing-filter');
+
+                    filterBtns.forEach(b => {
+                        b.classList.remove('bg-amber-600', 'text-white', 'shadow-md', 'shadow-amber-600/30');
+                        b.classList.add('bg-white', 'dark:bg-stone-800', 'text-stone-700', 'dark:text-stone-300', 'border', 'border-stone-200', 'dark:border-stone-700');
+                    });
+                    this.classList.remove('bg-white', 'dark:bg-stone-800', 'text-stone-700', 'dark:text-stone-300', 'border', 'border-stone-200', 'dark:border-stone-700');
+                    this.classList.add('bg-amber-600', 'text-white', 'shadow-md', 'shadow-amber-600/30');
+
+                    pricingCards.forEach(card => {
+                        const prod = card.getAttribute('data-product');
+                        if (filter === 'all' || prod === filter) {
+                            card.classList.remove('hidden');
+                        } else {
+                            card.classList.add('hidden');
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+<!-- Master Footer Component -->
     <footer class="bg-[#040814] text-stone-400 pt-16 pb-8 border-t border-stone-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
