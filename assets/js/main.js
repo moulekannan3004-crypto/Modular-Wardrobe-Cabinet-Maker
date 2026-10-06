@@ -921,8 +921,12 @@ function initPhoneValidation() {
         if (!input.getAttribute('pattern')) {
             input.setAttribute('pattern', '^[+]?[0-9\\s\\-\\(\\)\\.]{7,20}$');
         }
-        input.setAttribute('title', 'Please enter a valid phone number with 7 to 15 digits (numbers only, no letters)');
-        input.setAttribute('inputmode', 'tel');
+        if (!input.getAttribute('title')) {
+            input.setAttribute('title', 'Please enter a valid phone number with 7 to 15 digits (numbers only, no letters)');
+        }
+        if (!input.getAttribute('inputmode')) {
+            input.setAttribute('inputmode', 'tel');
+        }
         
         // Block typing alphabetic characters on keydown
         input.addEventListener('keydown', (e) => {
