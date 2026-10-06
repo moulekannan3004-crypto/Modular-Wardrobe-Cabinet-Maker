@@ -182,42 +182,131 @@
     <section class="py-12 bg-white dark:bg-stone-900 border-b border-stone-200 dark:border-stone-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="bg-stone-950 text-white rounded-3xl overflow-hidden border border-stone-800 shadow-2xl grid grid-cols-1 lg:grid-cols-12 group hover:border-amber-500/60 transition-all duration-300">
-                <div class="lg:col-span-7 relative h-72 sm:h-96 lg:h-auto overflow-hidden">
-                    <img src="assets/stuttgart-fluted-glass-suite.png" alt="2026 Wardrobe Design Trends" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                    <div class="absolute inset-0 bg-gradient-to-t from-stone-950 via-transparent to-transparent lg:hidden"></div>
-                    <span class="absolute top-4 left-4 bg-amber-600 text-white text-[10px] uppercase font-extrabold px-3 py-1.5 rounded-xl shadow-lg">FEATURED EDITORIAL</span>
-                </div>
-                <div class="lg:col-span-5 p-6 sm:p-10 flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-center gap-3 text-[11px] text-amber-400 font-bold mb-3">
-                            <span><i class="fa-solid fa-sparkles mr-1"></i> 2026 Trend Forecast</span>
-                            <span>•</span>
-                            <span>8 Min Read</span>
+                <!-- Left: Proportional Visual Showcase (5 of 12 cols) -->
+                <div class="lg:col-span-5 relative h-72 sm:h-96 lg:h-full min-h-[380px] lg:min-h-[520px] overflow-hidden">
+                    <img src="assets/stuttgart-fluted-glass-suite.png" alt="2026 Wardrobe Design Trends" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-stone-950/80 via-transparent to-black/20 pointer-events-none"></div>
+                    <span class="absolute top-4 left-4 bg-amber-600 text-white text-[10px] uppercase font-extrabold px-3 py-1.5 rounded-xl shadow-lg flex items-center gap-1.5 z-10">
+                        <i class="fa-solid fa-star text-[9px]"></i> FEATURED EDITORIAL
+                    </span>
+                    <!-- Bottom Overlay Badge on Image -->
+                    <div class="absolute bottom-4 left-4 right-4 hidden sm:flex items-center justify-between p-3 rounded-2xl bg-stone-950/85 backdrop-blur-md border border-stone-800 text-[11px] text-stone-300 z-10">
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-camera text-amber-400"></i>
+                            <span class="font-semibold text-white">Stuttgart Master Dressing Suite</span>
                         </div>
+                        <span class="text-[10px] text-amber-400 font-bold bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/30">2026 Prototype</span>
+                    </div>
+                </div>
+
+                <!-- Right: Rich Editorial Content & 2026 Innovation Matrix (7 of 12 cols) -->
+                <div class="lg:col-span-7 p-6 sm:p-8 lg:p-10 flex flex-col justify-between">
+                    <div>
+                        <!-- Category & Reading Meta -->
+                        <div class="flex flex-wrap items-center gap-2.5 text-[11px] text-amber-400 font-bold mb-3">
+                            <span class="bg-amber-500/10 border border-amber-500/30 px-2.5 py-0.5 rounded-md"><i class="fa-solid fa-sparkles mr-1"></i> 2026 Trend Forecast</span>
+                            <span class="text-stone-600">•</span>
+                            <span class="text-stone-300"><i class="fa-solid fa-clock mr-1 text-amber-400"></i> 8 Min Read</span>
+                            <span class="text-stone-600">•</span>
+                            <span class="text-stone-400"><i class="fa-solid fa-fire text-amber-400 mr-1"></i> Architectural Intelligence</span>
+                        </div>
+
+                        <!-- Editorial Title -->
                         <h2 class="text-2xl sm:text-3xl font-extrabold font-heading text-white leading-tight group-hover:text-amber-400 transition-colors">
                             The 2026 Wardrobe Design &amp; Trend Forecast: 7 Innovations Redefining Modern Closets
                         </h2>
-                        <p class="text-stone-300 text-xs sm:text-sm mt-4 leading-relaxed">
+
+                        <!-- Summary Paragraph -->
+                        <p class="text-stone-300 text-xs sm:text-sm mt-3.5 leading-relaxed">
                             From fluted amber glass with bronze anodized profiles and ceiling-flush coplanar sliding doors to integrated 3000K motion ergonomics and Italian velvet jewelry islands — how luxury modular wardrobes are evolving into private boutique sanctuaries.
                         </p>
                         
-                        <div class="grid grid-cols-2 gap-3 mt-6 pt-5 border-t border-stone-800 text-[11px] text-stone-300">
-                            <div><i class="fa-solid fa-check text-amber-500 mr-1.5"></i> Fluted Ribbed Glass</div>
-                            <div><i class="fa-solid fa-check text-amber-500 mr-1.5"></i> Coplanar Track Doors</div>
-                            <div><i class="fa-solid fa-check text-amber-500 mr-1.5"></i> Biometric Island Safes</div>
-                            <div><i class="fa-solid fa-check text-amber-500 mr-1.5"></i> 120N Hydraulic Lifts</div>
+                        <!-- 6 Key 2026 Innovations Grid -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 mt-5 pt-4 border-t border-stone-800">
+                            <div class="bg-stone-900/80 hover:bg-stone-900 p-2.5 rounded-xl border border-stone-800/90 hover:border-amber-500/40 transition flex items-start gap-2.5">
+                                <div class="w-7 h-7 rounded-lg bg-amber-500/10 text-amber-400 flex items-center justify-center shrink-0 text-xs mt-0.5">
+                                    <i class="fa-solid fa-layer-group"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-xs font-bold text-white">Fluted Amber Glass</h4>
+                                    <p class="text-[10.5px] text-stone-400 leading-snug mt-0.5">Diffuses clothes with warm glow &amp; 18mm bronze anodized profiles.</p>
+                                </div>
+                            </div>
+
+                            <div class="bg-stone-900/80 hover:bg-stone-900 p-2.5 rounded-xl border border-stone-800/90 hover:border-amber-500/40 transition flex items-start gap-2.5">
+                                <div class="w-7 h-7 rounded-lg bg-amber-500/10 text-amber-400 flex items-center justify-center shrink-0 text-xs mt-0.5">
+                                    <i class="fa-solid fa-door-open"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-xs font-bold text-white">Coplanar Track Doors</h4>
+                                    <p class="text-[10.5px] text-stone-400 leading-snug mt-0.5">Ceiling-flush 80kg whisper-glide doors with soft bilateral damping.</p>
+                                </div>
+                            </div>
+
+                            <div class="bg-stone-900/80 hover:bg-stone-900 p-2.5 rounded-xl border border-stone-800/90 hover:border-amber-500/40 transition flex items-start gap-2.5">
+                                <div class="w-7 h-7 rounded-lg bg-amber-500/10 text-amber-400 flex items-center justify-center shrink-0 text-xs mt-0.5">
+                                    <i class="fa-solid fa-fingerprint"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-xs font-bold text-white">Biometric Island Safes</h4>
+                                    <p class="text-[10.5px] text-stone-400 leading-snug mt-0.5">Concealed motorized safes inside velvet jewelry dresser drawers.</p>
+                                </div>
+                            </div>
+
+                            <div class="bg-stone-900/80 hover:bg-stone-900 p-2.5 rounded-xl border border-stone-800/90 hover:border-amber-500/40 transition flex items-start gap-2.5">
+                                <div class="w-7 h-7 rounded-lg bg-amber-500/10 text-amber-400 flex items-center justify-center shrink-0 text-xs mt-0.5">
+                                    <i class="fa-solid fa-arrows-up-down"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-xs font-bold text-white">120N Hydraulic Pull-Downs</h4>
+                                    <p class="text-[10.5px] text-stone-400 leading-snug mt-0.5">German gas-spring wardrobe rails for effortless high loft suit access.</p>
+                                </div>
+                            </div>
+
+                            <div class="bg-stone-900/80 hover:bg-stone-900 p-2.5 rounded-xl border border-stone-800/90 hover:border-amber-500/40 transition flex items-start gap-2.5">
+                                <div class="w-7 h-7 rounded-lg bg-amber-500/10 text-amber-400 flex items-center justify-center shrink-0 text-xs mt-0.5">
+                                    <i class="fa-solid fa-lightbulb"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-xs font-bold text-white">Shadowless Vertical LEDs</h4>
+                                    <p class="text-[10.5px] text-stone-400 leading-snug mt-0.5">3000K warm 95+ CRI vertical extrusions with proximity sensors.</p>
+                                </div>
+                            </div>
+
+                            <div class="bg-stone-900/80 hover:bg-stone-900 p-2.5 rounded-xl border border-stone-800/90 hover:border-amber-500/40 transition flex items-start gap-2.5">
+                                <div class="w-7 h-7 rounded-lg bg-amber-500/10 text-amber-400 flex items-center justify-center shrink-0 text-xs mt-0.5">
+                                    <i class="fa-solid fa-shield-halved"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-xs font-bold text-white">Zero-VOC Eco Substrate</h4>
+                                    <p class="text-[10.5px] text-stone-400 leading-snug mt-0.5">CARB-2 &amp; BWP 710 marine ply core with PUR edge banding.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Technical Specification Highlights Bar -->
+                        <div class="mt-4 flex flex-wrap items-center gap-2 text-[10.5px]">
+                            <span class="text-amber-400 font-extrabold uppercase tracking-wider text-[10px] mr-1 flex items-center gap-1">
+                                <i class="fa-solid fa-sliders text-xs"></i> Highlights:
+                            </span>
+                            <span class="bg-stone-900 px-2.5 py-1 rounded-lg border border-stone-800 text-stone-300 font-medium">18mm Bronze Profile</span>
+                            <span class="bg-stone-900 px-2.5 py-1 rounded-lg border border-stone-800 text-stone-300 font-medium">3000K CRI 95+</span>
+                            <span class="bg-stone-900 px-2.5 py-1 rounded-lg border border-stone-800 text-stone-300 font-medium">Blum Coplanar</span>
+                            <span class="bg-stone-900 px-2.5 py-1 rounded-lg border border-stone-800 text-stone-300 font-medium">Italian Velvet</span>
+                            <span class="bg-stone-900 px-2.5 py-1 rounded-lg border border-stone-800 text-stone-300 font-medium">10-Yr Warranty</span>
                         </div>
                     </div>
 
-                    <div class="mt-8 pt-5 border-t border-stone-800/80 flex items-center justify-between">
+                    <!-- Footer Row: Author & Action Button -->
+                    <div class="mt-6 pt-5 border-t border-stone-800/80 flex flex-wrap items-center justify-between gap-4">
                         <div class="flex items-center gap-3">
                             <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=150&auto=format&fit=crop" alt="Henrik Vance" class="w-10 h-10 rounded-full object-cover ring-2 ring-amber-500">
                             <div>
                                 <span class="text-xs font-bold text-white block">Henrik Vance</span>
-                                <span class="text-[10px] text-stone-400">Lead Architectural Designer</span>
+                                <span class="text-[10px] text-stone-400">Lead Architectural Designer • MODULARIS</span>
                             </div>
                         </div>
-                        <a href="blog-details.html?id=8" class="inline-flex items-center space-x-1.5 bg-amber-600 hover:bg-amber-500 text-white text-xs font-extrabold uppercase tracking-wider px-5 py-3 rounded-xl transition shadow-md">
+                        <a href="blog-details.html?id=8" class="inline-flex items-center space-x-1.5 bg-amber-600 hover:bg-amber-500 text-white text-xs font-extrabold uppercase tracking-wider px-5 py-3 rounded-xl transition shadow-md shadow-amber-600/20">
                             <span>Read Full Guide</span>
                             <i class="fa-solid fa-arrow-right text-[10px] ml-1"></i>
                         </a>
