@@ -42,13 +42,17 @@
 
                 <!-- Desktop Navigation Menu -->
                 <nav class="hidden lg:flex items-center space-x-2.5 xl:space-x-6 rtl:space-x-reverse text-xs xl:text-sm shrink-0">
-                    <div class="relative group py-4">
-                        <a href="index.html" class="text-stone-700 dark:text-stone-200 hover:text-amber-600 dark:hover:text-amber-400 font-semibold flex items-center transition">
-                            Home 1 <i class="fa-solid fa-chevron-down text-[10px] ml-1.5 transition group-hover:rotate-180"></i>
-                        </a>
-                        <div class="absolute left-0 top-full hidden group-hover:block w-48 bg-white dark:bg-stone-800 shadow-xl rounded-xl border border-stone-100 dark:border-stone-700 py-2 z-50">
-                            <a href="index.html" class="block px-4 py-2 text-xs hover:bg-amber-50 dark:hover:bg-stone-700 text-stone-700 dark:text-stone-200 hover:text-amber-600">Home 1 - General Services</a>
-                            <a href="home-niche.html" class="block px-4 py-2 text-xs hover:bg-amber-50 dark:hover:bg-stone-700 text-stone-700 dark:text-stone-200 hover:text-amber-600">Home 2 - Custom Wardrobes</a>
+                    <div class="relative nav-dropdown group py-4">
+                        <button type="button" class="nav-dropdown-trigger text-stone-700 dark:text-stone-200 hover:text-amber-600 dark:hover:text-amber-400 font-semibold flex items-center transition cursor-pointer focus:outline-none" aria-haspopup="true" aria-expanded="false">
+                            <span>Home</span> <i class="fa-solid fa-chevron-down text-[10px] ml-1.5 transition-transform duration-200 group-hover:rotate-180"></i>
+                        </button>
+                        <div class="nav-dropdown-menu absolute start-0 top-full hidden group-hover:block w-52 bg-white dark:bg-stone-800 shadow-2xl rounded-xl border border-stone-100 dark:border-stone-700 py-2 z-50">
+                            <a href="index.html" class="block px-4 py-2.5 text-xs hover:bg-amber-50 dark:hover:bg-stone-700 text-stone-700 dark:text-stone-200 hover:text-amber-600 transition">
+                                Home 1 - General Services
+                            </a>
+                            <a href="home-niche.html" class="block px-4 py-2.5 text-xs hover:bg-amber-50 dark:hover:bg-stone-700 text-stone-700 dark:text-stone-200 hover:text-amber-600 transition">
+                                Home 2 - Custom Wardrobes
+                            </a>
                         </div>
                     </div>
                     <a href="about.html" class="text-amber-600 dark:text-amber-400 font-bold border-b-2 border-amber-600 pb-1 transition">About Us</a>
@@ -185,19 +189,19 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-4 xl:px-8">
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 lg:gap-4 xl:gap-8 text-center divide-x divide-amber-500/50 rtl:divide-x-reverse">
                 <div class="p-2 flex flex-col justify-center items-center">
-                    <div class="text-2xl sm:text-3xl lg:text-2xl xl:text-4xl font-extrabold font-heading whitespace-nowrap">4,800+</div>
+                    <div class="text-2xl sm:text-3xl lg:text-2xl xl:text-4xl font-extrabold font-sans whitespace-nowrap">4,800+</div>
                     <div class="text-xs uppercase tracking-wider font-medium text-amber-100 mt-1.5">Luxury Residences Built</div>
                 </div>
                 <div class="p-2 flex flex-col justify-center items-center">
-                    <div class="text-2xl sm:text-3xl lg:text-2xl xl:text-4xl font-extrabold font-heading whitespace-nowrap">40,000 Sq. Ft.</div>
+                    <div class="text-2xl sm:text-3xl lg:text-2xl xl:text-4xl font-extrabold font-sans whitespace-nowrap">40,000 Sq. Ft.</div>
                     <div class="text-xs uppercase tracking-wider font-medium text-amber-100 mt-1.5">Automated CNC Plant</div>
                 </div>
                 <div class="p-2 flex flex-col justify-center items-center">
-                    <div class="text-2xl sm:text-3xl lg:text-2xl xl:text-4xl font-extrabold font-heading whitespace-nowrap">&lt; 0.5 mm</div>
+                    <div class="text-2xl sm:text-3xl lg:text-2xl xl:text-4xl font-extrabold font-sans whitespace-nowrap">&lt; 0.5 mm</div>
                     <div class="text-xs uppercase tracking-wider font-medium text-amber-100 mt-1.5">Milling Tolerance</div>
                 </div>
                 <div class="p-2 flex flex-col justify-center items-center">
-                    <div class="text-2xl sm:text-3xl lg:text-2xl xl:text-4xl font-extrabold font-heading whitespace-nowrap">10 Years</div>
+                    <div class="text-2xl sm:text-3xl lg:text-2xl xl:text-4xl font-extrabold font-sans whitespace-nowrap">10 Years</div>
                     <div class="text-xs uppercase tracking-wider font-medium text-amber-100 mt-1.5">Structural Warranty</div>
                 </div>
             </div>
@@ -207,24 +211,27 @@
     <!-- Who We Are Section -->
     <section class="py-24 bg-white dark:bg-stone-900 border-b border-gray-200 dark:border-stone-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                <div class="lg:col-span-7 space-y-6">
-                    <div class="inline-flex items-center space-x-2 bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/30 rounded-full px-4 py-1.5 text-xs font-extrabold uppercase tracking-widest">
-                        <i class="fa-solid fa-users"></i>
-                        <span>Who We Are</span>
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-stretch">
+                <!-- Left Content Column -->
+                <div class="lg:col-span-7 flex flex-col justify-between space-y-6">
+                    <div class="space-y-4">
+                        <div class="inline-flex items-center space-x-2 bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/30 rounded-full px-4 py-1.5 text-xs font-extrabold uppercase tracking-widest">
+                            <i class="fa-solid fa-users"></i>
+                            <span>Who We Are</span>
+                        </div>
+
+                        <h2 class="text-3xl sm:text-4xl font-extrabold font-heading text-stone-900 dark:text-white leading-tight">
+                            Pioneering Modular Joinery &amp; <span class="text-amber-600 dark:text-amber-400">Cabinet Engineering</span>
+                        </h2>
+
+                        <!-- The Company & Heritage -->
+                        <p class="text-stone-700 dark:text-stone-300 text-sm sm:text-base leading-relaxed">
+                            <strong>The Company:</strong> Founded in 2011 by master joinery engineer Henrik Vance, MODULARIS is an industry-leading architectural manufacturer specializing in bespoke modular wardrobes and premium custom cabinetry. What began as an artisan workshop in Munich has scaled into a state-of-the-art 40,000 sq. ft. automated manufacturing facility dedicated to eliminating the delays, noise, and airborne sawdust of traditional on-site carpentry.
+                        </p>
                     </div>
 
-                    <h2 class="text-3xl sm:text-4xl font-extrabold font-heading text-stone-900 dark:text-white leading-tight">
-                        Pioneering Modular Joinery &amp; <span class="text-amber-600 dark:text-amber-400">Cabinet Engineering</span>
-                    </h2>
-
-                    <!-- The Company & Heritage -->
-                    <p class="text-stone-700 dark:text-stone-300 text-sm sm:text-base leading-relaxed">
-                        <strong>The Company:</strong> Founded in 2011 by master joinery engineer Henrik Vance, MODULARIS is an industry-leading architectural manufacturer specializing in bespoke modular wardrobes and premium custom cabinetry. What began as an artisan workshop in Munich has scaled into a state-of-the-art 40,000 sq. ft. automated manufacturing facility dedicated to eliminating the delays, noise, and airborne sawdust of traditional on-site carpentry.
-                    </p>
-
                     <!-- Work & Experience -->
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div class="p-4 rounded-2xl bg-stone-50 dark:bg-stone-800/80 border border-stone-200 dark:border-stone-700">
                             <div class="flex items-center space-x-2 text-amber-600 dark:text-amber-400 font-bold text-xs uppercase tracking-wider mb-1">
                                 <i class="fa-solid fa-screwdriver-wrench"></i>
@@ -280,11 +287,12 @@
                     </div>
                 </div>
 
-                <div class="lg:col-span-5">
-                    <div class="relative rounded-3xl overflow-hidden shadow-2xl border-2 border-stone-200 dark:border-stone-800 group">
-                        <img src="assets/boutique-workshop-cabinet-makers.png" alt="Who We Are - MODULARIS Factory Manufacturing" class="w-full h-[460px] object-cover group-hover:scale-105 transition-transform duration-700">
-                        <div class="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/20 to-transparent"></div>
-                        <div class="absolute bottom-6 left-6 right-6 p-5 bg-stone-900/90 backdrop-blur-md rounded-2xl border border-stone-700 text-white">
+                <!-- Right Image Column (Guaranteed Equal Height with Content) -->
+                <div class="lg:col-span-5 flex flex-col w-full h-full">
+                    <div class="relative flex-1 w-full min-h-[460px] rounded-3xl overflow-hidden shadow-2xl border-2 border-stone-200 dark:border-stone-800 group">
+                        <img src="assets/boutique-workshop-cabinet-makers.png" alt="Who We Are - MODULARIS Factory Manufacturing" class="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/20 to-transparent pointer-events-none"></div>
+                        <div class="absolute bottom-6 left-6 right-6 p-5 bg-stone-900/95 backdrop-blur-md rounded-2xl border border-stone-700 text-white shadow-xl">
                             <span class="text-[10px] font-extrabold uppercase tracking-widest text-amber-400 block mb-1">Manufacturing Facility</span>
                             <h4 class="text-base font-bold font-heading">40,000 Sq. Ft. Automated CNC Plant</h4>
                             <p class="text-xs text-stone-300 mt-1">Industrial panel sizing, multi-spindle line-boring, and clean-room lacquer finishing under one roof.</p>
@@ -310,7 +318,7 @@
 
             <!-- Horizontal Connected Progress Line (Desktop) -->
             <div class="relative">
-                <div class="hidden md:block absolute top-12 left-12 right-12 h-1 bg-gradient-to-r from-amber-600/30 via-amber-500 to-amber-600/30 rounded-full z-0"></div>
+                <div class="hidden md:block absolute top-1/2 -translate-y-1/2 left-[10%] right-[10%] h-1 bg-gradient-to-r from-amber-600/30 via-amber-500 to-amber-600/30 rounded-full z-0 shadow-[0_0_8px_rgba(212,175,55,0.3)]"></div>
 
                 <div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative z-10">
                     
@@ -320,7 +328,7 @@
                             <div class="w-14 h-14 bg-stone-950 border-2 border-amber-500 text-amber-400 rounded-2xl flex items-center justify-center text-xl shadow-lg mb-6 group-hover:bg-amber-600 group-hover:text-white transition-colors duration-300">
                                 <i class="fa-solid fa-hammer"></i>
                             </div>
-                            <span class="text-4xl font-black font-heading text-amber-400 block mb-1">2011</span>
+                            <span class="text-4xl font-black font-sans text-amber-400 block mb-1">2011</span>
                             <span class="text-[10px] font-extrabold uppercase tracking-widest bg-amber-500/10 text-amber-400 border border-amber-500/20 px-2.5 py-0.5 rounded-full inline-block mb-3">Boutique Joinery</span>
                             <h4 class="font-bold text-white text-base mb-2">Workshop Founded</h4>
                             <p class="text-xs text-stone-400 leading-relaxed mb-4">
@@ -339,7 +347,7 @@
                             <div class="w-14 h-14 bg-stone-950 border-2 border-amber-500 text-amber-400 rounded-2xl flex items-center justify-center text-xl shadow-lg mb-6 group-hover:bg-amber-600 group-hover:text-white transition-colors duration-300">
                                 <i class="fa-solid fa-microchip"></i>
                             </div>
-                            <span class="text-4xl font-black font-heading text-amber-400 block mb-1">2016</span>
+                            <span class="text-4xl font-black font-sans text-amber-400 block mb-1">2016</span>
                             <span class="text-[10px] font-extrabold uppercase tracking-widest bg-amber-500/10 text-amber-400 border border-amber-500/20 px-2.5 py-0.5 rounded-full inline-block mb-3">CNC Automation</span>
                             <h4 class="font-bold text-white text-base mb-2">German CNC Milling</h4>
                             <p class="text-xs text-stone-400 leading-relaxed mb-4">
@@ -358,7 +366,7 @@
                             <div class="w-14 h-14 bg-stone-950 border-2 border-amber-500 text-amber-400 rounded-2xl flex items-center justify-center text-xl shadow-lg mb-6 group-hover:bg-amber-600 group-hover:text-white transition-colors duration-300">
                                 <i class="fa-solid fa-vr-cardboard"></i>
                             </div>
-                            <span class="text-4xl font-black font-heading text-amber-400 block mb-1">2021</span>
+                            <span class="text-4xl font-black font-sans text-amber-400 block mb-1">2021</span>
                             <span class="text-[10px] font-extrabold uppercase tracking-widest bg-amber-500/10 text-amber-400 border border-amber-500/20 px-2.5 py-0.5 rounded-full inline-block mb-3">VR Technology</span>
                             <h4 class="font-bold text-white text-base mb-2">3D VR Proposal Portal</h4>
                             <p class="text-xs text-stone-400 leading-relaxed mb-4">
@@ -377,7 +385,7 @@
                             <div class="w-14 h-14 bg-stone-950 border-2 border-amber-500 text-amber-400 rounded-2xl flex items-center justify-center text-xl shadow-lg mb-6 group-hover:bg-amber-600 group-hover:text-white transition-colors duration-300">
                                 <i class="fa-solid fa-trophy"></i>
                             </div>
-                            <span class="text-4xl font-black font-heading text-amber-400 block mb-1">2026</span>
+                            <span class="text-4xl font-black font-sans text-amber-400 block mb-1">2026</span>
                             <span class="text-[10px] font-extrabold uppercase tracking-widest bg-amber-500/10 text-amber-400 border border-amber-500/20 px-2.5 py-0.5 rounded-full inline-block mb-3">Global Milestone</span>
                             <h4 class="font-bold text-white text-base mb-2">4,800+ Installations</h4>
                             <p class="text-xs text-stone-400 leading-relaxed mb-4">
@@ -565,37 +573,146 @@
     </section>
 
     <!-- 4-Stage Craftsmanship Process -->
-    <section class="py-20 bg-gray-50 dark:bg-stone-950">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section class="py-24 bg-stone-50 dark:bg-stone-950 border-t border-b border-stone-200 dark:border-stone-800 relative overflow-hidden">
+        <!-- Subtle blueprint grid texture -->
+        <div class="absolute inset-0 bg-[radial-gradient(#d4af37_1px,transparent_1px)] [background-size:24px_24px] opacity-[0.03] dark:opacity-[0.07] pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-xs font-bold text-amber-600 uppercase tracking-widest block mb-2">Production Excellence</span>
-                <h2 class="text-3xl font-bold font-heading text-stone-900 dark:text-white">Our 4-Stage Modular Manufacturing Lifecycle</h2>
-                <p class="text-xs sm:text-sm text-stone-600 dark:text-stone-400 mt-2">How automated factory joinery ensures flawless fit and 48-hour dust-free installation.</p>
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/30 text-xs font-extrabold uppercase tracking-widest mb-3 shadow-sm">
+                    <i class="fa-solid fa-industry text-[11px]"></i> Production Excellence
+                </div>
+                <h2 class="text-3xl sm:text-4xl font-bold font-heading text-stone-900 dark:text-white">Our 4-Stage Modular Manufacturing Lifecycle</h2>
+                <p class="text-stone-600 dark:text-stone-300 text-xs sm:text-sm mt-3 leading-relaxed">How automated factory joinery ensures flawless fit and 48-hour dust-free installation.</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-                <div class="relative bg-white dark:bg-stone-900 p-6 rounded-2xl border border-gray-200 dark:border-stone-800 text-center shadow-sm">
-                    <div class="w-10 h-10 bg-amber-600 text-white rounded-full flex items-center justify-center font-bold text-sm mx-auto mb-4">01</div>
-                    <h4 class="font-bold text-stone-900 dark:text-white text-sm">3D Laser CAD Survey</h4>
-                    <p class="text-xs text-stone-500 dark:text-stone-400 mt-2 leading-relaxed">Laser-scanned room dimensions accurate to 0.5mm are converted to parametric CAD nest blueprints.</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 xl:gap-7 items-stretch">
+                <!-- Stage 1 -->
+                <div class="bg-white dark:bg-stone-900/90 rounded-3xl p-6 sm:p-7 border border-stone-200 dark:border-stone-800 hover:border-amber-500 shadow-xl hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between relative overflow-hidden group text-center h-full">
+                    <div class="absolute -top-12 -right-12 w-28 h-28 bg-amber-500/10 rounded-full blur-2xl group-hover:bg-amber-500/25 transition-all pointer-events-none"></div>
+                    <div class="absolute top-2 right-4 text-5xl font-black font-heading text-stone-200/60 dark:text-stone-800/40 group-hover:text-amber-500/15 transition-colors select-none pointer-events-none">01</div>
+                    
+                    <div>
+                        <div class="flex flex-col items-center mb-5">
+                            <div class="w-14 h-14 bg-gradient-to-br from-amber-500 to-amber-700 text-white rounded-2xl flex items-center justify-center text-xl shadow-lg shadow-amber-600/30 group-hover:scale-110 transition-transform duration-300 mb-3 border border-amber-400/30">
+                                <i class="fa-solid fa-compass-drafting"></i>
+                            </div>
+                            <span class="text-[10px] font-extrabold uppercase tracking-widest text-amber-700 dark:text-amber-400 bg-amber-100/80 dark:bg-amber-500/10 px-3 py-1 rounded-full border border-amber-300 dark:border-amber-500/30 shadow-xs">
+                                STAGE 01
+                            </span>
+                        </div>
+                        <h4 class="font-bold font-heading text-stone-900 dark:text-white text-base group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors mb-2 min-h-[3rem] flex items-center justify-center">
+                            3D Laser CAD Survey
+                        </h4>
+                        <p class="text-xs sm:text-sm text-stone-600 dark:text-stone-300 leading-relaxed mb-6 min-h-[4.5rem] flex items-center justify-center">
+                            Laser-scanned room dimensions accurate to 0.5mm are converted to parametric CAD nest blueprints.
+                        </p>
+                    </div>
+
+                    <div class="mt-auto pt-4 border-t border-stone-100 dark:border-stone-800/80 w-full flex flex-col gap-1.5 items-center">
+                        <span class="text-[10px] font-bold text-stone-700 dark:text-stone-300 bg-stone-100 dark:bg-stone-800 px-3 py-1 rounded-full border border-stone-200 dark:border-stone-700 w-full truncate shadow-xs">
+                            <i class="fa-solid fa-crosshairs text-amber-500 mr-1"></i> &plusmn;0.5mm LiDAR Audit
+                        </span>
+                        <span class="text-[10px] font-extrabold text-amber-600 dark:text-amber-400 uppercase tracking-wider">
+                            Parametric Blueprint
+                        </span>
+                    </div>
                 </div>
 
-                <div class="relative bg-white dark:bg-stone-900 p-6 rounded-2xl border border-gray-200 dark:border-stone-800 text-center shadow-sm">
-                    <div class="w-10 h-10 bg-amber-600 text-white rounded-full flex items-center justify-center font-bold text-sm mx-auto mb-4">02</div>
-                    <h4 class="font-bold text-stone-900 dark:text-white text-sm">5-Axis CNC Milling</h4>
-                    <p class="text-xs text-stone-500 dark:text-stone-400 mt-2 leading-relaxed">German CNC machines route panels to 0.1mm tolerance and precision drill 32mm system hardware holes.</p>
+                <!-- Stage 2 -->
+                <div class="bg-white dark:bg-stone-900/90 rounded-3xl p-6 sm:p-7 border border-stone-200 dark:border-stone-800 hover:border-amber-500 shadow-xl hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between relative overflow-hidden group text-center h-full">
+                    <div class="absolute -top-12 -right-12 w-28 h-28 bg-amber-500/10 rounded-full blur-2xl group-hover:bg-amber-500/25 transition-all pointer-events-none"></div>
+                    <div class="absolute top-2 right-4 text-5xl font-black font-heading text-stone-200/60 dark:text-stone-800/40 group-hover:text-amber-500/15 transition-colors select-none pointer-events-none">02</div>
+                    
+                    <div>
+                        <div class="flex flex-col items-center mb-5">
+                            <div class="w-14 h-14 bg-gradient-to-br from-amber-500 to-amber-700 text-white rounded-2xl flex items-center justify-center text-xl shadow-lg shadow-amber-600/30 group-hover:scale-110 transition-transform duration-300 mb-3 border border-amber-400/30">
+                                <i class="fa-solid fa-microchip"></i>
+                            </div>
+                            <span class="text-[10px] font-extrabold uppercase tracking-widest text-amber-700 dark:text-amber-400 bg-amber-100/80 dark:bg-amber-500/10 px-3 py-1 rounded-full border border-amber-300 dark:border-amber-500/30 shadow-xs">
+                                STAGE 02
+                            </span>
+                        </div>
+                        <h4 class="font-bold font-heading text-stone-900 dark:text-white text-base group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors mb-2 min-h-[3rem] flex items-center justify-center">
+                            5-Axis CNC Milling
+                        </h4>
+                        <p class="text-xs sm:text-sm text-stone-600 dark:text-stone-300 leading-relaxed mb-6 min-h-[4.5rem] flex items-center justify-center">
+                            German CNC machines route panels to 0.1mm tolerance and precision drill 32mm system hardware holes.
+                        </p>
+                    </div>
+
+                    <div class="mt-auto pt-4 border-t border-stone-100 dark:border-stone-800/80 w-full flex flex-col gap-1.5 items-center">
+                        <span class="text-[10px] font-bold text-stone-700 dark:text-stone-300 bg-stone-100 dark:bg-stone-800 px-3 py-1 rounded-full border border-stone-200 dark:border-stone-700 w-full truncate shadow-xs">
+                            <i class="fa-solid fa-gear text-amber-500 mr-1"></i> 0.1mm HOMAG Milling
+                        </span>
+                        <span class="text-[10px] font-extrabold text-amber-600 dark:text-amber-400 uppercase tracking-wider">
+                            Robotic Automation
+                        </span>
+                    </div>
                 </div>
 
-                <div class="relative bg-white dark:bg-stone-900 p-6 rounded-2xl border border-gray-200 dark:border-stone-800 text-center shadow-sm">
-                    <div class="w-10 h-10 bg-amber-600 text-white rounded-full flex items-center justify-center font-bold text-sm mx-auto mb-4">03</div>
-                    <h4 class="font-bold text-stone-900 dark:text-white text-sm">PUR Zero-Joint Edging</h4>
-                    <p class="text-xs text-stone-500 dark:text-stone-400 mt-2 leading-relaxed">Polyurethane hot-melt adhesive creates a seamless zero-joint edge that seals 100% against humidity.</p>
+                <!-- Stage 3 -->
+                <div class="bg-white dark:bg-stone-900/90 rounded-3xl p-6 sm:p-7 border border-stone-200 dark:border-stone-800 hover:border-amber-500 shadow-xl hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between relative overflow-hidden group text-center h-full">
+                    <div class="absolute -top-12 -right-12 w-28 h-28 bg-amber-500/10 rounded-full blur-2xl group-hover:bg-amber-500/25 transition-all pointer-events-none"></div>
+                    <div class="absolute top-2 right-4 text-5xl font-black font-heading text-stone-200/60 dark:text-stone-800/40 group-hover:text-amber-500/15 transition-colors select-none pointer-events-none">03</div>
+                    
+                    <div>
+                        <div class="flex flex-col items-center mb-5">
+                            <div class="w-14 h-14 bg-gradient-to-br from-amber-500 to-amber-700 text-white rounded-2xl flex items-center justify-center text-xl shadow-lg shadow-amber-600/30 group-hover:scale-110 transition-transform duration-300 mb-3 border border-amber-400/30">
+                                <i class="fa-solid fa-shield-halved"></i>
+                            </div>
+                            <span class="text-[10px] font-extrabold uppercase tracking-widest text-amber-700 dark:text-amber-400 bg-amber-100/80 dark:bg-amber-500/10 px-3 py-1 rounded-full border border-amber-300 dark:border-amber-500/30 shadow-xs">
+                                STAGE 03
+                            </span>
+                        </div>
+                        <h4 class="font-bold font-heading text-stone-900 dark:text-white text-base group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors mb-2 min-h-[3rem] flex items-center justify-center">
+                            PUR Zero-Joint Edging
+                        </h4>
+                        <p class="text-xs sm:text-sm text-stone-600 dark:text-stone-300 leading-relaxed mb-6 min-h-[4.5rem] flex items-center justify-center">
+                            Polyurethane hot-melt adhesive creates a seamless zero-joint edge that seals 100% against humidity.
+                        </p>
+                    </div>
+
+                    <div class="mt-auto pt-4 border-t border-stone-100 dark:border-stone-800/80 w-full flex flex-col gap-1.5 items-center">
+                        <span class="text-[10px] font-bold text-stone-700 dark:text-stone-300 bg-stone-100 dark:bg-stone-800 px-3 py-1 rounded-full border border-stone-200 dark:border-stone-700 w-full truncate shadow-xs">
+                            <i class="fa-solid fa-droplet text-amber-500 mr-1"></i> 100% Moisture Proof
+                        </span>
+                        <span class="text-[10px] font-extrabold text-amber-600 dark:text-amber-400 uppercase tracking-wider">
+                            Seamless Hot-Melt
+                        </span>
+                    </div>
                 </div>
 
-                <div class="relative bg-white dark:bg-stone-900 p-6 rounded-2xl border border-gray-200 dark:border-stone-800 text-center shadow-sm">
-                    <div class="w-10 h-10 bg-amber-600 text-white rounded-full flex items-center justify-center font-bold text-sm mx-auto mb-4">04</div>
-                    <h4 class="font-bold text-stone-900 dark:text-white text-sm">48h Dust-Free Assembly</h4>
-                    <p class="text-xs text-stone-500 dark:text-stone-400 mt-2 leading-relaxed">Pre-finished modular panels arrive barcoded in crates and assemble in 1-2 days with zero home sawdust.</p>
+                <!-- Stage 4 -->
+                <div class="bg-white dark:bg-stone-900/90 rounded-3xl p-6 sm:p-7 border border-stone-200 dark:border-stone-800 hover:border-amber-500 shadow-xl hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between relative overflow-hidden group text-center h-full">
+                    <div class="absolute -top-12 -right-12 w-28 h-28 bg-amber-500/10 rounded-full blur-2xl group-hover:bg-amber-500/25 transition-all pointer-events-none"></div>
+                    <div class="absolute top-2 right-4 text-5xl font-black font-heading text-stone-200/60 dark:text-stone-800/40 group-hover:text-amber-500/15 transition-colors select-none pointer-events-none">04</div>
+                    
+                    <div>
+                        <div class="flex flex-col items-center mb-5">
+                            <div class="w-14 h-14 bg-gradient-to-br from-amber-500 to-amber-700 text-white rounded-2xl flex items-center justify-center text-xl shadow-lg shadow-amber-600/30 group-hover:scale-110 transition-transform duration-300 mb-3 border border-amber-400/30">
+                                <i class="fa-solid fa-screwdriver-wrench"></i>
+                            </div>
+                            <span class="text-[10px] font-extrabold uppercase tracking-widest text-amber-700 dark:text-amber-400 bg-amber-100/80 dark:bg-amber-500/10 px-3 py-1 rounded-full border border-amber-300 dark:border-amber-500/30 shadow-xs">
+                                STAGE 04
+                            </span>
+                        </div>
+                        <h4 class="font-bold font-heading text-stone-900 dark:text-white text-base group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors mb-2 min-h-[3rem] flex items-center justify-center">
+                            48h Dust-Free Assembly
+                        </h4>
+                        <p class="text-xs sm:text-sm text-stone-600 dark:text-stone-300 leading-relaxed mb-6 min-h-[4.5rem] flex items-center justify-center">
+                            Pre-finished modular panels arrive barcoded in crates and assemble in 1-2 days with zero home sawdust.
+                        </p>
+                    </div>
+
+                    <div class="mt-auto pt-4 border-t border-stone-100 dark:border-stone-800/80 w-full flex flex-col gap-1.5 items-center">
+                        <span class="text-[10px] font-bold text-stone-700 dark:text-stone-300 bg-stone-100 dark:bg-stone-800 px-3 py-1 rounded-full border border-stone-200 dark:border-stone-700 w-full truncate shadow-xs">
+                            <i class="fa-solid fa-bolt text-amber-500 mr-1"></i> Zero On-Site Sawdust
+                        </span>
+                        <span class="text-[10px] font-extrabold text-amber-600 dark:text-amber-400 uppercase tracking-wider">
+                            White-Glove Delivery
+                        </span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -723,86 +840,261 @@
     </section>
 
     <!-- Master Team Section -->
-    <section class="py-20 bg-gray-50 dark:bg-stone-950">
+    <section class="py-24 bg-gradient-to-b from-stone-50 via-stone-100/60 to-stone-50 dark:from-stone-950 dark:via-stone-900 dark:to-stone-950 border-t border-stone-200 dark:border-stone-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-xs font-bold text-amber-600 uppercase tracking-widest block mb-2">The Artisans</span>
-                <h2 class="text-3xl font-bold font-heading text-stone-900 dark:text-white">Meet Our Master Craftsmen & Engineers</h2>
-                <p class="text-stone-600 dark:text-stone-400 text-xs sm:text-sm mt-3">Combining decades of traditional timber joinery with modern 3D CAD engineering.</p>
+                <span class="text-xs font-extrabold text-amber-600 dark:text-amber-400 uppercase tracking-widest block mb-2">The Master Joinery Guild</span>
+                <h2 class="text-3xl sm:text-4xl font-bold font-heading text-stone-900 dark:text-white">Meet Our Master Craftsmen &amp; Engineers</h2>
+                <p class="text-stone-600 dark:text-stone-300 text-xs sm:text-sm mt-3 leading-relaxed">Blending centuries of traditional European cabinetmaking discipline with 5-axis robotic CAD automation.</p>
             </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="bg-white dark:bg-stone-900 rounded-2xl p-6 text-center border border-gray-200 dark:border-stone-800 shadow-sm hover:border-amber-500 transition-all">
-                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=400&auto=format&fit=crop" alt="Henrik Vance" class="w-24 h-24 rounded-full mx-auto object-cover mb-4 ring-4 ring-amber-500">
-                    <h4 class="font-bold text-stone-900 dark:text-white text-base">Henrik Vance</h4>
-                    <p class="text-xs text-amber-600 font-semibold mb-2">Founder & Chief Engineer</p>
-                    <p class="text-xs text-stone-500 dark:text-stone-400">20+ years of timber engineering and CNC automation pioneer.</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-7 xl:gap-8">
+                <!-- Artisan 1: Henrik Vance -->
+                <div class="bg-white dark:bg-stone-900 rounded-3xl border border-stone-200 dark:border-stone-800 hover:border-amber-500 shadow-xl hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 p-6 flex flex-col justify-between relative overflow-hidden group">
+                    <div class="absolute -top-12 -right-12 w-32 h-32 bg-amber-500/10 rounded-full blur-2xl group-hover:bg-amber-500/25 transition-all pointer-events-none"></div>
+                    <div>
+                        <div class="relative h-60 sm:h-64 rounded-2xl overflow-hidden mb-5 border border-stone-200 dark:border-stone-800 shadow-md bg-stone-100 dark:bg-stone-950">
+                            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=600&auto=format&fit=crop" alt="Henrik Vance" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                            <span class="absolute top-3 left-3 bg-stone-900/90 backdrop-blur-md text-amber-400 font-extrabold text-[10px] uppercase tracking-wider px-2.5 py-1 rounded-lg border border-stone-700/60 shadow-md">
+                                ART-01
+                            </span>
+                            <span class="absolute bottom-3 left-3 right-3 text-[11px] font-bold text-white bg-black/60 backdrop-blur-md px-3 py-1.5 rounded-xl border border-amber-500/30 flex items-center justify-between">
+                                <span class="truncate"><i class="fa-solid fa-compass-drafting text-amber-400 mr-1.5"></i> Master Guild Joiner</span>
+                                <span class="text-amber-400 text-[10px] uppercase font-black shrink-0">20+ YRS</span>
+                            </span>
+                        </div>
+                        <h4 class="font-bold font-heading text-stone-900 dark:text-white text-lg group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">Henrik Vance</h4>
+                        <p class="text-xs text-amber-600 dark:text-amber-400 font-bold mb-2">Founder &amp; Chief Engineer</p>
+                        <p class="text-xs text-stone-600 dark:text-stone-300 leading-relaxed mb-4 min-h-[3rem]">
+                            Pioneered our factory's 5-axis milling protocols and exotic timber grain-matching standards.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-stone-100 dark:border-stone-800/80">
+                        <div class="flex flex-wrap gap-1.5">
+                            <span class="text-[10px] font-bold text-stone-700 dark:text-stone-300 bg-stone-100 dark:bg-stone-800 px-2.5 py-1 rounded-md border border-stone-200 dark:border-stone-700">Grain Matching</span>
+                            <span class="text-[10px] font-bold text-stone-700 dark:text-stone-300 bg-stone-100 dark:bg-stone-800 px-2.5 py-1 rounded-md border border-stone-200 dark:border-stone-700">Veneer Inlay</span>
+                            <span class="text-[10px] font-bold text-stone-700 dark:text-stone-300 bg-stone-100 dark:bg-stone-800 px-2.5 py-1 rounded-md border border-stone-200 dark:border-stone-700">Wood Science</span>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="bg-white dark:bg-stone-900 rounded-2xl p-6 text-center border border-gray-200 dark:border-stone-800 shadow-sm hover:border-amber-500 transition-all">
-                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=400&auto=format&fit=crop" alt="Elena Rostova" class="w-24 h-24 rounded-full mx-auto object-cover mb-4 ring-4 ring-amber-500">
-                    <h4 class="font-bold text-stone-900 dark:text-white text-base">Elena Rostova</h4>
-                    <p class="text-xs text-amber-600 font-semibold mb-2">Head of 3D Architectural Design</p>
-                    <p class="text-xs text-stone-500 dark:text-stone-400">Specialist in luxury closet spatial planning and lighting integration.</p>
+                <!-- Artisan 2: Elena Rostova -->
+                <div class="bg-white dark:bg-stone-900 rounded-3xl border border-stone-200 dark:border-stone-800 hover:border-amber-500 shadow-xl hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 p-6 flex flex-col justify-between relative overflow-hidden group">
+                    <div class="absolute -top-12 -right-12 w-32 h-32 bg-amber-500/10 rounded-full blur-2xl group-hover:bg-amber-500/25 transition-all pointer-events-none"></div>
+                    <div>
+                        <div class="relative h-60 sm:h-64 rounded-2xl overflow-hidden mb-5 border border-stone-200 dark:border-stone-800 shadow-md bg-stone-100 dark:bg-stone-950">
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=600&auto=format&fit=crop" alt="Elena Rostova" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                            <span class="absolute top-3 left-3 bg-stone-900/90 backdrop-blur-md text-amber-400 font-extrabold text-[10px] uppercase tracking-wider px-2.5 py-1 rounded-lg border border-stone-700/60 shadow-md">
+                                CAD-02
+                            </span>
+                            <span class="absolute bottom-3 left-3 right-3 text-[11px] font-bold text-white bg-black/60 backdrop-blur-md px-3 py-1.5 rounded-xl border border-amber-500/30 flex items-center justify-between">
+                                <span class="truncate"><i class="fa-solid fa-cube text-amber-400 mr-1.5"></i> 3D CAD Architect</span>
+                                <span class="text-amber-400 text-[10px] uppercase font-black shrink-0">BIM LEAD</span>
+                            </span>
+                        </div>
+                        <h4 class="font-bold font-heading text-stone-900 dark:text-white text-lg group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">Elena Rostova</h4>
+                        <p class="text-xs text-amber-600 dark:text-amber-400 font-bold mb-2">Head of 3D Architectural Design</p>
+                        <p class="text-xs text-stone-600 dark:text-stone-300 leading-relaxed mb-4 min-h-[3rem]">
+                            Specialist in walk-in dressing suite ergonomics, concealed lighting channels, and photorealistic 3D VR previews.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-stone-100 dark:border-stone-800/80">
+                        <div class="flex flex-wrap gap-1.5">
+                            <span class="text-[10px] font-bold text-stone-700 dark:text-stone-300 bg-stone-100 dark:bg-stone-800 px-2.5 py-1 rounded-md border border-stone-200 dark:border-stone-700">Rhino 3D CAD</span>
+                            <span class="text-[10px] font-bold text-stone-700 dark:text-stone-300 bg-stone-100 dark:bg-stone-800 px-2.5 py-1 rounded-md border border-stone-200 dark:border-stone-700">Ergonomics</span>
+                            <span class="text-[10px] font-bold text-stone-700 dark:text-stone-300 bg-stone-100 dark:bg-stone-800 px-2.5 py-1 rounded-md border border-stone-200 dark:border-stone-700">LED Layout</span>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="bg-white dark:bg-stone-900 rounded-2xl p-6 text-center border border-gray-200 dark:border-stone-800 shadow-sm hover:border-amber-500 transition-all">
-                    <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=400&auto=format&fit=crop" alt="Marcus Thorne" class="w-24 h-24 rounded-full mx-auto object-cover mb-4 ring-4 ring-amber-500">
-                    <h4 class="font-bold text-stone-900 dark:text-white text-base">Marcus Thorne</h4>
-                    <p class="text-xs text-amber-600 font-semibold mb-2">CNC Production Director</p>
-                    <p class="text-xs text-stone-500 dark:text-stone-400">Oversees sub-millimeter precision milling and zero-defect quality control.</p>
+                <!-- Artisan 3: Marcus Thorne -->
+                <div class="bg-white dark:bg-stone-900 rounded-3xl border border-stone-200 dark:border-stone-800 hover:border-amber-500 shadow-xl hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 p-6 flex flex-col justify-between relative overflow-hidden group">
+                    <div class="absolute -top-12 -right-12 w-32 h-32 bg-amber-500/10 rounded-full blur-2xl group-hover:bg-amber-500/25 transition-all pointer-events-none"></div>
+                    <div>
+                        <div class="relative h-60 sm:h-64 rounded-2xl overflow-hidden mb-5 border border-stone-200 dark:border-stone-800 shadow-md bg-stone-100 dark:bg-stone-950">
+                            <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=600&auto=format&fit=crop" alt="Marcus Thorne" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                            <span class="absolute top-3 left-3 bg-stone-900/90 backdrop-blur-md text-amber-400 font-extrabold text-[10px] uppercase tracking-wider px-2.5 py-1 rounded-lg border border-stone-700/60 shadow-md">
+                                CNC-03
+                            </span>
+                            <span class="absolute bottom-3 left-3 right-3 text-[11px] font-bold text-white bg-black/60 backdrop-blur-md px-3 py-1.5 rounded-xl border border-amber-500/30 flex items-center justify-between">
+                                <span class="truncate"><i class="fa-solid fa-microchip text-amber-400 mr-1.5"></i> Precision CNC Director</span>
+                                <span class="text-amber-400 text-[10px] uppercase font-black shrink-0">&plusmn;0.1mm</span>
+                            </span>
+                        </div>
+                        <h4 class="font-bold font-heading text-stone-900 dark:text-white text-lg group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">Marcus Thorne</h4>
+                        <p class="text-xs text-amber-600 dark:text-amber-400 font-bold mb-2">CNC Production Director</p>
+                        <p class="text-xs text-stone-600 dark:text-stone-300 leading-relaxed mb-4 min-h-[3rem]">
+                            Oversees automated HOMAG CNC routing lines and zero-joint PUR hot-melt edgebanding operations.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-stone-100 dark:border-stone-800/80">
+                        <div class="flex flex-wrap gap-1.5">
+                            <span class="text-[10px] font-bold text-stone-700 dark:text-stone-300 bg-stone-100 dark:bg-stone-800 px-2.5 py-1 rounded-md border border-stone-200 dark:border-stone-700">HOMAG 5-Axis</span>
+                            <span class="text-[10px] font-bold text-stone-700 dark:text-stone-300 bg-stone-100 dark:bg-stone-800 px-2.5 py-1 rounded-md border border-stone-200 dark:border-stone-700">PUR Laser Seal</span>
+                            <span class="text-[10px] font-bold text-stone-700 dark:text-stone-300 bg-stone-100 dark:bg-stone-800 px-2.5 py-1 rounded-md border border-stone-200 dark:border-stone-700">Optical QC</span>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="bg-white dark:bg-stone-900 rounded-2xl p-6 text-center border border-gray-200 dark:border-stone-800 shadow-sm hover:border-amber-500 transition-all">
-                    <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=400&auto=format&fit=crop" alt="Sophia Chen" class="w-24 h-24 rounded-full mx-auto object-cover mb-4 ring-4 ring-amber-500">
-                    <h4 class="font-bold text-stone-900 dark:text-white text-base">Sophia Chen</h4>
-                    <p class="text-xs text-amber-600 font-semibold mb-2">Client Installation Lead</p>
-                    <p class="text-xs text-stone-500 dark:text-stone-400">Directs white-glove on-site assembly and white-glove finishing teams.</p>
+                <!-- Artisan 4: Sophia Chen -->
+                <div class="bg-white dark:bg-stone-900 rounded-3xl border border-stone-200 dark:border-stone-800 hover:border-amber-500 shadow-xl hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 p-6 flex flex-col justify-between relative overflow-hidden group">
+                    <div class="absolute -top-12 -right-12 w-32 h-32 bg-amber-500/10 rounded-full blur-2xl group-hover:bg-amber-500/25 transition-all pointer-events-none"></div>
+                    <div>
+                        <div class="relative h-60 sm:h-64 rounded-2xl overflow-hidden mb-5 border border-stone-200 dark:border-stone-800 shadow-md bg-stone-100 dark:bg-stone-950">
+                            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=600&auto=format&fit=crop" alt="Sophia Chen" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                            <span class="absolute top-3 left-3 bg-stone-900/90 backdrop-blur-md text-amber-400 font-extrabold text-[10px] uppercase tracking-wider px-2.5 py-1 rounded-lg border border-stone-700/60 shadow-md">
+                                INS-04
+                            </span>
+                            <span class="absolute bottom-3 left-3 right-3 text-[11px] font-bold text-white bg-black/60 backdrop-blur-md px-3 py-1.5 rounded-xl border border-amber-500/30 flex items-center justify-between">
+                                <span class="truncate"><i class="fa-solid fa-award text-amber-400 mr-1.5"></i> White-Glove Lead</span>
+                                <span class="text-amber-400 text-[10px] uppercase font-black shrink-0">100% PASS</span>
+                            </span>
+                        </div>
+                        <h4 class="font-bold font-heading text-stone-900 dark:text-white text-lg group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">Sophia Chen</h4>
+                        <p class="text-xs text-amber-600 dark:text-amber-400 font-bold mb-2">Client Installation Lead</p>
+                        <p class="text-xs text-stone-600 dark:text-stone-300 leading-relaxed mb-4 min-h-[3rem]">
+                            Directs white-glove site delivery, laser leveling scribing, and final optical sensor calibration.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-stone-100 dark:border-stone-800/80">
+                        <div class="flex flex-wrap gap-1.5">
+                            <span class="text-[10px] font-bold text-stone-700 dark:text-stone-300 bg-stone-100 dark:bg-stone-800 px-2.5 py-1 rounded-md border border-stone-200 dark:border-stone-700">Laser Leveling</span>
+                            <span class="text-[10px] font-bold text-stone-700 dark:text-stone-300 bg-stone-100 dark:bg-stone-800 px-2.5 py-1 rounded-md border border-stone-200 dark:border-stone-700">Scribed Fitting</span>
+                            <span class="text-[10px] font-bold text-stone-700 dark:text-stone-300 bg-stone-100 dark:bg-stone-800 px-2.5 py-1 rounded-md border border-stone-200 dark:border-stone-700">Clean Handover</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Client Testimonials & Endorsements -->
-    <section class="py-20 bg-white dark:bg-stone-900">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-xs font-bold text-amber-600 uppercase tracking-widest block mb-2">Client Endorsements</span>
-                <h2 class="text-3xl font-bold font-heading text-stone-900 dark:text-white">Trusted by Discerning Homeowners & Architects</h2>
+    <section class="py-24 bg-white dark:bg-stone-900 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+                <div>
+                    <span class="text-xs font-extrabold text-amber-600 dark:text-amber-400 uppercase tracking-widest block mb-2">Verified Client Reviews</span>
+                    <h2 class="text-3xl sm:text-4xl font-bold font-heading text-stone-900 dark:text-white">Trusted by Discerning Homeowners &amp; Architects</h2>
+                </div>
+                <div class="flex items-center gap-3 bg-stone-50 dark:bg-stone-800/80 px-5 py-3 rounded-2xl border border-stone-200 dark:border-stone-700/80 shrink-0">
+                    <div class="flex text-amber-500 text-sm space-x-1">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <div class="text-xs font-bold text-stone-900 dark:text-white border-l border-stone-300 dark:border-stone-700 pl-3">
+                        <span class="text-amber-600 dark:text-amber-400 font-extrabold text-sm">4.98 / 5.0</span>
+                        <span class="text-stone-500 dark:text-stone-400 font-medium block text-[10px]">500+ Luxury Installations</span>
+                    </div>
+                </div>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-gray-50 dark:bg-stone-800/70 p-6 rounded-2xl border border-gray-200 dark:border-stone-700">
-                    <div class="flex text-amber-500 text-xs space-x-1 mb-3">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                <!-- Testimonial 1 -->
+                <div class="bg-stone-50 dark:bg-stone-800/70 p-7 sm:p-8 rounded-3xl border border-stone-200 dark:border-stone-700/80 hover:border-amber-500 shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 relative flex flex-col justify-between group overflow-hidden">
+                    <div class="absolute -right-3 -top-2 text-8xl font-serif text-amber-500/10 dark:text-amber-500/15 group-hover:text-amber-500/25 transition-colors select-none pointer-events-none">&ldquo;</div>
+                    <div class="relative z-10">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex text-amber-500 text-xs space-x-1">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <span class="inline-flex items-center gap-1.5 text-[10px] font-extrabold uppercase tracking-wider text-emerald-700 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-200 dark:border-emerald-800/80 px-2.5 py-1 rounded-full">
+                                <i class="fa-solid fa-shield-halved text-[9px]"></i> Verified Commission
+                            </span>
+                        </div>
+                        <div class="text-[11px] font-extrabold uppercase tracking-wider text-amber-700 dark:text-amber-400 mb-3 flex items-center gap-1.5">
+                            <i class="fa-solid fa-gem text-amber-500 text-[10px]"></i> 52m&sup2; Master Walk-In Dressing Suite
+                        </div>
+                        <p class="text-xs sm:text-sm text-stone-700 dark:text-stone-200 italic leading-relaxed mb-6 font-medium">
+                            &ldquo;MODULARIS transformed our master suite with an exquisite fluted amber glass walk-in wardrobe. The 3D render was 100% faithful to the installed reality—down to the warm LED rails and velvet accessories drawer trays.&rdquo;
+                        </p>
                     </div>
-                    <p class="text-xs text-stone-600 dark:text-stone-300 italic mb-4 leading-relaxed">
-                        "MODULARIS transformed our master bedroom with an exquisite fluted glass walk-in suite. The 3D render was 100% accurate to the installed reality."
-                    </p>
-                    <div class="font-bold text-xs text-stone-900 dark:text-white">Victoria & Julian Vance</div>
-                    <div class="text-[10px] text-stone-500 dark:text-stone-400">Penthouse Residence, New York</div>
+                    <div class="pt-5 border-t border-stone-200/80 dark:border-stone-700/80 flex items-center gap-3.5 relative z-10">
+                        <div class="w-11 h-11 rounded-full bg-gradient-to-tr from-amber-600 to-amber-400 text-white font-bold text-xs flex items-center justify-center shrink-0 shadow-md ring-2 ring-amber-500/40">
+                            VJ
+                        </div>
+                        <div>
+                            <div class="font-bold text-xs sm:text-sm text-stone-900 dark:text-white flex items-center gap-1.5">
+                                Victoria &amp; Julian Vance
+                                <i class="fa-solid fa-circle-check text-amber-500 text-[11px]" title="Verified Client"></i>
+                            </div>
+                            <div class="text-[11px] text-stone-500 dark:text-stone-400 flex items-center gap-1 mt-0.5">
+                                <i class="fa-solid fa-location-dot text-amber-600 text-[10px]"></i> Penthouse Residence, New York
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="bg-gray-50 dark:bg-stone-800/70 p-6 rounded-2xl border border-gray-200 dark:border-stone-700">
-                    <div class="flex text-amber-500 text-xs space-x-1 mb-3">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                <!-- Testimonial 2 -->
+                <div class="bg-stone-50 dark:bg-stone-800/70 p-7 sm:p-8 rounded-3xl border border-stone-200 dark:border-stone-700/80 hover:border-amber-500 shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 relative flex flex-col justify-between group overflow-hidden">
+                    <div class="absolute -right-3 -top-2 text-8xl font-serif text-amber-500/10 dark:text-amber-500/15 group-hover:text-amber-500/25 transition-colors select-none pointer-events-none">&ldquo;</div>
+                    <div class="relative z-10">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex text-amber-500 text-xs space-x-1">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <span class="inline-flex items-center gap-1.5 text-[10px] font-extrabold uppercase tracking-wider text-emerald-700 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-200 dark:border-emerald-800/80 px-2.5 py-1 rounded-full">
+                                <i class="fa-solid fa-shield-halved text-[9px]"></i> Architect Partner
+                            </span>
+                        </div>
+                        <div class="text-[11px] font-extrabold uppercase tracking-wider text-amber-700 dark:text-amber-400 mb-3 flex items-center gap-1.5">
+                            <i class="fa-solid fa-compass-drafting text-amber-500 text-[10px]"></i> 14-Room Residential Villa Estate
+                        </div>
+                        <p class="text-xs sm:text-sm text-stone-700 dark:text-stone-200 italic leading-relaxed mb-6 font-medium">
+                            &ldquo;As an architectural designer, sub-millimeter tolerances are mandatory. MODULARIS&rsquo;s automated CNC precision, invisible Blum hardware, and zero-VOC lacquer finish are hands-down the finest joinery in modern luxury.&rdquo;
+                        </p>
                     </div>
-                    <p class="text-xs text-stone-600 dark:text-stone-300 italic mb-4 leading-relaxed">
-                        "As an architectural designer, I require exact precision. MODULARIS's CNC tolerance and zero-VOC lacquer quality are unsurpassed in the industry."
-                    </p>
-                    <div class="font-bold text-xs text-stone-900 dark:text-white">Arthur Pendelton, AIA</div>
-                    <div class="text-[10px] text-stone-500 dark:text-stone-400">Principal Architect, Beverly Hills</div>
+                    <div class="pt-5 border-t border-stone-200/80 dark:border-stone-700/80 flex items-center gap-3.5 relative z-10">
+                        <div class="w-11 h-11 rounded-full bg-gradient-to-tr from-stone-800 to-stone-600 text-amber-400 font-bold text-xs flex items-center justify-center shrink-0 shadow-md ring-2 ring-amber-500/40">
+                            AP
+                        </div>
+                        <div>
+                            <div class="font-bold text-xs sm:text-sm text-stone-900 dark:text-white flex items-center gap-1.5">
+                                Arthur Pendelton, AIA
+                                <i class="fa-solid fa-circle-check text-amber-500 text-[11px]" title="AIA Architect Partner"></i>
+                            </div>
+                            <div class="text-[11px] text-stone-500 dark:text-stone-400 flex items-center gap-1 mt-0.5">
+                                <i class="fa-solid fa-location-dot text-amber-600 text-[10px]"></i> Principal Architect, Beverly Hills
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="bg-gray-50 dark:bg-stone-800/70 p-6 rounded-2xl border border-gray-200 dark:border-stone-700">
-                    <div class="flex text-amber-500 text-xs space-x-1 mb-3">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                <!-- Testimonial 3 -->
+                <div class="bg-stone-50 dark:bg-stone-800/70 p-7 sm:p-8 rounded-3xl border border-stone-200 dark:border-stone-700/80 hover:border-amber-500 shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 relative flex flex-col justify-between group overflow-hidden">
+                    <div class="absolute -right-3 -top-2 text-8xl font-serif text-amber-500/10 dark:text-amber-500/15 group-hover:text-amber-500/25 transition-colors select-none pointer-events-none">&ldquo;</div>
+                    <div class="relative z-10">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex text-amber-500 text-xs space-x-1">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <span class="inline-flex items-center gap-1.5 text-[10px] font-extrabold uppercase tracking-wider text-emerald-700 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-200 dark:border-emerald-800/80 px-2.5 py-1 rounded-full">
+                                <i class="fa-solid fa-shield-halved text-[9px]"></i> Verified Commission
+                            </span>
+                        </div>
+                        <div class="text-[11px] font-extrabold uppercase tracking-wider text-amber-700 dark:text-amber-400 mb-3 flex items-center gap-1.5">
+                            <i class="fa-solid fa-landmark text-amber-500 text-[10px]"></i> Heritage Townhouse Renovation
+                        </div>
+                        <p class="text-xs sm:text-sm text-stone-700 dark:text-stone-200 italic leading-relaxed mb-6 font-medium">
+                            &ldquo;The scribed floor-to-ceiling fit seamlessly compensated for our 120-year-old uneven cornices. The installation team was quiet, spotless, and completed delivery two days ahead of schedule.&rdquo;
+                        </p>
                     </div>
-                    <p class="text-xs text-stone-600 dark:text-stone-300 italic mb-4 leading-relaxed">
-                        "The integrated motion-sensor LED lighting and Italian velvet drawer inserts turned our daily closet routine into a boutique hotel experience."
-                    </p>
-                    <div class="font-bold text-xs text-stone-900 dark:text-white">Lady Evelyn Sterling</div>
-                    <div class="text-[10px] text-stone-500 dark:text-stone-400">Kensington Townhouse, London</div>
+                    <div class="pt-5 border-t border-stone-200/80 dark:border-stone-700/80 flex items-center gap-3.5 relative z-10">
+                        <div class="w-11 h-11 rounded-full bg-gradient-to-tr from-amber-700 to-amber-500 text-white font-bold text-xs flex items-center justify-center shrink-0 shadow-md ring-2 ring-amber-500/40">
+                            ES
+                        </div>
+                        <div>
+                            <div class="font-bold text-xs sm:text-sm text-stone-900 dark:text-white flex items-center gap-1.5">
+                                Lady Evelyn Sterling
+                                <i class="fa-solid fa-circle-check text-amber-500 text-[11px]" title="Verified Client"></i>
+                            </div>
+                            <div class="text-[11px] text-stone-500 dark:text-stone-400 flex items-center gap-1 mt-0.5">
+                                <i class="fa-solid fa-location-dot text-amber-600 text-[10px]"></i> Kensington Townhouse, London
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

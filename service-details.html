@@ -38,13 +38,17 @@
                     </div>
                 </a>
                 <nav class="hidden lg:flex items-center space-x-2.5 xl:space-x-6 rtl:space-x-reverse text-xs xl:text-sm shrink-0">
-                    <div class="relative group py-4">
-                        <a href="index.html" class="text-stone-700 dark:text-stone-200 hover:text-amber-600 font-semibold flex items-center transition">
-                            Home <i class="fa-solid fa-chevron-down text-[10px] ml-1.5 transition group-hover:rotate-180"></i>
-                        </a>
-                        <div class="absolute left-0 top-full hidden group-hover:block w-48 bg-white dark:bg-stone-800 shadow-xl rounded-xl border border-stone-100 dark:border-stone-700 py-2 z-50">
-                            <a href="index.html" class="block px-4 py-2 text-xs hover:bg-amber-50 dark:hover:bg-stone-700 text-stone-700 dark:text-stone-200 hover:text-amber-600">Home 1 - General Services</a>
-                            <a href="home-niche.html" class="block px-4 py-2 text-xs hover:bg-amber-50 dark:hover:bg-stone-700 text-stone-700 dark:text-stone-200 hover:text-amber-600">Home 2 - Custom Wardrobes</a>
+                    <div class="relative nav-dropdown group py-4">
+                        <button type="button" class="nav-dropdown-trigger text-stone-700 dark:text-stone-200 hover:text-amber-600 dark:hover:text-amber-400 font-semibold flex items-center transition cursor-pointer focus:outline-none" aria-haspopup="true" aria-expanded="false">
+                            <span>Home</span> <i class="fa-solid fa-chevron-down text-[10px] ml-1.5 transition-transform duration-200 group-hover:rotate-180"></i>
+                        </button>
+                        <div class="nav-dropdown-menu absolute start-0 top-full hidden group-hover:block w-52 bg-white dark:bg-stone-800 shadow-2xl rounded-xl border border-stone-100 dark:border-stone-700 py-2 z-50">
+                            <a href="index.html" class="block px-4 py-2.5 text-xs hover:bg-amber-50 dark:hover:bg-stone-700 text-stone-700 dark:text-stone-200 hover:text-amber-600 transition">
+                                Home 1 - General Services
+                            </a>
+                            <a href="home-niche.html" class="block px-4 py-2.5 text-xs hover:bg-amber-50 dark:hover:bg-stone-700 text-stone-700 dark:text-stone-200 hover:text-amber-600 transition">
+                                Home 2 - Custom Wardrobes
+                            </a>
                         </div>
                     </div>
                     <a href="about.html" class="text-stone-700 dark:text-stone-200 hover:text-amber-600 font-semibold transition">About Us</a>
@@ -132,16 +136,16 @@
                     <img id="service-main-img" src="assets/custom-wardrobes.png" alt="Service Image" class="w-full h-96 object-cover rounded-2xl border border-gray-200 dark:border-stone-800 shadow-xl">
                     <h2 id="service-main-heading" class="text-2xl font-bold font-heading text-stone-900 dark:text-white">Next-Generation Wardrobe Architecture</h2>
                     <p id="service-main-text" class="text-stone-600 dark:text-stone-400 text-sm leading-relaxed">Our modular wardrobe design service combines high-end European aesthetics with practical storage organization. Whether you require sliding frosted glass doors for compact apartments or floor-to-ceiling walk-in suites, every module is engineered for maximum space efficiency.</p>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+                    <div id="service-features-grid" class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
                         <div class="p-5 rounded-xl bg-gray-50 dark:bg-stone-800 border border-gray-200 dark:border-stone-700"><i class="fa-solid fa-lightbulb text-amber-600 text-xl mb-2"></i><h4 class="font-bold text-stone-900 dark:text-white text-sm">Smart Motion Lighting</h4><p class="text-xs text-stone-500 dark:text-stone-400 mt-1">Concealed warm LED aluminum profiles with motion sensor triggers.</p></div>
                         <div class="p-5 rounded-xl bg-gray-50 dark:bg-stone-800 border border-gray-200 dark:border-stone-700"><i class="fa-solid fa-gem text-amber-600 text-xl mb-2"></i><h4 class="font-bold text-stone-900 dark:text-white text-sm">Custom Accessory Trays</h4><p class="text-xs text-stone-500 dark:text-stone-400 mt-1">Italian velvet-lined drawers for watches, sunglasses, and jewelry.</p></div>
                         <div class="p-5 rounded-xl bg-gray-50 dark:bg-stone-800 border border-gray-200 dark:border-stone-700"><i class="fa-solid fa-arrows-up-to-line text-amber-600 text-xl mb-2"></i><h4 class="font-bold text-stone-900 dark:text-white text-sm">Hydraulic Lift Rods</h4><p class="text-xs text-stone-500 dark:text-stone-400 mt-1">Easily lower high hanging suits without needing step stools.</p></div>
                         <div class="p-5 rounded-xl bg-gray-50 dark:bg-stone-800 border border-gray-200 dark:border-stone-700"><i class="fa-solid fa-shield text-amber-600 text-xl mb-2"></i><h4 class="font-bold text-stone-900 dark:text-white text-sm">10-Year Warranty</h4><p class="text-xs text-stone-500 dark:text-stone-400 mt-1">Full structural coverage on all frames, hinges, and sliding tracks.</p></div>
                     </div>
-                    <div class="bg-gray-50 dark:bg-stone-800/80 p-6 rounded-2xl border border-gray-200 dark:border-stone-700 space-y-4">
-                        <h3 class="text-lg font-bold font-heading text-stone-900 dark:text-white">Ergonomic Compartment Sizing Guidelines</h3>
-                        <p class="text-xs text-stone-600 dark:text-stone-400">Our wardrobe architects design internal layouts based on standardized clothing hanging standards:</p>
-                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 text-center text-xs">
+                    <div id="service-specs-box" class="bg-gray-50 dark:bg-stone-800/80 p-6 rounded-2xl border border-gray-200 dark:border-stone-700 space-y-4">
+                        <h3 id="service-specs-title" class="text-lg font-bold font-heading text-stone-900 dark:text-white">Ergonomic Compartment Sizing Guidelines</h3>
+                        <p id="service-specs-desc" class="text-xs text-stone-600 dark:text-stone-400">Our wardrobe architects design internal layouts based on standardized clothing hanging standards:</p>
+                        <div id="service-specs-grid" class="grid grid-cols-2 sm:grid-cols-4 gap-4 text-center text-xs">
                             <div class="bg-white dark:bg-stone-900 p-3 rounded-xl border border-gray-200 dark:border-stone-700"><strong class="text-amber-600 block text-sm">160 cm (63")</strong><span class="text-stone-500">Long Coats &amp; Gowns</span></div>
                             <div class="bg-white dark:bg-stone-900 p-3 rounded-xl border border-gray-200 dark:border-stone-700"><strong class="text-amber-600 block text-sm">110 cm (43")</strong><span class="text-stone-500">Suit Jackets &amp; Shirts</span></div>
                             <div class="bg-white dark:bg-stone-900 p-3 rounded-xl border border-gray-200 dark:border-stone-700"><strong class="text-amber-600 block text-sm">90 cm (35")</strong><span class="text-stone-500">Trouser Pull-outs</span></div>
@@ -157,14 +161,14 @@
                         </ol>
                     </div>
                     <div class="pt-8">
-                        <h3 class="text-xl font-bold font-heading text-stone-900 dark:text-white mb-4">Package Rates Overview</h3>
+                        <h3 id="service-packages-heading" class="text-xl font-bold font-heading text-stone-900 dark:text-white mb-4">Package Rates Overview</h3>
                         <div class="overflow-x-auto">
                             <table class="w-full text-left text-xs border-collapse">
                                 <thead><tr class="bg-gray-100 dark:bg-stone-800 text-stone-900 dark:text-amber-400"><th class="p-3 border border-gray-200 dark:border-stone-700">Package Tier</th><th class="p-3 border border-gray-200 dark:border-stone-700">Recommended Size</th><th class="p-3 border border-gray-200 dark:border-stone-700">Included Hardware</th><th class="p-3 border border-gray-200 dark:border-stone-700">Est. Price</th></tr></thead>
-                                <tbody>
-                                    <tr class="border-b border-gray-200 dark:border-stone-800"><td class="p-3 font-bold">Essential Modular</td><td class="p-3">6 ft - 8 ft Width</td><td class="p-3">Soft-Close Hinges, Standard LED</td><td class="p-3 text-amber-600 font-bold">$2,200</td></tr>
-                                    <tr class="border-b border-gray-200 dark:border-stone-800"><td class="p-3 font-bold">Signature Custom</td><td class="p-3">8 ft - 12 ft Width</td><td class="p-3">Blum Motion, Glass Drawers, Motion LED</td><td class="p-3 text-amber-600 font-bold">$4,500</td></tr>
-                                    <tr class="border-b border-gray-200 dark:border-stone-800"><td class="p-3 font-bold">Royal Walk-In Luxury</td><td class="p-3">Full Master Suite</td><td class="p-3">Fluted Glass, Island Vanity, Leather Trays</td><td class="p-3 text-amber-600 font-bold">$8,900+</td></tr>
+                                <tbody id="service-packages-tbody">
+                                    <tr class="border-b border-gray-200 dark:border-stone-800"><td class="p-3 font-bold">Essential Modular</td><td class="p-3">6 ft - 8 ft Width</td><td class="p-3">Soft-Close Hinges, Standard LED</td><td class="p-3 text-amber-600 font-bold">$180 / ft</td></tr>
+                                    <tr class="border-b border-gray-200 dark:border-stone-800"><td class="p-3 font-bold">Signature Custom</td><td class="p-3">8 ft - 12 ft Width</td><td class="p-3">18mm HDHMR, Blumotion Hinges, LED Trays</td><td class="p-3 text-amber-600 font-bold">$280 / ft</td></tr>
+                                    <tr class="border-b border-gray-200 dark:border-stone-800"><td class="p-3 font-bold">Royal Walk-In Luxury</td><td class="p-3">Full Master Suite</td><td class="p-3">Glass Vitrines, Island Chest, Velvet Trays</td><td class="p-3 text-amber-600 font-bold">$420 / ft</td></tr>
                                 </tbody>
                             </table>
                         </div>
@@ -180,9 +184,12 @@
                     <div class="bg-gray-50 dark:bg-stone-800 p-6 rounded-2xl border border-gray-200 dark:border-stone-700">
                         <h4 class="font-bold text-stone-900 dark:text-white text-sm mb-4">Related Joinery Services</h4>
                         <ul class="space-y-3 text-xs">
-                            <li><a href="service-details.html" class="text-stone-600 dark:text-stone-300 hover:text-amber-600 font-semibold block"><i class="fa-solid fa-chevron-right text-[10px] text-amber-500 mr-2"></i> Custom Kitchen Cabinets</a></li>
-                            <li><a href="service-details.html" class="text-stone-600 dark:text-stone-300 hover:text-amber-600 font-semibold block"><i class="fa-solid fa-chevron-right text-[10px] text-amber-500 mr-2"></i> Walk-in Closet Islands</a></li>
-                            <li><a href="service-details.html" class="text-stone-600 dark:text-stone-300 hover:text-amber-600 font-semibold block"><i class="fa-solid fa-chevron-right text-[10px] text-amber-500 mr-2"></i> 3D VR Space Modeling</a></li>
+                            <li><a href="service-details.html?service=kitchen" class="text-stone-600 dark:text-stone-300 hover:text-amber-600 font-semibold block transition"><i class="fa-solid fa-chevron-right text-[10px] text-amber-500 mr-2"></i> Custom Kitchen Cabinetry</a></li>
+                            <li><a href="service-details.html?service=tv" class="text-stone-600 dark:text-stone-300 hover:text-amber-600 font-semibold block transition"><i class="fa-solid fa-chevron-right text-[10px] text-amber-500 mr-2"></i> TV Showcase &amp; Media Units</a></li>
+                            <li><a href="service-details.html?service=bedroom" class="text-stone-600 dark:text-stone-300 hover:text-amber-600 font-semibold block transition"><i class="fa-solid fa-chevron-right text-[10px] text-amber-500 mr-2"></i> Bedroom Storage &amp; Beds</a></li>
+                            <li><a href="service-details.html?service=pooja" class="text-stone-600 dark:text-stone-300 hover:text-amber-600 font-semibold block transition"><i class="fa-solid fa-chevron-right text-[10px] text-amber-500 mr-2"></i> Pooja Room Mandirs</a></li>
+                            <li><a href="service-details.html?service=ceiling" class="text-stone-600 dark:text-stone-300 hover:text-amber-600 font-semibold block transition"><i class="fa-solid fa-chevron-right text-[10px] text-amber-500 mr-2"></i> False Ceiling Designs</a></li>
+                            <li><a href="service-details.html?service=kids" class="text-stone-600 dark:text-stone-300 hover:text-amber-600 font-semibold block transition"><i class="fa-solid fa-chevron-right text-[10px] text-amber-500 mr-2"></i> Kids Room Solutions</a></li>
                         </ul>
                     </div>
                 </div>
@@ -211,170 +218,6 @@
         </div>
     </footer>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const params = new URLSearchParams(window.location.search);
-            const service = params.get('service');
-            const titleEl = document.getElementById('service-banner-title');
-            const descEl = document.getElementById('service-banner-desc');
-            const headingEl = document.getElementById('service-main-heading');
-            const mainTextEl = document.getElementById('service-main-text');
-            const imgEl = document.getElementById('service-main-img');
-
-            const serviceData = {
-                wardrobes: {
-                    img: 'assets/custom-wardrobes.png',
-                    title: 'Modular Wardrobes (Hinged, Sliding & Walk-In)',
-                    desc: 'Precision factory-built modular wardrobe carcasses with 110°/165° Blum soft-close hinges, overhead lofts, and top-hung silent tracks.',
-                    heading: 'Factory-Manufactured Modular Wardrobe Solutions',
-                    text: 'Our modular wardrobe manufacturing service replaces noisy on-site carpentry with automated 5-axis CNC precision joinery. Every carcass is crafted from 18mm HDHMR (High Density High Moisture Resistance) with zero-joint industrial PUR edge-banding. Available in hinged swing configurations, top-hung sliding doors, walk-in dressing suites, or overhead loft extensions.'
-                },
-                sliding: {
-                    img: 'assets/custom-wardrobes.png',
-                    title: 'Top-Hung Sliding Wardrobes',
-                    desc: 'Concealed ceiling-hung sliding mechanisms with bidirectional soft-dampers and anti-dust brush perimeter seals.',
-                    heading: 'Silent Glide Sliding Door Systems',
-                    text: 'Engineered for smooth, effortless operation with zero bottom-floor track tripping hazards. Featuring German-engineered top-hung rollers rated for 80kg per door leaf, bidirectional hydraulic soft-close braking, and aluminum anti-warp stiffener bars integrated inside every shutter.'
-                },
-                walkin: {
-                    img: 'assets/bespoke-walk-in-suites.png',
-                    title: 'Walk-In Dressing Suites & Island Storage',
-                    desc: 'Architectural dressing rooms featuring central jewelry island chests, tempered glass display vitrines, and sensor LED lighting.',
-                    heading: 'Bespoke Master Walk-In Dressing Suites',
-                    text: 'Designed as personal luxury boutiques, our walk-in wardrobe suites integrate central accessory islands with velvet-lined watch and ring trays, anodized bronze aluminum glass vitrines, motion-triggered warm 3000K LED hanging bays, and concealed security safes.'
-                },
-                alcove: {
-                    img: 'assets/custom-wardrobes.png',
-                    title: 'Floor-to-Ceiling Scribed Alcove Wardrobes',
-                    desc: 'Wall-to-wall scribed cabinetry with zero gaps, compensating for uneven ceiling lines and architectural recesses.',
-                    heading: 'Precision Scribed Alcove Joinery',
-                    text: 'Eliminate awkward recessed spaces and irregular wall deviations. Our 3D laser audit maps wall irregularities to within 0.5mm, producing precision-scribed filler panels and continuous floor-to-ceiling storage that looks built directly into the home architecture.'
-                },
-                kitchen: {
-                    img: 'assets/luxury-kitchen-cabinetry.png',
-                    title: 'Custom Modular Kitchen Cabinetry',
-                    desc: '100% Boiling Water Proof (BWP) Marine ply carcasses, Blum Tandembox drawer runners, and pull-out pantry larders.',
-                    heading: 'Ergonomic Factory-Engineered Modular Kitchens',
-                    text: 'Built to withstand lifetime kitchen demands with high-temperature resistance and zero moisture swelling. Base sink units are fabricated using 100% Boiling Water Proof (BWP) Marine Grade plywood with PUR edge sealing, paired with Austrian Blum soft-close tandembox drawers and heavy-duty pantry larder mechanisms.'
-                },
-                tv: {
-                    img: 'assets/tv-showcase-media-unit.jpg',
-                    title: 'TV Showcase & Entertainment Units',
-                    desc: 'Floating lowboy entertainment consoles, acoustic fluted wood slats, and concealed cable infrastructure.',
-                    heading: 'Architectural Media Consoles & Living Joinery',
-                    text: 'Sleek, handleless floating media consoles engineered with high-weight wall suspension brackets, ventilated amplifier cabinets, precision CNC fluted acoustic timber backdrops, and concealed channel tracks for seamless AV wire routing.'
-                },
-                entertainment: {
-                    img: 'assets/tv-showcase-media-unit.jpg',
-                    title: 'TV Showcase & Entertainment Units',
-                    desc: 'Floating lowboy entertainment consoles, acoustic fluted wood slats, and concealed cable infrastructure.',
-                    heading: 'Architectural Media Consoles & Living Joinery',
-                    text: 'Sleek, handleless floating media consoles engineered with high-weight wall suspension brackets, ventilated amplifier cabinets, precision CNC fluted acoustic timber backdrops, and concealed channel tracks for seamless AV wire routing.'
-                },
-                living: {
-                    img: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=800&auto=format&fit=crop',
-                    title: 'Living Room Storage & Partition Units',
-                    desc: 'Double-sided partition room dividers, display vitrines, decorative accent wall panelling, and entryway foyer consoles.',
-                    heading: 'Living Room Joinery & Architectural Divider Solutions',
-                    text: 'Harmonious living room cabinetry designed to delineate open floor plans while maximizing natural illumination. We manufacture dual-sided open display shelving, illuminated vitrine bookcases, foyer entry consoles with integrated shoe compartments, and flush timber paneling concealing hidden push-to-open doors.'
-                },
-                dining: {
-                    img: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=800&auto=format&fit=crop',
-                    title: 'Dining Room Cabinetry & Bar Units',
-                    desc: 'Crockery display vitrines with warm LED lighting, buffet sideboards with quartz serving tops, and stemware bar counters.',
-                    heading: 'Custom Dining Room Joinery & Crockery Vitrines',
-                    text: 'Factory-finished dining room cabinetry crafted to enhance dining experiences. Features tempered glass front crockery display cabinets with soft 3000K shelf lighting, buffet sideboards with heat-resistant quartz stone tops for hot dish placement, and integrated wine bar units with suspended stemware racks.'
-                },
-                bedroom: {
-                    img: 'assets/bedroom-storage.png',
-                    title: 'Bedroom Storage & Hydraulic Beds',
-                    desc: 'Gas-lift hydraulic storage beds, acoustic fluted headboard panels, floating nightstands, and vanity dressers.',
-                    heading: 'Master Bedroom Storage & Ergonomic Bedding Joinery',
-                    text: 'Comprehensive bedroom furniture engineered with concealed storage for a clutter-free sanctuary. We manufacture heavy-duty hydraulic gas-lift storage beds that lift effortlessly to reveal under-bed storage for extra bedding, custom acoustic upholstered headboards, and matching floating bedside nightstands.'
-                },
-                pooja: {
-                    img: 'assets/pooja-room-mandir.jpg',
-                    title: 'Pooja Room & Mandir Cabinetry',
-                    desc: 'CNC jali lattice cutwork, Burma teakwood & HDHMR units, brass bell inlays, pull-out bhog trays, and backlit altars.',
-                    heading: 'Sacred Sanctum Joinery: Factory-Precision Mandir Architecture',
-                    text: 'Sacred mandir cabinetry harmonizing sacred motifs with CNC industrial accuracy. Built using fire-retardant Corian or HDHMR, intricate laser-cut jali lattices, brass bell inlays, heavy-duty pull-out prasad/bhog trays, and odor-sealed incense drawer compartments with built-in smoke ventilation channels.'
-                },
-                ceiling: {
-                    img: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=800&auto=format&fit=crop',
-                    title: 'False Ceiling & Architectural Lighting',
-                    desc: 'Saint-Gobain Gyproc false ceilings, decorative wooden rafters, diffused cove LED lighting, and magnetic track channels.',
-                    heading: 'Architectural False Ceilings & Lighting Integration',
-                    text: 'Comprehensive ceiling architecture engineered for lighting perfection and acoustic comfort. We manufacture moisture-resistant Gyproc false ceilings, lightweight timber ceiling rafters, indirect shadowless cove LED light channels, and recessed magnetic track systems for adjustable spotlights.'
-                },
-                'false-ceiling': {
-                    img: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=800&auto=format&fit=crop',
-                    title: 'False Ceiling & Architectural Lighting',
-                    desc: 'Saint-Gobain Gyproc false ceilings, decorative wooden rafters, diffused cove LED lighting, and magnetic track channels.',
-                    heading: 'Architectural False Ceilings & Lighting Integration',
-                    text: 'Comprehensive ceiling architecture engineered for lighting perfection and acoustic comfort. We manufacture moisture-resistant Gyproc false ceilings, lightweight timber ceiling rafters, indirect shadowless cove LED light channels, and recessed magnetic track systems for adjustable spotlights.'
-                },
-                kids: {
-                    img: 'https://images.unsplash.com/photo-1595428774223-ef52624120d2?q=80&w=800&auto=format&fit=crop',
-                    title: 'Kids Room Architecture & Study Stations',
-                    desc: 'Bunk beds with staircase storage, adjustable ergonomic study desks, rounded corner child-safe modular wardrobes, and toy cubbies.',
-                    heading: 'Youth Ergonomics: Safe & Playful Modular Kids Rooms',
-                    text: 'Modular furniture engineered specifically for active children and teens. Built using certified zero-VOC non-toxic materials, rounded corner safety radii to eliminate sharp edges, and anti-pinch Blum soft-closing hinges. Features bunk beds with integrated staircase drawers, study desks, and modular toy organizers.'
-                },
-                other: {
-                    img: 'assets/commercial-hotel-joinery.jpg',
-                    title: 'Other Interior Solutions & Utility Joinery',
-                    desc: 'Ventilated foyer shoe consoles, concealed laundry/utility cabinetry, moisture-proof floating bathroom vanities, and commercial casework.',
-                    heading: 'Comprehensive Utility & Architectural Interior Joinery',
-                    text: 'Specialized modular joinery engineered for functional residential niches and commercial fit-outs. We manufacture ventilated foyer shoe consoles with deodorizing louvers, tall utility cabinets concealing laundry washers and dryers, moisture-sealed vanity units with quartz tops, and custom hotel/office reception casework.'
-                },
-                vanity: {
-                    img: 'assets/luxury-kitchen-cabinetry.png',
-                    title: 'Moisture-Sealed Bathroom Vanities',
-                    desc: 'BWP Marine plywood floating vanity cabinets with zero-joint PUR edge protection against steam and water exposure.',
-                    heading: 'Luxury Waterproof Bathroom Vanity Systems',
-                    text: 'Manufactured exclusively with BWP Marine Grade Plywood and industrial PUR hot-melt edge-banding, our custom vanities provide 100% immunity to bathroom steam, water pooling, and humidity-induced delamination.'
-                },
-                study: {
-                    img: 'assets/commercial-hotel-joinery.jpg',
-                    title: 'Integrated Study & Workstation Joinery',
-                    desc: 'Ergonomic home office desks, acoustic pinboards, bookshelf vitrines, and concealed wire raceways.',
-                    heading: 'Ergonomic Home Office & Study Joinery',
-                    text: 'Purpose-built home workstations engineered for productivity. Includes heavy-load cantilever desks, full-height library bookcases, sound-dampening acoustic fabric pinboards, and concealed power raceways for monitors and laptops.'
-                },
-                'accessory-jewelry': {
-                    img: 'assets/italian-velvet-jewelry-trays.jpg',
-                    title: 'Italian Velvet Jewelry & Watch Trays',
-                    desc: 'Velvet-lined partitioned jewelry drawers with optional biometric fingerprint locks and anti-tarnish fabric.',
-                    heading: 'Precision Internal Wardrobe Accessories: Jewelry Vitrines',
-                    text: 'Handcrafted drawer inserts partitioned for luxury watches, rings, cufflinks, necklaces, and eyewear. Lined with imported Italian microfiber velvet with optional biometric fingerprint locking drawer systems.'
-                },
-                'accessory-hydraulic': {
-                    img: 'assets/hydraulic-pull-down-rods.png',
-                    title: 'Hydraulic Gas-Lift Pull-Down Wardrobe Rods',
-                    desc: 'Ergonomic gas-lift mechanism capable of holding up to 15kg of hanging suits, lowering effortlessly to arm level.',
-                    heading: 'Ergonomic High-Reach Pull-Down Hanging Rods',
-                    text: 'Utilize upper loft storage without awkward ladders. German hydraulic gas-springs smoothly lower upper clothing rails to arm height with automatic dampening during both downward pull and return release.'
-                },
-                'accessory-shoes': {
-                    img: 'assets/sliding-angled-shoe-islands.png',
-                    title: 'Sliding Angled Illuminated Shoe Shelves',
-                    desc: '45-degree angled shoe display shelves with heel-stop barriers and warm 3000K LED perimeter lighting.',
-                    heading: 'Gallery-Grade Sliding Shoe Island Shelves',
-                    text: 'Showcase your footwear collection in boutique gallery style. Full-extension undermount concealed slides with soft-close motion and 45-degree angled shelves provide effortless visibility for up to 60 pairs.'
-                }
-            };
-
-            if (service && serviceData[service]) {
-                const d = serviceData[service];
-                if (imgEl) { imgEl.src = d.img; imgEl.alt = d.title; }
-                if (titleEl) titleEl.textContent = d.title;
-                if (descEl) descEl.textContent = d.desc;
-                if (headingEl) headingEl.textContent = d.heading;
-                if (mainTextEl && d.text) mainTextEl.textContent = d.text;
-                document.title = d.title + ' | MODULARIS Joinery';
-            }
-        });
-    </script>
     <script src="assets/js/main.js"></script>
 </body>
 </html>

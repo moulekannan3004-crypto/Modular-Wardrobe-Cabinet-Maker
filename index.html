@@ -53,13 +53,18 @@
 
                 <!-- Desktop Navigation Menu -->
                 <nav class="hidden lg:flex items-center space-x-2.5 xl:space-x-6 rtl:space-x-reverse text-xs xl:text-sm shrink-0">
-                    <div class="relative group py-4">
-                        <a href="index.html" class="text-amber-600 dark:text-amber-400 font-bold border-b-2 border-amber-600 pb-1 flex items-center transition">
-                            Home 1 <i class="fa-solid fa-chevron-down text-[10px] ml-1.5 transition group-hover:rotate-180"></i>
-                        </a>
-                        <div class="absolute left-0 top-full hidden group-hover:block w-48 bg-white dark:bg-stone-800 shadow-xl rounded-xl border border-stone-100 dark:border-stone-700 py-2 z-50">
-                            <a href="index.html" class="block px-4 py-2 text-xs hover:bg-amber-50 dark:hover:bg-stone-700 text-stone-700 dark:text-stone-200 hover:text-amber-600">Home 1 - General Services</a>
-                            <a href="home-niche.html" class="block px-4 py-2 text-xs hover:bg-amber-50 dark:hover:bg-stone-700 text-stone-700 dark:text-stone-200 hover:text-amber-600">Home 2 - Custom Wardrobes</a>
+                    <div class="relative nav-dropdown group py-4">
+                        <button type="button" class="nav-dropdown-trigger text-amber-600 dark:text-amber-400 font-bold border-b-2 border-amber-600 pb-1 flex items-center transition cursor-pointer focus:outline-none" aria-haspopup="true" aria-expanded="false">
+                            <span>Home 1</span> <i class="fa-solid fa-chevron-down text-[10px] ml-1.5 transition-transform duration-200 group-hover:rotate-180"></i>
+                        </button>
+                        <div class="nav-dropdown-menu absolute start-0 top-full hidden group-hover:block w-52 bg-white dark:bg-stone-800 shadow-2xl rounded-xl border border-stone-100 dark:border-stone-700 py-2 z-50">
+                            <a href="index.html" class="block px-4 py-2.5 text-xs hover:bg-amber-50 dark:hover:bg-stone-700 text-stone-700 dark:text-stone-200 hover:text-amber-600 transition flex items-center justify-between">
+                                <span>Home 1 - General Services</span>
+                                <i class="fa-solid fa-check text-amber-500 text-[10px]"></i>
+                            </a>
+                            <a href="home-niche.html" class="block px-4 py-2.5 text-xs hover:bg-amber-50 dark:hover:bg-stone-700 text-stone-700 dark:text-stone-200 hover:text-amber-600 transition">
+                                Home 2 - Custom Wardrobes
+                            </a>
                         </div>
                     </div>
                     <a href="about.html" class="text-stone-700 dark:text-stone-200 hover:text-amber-600 dark:hover:text-amber-400 font-semibold transition">About Us</a>
@@ -208,18 +213,18 @@
                     </div>
 
                     <!-- Key Stats -->
-                    <div class="grid grid-cols-3 gap-6 pt-8 border-t border-stone-800">
-                        <div>
-                            <span class="block text-3xl font-extrabold text-amber-400">15+</span>
-                            <span class="text-xs text-stone-400">Years Craftsmanship</span>
+                    <div class="grid grid-cols-3 gap-2 sm:gap-6 pt-8 border-t border-stone-800">
+                        <div class="min-w-0">
+                            <span class="block text-xl sm:text-2xl xl:text-3xl font-extrabold text-amber-400 whitespace-nowrap tracking-tight">15+</span>
+                            <span class="text-[11px] sm:text-xs text-stone-400 block mt-1 leading-snug">Years Craftsmanship</span>
                         </div>
-                        <div>
-                            <span class="block text-3xl font-extrabold text-amber-400">4,800+</span>
-                            <span class="text-xs text-stone-400">Homes Transformed</span>
+                        <div class="min-w-0">
+                            <span class="block text-xl sm:text-2xl xl:text-3xl font-extrabold text-amber-400 whitespace-nowrap tracking-tight">4,800+</span>
+                            <span class="text-[11px] sm:text-xs text-stone-400 block mt-1 leading-snug">Homes Transformed</span>
                         </div>
-                        <div>
-                            <span class="block text-3xl font-extrabold text-amber-400">10 Years</span>
-                            <span class="text-xs text-stone-400">Structural Warranty</span>
+                        <div class="min-w-0">
+                            <span class="block text-xl sm:text-2xl xl:text-3xl font-extrabold text-amber-400 whitespace-nowrap tracking-tight">10-Year</span>
+                            <span class="text-[11px] sm:text-xs text-stone-400 block mt-1 leading-snug">Structural Warranty</span>
                         </div>
                     </div>
                 </div>
@@ -233,7 +238,7 @@
                         <form action="contact.html" method="GET" class="space-y-4">
                             <div>
                                 <label class="block text-xs font-semibold uppercase text-stone-600 dark:text-stone-300 mb-1">Your Full Name</label>
-                                <input type="text" name="fullName" required minlength="2" maxlength="50" pattern="^[A-Za-zÀ-ÿ\s'-]{2,50}$" title="Please enter letters only (at least 2 letters, no numbers or special characters)" placeholder="e.g. Alexander Vance" class="w-full px-4 py-3 rounded-lg bg-white dark:bg-stone-800 border border-gray-300 dark:border-stone-700 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500">
+                                <input type="text" name="fullName" id="hero-fullname" required minlength="2" maxlength="50" pattern="^[A-Za-z\s]{2,50}$" title="Please enter letters and spaces only (A-Z, a-z, no numbers or special characters)" placeholder="e.g. Alexander Vance" class="w-full px-4 py-3 rounded-lg bg-white dark:bg-stone-800 border border-gray-300 dark:border-stone-700 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500">
                             </div>
 
                             <div class="grid grid-cols-2 gap-4">
@@ -299,7 +304,7 @@
                 <!-- Service Card 1: Modular Wardrobe Manufacturing -->
                 <div class="bg-white dark:bg-stone-800/90 rounded-3xl border border-stone-200 dark:border-stone-700 shadow-xl hover:shadow-2xl hover:border-amber-500 transition-all duration-300 relative group flex flex-col justify-between overflow-hidden">
                     <div class="relative h-48 w-full overflow-hidden bg-stone-100 dark:bg-stone-700">
-                        <img src="assets/custom-wardrobes.png" alt="Modular Wardrobe Manufacturing" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <img src="assets/modular-hinged-sliding-wardrobes.jpg" alt="Modular Hinged &amp; Sliding Wardrobes" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                         <div class="absolute top-3 left-3">
                             <span class="text-[10px] font-extrabold uppercase tracking-wider text-amber-900 dark:text-amber-300 bg-white/90 dark:bg-stone-900/90 backdrop-blur-md px-2.5 py-1 rounded-lg border border-amber-300 dark:border-amber-500/40">WARDROBES</span>
                         </div>
@@ -407,7 +412,7 @@
                 <!-- Service Card 4: Living, Vanity & Built-In Storage -->
                 <div class="bg-white dark:bg-stone-800/90 rounded-3xl border border-stone-200 dark:border-stone-700 shadow-xl hover:shadow-2xl hover:border-amber-500 transition-all duration-300 relative group flex flex-col justify-between overflow-hidden">
                     <div class="relative h-48 w-full overflow-hidden bg-stone-100 dark:bg-stone-700">
-                        <img src="assets/bedroom-storage.png" alt="Living & Vanity Joinery" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <img src="assets/living-consoles-vanities-storage.png" alt="Living Consoles, Vanities &amp; Storage" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                         <div class="absolute top-3 left-3">
                             <span class="text-[10px] font-extrabold uppercase tracking-wider text-amber-900 dark:text-amber-300 bg-white/90 dark:bg-stone-900/90 backdrop-blur-md px-2.5 py-1 rounded-lg border border-amber-300 dark:border-amber-500/40">CUSTOM JOINERY</span>
                         </div>
@@ -673,13 +678,16 @@
     <!-- Why Choose Us / Engineering Excellence Section -->
     <section class="py-24 bg-gray-50 dark:bg-stone-950 border-t border-gray-200 dark:border-stone-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                <div>
-                    <span class="text-xs font-bold text-amber-600 uppercase tracking-widest block mb-2">Uncompromising Precision</span>
-                    <h2 class="text-3xl sm:text-4xl font-bold font-heading text-stone-900 dark:text-white mb-6">Manufacturing Precision, Architectural Design &amp; Quality Standards</h2>
-                    <p class="text-stone-600 dark:text-stone-400 text-sm leading-relaxed mb-8">
-                        Why interior architects and discerning homeowners choose MODULARIS over traditional on-site carpentry: guaranteed dimensional accuracy, 3D parametric CAD modeling, and multi-stage factory quality control.
-                    </p>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-stretch">
+                <!-- Left: Content Column -->
+                <div class="flex flex-col justify-between">
+                    <div>
+                        <span class="text-xs font-bold text-amber-600 uppercase tracking-widest block mb-2">Uncompromising Precision</span>
+                        <h2 class="text-3xl sm:text-4xl font-bold font-heading text-stone-900 dark:text-white mb-5 leading-tight">Manufacturing Precision, Architectural Design &amp; Quality Standards</h2>
+                        <p class="text-stone-600 dark:text-stone-400 text-sm leading-relaxed mb-8">
+                            Why interior architects and discerning homeowners choose MODULARIS over traditional on-site carpentry: guaranteed dimensional accuracy, 3D parametric CAD modeling, and multi-stage factory quality control.
+                        </p>
+                    </div>
 
                     <div class="space-y-6">
                         <!-- Manufacturing Pillar -->
@@ -723,28 +731,44 @@
                     </div>
                 </div>
 
-                <div class="relative">
-                    <div class="rounded-2xl overflow-hidden shadow-2xl border-4 border-white dark:border-stone-800">
-                        <img src="assets/royal-penthouse-walkin-suite.jpg" alt="Precision Modular Wardrobe Manufacturing Craftsmanship" class="w-full h-auto object-cover">
-                    </div>
-                    <!-- Floating Badge -->
-                    <div class="absolute -bottom-6 -left-6 bg-stone-900 text-white p-5 rounded-2xl shadow-2xl border border-stone-700 hidden sm:block min-w-[170px]">
-                        <div class="flex items-center gap-3 mb-2">
-                            <div class="w-9 h-9 bg-amber-500/20 rounded-xl flex items-center justify-center shrink-0">
-                                <i class="fa-solid fa-trophy text-amber-400 text-sm"></i>
-                            </div>
-                            <div>
-                                <div class="text-xl font-black text-white leading-none">4,800+</div>
-                                <div class="text-[10px] text-stone-400 uppercase tracking-widest font-bold mt-0.5">Residences Built</div>
-                            </div>
+                <!-- Right: Image Column (Guaranteed Equal Height & Alignment) -->
+                <div class="flex flex-col w-full h-full">
+                    <div class="relative flex-1 w-full min-h-[440px] rounded-2xl overflow-hidden shadow-2xl border-4 border-white dark:border-stone-800 group cursor-pointer open-modal-trigger"
+                         data-modal-title="3D Architectural CAD Walkthrough"
+                         data-modal-subtext="Manufacturing Precision, Architectural Design &amp; Quality Standards"
+                         data-modal-desc="Photorealistic 3D CAD modeling, multi-axis CNC joinery walkthrough, and factory quality control ensuring micron-grade dimensional accuracy."
+                         data-modal-badge="3D Architectural CAD Walkthrough"
+                         data-modal-img="assets/architectural-design-precision-frame.png">
+                        <img src="assets/architectural-design-precision-frame.png" alt="Manufacturing Precision, Architectural Design &amp; Quality Standards" class="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700">
+                        
+                        <!-- Frame Subtle Gradient Overlay -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/20 group-hover:from-black/40 transition-colors pointer-events-none"></div>
+
+                        <!-- Top-Right Video Badge -->
+                        <div class="absolute top-4 right-4 bg-stone-900/90 backdrop-blur-md px-3.5 py-1.5 rounded-full text-[10px] font-bold text-amber-400 border border-stone-700/80 flex items-center gap-2 shadow-xl">
+                            <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+                            <span class="tracking-wider uppercase">3D Architectural CAD Walkthrough</span>
                         </div>
-                        <div class="flex items-center gap-0.5 mt-1">
-                            <i class="fa-solid fa-star text-amber-400 text-[10px]"></i>
-                            <i class="fa-solid fa-star text-amber-400 text-[10px]"></i>
-                            <i class="fa-solid fa-star text-amber-400 text-[10px]"></i>
-                            <i class="fa-solid fa-star text-amber-400 text-[10px]"></i>
-                            <i class="fa-solid fa-star text-amber-400 text-[10px]"></i>
-                            <span class="text-[10px] text-stone-400 ml-1.5 font-semibold">10-Yr Warranty</span>
+
+                        <!-- Floating Badge -->
+                        <div class="absolute bottom-6 left-6 bg-stone-900/95 backdrop-blur-md text-white p-4 sm:p-5 rounded-2xl shadow-2xl border border-stone-700/80 hidden sm:block min-w-[170px]">
+                            <div class="flex items-center gap-3 mb-1.5">
+                                <div class="w-8 h-8 bg-amber-500/20 rounded-lg flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-trophy text-amber-400 text-xs"></i>
+                                </div>
+                                <div>
+                                    <div class="text-lg font-black text-white leading-none">4,800+</div>
+                                    <div class="text-[9px] text-stone-400 uppercase tracking-widest font-bold mt-0.5">Residences Built</div>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-0.5 mt-0.5">
+                                <i class="fa-solid fa-star text-amber-400 text-[9px]"></i>
+                                <i class="fa-solid fa-star text-amber-400 text-[9px]"></i>
+                                <i class="fa-solid fa-star text-amber-400 text-[9px]"></i>
+                                <i class="fa-solid fa-star text-amber-400 text-[9px]"></i>
+                                <i class="fa-solid fa-star text-amber-400 text-[9px]"></i>
+                                <span class="text-[9px] text-stone-300 ml-1.5 font-semibold">10-Yr Warranty</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -876,20 +900,35 @@
 
     <!-- Global Modal Viewer for 3D/Gallery -->
     <div id="global-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/80 backdrop-blur-sm p-4">
-        <div class="modal-content bg-white dark:bg-stone-900 max-w-3xl w-full rounded-2xl p-6 relative border border-stone-700 shadow-2xl">
-            <button class="close-modal-btn absolute top-4 right-4 text-stone-500 hover:text-white text-xl">
+        <div class="modal-content bg-white dark:bg-stone-900 max-w-4xl w-full rounded-2xl p-6 md:p-8 relative border border-stone-700 shadow-2xl max-h-[92vh] overflow-y-auto">
+            <button class="close-modal-btn absolute top-4 right-4 text-stone-400 hover:text-white text-xl w-8 h-8 rounded-full bg-stone-800 flex items-center justify-center transition z-20">
                 <i class="fa-solid fa-xmark"></i>
             </button>
-            <h3 class="text-lg font-bold font-heading text-stone-900 dark:text-amber-400 mb-4">3D Interactive Layout Previewer</h3>
-            <div class="aspect-video bg-stone-800 rounded-xl flex items-center justify-center text-stone-400 relative overflow-hidden">
-                <img src="assets/custom-wardrobes.png" alt="Custom Bespoke Wardrobe Suite" class="w-full h-full object-cover">
-                <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
-                    <span class="bg-amber-600 text-white text-xs font-bold px-4 py-2 rounded-lg shadow-lg">
-                        <i class="fa-solid fa-cube mr-1"></i> Drag to Rotate 3D Model
+            <div class="mb-4 pr-10">
+                <span class="text-[10px] font-extrabold uppercase tracking-widest text-amber-500 block mb-1">Photorealistic CAD Walkthrough</span>
+                <h3 class="text-xl sm:text-2xl font-bold font-heading text-stone-900 dark:text-white">3D Architectural CAD Walkthrough</h3>
+            </div>
+            <div class="relative w-full aspect-video bg-stone-950 rounded-2xl overflow-hidden border border-stone-800 shadow-2xl group">
+                <img src="assets/architectural-design-precision-frame.png" alt="3D Architectural CAD Walkthrough" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                <div class="absolute inset-0 bg-black/20 flex items-center justify-center pointer-events-none">
+                    <span class="bg-stone-900/90 text-amber-400 border border-amber-500/40 text-xs font-bold px-4 py-2 rounded-xl shadow-2xl backdrop-blur-md flex items-center gap-2">
+                        <i class="fa-solid fa-cube text-amber-400"></i> High-Resolution CAD Model Walkthrough
                     </span>
                 </div>
+                <div class="absolute top-3.5 left-3.5 bg-stone-900/90 text-amber-400 text-[10px] font-bold px-3 py-1.5 rounded-full backdrop-blur-md border border-stone-700/80 flex items-center gap-1.5">
+                    <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+                    <span>3D Architectural CAD Walkthrough</span>
+                </div>
+                <div class="absolute bottom-3.5 right-3.5 bg-stone-900/90 text-stone-300 text-[10px] font-bold px-3 py-1.5 rounded-full backdrop-blur-md border border-stone-700/80">
+                    Precision Tolerances &lt; 0.5mm
+                </div>
             </div>
-            <p class="text-xs text-stone-500 dark:text-stone-400 mt-4">Showing photorealistic render specs for Walk-In Wardrobe Suite #409.</p>
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mt-5 pt-4 border-t border-stone-200 dark:border-stone-800">
+                <p class="text-xs text-stone-600 dark:text-stone-300 leading-relaxed max-w-xl">Photorealistic 3D CAD modeling, multi-axis CNC joinery walkthrough, and factory quality control ensuring micron-grade dimensional accuracy.</p>
+                <a href="contact.html" class="inline-flex items-center justify-center bg-amber-600 hover:bg-amber-700 text-white font-bold text-xs uppercase px-5 py-3 rounded-xl shadow-lg shadow-amber-600/30 transition transform hover:scale-105 whitespace-nowrap">
+                    Consult Engineering Team <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                </a>
+            </div>
         </div>
     </div>
 
@@ -986,20 +1025,17 @@
             });
         })();
     </script>
+
+    <!-- Valid Letters-Only Input Controller for Hero Full Name Field -->
+    <script>
+        (function() {
+            const nameInput = document.getElementById('hero-fullname');
+            if (!nameInput) return;
+
+            if (typeof setupNameFieldController === 'function') {
+                setupNameFieldController(nameInput);
+            }
+        })();
+    </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

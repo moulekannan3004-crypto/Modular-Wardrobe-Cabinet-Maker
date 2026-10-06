@@ -49,13 +49,18 @@
 
                 <!-- Desktop Navigation Menu -->
                 <nav class="hidden lg:flex items-center space-x-2.5 xl:space-x-6 rtl:space-x-reverse text-xs xl:text-sm shrink-0">
-                    <div class="relative group py-4">
-                        <a href="home-niche.html" class="text-amber-600 dark:text-amber-400 font-bold border-b-2 border-amber-600 pb-1 flex items-center transition">
-                            Home 2 <i class="fa-solid fa-chevron-down text-[10px] ml-1.5 transition group-hover:rotate-180"></i>
-                        </a>
-                        <div class="absolute left-0 top-full hidden group-hover:block w-48 bg-white dark:bg-stone-800 shadow-xl rounded-xl border border-stone-100 dark:border-stone-700 py-2 z-50">
-                            <a href="index.html" class="block px-4 py-2 text-xs hover:bg-amber-50 dark:hover:bg-stone-700 text-stone-700 dark:text-stone-200 hover:text-amber-600">Home 1 - General Services</a>
-                            <a href="home-niche.html" class="block px-4 py-2 text-xs hover:bg-amber-50 dark:hover:bg-stone-700 text-stone-700 dark:text-stone-200 hover:text-amber-600">Home 2 - Custom Wardrobes</a>
+                    <div class="relative nav-dropdown group py-4">
+                        <button type="button" class="nav-dropdown-trigger text-amber-600 dark:text-amber-400 font-bold border-b-2 border-amber-600 pb-1 flex items-center transition cursor-pointer focus:outline-none" aria-haspopup="true" aria-expanded="false">
+                            <span>Home 2</span> <i class="fa-solid fa-chevron-down text-[10px] ml-1.5 transition-transform duration-200 group-hover:rotate-180"></i>
+                        </button>
+                        <div class="nav-dropdown-menu absolute start-0 top-full hidden group-hover:block w-52 bg-white dark:bg-stone-800 shadow-2xl rounded-xl border border-stone-100 dark:border-stone-700 py-2 z-50">
+                            <a href="index.html" class="block px-4 py-2.5 text-xs hover:bg-amber-50 dark:hover:bg-stone-700 text-stone-700 dark:text-stone-200 hover:text-amber-600 transition">
+                                Home 1 - General Services
+                            </a>
+                            <a href="home-niche.html" class="block px-4 py-2.5 text-xs hover:bg-amber-50 dark:hover:bg-stone-700 text-stone-700 dark:text-stone-200 hover:text-amber-600 transition flex items-center justify-between">
+                                <span>Home 2 - Custom Wardrobes</span>
+                                <i class="fa-solid fa-check text-amber-500 text-[10px]"></i>
+                            </a>
                         </div>
                     </div>
                     <a href="about.html" class="text-stone-700 dark:text-stone-200 hover:text-amber-600 dark:hover:text-amber-400 font-semibold transition">About Us</a>
@@ -168,24 +173,27 @@
     </header>
 
     <!-- Niche Hero Section -->
-    <section class="relative py-20 overflow-hidden bg-stone-900 text-white">
+    <section class="relative py-16 lg:py-20 overflow-hidden bg-stone-900 text-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                <div class="lg:col-span-6 space-y-6">
-                    <div class="inline-flex items-center space-x-2 bg-amber-500/10 text-amber-400 border border-amber-500/20 rounded-full px-4 py-1 text-xs font-semibold uppercase tracking-wider">
-                        <i class="fa-solid fa-industry"></i>
-                        <span>Factory CNC Joinery &amp; Wardrobe Manufacturing</span>
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-stretch">
+                <!-- Left Content Column -->
+                <div class="lg:col-span-6 flex flex-col justify-between space-y-6">
+                    <div class="space-y-4">
+                        <div class="inline-flex items-center space-x-2 bg-amber-500/10 text-amber-400 border border-amber-500/20 rounded-full px-4 py-1 text-xs font-semibold uppercase tracking-wider">
+                            <i class="fa-solid fa-industry"></i>
+                            <span>Factory CNC Joinery &amp; Wardrobe Manufacturing</span>
+                        </div>
+
+                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold font-heading leading-tight text-white">
+                            Precision Modular Wardrobes &amp; <span class="text-amber-500">Cabinet Manufacturing</span>
+                        </h1>
+
+                        <p class="text-stone-300 text-sm sm:text-base leading-relaxed">
+                            Direct-from-factory modular wardrobes, walk-in dressing suites, and custom cabinetry. Engineered with 0.1mm German CNC accuracy, zero-joint industrial PUR edge-banding, and high-density 18mm HDHMR moisture-resistant cores. Fabricated off-site and cleanly assembled in your home in 48 hours.
+                        </p>
                     </div>
 
-                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold font-heading leading-tight text-white">
-                        Precision Modular Wardrobes &amp; <span class="text-amber-500">Cabinet Manufacturing</span>
-                    </h1>
-
-                    <p class="text-stone-300 text-base leading-relaxed">
-                        Direct-from-factory modular wardrobes, walk-in dressing suites, and custom cabinetry. Engineered with 0.1mm German CNC accuracy, zero-joint industrial PUR edge-banding, and high-density 18mm HDHMR moisture-resistant cores. Fabricated off-site and cleanly assembled in your home in 48 hours.
-                    </p>
-
-                    <div class="grid grid-cols-2 gap-4 pt-2">
+                    <div class="grid grid-cols-2 gap-4">
                         <div class="p-4 rounded-xl bg-stone-800/60 border border-stone-700">
                             <i class="fa-solid fa-shield-halved text-amber-400 text-xl mb-2"></i>
                             <h4 class="font-bold text-sm text-white">18mm HDHMR Cores</h4>
@@ -199,14 +207,14 @@
                     </div>
 
                     <!-- Quick Capability Badges -->
-                    <div class="flex flex-wrap gap-2 text-xs font-bold text-amber-400 pt-1">
+                    <div class="flex flex-wrap gap-2 text-xs font-bold text-amber-400">
                         <span class="bg-stone-800/80 border border-stone-700/80 px-3 py-1 rounded-full"><i class="fa-solid fa-microchip text-amber-500 mr-1.5"></i> 0.1mm CNC Accuracy</span>
                         <span class="bg-stone-800/80 border border-stone-700/80 px-3 py-1 rounded-full"><i class="fa-solid fa-gears text-amber-500 mr-1.5"></i> Blum &amp; Hettich Hardware</span>
                         <span class="bg-stone-800/80 border border-stone-700/80 px-3 py-1 rounded-full"><i class="fa-solid fa-truck-fast text-amber-500 mr-1.5"></i> 48h Dust-Free Assembly</span>
                         <span class="bg-stone-800/80 border border-stone-700/80 px-3 py-1 rounded-full"><i class="fa-solid fa-award text-amber-500 mr-1.5"></i> 10-Yr Factory Warranty</span>
                     </div>
 
-                    <div class="pt-3 flex flex-wrap gap-4">
+                    <div class="pt-1 flex flex-wrap gap-4">
                         <a href="contact.html" class="bg-amber-600 hover:bg-amber-500 text-white font-bold px-8 py-4 rounded-xl shadow-xl shadow-amber-600/30 transition text-sm uppercase tracking-wider">
                             Book In-Home 3D Audit
                         </a>
@@ -216,14 +224,26 @@
                     </div>
                 </div>
 
-                <div class="lg:col-span-6 flex justify-center">
-                    <div class="relative rounded-2xl overflow-hidden shadow-2xl border-2 border-stone-700 group w-full max-w-md md:max-w-lg lg:max-w-none">
-                        <img src="assets/royal-penthouse-walkin-suite.jpg" alt="The Royal Penthouse Walk-In Suite" class="w-full h-72 sm:h-96 md:h-[440px] lg:h-[540px] xl:h-[600px] object-cover object-center">
-                        <div class="absolute inset-0 bg-gradient-to-t from-stone-950 via-transparent to-transparent opacity-80"></div>
-                        <div class="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 p-4 sm:p-6 bg-stone-900/90 backdrop-blur-md rounded-xl border border-stone-700">
+                <!-- Right Image Column (Guaranteed Equal Height & Perfect Alignment) -->
+                <div class="lg:col-span-6 flex flex-col w-full h-full">
+                    <div class="relative flex-1 w-full min-h-[480px] rounded-2xl overflow-hidden shadow-2xl border-2 border-stone-700 group cursor-pointer open-modal-trigger"
+                         data-modal-title="Precision Modular Wardrobes &amp; Walk-In Dressing Suite"
+                         data-modal-desc="Automated 18mm HDHMR carcasses, floor-to-ceiling illuminated glass shutters, integrated dressing console, and polished marble corridor reflection."
+                         data-modal-badge="Precision Factory Showcase"
+                         data-modal-img="assets/precision-modular-wardrobes-walkin-dressing-suite.jpg">
+                        <img src="assets/precision-modular-wardrobes-walkin-dressing-suite.jpg" alt="Precision Modular Wardrobes &amp; Cabinet Manufacturing Showcase" class="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/20 to-black/30 opacity-80 pointer-events-none group-hover:opacity-70 transition-opacity"></div>
+
+                        <!-- Top-Right Video Badge -->
+                        <div class="absolute top-4 right-4 bg-stone-900/90 backdrop-blur-md px-3.5 py-1.5 rounded-full text-[10px] font-bold text-amber-400 border border-stone-700/80 flex items-center gap-2 shadow-xl">
+                            <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+                            <span class="tracking-wider uppercase">Precision Factory Showcase</span>
+                        </div>
+
+                        <div class="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 p-4 sm:p-6 bg-stone-900/90 backdrop-blur-md rounded-xl border border-stone-700 shadow-xl">
                             <span class="text-xs font-bold text-amber-400 uppercase tracking-widest block mb-1">Factory Showcase Project</span>
-                            <h3 class="text-lg font-bold font-heading text-white">Master Walk-In Suite &amp; Central Island Chest</h3>
-                            <p class="text-xs text-stone-300 mt-1">Automated 18mm HDHMR carcasses, fluted tinted glass doors, Italian leather drawer linings, and concealed 3000K LED rails.</p>
+                            <h3 class="text-lg font-bold font-heading text-white">Master Walk-In Dressing Suite &amp; Vanity Console</h3>
+                            <p class="text-xs text-stone-300 mt-1">Automated 18mm HDHMR carcasses, floor-to-ceiling illuminated glass doors, central vanity console, and concealed 3000K LED rails.</p>
                         </div>
                     </div>
                 </div>
@@ -243,7 +263,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <!-- Cat 1: Modular Wardrobes -->
                 <div class="bg-stone-50 dark:bg-stone-900 rounded-2xl p-6 border border-stone-200 dark:border-stone-800 hover:border-amber-500/50 transition product-card shadow-sm flex flex-col h-full">
-                    <img src="assets/custom-wardrobes.png" alt="Modular Hinged & Sliding Wardrobes" class="w-full h-48 object-cover rounded-xl mb-4">
+                    <img src="assets/modular-hinged-sliding-wardrobes.jpg" alt="Modular Hinged &amp; Sliding Wardrobes" class="w-full h-48 object-cover rounded-xl mb-4">
                     <div class="flex-1 flex flex-col justify-between">
                         <div>
                             <span class="text-[10px] font-extrabold uppercase tracking-wider text-amber-600 dark:text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/20 mb-2 inline-block">Wardrobe Engineering</span>
@@ -347,7 +367,7 @@
                         </div>
 
                         <div class="relative h-44 sm:h-52 md:h-44 lg:h-48 rounded-2xl overflow-hidden mb-5 lg:mb-6 border border-stone-200 dark:border-stone-800 shadow-md bg-stone-100 dark:bg-stone-800/80">
-                            <img src="assets/smart-storage-integration.png" alt="Dual Hanging & Long Gown Compartments" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500">
+                            <img src="assets/dual-hanging-gown-zones.png" alt="Dual Hanging & Long Gown Compartments" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
                             <span class="absolute bottom-3 left-3 text-[10px] font-extrabold uppercase tracking-widest text-amber-300 bg-black/70 backdrop-blur-md px-2.5 py-1 rounded-md border border-amber-500/40">
                                 <i class="fa-solid fa-arrows-up-down text-amber-400 mr-1"></i> 160cm / 105cm Rails
@@ -503,57 +523,75 @@
                 <p class="text-stone-600 dark:text-stone-400 text-sm mt-3">Click on any finish below to preview how it looks on a custom cabinet door.</p>
             </div>
 
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch">
                 <!-- Swatch Buttons -->
-                <div class="lg:col-span-5 space-y-4">
-                    <button class="swatch-select-btn w-full p-4 rounded-xl bg-stone-50 dark:bg-stone-800 text-left flex items-center space-x-4 border border-stone-200 dark:border-stone-700 hover:border-amber-500 transition ring-4 ring-amber-500 shadow-sm"
+                <div class="lg:col-span-5 flex flex-col justify-between gap-4 h-full">
+                    <button class="swatch-select-btn w-full p-4 sm:p-5 rounded-2xl bg-stone-50 dark:bg-stone-900 text-left flex items-center space-x-4 rtl:space-x-reverse border border-stone-200 dark:border-stone-800 hover:border-amber-500 transition ring-4 ring-amber-500 shadow-sm flex-1 group"
                             data-img="https://images.unsplash.com/photo-1546484475-7f7bd55792da?q=80&w=1000&auto=format&fit=crop"
                             data-title="Natural Crown Oak Veneer"
                             data-desc="Hand-selected authentic timber veneer with deep tactile grain and protective matte UV clear coat.">
-                        <span class="w-12 h-12 rounded-full overflow-hidden border-2 border-amber-500 shrink-0 shadow-sm">
+                        <span class="w-14 h-14 rounded-2xl overflow-hidden border-2 border-amber-500 shrink-0 shadow-md group-hover:scale-105 transition-transform">
                             <img src="https://images.unsplash.com/photo-1546484475-7f7bd55792da?q=80&w=200&auto=format&fit=crop" alt="Natural Crown Oak Veneer Texture" class="w-full h-full object-cover">
                         </span>
-                        <div>
-                            <span class="block font-bold text-stone-900 dark:text-white text-sm">Natural Crown Oak Veneer</span>
-                            <span class="text-xs text-amber-600 dark:text-amber-400 font-semibold">Warm organic timber feel</span>
+                        <div class="flex-1 min-w-0">
+                            <div class="flex items-center justify-between gap-2">
+                                <span class="block font-bold text-stone-900 dark:text-white text-sm sm:text-base truncate">Natural Crown Oak Veneer</span>
+                                <span class="text-[10px] font-extrabold uppercase px-2 py-0.5 rounded bg-amber-100 dark:bg-amber-500/20 text-amber-700 dark:text-amber-400 shrink-0">Veneer</span>
+                            </div>
+                            <span class="text-xs text-amber-600 dark:text-amber-400 font-semibold block mt-0.5">Warm organic timber feel</span>
+                            <span class="text-[11px] text-stone-500 dark:text-stone-400 block mt-1 truncate">0.6mm architectural veneer · Matte UV seal</span>
                         </div>
                     </button>
 
-                    <button class="swatch-select-btn w-full p-4 rounded-xl bg-stone-50 dark:bg-stone-800 text-left flex items-center space-x-4 border border-stone-200 dark:border-stone-700 hover:border-amber-500 transition shadow-sm"
+                    <button class="swatch-select-btn w-full p-4 sm:p-5 rounded-2xl bg-stone-50 dark:bg-stone-900 text-left flex items-center space-x-4 rtl:space-x-reverse border border-stone-200 dark:border-stone-800 hover:border-amber-500 transition shadow-sm flex-1 group"
                             data-img="assets/images/matte-anti-fingerprint-pu.png"
                             data-title="Matte Anti-Fingerprint Polyurethane"
                             data-desc="Smooth velvet-like lacquer available in over 200 RAL custom paint colors with zero fingerprint marks.">
-                        <span class="w-12 h-12 rounded-full overflow-hidden border-2 border-stone-400 shrink-0 shadow-sm">
+                        <span class="w-14 h-14 rounded-2xl overflow-hidden border-2 border-stone-400 dark:border-stone-600 shrink-0 shadow-md group-hover:scale-105 transition-transform">
                             <img src="assets/images/matte-anti-fingerprint-pu.png" alt="Matte Anti-Fingerprint PU Finish" class="w-full h-full object-cover">
                         </span>
-                        <div>
-                            <span class="block font-bold text-stone-900 dark:text-white text-sm">Matte Anti-Fingerprint PU</span>
-                            <span class="text-xs text-stone-500 dark:text-stone-400">Sleek non-reflective aesthetic</span>
+                        <div class="flex-1 min-w-0">
+                            <div class="flex items-center justify-between gap-2">
+                                <span class="block font-bold text-stone-900 dark:text-white text-sm sm:text-base truncate">Matte Anti-Fingerprint PU</span>
+                                <span class="text-[10px] font-extrabold uppercase px-2 py-0.5 rounded bg-stone-200 dark:bg-stone-800 text-stone-700 dark:text-stone-300 shrink-0">Lacquer</span>
+                            </div>
+                            <span class="text-xs text-stone-500 dark:text-stone-400 block mt-0.5">Sleek non-reflective aesthetic</span>
+                            <span class="text-[11px] text-stone-500 dark:text-stone-400 block mt-1 truncate">Velvet touch · 200+ RAL shades · Scratch resistant</span>
                         </div>
                     </button>
 
-                    <button class="swatch-select-btn w-full p-4 rounded-xl bg-stone-50 dark:bg-stone-800 text-left flex items-center space-x-4 border border-stone-200 dark:border-stone-700 hover:border-amber-500 transition shadow-sm"
+                    <button class="swatch-select-btn w-full p-4 sm:p-5 rounded-2xl bg-stone-50 dark:bg-stone-900 text-left flex items-center space-x-4 rtl:space-x-reverse border border-stone-200 dark:border-stone-800 hover:border-amber-500 transition shadow-sm flex-1 group"
                             data-img="assets/images/fluted-amber-glass.png"
                             data-title="Fluted Amber Glass & Anodized Bronze"
                             data-desc="Architectural fluted safety glass paired with lightweight anodized bronze aluminium profiles.">
-                        <span class="w-12 h-12 rounded-full overflow-hidden border-2 border-amber-500 shrink-0 shadow-sm">
+                        <span class="w-14 h-14 rounded-2xl overflow-hidden border-2 border-amber-500/70 shrink-0 shadow-md group-hover:scale-105 transition-transform">
                             <img src="assets/images/fluted-amber-glass.png" alt="Fluted Amber Glass Texture" class="w-full h-full object-cover">
                         </span>
-                        <div>
-                            <span class="block font-bold text-stone-900 dark:text-white text-sm">Fluted Amber Glass</span>
-                            <span class="text-xs text-stone-500 dark:text-stone-400">Luxury showcase transparency</span>
+                        <div class="flex-1 min-w-0">
+                            <div class="flex items-center justify-between gap-2">
+                                <span class="block font-bold text-stone-900 dark:text-white text-sm sm:text-base truncate">Fluted Amber Glass</span>
+                                <span class="text-[10px] font-extrabold uppercase px-2 py-0.5 rounded bg-amber-100 dark:bg-amber-500/20 text-amber-700 dark:text-amber-400 shrink-0">Glass</span>
+                            </div>
+                            <span class="text-xs text-stone-500 dark:text-stone-400 block mt-0.5">Luxury showcase transparency</span>
+                            <span class="text-[11px] text-stone-500 dark:text-stone-400 block mt-1 truncate">Tempered fluted glass · Anodized bronze frame</span>
                         </div>
                     </button>
                 </div>
 
                 <!-- Swatch Live Preview Panel -->
-                <div class="lg:col-span-7">
-                    <div class="bg-stone-50 dark:bg-stone-900 p-6 rounded-2xl border border-stone-200 dark:border-stone-800 shadow-xl">
-                        <div class="relative h-96 rounded-xl overflow-hidden mb-6">
+                <div class="lg:col-span-7 flex flex-col h-full">
+                    <div class="bg-stone-50 dark:bg-stone-900 p-6 sm:p-7 rounded-3xl border border-stone-200 dark:border-stone-800 shadow-xl h-full flex flex-col justify-between">
+                        <div class="relative h-72 sm:h-80 lg:h-[340px] rounded-2xl overflow-hidden mb-6 border border-stone-200 dark:border-stone-800 shadow-inner bg-stone-100 dark:bg-stone-950">
                             <img id="swatch-preview-img" src="https://images.unsplash.com/photo-1546484475-7f7bd55792da?q=80&w=1000&auto=format&fit=crop" alt="Natural Crown Oak Veneer Texture Finish" class="w-full h-full object-cover transition-opacity duration-300">
+                            <div class="absolute top-3 left-3 bg-stone-950/80 backdrop-blur-md px-3 py-1 rounded-full border border-stone-700/60 flex items-center gap-1.5 shadow-md">
+                                <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                                <span class="text-[10px] font-extrabold uppercase tracking-wider text-stone-200">Live Swatch Render</span>
+                            </div>
                         </div>
-                        <h3 id="swatch-preview-title" class="text-xl font-bold font-heading text-amber-600 dark:text-amber-400">Natural Crown Oak Veneer</h3>
-                        <p id="swatch-preview-desc" class="text-xs text-stone-600 dark:text-stone-400 mt-2 leading-relaxed">Hand-selected authentic timber veneer with deep tactile grain and protective matte UV clear coat.</p>
+                        <div class="pt-2">
+                            <h3 id="swatch-preview-title" class="text-xl sm:text-2xl font-bold font-heading text-amber-600 dark:text-amber-400">Natural Crown Oak Veneer</h3>
+                            <p id="swatch-preview-desc" class="text-xs sm:text-sm text-stone-600 dark:text-stone-400 mt-2 leading-relaxed">Hand-selected authentic timber veneer with deep tactile grain and protective matte UV clear coat.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -636,6 +674,9 @@
             </div>
         </div>
     </footer>
+
+    <!-- Global Modal Viewer for 3D/Gallery -->
+    <div id="global-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/80 backdrop-blur-sm p-4"></div>
 
     <script src="assets/js/main.js"></script>
 </body>

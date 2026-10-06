@@ -35,9 +35,16 @@ body {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Custom Typography Classes */
+/* Custom Typography Classes & Standard Normal Numbers */
+:root {
+    font-variant-numeric: lining-nums tabular-nums;
+    font-feature-settings: "lnum" 1, "tnum" 1;
+}
+
 .font-heading {
     font-family: var(--font-heading);
+    font-variant-numeric: lining-nums;
+    font-feature-settings: "lnum" 1;
 }
 
 /* Premium Wood & Gold Accent Gradients */
@@ -168,6 +175,21 @@ body {
     right: 50%;
     left: auto;
     transform: translateX(50%);
+}
+
+/* Navigation Dropdowns: Seamless Hover Bridge & Click State */
+.nav-dropdown-menu::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: 0;
+    right: 0;
+    height: 20px;
+    background: transparent;
+}
+
+.nav-dropdown-menu.show-dropdown {
+    display: block !important;
 }
 
 

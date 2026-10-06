@@ -53,13 +53,17 @@
 
                 <!-- Desktop Navigation Menu -->
                 <nav class="hidden lg:flex items-center space-x-2.5 xl:space-x-6 rtl:space-x-reverse text-xs xl:text-sm shrink-0">
-                    <div class="relative group py-4">
-                        <a href="index.html" class="text-stone-700 dark:text-stone-200 hover:text-amber-600 dark:hover:text-amber-400 font-semibold flex items-center transition">
-                            Home 1 <i class="fa-solid fa-chevron-down text-[10px] ml-1.5 transition group-hover:rotate-180"></i>
-                        </a>
-                        <div class="absolute left-0 top-full hidden group-hover:block w-48 bg-white dark:bg-stone-800 shadow-xl rounded-xl border border-stone-100 dark:border-stone-700 py-2 z-50">
-                            <a href="index.html" class="block px-4 py-2 text-xs hover:bg-amber-50 dark:hover:bg-stone-700 text-stone-700 dark:text-stone-200 hover:text-amber-600">Home 1 - General Services</a>
-                            <a href="home-niche.html" class="block px-4 py-2 text-xs hover:bg-amber-50 dark:hover:bg-stone-700 text-stone-700 dark:text-stone-200 hover:text-amber-600">Home 2 - Custom Wardrobes</a>
+                    <div class="relative nav-dropdown group py-4">
+                        <button type="button" class="nav-dropdown-trigger text-stone-700 dark:text-stone-200 hover:text-amber-600 dark:hover:text-amber-400 font-semibold flex items-center transition cursor-pointer focus:outline-none" aria-haspopup="true" aria-expanded="false">
+                            <span>Home</span> <i class="fa-solid fa-chevron-down text-[10px] ml-1.5 transition-transform duration-200 group-hover:rotate-180"></i>
+                        </button>
+                        <div class="nav-dropdown-menu absolute start-0 top-full hidden group-hover:block w-52 bg-white dark:bg-stone-800 shadow-2xl rounded-xl border border-stone-100 dark:border-stone-700 py-2 z-50">
+                            <a href="index.html" class="block px-4 py-2.5 text-xs hover:bg-amber-50 dark:hover:bg-stone-700 text-stone-700 dark:text-stone-200 hover:text-amber-600 transition">
+                                Home 1 - General Services
+                            </a>
+                            <a href="home-niche.html" class="block px-4 py-2.5 text-xs hover:bg-amber-50 dark:hover:bg-stone-700 text-stone-700 dark:text-stone-200 hover:text-amber-600 transition">
+                                Home 2 - Custom Wardrobes
+                            </a>
                         </div>
                     </div>
                     <a href="about.html" class="text-stone-700 dark:text-stone-200 hover:text-amber-600 dark:hover:text-amber-400 font-semibold transition">About Us</a>
@@ -269,7 +273,7 @@
                             author: 'By Elena Rostova',
                             date: 'August 22, 2026',
                             read: '8 Min Read',
-                            img: 'assets/island-units-jewellery-drawers.png',
+                            img: 'assets/walk-in-island-dresser.jpg',
                             authorImg: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=200&auto=format&fit=crop',
                             authorName: 'Elena Rostova',
                             authorBio: 'Head of 3D Design at MODULARIS. Specialises in luxury master suite wardrobe experiences and bespoke island dresser configurations.',
@@ -307,7 +311,7 @@
                             author: 'By Sophia Chen',
                             date: 'June 20, 2026',
                             read: '5 Min Read',
-                            img: 'assets/sliding-angled-shoe-islands.png',
+                            img: 'assets/sliding-angled-shoe-islands.jpg',
                             authorImg: 'https://images.unsplash.com/photo-1607746882042-944635dfe10e?q=80&w=200&auto=format&fit=crop',
                             authorName: 'Sophia Chen',
                             authorBio: 'Space Planning Architect at MODULARIS. Expert in maximising storage potential in attic conversions and architecturally challenging rooms.',
@@ -326,7 +330,7 @@
                             author: 'By Henrik Vance',
                             date: 'July 15, 2026',
                             read: '5 Min Read',
-                            img: 'assets/hydraulic-pull-down-rods.png',
+                            img: 'assets/hydraulic-pull-down-rods.jpg',
                             authorImg: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=200&auto=format&fit=crop',
                             authorName: 'Henrik Vance',
                             authorBio: 'Founder & Lead Architectural Designer at MODULARIS with 15+ years of custom joinery experience.',
@@ -345,7 +349,7 @@
                             author: 'By Elena Rostova',
                             date: 'September 04, 2026',
                             read: '7 Min Read',
-                            img: 'assets/stuttgart-fluted-glass-suite.png',
+                            img: 'assets/fluted-amber-glass-bronze-shutters.png',
                             authorImg: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=200&auto=format&fit=crop',
                             authorName: 'Elena Rostova',
                             authorBio: 'Head of 3D Design at MODULARIS. Specialises in luxury master suite wardrobe experiences and bespoke island dresser configurations.',
@@ -357,6 +361,74 @@
                             <p>Black industrial steel frames are giving way to warmer, softer metallics. Ultra-slim 18mm anodized bronze and brushed champagne aluminum profiles create delicate linear borders that harmonize with warm European oak and walnut carcass interiors.</p>
                             <h3 class="text-xl font-bold text-stone-900 dark:text-white font-heading">Concealed Vertical Track Lighting</h3>
                             <p>Instead of ceiling spotlights that cast harsh top shadows, 2026 designs integrate continuous vertical LED extrusion channels embedded directly within the cabinet side gables. The result is perfectly uniform, shadowless illumination from head to toe.</p>`
+                        },
+                        9: {
+                            category: '2026 Trends',
+                            title: 'Smart Architectural Lighting: Integrated 3000K Motion Sensor Channels',
+                            author: 'By Elena Rostova',
+                            date: 'October 02, 2026',
+                            read: '6 Min Read',
+                            img: 'assets/smart-architectural-motion-lighting.png',
+                            authorImg: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=200&auto=format&fit=crop',
+                            authorName: 'Elena Rostova',
+                            authorBio: 'Head of 3D Design at MODULARIS. Specialises in luxury master suite wardrobe experiences and bespoke lighting configurations.',
+                            body: `<p>Lighting is no longer an afterthought in luxury joinery; it is the fundamental architectural medium that defines mood, enhances surface materiality, and turns personal storage into a gallery showcase.</p>
+                            <h3 class="text-xl font-bold text-stone-900 dark:text-white font-heading">Micro-Recessed 3000K Warm Vertical Extrusions</h3>
+                            <p>Continuous vertical aluminum extrusions embedded flush with wardrobe side gables deliver 95+ CRI daylight-balanced illumination. Clothing colors appear vibrant and true to life with zero harsh glare or hot spots.</p>
+                            <blockquote class="p-4 border-l-4 border-amber-500 bg-gray-50 dark:bg-stone-800 italic font-serif text-stone-800 dark:text-stone-200">"Smart motion-activated lighting brings closets to life the moment you approach, bathing textures in a warm, welcoming glow."</blockquote>
+                            <h3 class="text-xl font-bold text-stone-900 dark:text-white font-heading">Automated Proximity &amp; PIR Motion Sensors</h3>
+                            <p>Concealed millimeter-wave and infrared proximity sensors trigger smooth 0.8-second fade-ins when wardrobe doors glide open or when footsteps approach, eliminating the need for physical switches.</p>`
+                        },
+                        10: {
+                            category: '2026 Trends',
+                            title: 'Biometric Security Drawers & Motorized Concealed Compartments',
+                            author: 'By Henrik Vance',
+                            date: 'October 14, 2026',
+                            read: '7 Min Read',
+                            img: 'assets/biometric-wardrobe-safe-compartments.jpg',
+                            authorImg: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=200&auto=format&fit=crop',
+                            authorName: 'Henrik Vance',
+                            authorBio: 'Founder & Lead Architectural Designer at MODULARIS with 15+ years of custom joinery experience.',
+                            body: `<p>In luxury master dressing suites, privacy and high-value security must blend invisibly into bespoke cabinetry without resembling an unsightly industrial strongbox.</p>
+                            <h3 class="text-xl font-bold text-stone-900 dark:text-white font-heading">Sub-Second Optical Biometric Scanning</h3>
+                            <p>Integrated optical fingerprint sensors read 3D capillary dermal patterns in under 0.4 seconds, smoothly releasing multi-point motorized hardened alloy deadbolts.</p>
+                            <blockquote class="p-4 border-l-4 border-amber-500 bg-gray-50 dark:bg-stone-800 italic font-serif text-stone-800 dark:text-stone-200">"Security should be effortless: biometric recognition allows instant, keyless access while remaining completely invisible from the outside."</blockquote>
+                            <h3 class="text-xl font-bold text-stone-900 dark:text-white font-heading">Luxury Horology Winders &amp; Orange Leather Lining</h3>
+                            <p>Inside the armored vault carcass, programmable multi-axis watch winders keep automatic mechanical timepieces wound to specification, surrounded by hand-stitched saddle leather and micro-velvet lining.</p>`
+                        },
+                        11: {
+                            category: 'Finish Options',
+                            title: 'Super-Matte Anti-Fingerprint Thermal Laminates vs Ceramic Facades',
+                            author: 'By Marcus Thorne',
+                            date: 'July 08, 2026',
+                            read: '6 Min Read',
+                            img: 'assets/super-matte-ceramic-facades.png',
+                            authorImg: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=200&auto=format&fit=crop',
+                            authorName: 'Marcus Thorne',
+                            authorBio: 'Senior Materials Consultant at MODULARIS. Specialist in timber veneer sourcing, FSC certification, and finish durability testing.',
+                            body: `<p>Modern minimal wardrobe design embraces ultra-deep matte textures that absorb ambient light and resist everyday oils and fingerprint smudges.</p>
+                            <h3 class="text-xl font-bold text-stone-900 dark:text-white font-heading">Electron-Beam Cured Nanotech Surfaces</h3>
+                            <p>Super-matte nanotech acrylic surfaces feature extreme low light reflectivity (gloss level &lt; 5 GU), providing an ultra-soft, velvety tactile touch. Microscopic thermal healing properties allow surface micro-scratches to be erased using a standard household iron and a damp cloth.</p>
+                            <blockquote class="p-4 border-l-4 border-amber-500 bg-gray-50 dark:bg-stone-800 italic font-serif text-stone-800 dark:text-stone-200">"Nanotech surfaces provide flawless, smudge-free matte elegance that repels everyday fingerprints and cleans effortlessly."</blockquote>
+                            <h3 class="text-xl font-bold text-stone-900 dark:text-white font-heading">3mm Ultra-Thin Ceramic &amp; Sintered Stone Facades</h3>
+                            <p>For an ultra-luxury architectural statement, sintered ceramic panels engineered at just 3mm to 4mm thickness are mounted onto honeycomb aluminum core door frames. Non-porous, 100% scratch-proof, and impervious to heat and UV fading.</p>`
+                        },
+                        12: {
+                            category: 'Internal Ergonomics',
+                            title: 'Italian Velvet Organizer Trays & Modular Accessory Dividers',
+                            author: 'By Sophia Chen',
+                            date: 'August 30, 2026',
+                            read: '5 Min Read',
+                            img: 'assets/italian-velvet-jewelry-trays.jpg',
+                            authorImg: 'https://images.unsplash.com/photo-1607746882042-944635dfe10e?q=80&w=200&auto=format&fit=crop',
+                            authorName: 'Sophia Chen',
+                            authorBio: 'Space Planning Architect at MODULARIS. Expert in maximising storage potential in bespoke dressing suites and luxury islands.',
+                            body: `<p>The difference between a functional closet and a world-class dressing boutique lies inside the drawers. High-value watches, bespoke jewelry, and fine leather accessories demand custom modular vitrines.</p>
+                            <h3 class="text-xl font-bold text-stone-900 dark:text-white font-heading">Hand-Crafted Italian Micro-Velvet Vitrines</h3>
+                            <p>Lined with plush Italian micro-velvet and hand-stitched vegan leather borders, custom modular drawer inserts protect delicate sapphire crystals, gold bangles, and cufflinks from tarnishing and abrasion.</p>
+                            <blockquote class="p-4 border-l-4 border-amber-500 bg-gray-50 dark:bg-stone-800 italic font-serif text-stone-800 dark:text-stone-200">"Every bespoke timepiece and delicate heirloom deserves its own cushioned compartment, illuminated through tempered crystal glass drawers."</blockquote>
+                            <h3 class="text-xl font-bold text-stone-900 dark:text-white font-heading">Blum Movento Undermount Synchronized Slides</h3>
+                            <p>Integrated Blum Movento runners ensure zero deflection under heavy accessory loading, gliding closed with whispering-silent Blumotion soft-close technology.</p>`
                         }
                     };
 
@@ -402,14 +474,14 @@
                                 </div>
                             </a>
                             <a href="blog-details.html?id=8" class="flex items-center space-x-3 group">
-                                <img src="assets/stuttgart-fluted-glass-suite.png" alt="2026 Trends" class="w-12 h-12 rounded-xl object-cover shrink-0">
+                                <img src="assets/fluted-amber-glass-bronze-shutters.png" alt="2026 Trends" class="w-12 h-12 rounded-xl object-cover shrink-0">
                                 <div>
                                     <h5 class="text-xs font-bold text-stone-900 dark:text-white group-hover:text-amber-500 transition line-clamp-1">2026 Fluted Amber Glass Forecast</h5>
                                     <span class="text-[10px] text-stone-400">Sep 04, 2026 • 7 min</span>
                                 </div>
                             </a>
                             <a href="blog-details.html?id=4" class="flex items-center space-x-3 group">
-                                <img src="assets/island-units-jewellery-drawers.png" alt="Island Units" class="w-12 h-12 rounded-xl object-cover shrink-0">
+                                <img src="assets/walk-in-island-dresser.jpg" alt="Island Units" class="w-12 h-12 rounded-xl object-cover shrink-0">
                                 <div>
                                     <h5 class="text-xs font-bold text-stone-900 dark:text-white group-hover:text-amber-500 transition line-clamp-1">Walk-In Suites &amp; Island Dressers</h5>
                                     <span class="text-[10px] text-stone-400">Aug 22, 2026 • 8 min</span>

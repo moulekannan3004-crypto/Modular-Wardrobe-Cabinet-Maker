@@ -42,13 +42,17 @@
 
                 <!-- Desktop Navigation Menu -->
                 <nav class="hidden lg:flex items-center space-x-2.5 xl:space-x-6 rtl:space-x-reverse text-xs xl:text-sm shrink-0">
-                    <div class="relative group py-4">
-                        <a href="index.html" class="text-stone-700 dark:text-stone-200 hover:text-amber-600 dark:hover:text-amber-400 font-semibold flex items-center transition">
-                            Home 1 <i class="fa-solid fa-chevron-down text-[10px] ml-1.5 transition group-hover:rotate-180"></i>
-                        </a>
-                        <div class="absolute left-0 top-full hidden group-hover:block w-48 bg-white dark:bg-stone-800 shadow-xl rounded-xl border border-stone-100 dark:border-stone-700 py-2 z-50">
-                            <a href="index.html" class="block px-4 py-2 text-xs hover:bg-amber-50 dark:hover:bg-stone-700 text-stone-700 dark:text-stone-200 hover:text-amber-600">Home 1 - General Services</a>
-                            <a href="home-niche.html" class="block px-4 py-2 text-xs hover:bg-amber-50 dark:hover:bg-stone-700 text-stone-700 dark:text-stone-200 hover:text-amber-600">Home 2 - Custom Wardrobes</a>
+                    <div class="relative nav-dropdown group py-4">
+                        <button type="button" class="nav-dropdown-trigger text-stone-700 dark:text-stone-200 hover:text-amber-600 dark:hover:text-amber-400 font-semibold flex items-center transition cursor-pointer focus:outline-none" aria-haspopup="true" aria-expanded="false">
+                            <span>Home</span> <i class="fa-solid fa-chevron-down text-[10px] ml-1.5 transition-transform duration-200 group-hover:rotate-180"></i>
+                        </button>
+                        <div class="nav-dropdown-menu absolute start-0 top-full hidden group-hover:block w-52 bg-white dark:bg-stone-800 shadow-2xl rounded-xl border border-stone-100 dark:border-stone-700 py-2 z-50">
+                            <a href="index.html" class="block px-4 py-2.5 text-xs hover:bg-amber-50 dark:hover:bg-stone-700 text-stone-700 dark:text-stone-200 hover:text-amber-600 transition">
+                                Home 1 - General Services
+                            </a>
+                            <a href="home-niche.html" class="block px-4 py-2.5 text-xs hover:bg-amber-50 dark:hover:bg-stone-700 text-stone-700 dark:text-stone-200 hover:text-amber-600 transition">
+                                Home 2 - Custom Wardrobes
+                            </a>
                         </div>
                     </div>
                     <a href="about.html" class="text-stone-700 dark:text-stone-200 hover:text-amber-600 dark:hover:text-amber-400 font-semibold transition">About Us</a>
@@ -170,10 +174,10 @@
             
             <!-- Quick Topic Badges -->
             <div class="flex flex-wrap justify-center gap-2 sm:gap-3 mt-8 text-[11px] sm:text-xs font-bold">
-                <span class="bg-amber-500/10 border border-amber-500/30 text-amber-400 px-3.5 py-1.5 rounded-full flex items-center gap-1.5"><i class="fa-solid fa-door-closed"></i> Wardrobe Layouts &amp; Types</span>
-                <span class="bg-amber-500/10 border border-amber-500/30 text-amber-400 px-3.5 py-1.5 rounded-full flex items-center gap-1.5"><i class="fa-solid fa-chart-line"></i> 2026 Trend Forecasts</span>
-                <span class="bg-amber-500/10 border border-amber-500/30 text-amber-400 px-3.5 py-1.5 rounded-full flex items-center gap-1.5"><i class="fa-solid fa-palette"></i> Materials &amp; Finishes</span>
-                <span class="bg-amber-500/10 border border-amber-500/30 text-amber-400 px-3.5 py-1.5 rounded-full flex items-center gap-1.5"><i class="fa-solid fa-sliders"></i> Internal Ergonomics</span>
+                <button type="button" onclick="document.querySelector('[data-category=\'wardrobe-designs\']').click(); document.getElementById('blog-filters').scrollIntoView({behavior:'smooth'});" class="bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 text-amber-400 px-3.5 py-1.5 rounded-full flex items-center gap-1.5 transition cursor-pointer"><i class="fa-solid fa-door-closed"></i> Wardrobe Designs</button>
+                <button type="button" onclick="document.querySelector('[data-category=\'wardrobe-trends\']').click(); document.getElementById('blog-filters').scrollIntoView({behavior:'smooth'});" class="bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 text-amber-400 px-3.5 py-1.5 rounded-full flex items-center gap-1.5 transition cursor-pointer"><i class="fa-solid fa-chart-line"></i> 2026 Trends</button>
+                <button type="button" onclick="document.querySelector('[data-category=\'finish-options\']').click(); document.getElementById('blog-filters').scrollIntoView({behavior:'smooth'});" class="bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 text-amber-400 px-3.5 py-1.5 rounded-full flex items-center gap-1.5 transition cursor-pointer"><i class="fa-solid fa-palette"></i> Finish Options</button>
+                <button type="button" onclick="document.querySelector('[data-category=\'internal-ergonomics\']').click(); document.getElementById('blog-filters').scrollIntoView({behavior:'smooth'});" class="bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 text-amber-400 px-3.5 py-1.5 rounded-full flex items-center gap-1.5 transition cursor-pointer"><i class="fa-solid fa-sliders"></i> Internal Ergonomics</button>
             </div>
         </div>
     </section>
@@ -182,9 +186,9 @@
     <section class="py-12 bg-white dark:bg-stone-900 border-b border-stone-200 dark:border-stone-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="bg-stone-950 text-white rounded-3xl overflow-hidden border border-stone-800 shadow-2xl grid grid-cols-1 lg:grid-cols-12 group hover:border-amber-500/60 transition-all duration-300">
-                <!-- Left: Proportional Visual Showcase (5 of 12 cols) -->
-                <div class="lg:col-span-5 relative h-72 sm:h-96 lg:h-full min-h-[380px] lg:min-h-[520px] overflow-hidden">
-                    <img src="assets/stuttgart-fluted-glass-suite.png" alt="2026 Wardrobe Design Trends" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700">
+                <!-- Left: Minimized Visual Showcase (4 of 12 cols) -->
+                <div class="lg:col-span-4 relative min-h-[300px] lg:min-h-0 overflow-hidden">
+                    <img src="assets/stuttgart-fluted-glass-suite.png" alt="2026 Wardrobe Design Trends" class="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700">
                     <div class="absolute inset-0 bg-gradient-to-t from-stone-950/80 via-transparent to-black/20 pointer-events-none"></div>
                     <span class="absolute top-4 left-4 bg-amber-600 text-white text-[10px] uppercase font-extrabold px-3 py-1.5 rounded-xl shadow-lg flex items-center gap-1.5 z-10">
                         <i class="fa-solid fa-star text-[9px]"></i> FEATURED EDITORIAL
@@ -199,8 +203,8 @@
                     </div>
                 </div>
 
-                <!-- Right: Rich Editorial Content & 2026 Innovation Matrix (7 of 12 cols) -->
-                <div class="lg:col-span-7 p-6 sm:p-8 lg:p-10 flex flex-col justify-between">
+                <!-- Right: Rich Editorial Content & 2026 Innovation Matrix (8 of 12 cols) -->
+                <div class="lg:col-span-8 p-6 sm:p-8 lg:p-8 flex flex-col justify-between">
                     <div>
                         <!-- Category & Reading Meta -->
                         <div class="flex flex-wrap items-center gap-2.5 text-[11px] text-amber-400 font-bold mb-3">
@@ -322,7 +326,7 @@
             <div class="flex flex-col md:flex-row justify-between items-center gap-4">
                 <!-- Category Pills -->
                 <div class="flex flex-wrap justify-center md:justify-start gap-2 w-full md:w-auto" id="blog-filters">
-                    <button data-category="all" class="blog-filter-btn active-filter bg-amber-600 text-white px-4 py-2 rounded-xl text-xs font-bold uppercase shadow transition">All Articles (8)</button>
+                    <button data-category="all" class="blog-filter-btn active-filter bg-amber-600 text-white px-4 py-2 rounded-xl text-xs font-bold uppercase shadow transition">All Articles (12)</button>
                     <button data-category="wardrobe-designs" class="blog-filter-btn bg-stone-100 dark:bg-stone-800 text-stone-700 dark:text-stone-300 hover:bg-amber-600 hover:text-white px-4 py-2 rounded-xl text-xs font-bold uppercase transition">Wardrobe Designs</button>
                     <button data-category="wardrobe-trends" class="blog-filter-btn bg-stone-100 dark:bg-stone-800 text-stone-700 dark:text-stone-300 hover:bg-amber-600 hover:text-white px-4 py-2 rounded-xl text-xs font-bold uppercase transition">2026 Trends</button>
                     <button data-category="finish-options" class="blog-filter-btn bg-stone-100 dark:bg-stone-800 text-stone-700 dark:text-stone-300 hover:bg-amber-600 hover:text-white px-4 py-2 rounded-xl text-xs font-bold uppercase transition">Finish Options</button>
@@ -338,7 +342,7 @@
         </div>
     </section>
 
-    <!-- ARTICLE CARDS GRID (8 In-Depth Wardrobe Articles) -->
+    <!-- ARTICLE CARDS GRID (12 In-Depth Wardrobe Articles - 3 per topic) -->
     <section class="py-16 bg-gray-50 dark:bg-stone-950">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div id="blog-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -373,7 +377,7 @@
                 <article data-category="wardrobe-trends" class="blog-card bg-white dark:bg-stone-900 rounded-3xl overflow-hidden shadow-xl border border-stone-200 dark:border-stone-800 flex flex-col justify-between hover:border-amber-500 hover:shadow-2xl transition-all duration-300 group">
                     <div>
                         <div class="relative overflow-hidden h-52 bg-stone-100 dark:bg-stone-800">
-                            <img src="assets/stuttgart-fluted-glass-suite.png" alt="Fluted Amber Glass & Bronze Anodized Shutters" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <img src="assets/fluted-amber-glass-bronze-shutters.png" alt="Fluted Amber Glass & Bronze Anodized Shutters" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                             <span class="absolute top-3 left-3 bg-amber-600 text-white text-[10px] uppercase font-extrabold px-2.5 py-1 rounded-lg shadow">2026 Trends</span>
                             <span class="absolute top-3 right-3 bg-stone-900/80 backdrop-blur-md text-amber-400 text-[10px] font-bold px-2 py-0.5 rounded-md">Boutique Look</span>
                         </div>
@@ -399,7 +403,7 @@
                 <article data-category="wardrobe-designs" class="blog-card bg-white dark:bg-stone-900 rounded-3xl overflow-hidden shadow-xl border border-stone-200 dark:border-stone-800 flex flex-col justify-between hover:border-amber-500 hover:shadow-2xl transition-all duration-300 group">
                     <div>
                         <div class="relative overflow-hidden h-52 bg-stone-100 dark:bg-stone-800">
-                            <img src="assets/island-units-jewellery-drawers.png" alt="Walk-In Dressing Suites & Central Island Dressers" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <img src="assets/walk-in-island-dresser.jpg" alt="Walk-In Dressing Suites & Central Island Dressers" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                             <span class="absolute top-3 left-3 bg-amber-600 text-white text-[10px] uppercase font-extrabold px-2.5 py-1 rounded-lg shadow">Wardrobe Designs</span>
                             <span class="absolute top-3 right-3 bg-stone-900/80 backdrop-blur-md text-amber-400 text-[10px] font-bold px-2 py-0.5 rounded-md">Luxury Layouts</span>
                         </div>
@@ -477,7 +481,7 @@
                 <article data-category="internal-ergonomics" class="blog-card bg-white dark:bg-stone-900 rounded-3xl overflow-hidden shadow-xl border border-stone-200 dark:border-stone-800 flex flex-col justify-between hover:border-amber-500 hover:shadow-2xl transition-all duration-300 group">
                     <div>
                         <div class="relative overflow-hidden h-52 bg-stone-100 dark:bg-stone-800">
-                            <img src="assets/hydraulic-pull-down-rods.png" alt="Hydraulic Pull-Down Wardrobe Rods & Ergonomics" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <img src="assets/hydraulic-pull-down-rods.jpg" alt="Hydraulic Gas-Lift Pull-Down Rods &amp; Loft Ergonomics" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                             <span class="absolute top-3 left-3 bg-amber-600 text-white text-[10px] uppercase font-extrabold px-2.5 py-1 rounded-lg shadow">Internal Ergonomics</span>
                             <span class="absolute top-3 right-3 bg-stone-900/80 backdrop-blur-md text-amber-400 text-[10px] font-bold px-2 py-0.5 rounded-md">Smart Hardware</span>
                         </div>
@@ -503,7 +507,7 @@
                 <article data-category="internal-ergonomics" class="blog-card bg-white dark:bg-stone-900 rounded-3xl overflow-hidden shadow-xl border border-stone-200 dark:border-stone-800 flex flex-col justify-between hover:border-amber-500 hover:shadow-2xl transition-all duration-300 group">
                     <div>
                         <div class="relative overflow-hidden h-52 bg-stone-100 dark:bg-stone-800">
-                            <img src="assets/sliding-angled-shoe-islands.png" alt="Sliding Angled Illuminated Shoe Shelves" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <img src="assets/sliding-angled-shoe-islands.jpg" alt="Sliding Angled Shoe Galleries &amp; Illuminated Islands" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                             <span class="absolute top-3 left-3 bg-amber-600 text-white text-[10px] uppercase font-extrabold px-2.5 py-1 rounded-lg shadow">Internal Ergonomics</span>
                             <span class="absolute top-3 right-3 bg-stone-900/80 backdrop-blur-md text-amber-400 text-[10px] font-bold px-2 py-0.5 rounded-md">Storage Hacks</span>
                         </div>
@@ -548,6 +552,110 @@
                     <div class="px-6 py-4 flex items-center justify-between border-t border-stone-100 dark:border-stone-800 bg-stone-50/50 dark:bg-stone-900/50 mt-auto">
                         <span class="text-[11px] text-stone-600 dark:text-stone-400 font-bold flex items-center gap-1.5"><i class="fa-solid fa-user-pen text-amber-500 text-xs"></i> Marcus Thorne</span>
                         <a href="blog-details.html?id=2" class="text-amber-600 hover:text-amber-500 text-xs font-extrabold uppercase tracking-wider flex items-center transition-colors">Read Guide <i class="fa-solid fa-chevron-right text-[10px] ml-1"></i></a>
+                    </div>
+                </article>
+
+                <!-- Article 9: Smart Architectural Lighting & Motion Sensors (2026 Trends) -->
+                <article data-category="wardrobe-trends" class="blog-card bg-white dark:bg-stone-900 rounded-3xl overflow-hidden shadow-xl border border-stone-200 dark:border-stone-800 flex flex-col justify-between hover:border-amber-500 hover:shadow-2xl transition-all duration-300 group">
+                    <div>
+                        <div class="relative overflow-hidden h-52 bg-stone-100 dark:bg-stone-800">
+                            <img src="assets/smart-architectural-motion-lighting.png" alt="Smart Architectural Wardrobe Lighting & Motion Sensors" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <span class="absolute top-3 left-3 bg-amber-600 text-white text-[10px] uppercase font-extrabold px-2.5 py-1 rounded-lg shadow">2026 Trends</span>
+                            <span class="absolute top-3 right-3 bg-stone-900/80 backdrop-blur-md text-amber-400 text-[10px] font-bold px-2 py-0.5 rounded-md">Lighting Tech</span>
+                        </div>
+                        <div class="p-6 sm:p-7">
+                            <div class="text-[10px] font-extrabold text-amber-600 dark:text-amber-400 uppercase tracking-wider mb-2">October 02, 2026 • 6 Min Read</div>
+                            <h3 class="font-bold text-lg font-heading text-stone-900 dark:text-white mb-2.5 group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">Smart Architectural Lighting: Integrated 3000K Motion Sensor Channels</h3>
+                            <p class="text-xs text-stone-600 dark:text-stone-300 leading-relaxed mb-4">
+                                How micro-recessed vertical aluminum extrusions, 95+ CRI shadowless illumination, and automated proximity sensors transform dark wardrobe interiors into luxury retail display vitrines.
+                            </p>
+                            <div class="flex flex-wrap gap-1.5 pt-2 border-t border-stone-100 dark:border-stone-800 text-[10px] text-stone-500 dark:text-stone-400">
+                                <span class="bg-stone-100 dark:bg-stone-800 px-2 py-0.5 rounded">3000K CRI 95+</span>
+                                <span class="bg-stone-100 dark:bg-stone-800 px-2 py-0.5 rounded">Concealed Sensors</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="px-6 py-4 flex items-center justify-between border-t border-stone-100 dark:border-stone-800 bg-stone-50/50 dark:bg-stone-900/50 mt-auto">
+                        <span class="text-[11px] text-stone-600 dark:text-stone-400 font-bold flex items-center gap-1.5"><i class="fa-solid fa-user-pen text-amber-500 text-xs"></i> Elena Rostova</span>
+                        <a href="blog-details.html?id=9" class="text-amber-600 hover:text-amber-500 text-xs font-extrabold uppercase tracking-wider flex items-center transition-colors">Read Guide <i class="fa-solid fa-chevron-right text-[10px] ml-1"></i></a>
+                    </div>
+                </article>
+
+                <!-- Article 10: Biometric Security Drawers & Concealed Compartments (2026 Trends) -->
+                <article data-category="wardrobe-trends" class="blog-card bg-white dark:bg-stone-900 rounded-3xl overflow-hidden shadow-xl border border-stone-200 dark:border-stone-800 flex flex-col justify-between hover:border-amber-500 hover:shadow-2xl transition-all duration-300 group">
+                    <div>
+                        <div class="relative overflow-hidden h-52 bg-stone-100 dark:bg-stone-800">
+                            <img src="assets/biometric-wardrobe-safe-compartments.jpg" alt="Biometric Security Drawers & Motorized Compartments" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <span class="absolute top-3 left-3 bg-amber-600 text-white text-[10px] uppercase font-extrabold px-2.5 py-1 rounded-lg shadow">2026 Trends</span>
+                            <span class="absolute top-3 right-3 bg-stone-900/80 backdrop-blur-md text-amber-400 text-[10px] font-bold px-2 py-0.5 rounded-md">Smart Security</span>
+                        </div>
+                        <div class="p-6 sm:p-7">
+                            <div class="text-[10px] font-extrabold text-amber-600 dark:text-amber-400 uppercase tracking-wider mb-2">October 14, 2026 • 7 Min Read</div>
+                            <h3 class="font-bold text-lg font-heading text-stone-900 dark:text-white mb-2.5 group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">Biometric Security Drawers &amp; Motorized Concealed Compartments</h3>
+                            <p class="text-xs text-stone-600 dark:text-stone-300 leading-relaxed mb-4">
+                                Integrating high-security fingerprint recognition, motorized push-to-open mechanisms, and fireproof concealment boxes directly within luxury dressing suite drawer banks.
+                            </p>
+                            <div class="flex flex-wrap gap-1.5 pt-2 border-t border-stone-100 dark:border-stone-800 text-[10px] text-stone-500 dark:text-stone-400">
+                                <span class="bg-stone-100 dark:bg-stone-800 px-2 py-0.5 rounded">Biometric Scanner</span>
+                                <span class="bg-stone-100 dark:bg-stone-800 px-2 py-0.5 rounded">Motorized Safe</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="px-6 py-4 flex items-center justify-between border-t border-stone-100 dark:border-stone-800 bg-stone-50/50 dark:bg-stone-900/50 mt-auto">
+                        <span class="text-[11px] text-stone-600 dark:text-stone-400 font-bold flex items-center gap-1.5"><i class="fa-solid fa-user-pen text-amber-500 text-xs"></i> Henrik Vance</span>
+                        <a href="blog-details.html?id=10" class="text-amber-600 hover:text-amber-500 text-xs font-extrabold uppercase tracking-wider flex items-center transition-colors">Read Guide <i class="fa-solid fa-chevron-right text-[10px] ml-1"></i></a>
+                    </div>
+                </article>
+
+                <!-- Article 11: Super-Matte Anti-Fingerprint Laminates vs Ceramic Facades (Finish Options) -->
+                <article data-category="finish-options" class="blog-card bg-white dark:bg-stone-900 rounded-3xl overflow-hidden shadow-xl border border-stone-200 dark:border-stone-800 flex flex-col justify-between hover:border-amber-500 hover:shadow-2xl transition-all duration-300 group">
+                    <div>
+                        <div class="relative overflow-hidden h-52 bg-stone-100 dark:bg-stone-800">
+                            <img src="assets/super-matte-ceramic-facades.png" alt="Super-Matte Anti-Fingerprint Thermal Laminates vs Ceramic Facades" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <span class="absolute top-3 left-3 bg-amber-600 text-white text-[10px] uppercase font-extrabold px-2.5 py-1 rounded-lg shadow">Finish Options</span>
+                            <span class="absolute top-3 right-3 bg-stone-900/80 backdrop-blur-md text-amber-400 text-[10px] font-bold px-2 py-0.5 rounded-md">Nano Surfaces</span>
+                        </div>
+                        <div class="p-6 sm:p-7">
+                            <div class="text-[10px] font-extrabold text-amber-600 dark:text-amber-400 uppercase tracking-wider mb-2">July 08, 2026 • 6 Min Read</div>
+                            <h3 class="font-bold text-lg font-heading text-stone-900 dark:text-white mb-2.5 group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">Super-Matte Anti-Fingerprint Thermal Laminates vs Ceramic Facades</h3>
+                            <p class="text-xs text-stone-600 dark:text-stone-300 leading-relaxed mb-4">
+                                Exploring electron-beam cured nanotech surfaces with thermal micro-scratch healing alongside 3mm ultra-thin sintered stone and ceramic panel wardrobe doors.
+                            </p>
+                            <div class="flex flex-wrap gap-1.5 pt-2 border-t border-stone-100 dark:border-stone-800 text-[10px] text-stone-500 dark:text-stone-400">
+                                <span class="bg-stone-100 dark:bg-stone-800 px-2 py-0.5 rounded">Thermal Healing</span>
+                                <span class="bg-stone-100 dark:bg-stone-800 px-2 py-0.5 rounded">Zero Fingerprint</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="px-6 py-4 flex items-center justify-between border-t border-stone-100 dark:border-stone-800 bg-stone-50/50 dark:bg-stone-900/50 mt-auto">
+                        <span class="text-[11px] text-stone-600 dark:text-stone-400 font-bold flex items-center gap-1.5"><i class="fa-solid fa-user-pen text-amber-500 text-xs"></i> Marcus Thorne</span>
+                        <a href="blog-details.html?id=11" class="text-amber-600 hover:text-amber-500 text-xs font-extrabold uppercase tracking-wider flex items-center transition-colors">Read Guide <i class="fa-solid fa-chevron-right text-[10px] ml-1"></i></a>
+                    </div>
+                </article>
+
+                <!-- Article 12: Italian Velvet Organizer Trays & Modular Dividers (Internal Ergonomics) -->
+                <article data-category="internal-ergonomics" class="blog-card bg-white dark:bg-stone-900 rounded-3xl overflow-hidden shadow-xl border border-stone-200 dark:border-stone-800 flex flex-col justify-between hover:border-amber-500 hover:shadow-2xl transition-all duration-300 group">
+                    <div>
+                        <div class="relative overflow-hidden h-52 bg-stone-100 dark:bg-stone-800">
+                            <img src="assets/italian-velvet-jewelry-trays.jpg" alt="Italian Velvet Jewelry Trays & Modular Drawer Dividers" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <span class="absolute top-3 left-3 bg-amber-600 text-white text-[10px] uppercase font-extrabold px-2.5 py-1 rounded-lg shadow">Internal Ergonomics</span>
+                            <span class="absolute top-3 right-3 bg-stone-900/80 backdrop-blur-md text-amber-400 text-[10px] font-bold px-2 py-0.5 rounded-md">Accessory Care</span>
+                        </div>
+                        <div class="p-6 sm:p-7">
+                            <div class="text-[10px] font-extrabold text-amber-600 dark:text-amber-400 uppercase tracking-wider mb-2">August 30, 2026 • 5 Min Read</div>
+                            <h3 class="font-bold text-lg font-heading text-stone-900 dark:text-white mb-2.5 group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">Italian Velvet Organizer Trays &amp; Modular Accessory Dividers</h3>
+                            <p class="text-xs text-stone-600 dark:text-stone-300 leading-relaxed mb-4">
+                                Custom compartmentalized velvet inserts for luxury horology watch winders, tie dividers, and ring cushions fitted on silent undermount Blum Movento runners.
+                            </p>
+                            <div class="flex flex-wrap gap-1.5 pt-2 border-t border-stone-100 dark:border-stone-800 text-[10px] text-stone-500 dark:text-stone-400">
+                                <span class="bg-stone-100 dark:bg-stone-800 px-2 py-0.5 rounded">Velvet Vitrines</span>
+                                <span class="bg-stone-100 dark:bg-stone-800 px-2 py-0.5 rounded">Blum Movento</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="px-6 py-4 flex items-center justify-between border-t border-stone-100 dark:border-stone-800 bg-stone-50/50 dark:bg-stone-900/50 mt-auto">
+                        <span class="text-[11px] text-stone-600 dark:text-stone-400 font-bold flex items-center gap-1.5"><i class="fa-solid fa-user-pen text-amber-500 text-xs"></i> Sophia Chen</span>
+                        <a href="blog-details.html?id=12" class="text-amber-600 hover:text-amber-500 text-xs font-extrabold uppercase tracking-wider flex items-center transition-colors">Read Guide <i class="fa-solid fa-chevron-right text-[10px] ml-1"></i></a>
                     </div>
                 </article>
 
