@@ -755,10 +755,120 @@ function initNameValidation() {
     nameInputs.forEach(input => {
         if (!input.getAttribute('minlength')) input.setAttribute('minlength', '2');
         if (!input.getAttribute('pattern')) input.setAttribute('pattern', "^[A-Za-zÀ-ÿ\\s'-]{2,60}$");
-        input.setAttribute('title', 'Please enter a valid name (at least 2 letters, no numbers)');
+        input.setAttribute('title', 'Please enter letters only (no numbers or special characters)');
         
+        const allowedNavKeys = new Set([
+            'Backspace', 'Tab', 'Enter', 'Delete', 'Escape',
+            'ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown',
+            'Home', 'End'
+        ]);
+
+        let promptTimeout = null;
+        function showNamePrompt(msg = 'Numbers and special characters are not allowed. Please enter letters only.') {
+            input.setCustomValidity(msg);
+            input.reportValidity();
+            if (typeof showToast === 'function') {
+                showToast('Letters Only', msg, 'fa-triangle-exclamation', 3000);
+            }
+            clearTimeout(promptTimeout);
+            promptTimeout = setTimeout(() => {
+                if (!input.value || input.value.trim().length === 0) {
+                    input.setCustomValidity(input.hasAttribute('required') ? 'Please enter your full name.' : '');
+                } else {
+                    validateNameField(input, false);
+                }
+            }, 2500);
+        }
+
+        // 1. Block numbers, symbols, and special characters on keydown
+        input.addEventListener('keydown', (e) => {
+            if (allowedNavKeys.has(e.key) || e.ctrlKey || e.metaKey || e.altKey) {
+                return;
+            }
+            if (e.key.length === 1) {
+                const isAllowed = /^[A-Za-zÀ-ÿ\s'-]$/.test(e.key);
+                if (!isAllowed) {
+                    e.preventDefault();
+                    showNamePrompt('Numbers and special characters are not allowed. Please enter letters only.');
+                }
+            }
+        });
+
+        // 2. Block invalid input before insertion (mobile virtual keyboards)
+        input.addEventListener('beforeinput', (e) => {
+            if (e.data && !/^[A-Za-zÀ-ÿ\s'-]+$/.test(e.data)) {
+                e.preventDefault();
+                showNamePrompt('Numbers and special characters are not allowed. Please enter letters only.');
+            }
+        });
+
+        // 3. Fallback for legacy keypress
+        input.addEventListener('keypress', (e) => {
+            const char = String.fromCharCode(e.which || e.keyCode);
+            if (!/^[A-Za-zÀ-ÿ\s'-]$/.test(char)) {
+                e.preventDefault();
+                showNamePrompt('Numbers and special characters are not allowed. Please enter letters only.');
+            }
+        });
+
+        // 4. Automatically strip numbers and special characters on paste
+        input.addEventListener('paste', (e) => {
+            e.preventDefault();
+            const pastedText = (e.clipboardData || window.clipboardData).getData('text') || '';
+            const cleanLetters = pastedText.replace(/[^A-Za-zÀ-ÿ\s'-]/g, '');
+            if (cleanLetters.length !== pastedText.length) {
+                showNamePrompt('Numbers and special characters were removed. Please enter letters only.');
+            }
+            if (!cleanLetters) return;
+
+            const start = input.selectionStart ?? input.value.length;
+            const end = input.selectionEnd ?? input.value.length;
+            const current = input.value;
+            const maxLen = parseInt(input.getAttribute('maxlength') || '60', 10);
+            const nextVal = (current.substring(0, start) + cleanLetters + current.substring(end)).slice(0, maxLen);
+            input.value = nextVal;
+            const nextPos = Math.min(start + cleanLetters.length, nextVal.length);
+            input.setSelectionRange(nextPos, nextPos);
+            input.dispatchEvent(new Event('input', { bubbles: true }));
+        });
+
+        // 5. Automatically strip invalid characters on drag-and-drop
+        input.addEventListener('drop', (e) => {
+            e.preventDefault();
+            const dropText = (e.dataTransfer && e.dataTransfer.getData('text')) || '';
+            const cleanLetters = dropText.replace(/[^A-Za-zÀ-ÿ\s'-]/g, '');
+            if (cleanLetters.length !== dropText.length) {
+                showNamePrompt('Numbers and special characters were removed. Please enter letters only.');
+            }
+            if (!cleanLetters) return;
+
+            const start = input.selectionStart ?? input.value.length;
+            const end = input.selectionEnd ?? input.value.length;
+            const current = input.value;
+            const maxLen = parseInt(input.getAttribute('maxlength') || '60', 10);
+            const nextVal = (current.substring(0, start) + cleanLetters + current.substring(end)).slice(0, maxLen);
+            input.value = nextVal;
+            const nextPos = Math.min(start + cleanLetters.length, nextVal.length);
+            input.setSelectionRange(nextPos, nextPos);
+            input.dispatchEvent(new Event('input', { bubbles: true }));
+        });
+
+        // 6. Real-time input sanitization & validation
         input.addEventListener('input', () => {
-            validateNameField(input, false);
+            const raw = input.value;
+            const maxLen = parseInt(input.getAttribute('maxlength') || '60', 10);
+            const clean = raw.replace(/[^A-Za-zÀ-ÿ\s'-]/g, '').slice(0, maxLen);
+            if (raw !== clean) {
+                const start = input.selectionStart;
+                input.value = clean;
+                if (start !== null) {
+                    const nextPos = Math.min(start, clean.length);
+                    input.setSelectionRange(nextPos, nextPos);
+                }
+                showNamePrompt('Numbers and special characters were removed. Please enter letters only.');
+            } else {
+                validateNameField(input, false);
+            }
         });
         
         input.addEventListener('blur', () => {
