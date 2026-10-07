@@ -22,16 +22,16 @@
     <div class="py-16 px-4 flex items-center justify-center flex-1">
         <div class="max-w-lg w-full bg-white dark:bg-stone-900 p-8 rounded-3xl border border-gray-200 dark:border-stone-800 shadow-2xl space-y-6 relative">
             
-            <!-- Top Controls Row (LTR/RTL & Dark/Light Toggles) -->
-            <div class="flex items-center justify-end space-x-2 rtl:space-x-reverse pb-1 -mt-2">
-                <!-- LTR / RTL Toggle -->
+            <!-- Top Controls Row (LTR/RTL on Left, Dark/Light on Right) -->
+            <div class="flex items-center justify-between pb-1 -mt-2">
+                <!-- LTR / RTL Toggle (Left) -->
                 <button class="rtl-toggle-btn flex items-center gap-1.5 border border-stone-200 dark:border-stone-700 bg-stone-50 dark:bg-stone-800 rounded-full px-3 py-1.5 text-[11px] font-bold text-stone-600 dark:text-stone-300 hover:border-amber-500 transition focus:outline-none shadow-sm cursor-pointer" title="Switch LTR / RTL Direction">
                     <span class="ltr-label text-amber-600">LTR</span>
                     <svg class="rtl-dir-icon w-3.5 h-3.5 text-stone-400 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path class="dir-arrow" d="M5 19h14m-4-4 4 4-4 4"/><path d="M16 4h-6.5a3.5 3.5 0 0 0 0 7h.5M14 4v10M18 4v10"/></svg>
                     <span class="rtl-label text-stone-400">RTL</span>
                 </button>
 
-                <!-- Dark / Light Mode Toggle -->
+                <!-- Dark / Light Mode Toggle (Right) -->
                 <button class="theme-toggle-btn w-9 h-9 rounded-full border border-stone-200 dark:border-stone-700 bg-stone-50 dark:bg-stone-800 flex items-center justify-center text-stone-600 dark:text-stone-300 shadow-sm transition hover:border-amber-500 focus:outline-none cursor-pointer" title="Toggle Light/Dark Mode">
                     <i class="theme-toggle-icon fa-solid fa-moon text-xs"></i>
                 </button>
