@@ -71,9 +71,11 @@ function showToast(title, message, icon = 'fa-circle-check', duration = 4000) {
     const toast = document.createElement('div');
     toast.className = 'pointer-events-auto bg-stone-900/95 dark:bg-stone-800/95 backdrop-blur-md text-white p-4 rounded-xl shadow-2xl border border-amber-500/30 flex items-start space-x-3 rtl:space-x-reverse transform translate-y-8 opacity-0 transition-all duration-300';
     
+    const iconClass = (icon.includes('fa-brands') || icon.includes('fa-regular') || icon.includes('fa-solid')) ? icon : `fa-solid ${icon}`;
+
     toast.innerHTML = `
         <div class="w-8 h-8 rounded-lg bg-amber-600/20 text-amber-400 flex items-center justify-center shrink-0 mt-0.5">
-            <i class="fa-solid ${icon} text-base"></i>
+            <i class="${iconClass} text-base"></i>
         </div>
         <div class="flex-1">
             <h4 class="text-xs font-bold text-amber-400 uppercase tracking-wider">${title}</h4>
