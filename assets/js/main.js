@@ -1463,7 +1463,7 @@ function initServiceDetailsDynamic() {
             subtitle: 'High-performance modular kitchen cabinetry engineered to withstand water, steam, and heavy culinary wear.',
             heading: 'Ergonomic Factory-Engineered Modular Kitchens',
             text: 'High-performance modular kitchen cabinetry manufactured to endure heavy heat, oil, and continuous water exposure. Our base sink units are built from 100% Boiling Water Proof (BWP) Marine Grade 710 Plywood sealed with industrial PUR hot-melt banding. Complete with ergonomic Blum Tandembox drawers, Aventos bi-fold lift-up wall cabinets, and high-capacity pull-out pantry larders.',
-            img: 'assets/luxury-kitchen-cabinetry.png',
+            img: 'assets/ergonomic-modular-kitchen.png',
             features: [
                 { icon: 'fa-droplet-slash', title: '100% Waterproof Base', desc: 'BWP Marine 710 plywood sink carcass with PUR zero-joint edge sealing.' },
                 { icon: 'fa-box-archive', title: 'Blum Tandembox Drawers', desc: '50kg dynamic load capacity with smooth synchronized Blumotion gliding.' },
@@ -1697,7 +1697,7 @@ function initServiceDetailsDynamic() {
             subtitle: 'Central accessory islands with velvet-lined watch and ring trays, glass vitrines, and sensor LEDs.',
             heading: 'Bespoke Master Walk-In Dressing Suites',
             text: 'Designed as personal luxury boutiques, our walk-in wardrobe suites integrate central accessory islands with velvet-lined watch and ring trays, anodized bronze aluminum glass vitrines, motion-triggered warm 3000K LED hanging bays, and concealed security safes.',
-            img: 'assets/bespoke-walk-in-suites.png',
+            img: 'assets/master-walk-in-dressing-suite.jpg',
             features: [
                 { icon: 'fa-gem', title: 'Central Jewelry Island', desc: 'Glass-top accessory chest with velvet watch cushions and ring rolls.' },
                 { icon: 'fa-door-open', title: 'Smoked Glass Vitrines', desc: 'Anodized bronze aluminum frames with soft 3000K internal vertical illumination.' },
