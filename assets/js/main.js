@@ -1879,7 +1879,7 @@ function initServiceDetailsDynamic() {
             subtitle: 'Cascading soft-close trouser pull-outs, 45° angled sliding shoe racks, and tie-belt lateral sliders.',
             heading: 'Precision Trouser Racks, Shoe Shelves & Utility Organizers',
             text: 'Transform wardrobe base compartments into high-capacity organized storage. Our full-extension undermount organizers feature anti-slip silicone trouser rods holding 15+ pairs without creasing, dual-tier 45-degree angled shoe shelves with brushed aluminum heel-stop lips, and lateral slide-out racks for belts, ties, and scarves.',
-            img: 'assets/modular-pull-out-shoe-racks.png',
+            img: 'assets/home2-trouser-racks-shoe-organizers.jpg',
             features: [
                 { icon: 'fa-grip-lines', title: 'Crease-Free Trouser Rack', desc: 'Soft-close pull-out rack with anti-slip silicone ribs holding 15+ pairs cleanly.' },
                 { icon: 'fa-shoe-prints', title: '45° Angled Shoe Trays', desc: 'Dual-tier sliding shoe organizers with heel-stop lips accommodating up to 12 pairs.' },
