@@ -1541,7 +1541,7 @@ function initServiceDetailsDynamic() {
             subtitle: 'Crockery display vitrines with warm LED lighting, buffet sideboards with quartz serving tops, and stemware bar counters.',
             heading: 'Custom Dining Room Joinery & Crockery Vitrines',
             text: 'Factory-finished dining room joinery designed to elevate dinner gatherings and everyday dining. Custom-built crockery units feature tempered glass doors, warm internal downlighting, and velvet-padded cutlery organizers. Complementary buffet credenzas provide heat-resistant quartz stone tops for hot serving dishes.',
-            img: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=800&auto=format&fit=crop',
+            img: 'assets/dining-room-solutions.png',
             features: [
                 { icon: 'fa-wine-glass', title: 'Stemware & Wine Rack', desc: 'Suspended brass stemware hangers and temperature-stable bottle cradles.' },
                 { icon: 'fa-shield', title: 'Heat-Proof Quartz Top', desc: 'Durable 20mm quartz stone serving countertops for warm dinner platters.' },
