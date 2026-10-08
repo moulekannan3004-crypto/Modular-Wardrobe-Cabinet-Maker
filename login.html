@@ -30,12 +30,12 @@
         <div class="max-w-md w-full bg-white dark:bg-stone-900/95 backdrop-blur-md p-8 sm:p-10 rounded-3xl border border-stone-200 dark:border-stone-800 shadow-2xl space-y-6 relative">
             
             <!-- Top Controls Row (LTR/RTL on Left, Dark/Light on Right) -->
-            <div class="flex items-center justify-between pb-1 -mt-2">
+            <div dir="ltr" class="flex items-center justify-between mb-4">
                 <!-- LTR / RTL Toggle (Left) -->
-                <button class="rtl-toggle-btn flex items-center gap-1.5 border border-stone-200 dark:border-stone-700 bg-stone-50 dark:bg-stone-800 rounded-full px-3 py-1.5 text-[11px] font-bold text-stone-600 dark:text-stone-300 hover:border-amber-500 transition focus:outline-none shadow-sm cursor-pointer" title="Switch LTR / RTL Direction">
-                    <span class="ltr-label text-amber-600">LTR</span>
-                    <svg class="rtl-dir-icon w-3.5 h-3.5 text-stone-400 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path class="dir-arrow" d="M5 19h14m-4-4 4 4-4 4"/><path d="M16 4h-6.5a3.5 3.5 0 0 0 0 7h.5M14 4v10M18 4v10"/></svg>
-                    <span class="rtl-label text-stone-400">RTL</span>
+                <button dir="ltr" class="rtl-toggle-btn h-9 px-3.5 inline-flex items-center justify-center gap-2 border border-stone-200 dark:border-stone-700 bg-stone-50 dark:bg-stone-800 rounded-full text-xs font-bold text-stone-600 dark:text-stone-300 hover:border-amber-500 transition focus:outline-none shadow-sm cursor-pointer" title="Switch LTR / RTL Direction">
+                    <span class="ltr-label text-amber-600 leading-none">LTR</span>
+                    <svg class="rtl-dir-icon w-3.5 h-3.5 text-stone-400 shrink-0 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path class="dir-arrow" d="M5 19h14m-4-4 4 4-4 4"/><path d="M16 4h-6.5a3.5 3.5 0 0 0 0 7h.5M14 4v10M18 4v10"/></svg>
+                    <span class="rtl-label text-stone-400 leading-none">RTL</span>
                 </button>
 
                 <!-- Dark / Light Mode Toggle (Right) -->
@@ -84,8 +84,8 @@
                 <div>
                     <label id="label-email" class="block text-xs font-bold text-stone-700 dark:text-stone-300 mb-1.5">Email Address</label>
                     <div class="relative">
-                        <i class="fa-solid fa-envelope absolute left-4 top-3.5 text-xs text-stone-400"></i>
-                        <input type="email" id="login-email" name="email" required pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" title="Please enter a valid email address (e.g. name@domain.com)" value="client@modulariscabinets.com" placeholder="name@company.com" class="w-full pl-10 pr-4 py-3 rounded-xl bg-stone-50 dark:bg-stone-950 border border-stone-200 dark:border-stone-800 text-xs text-stone-900 dark:text-white placeholder-stone-400 focus:outline-none focus:ring-2 focus:ring-amber-500 transition">
+                        <i class="fa-solid fa-envelope absolute left-4 rtl:left-auto rtl:right-4 top-3.5 text-xs text-stone-400"></i>
+                        <input type="email" id="login-email" name="email" required pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" title="Please enter a valid email address (e.g. name@domain.com)" value="client@modulariscabinets.com" placeholder="name@company.com" class="w-full pl-10 pr-4 rtl:pl-4 rtl:pr-10 py-3 rounded-xl bg-stone-50 dark:bg-stone-950 border border-stone-200 dark:border-stone-800 text-xs text-stone-900 dark:text-white placeholder-stone-400 focus:outline-none focus:ring-2 focus:ring-amber-500 transition">
                     </div>
                 </div>
 
@@ -95,21 +95,21 @@
                         <a href="javascript:void(0)" onclick="openForgotPasswordModal(event)" class="text-[11px] font-bold text-amber-600 dark:text-amber-400 hover:underline cursor-pointer">Forgot password?</a>
                     </div>
                     <div class="relative">
-                        <i class="fa-solid fa-lock absolute left-4 top-3.5 text-xs text-stone-400"></i>
-                        <input type="password" id="login-password" required value="••••••••••••" class="w-full pl-10 pr-4 py-3 rounded-xl bg-stone-50 dark:bg-stone-950 border border-stone-200 dark:border-stone-800 text-xs text-stone-900 dark:text-white placeholder-stone-400 focus:outline-none focus:ring-2 focus:ring-amber-500 transition">
+                        <i class="fa-solid fa-lock absolute left-4 rtl:left-auto rtl:right-4 top-3.5 text-xs text-stone-400"></i>
+                        <input type="password" id="login-password" required value="••••••••••••" class="w-full pl-10 pr-4 rtl:pl-4 rtl:pr-10 py-3 rounded-xl bg-stone-50 dark:bg-stone-950 border border-stone-200 dark:border-stone-800 text-xs text-stone-900 dark:text-white placeholder-stone-400 focus:outline-none focus:ring-2 focus:ring-amber-500 transition">
                     </div>
                 </div>
 
                 <div class="flex items-center pt-1">
-                    <label class="flex items-center space-x-2 text-xs font-medium text-stone-600 dark:text-stone-300 cursor-pointer">
+                    <label class="flex items-center space-x-2 rtl:space-x-reverse text-xs font-medium text-stone-600 dark:text-stone-300 cursor-pointer">
                         <input type="checkbox" checked class="w-4 h-4 accent-amber-600 rounded">
                         <span>Remember this device</span>
                     </label>
                 </div>
 
-                <button type="submit" id="submit-btn" class="w-full bg-gradient-to-r from-amber-600 to-amber-500 hover:from-amber-500 hover:to-amber-600 text-white font-extrabold text-xs uppercase tracking-wider py-3.5 rounded-xl shadow-lg shadow-amber-600/25 hover:shadow-xl transition-all flex items-center justify-center space-x-2">
+                <button type="submit" id="submit-btn" class="w-full bg-gradient-to-r from-amber-600 to-amber-500 hover:from-amber-500 hover:to-amber-600 text-white font-extrabold text-xs uppercase tracking-wider py-3.5 rounded-xl shadow-lg shadow-amber-600/25 hover:shadow-xl transition-all flex items-center justify-center space-x-2 rtl:space-x-reverse">
                     <span id="submit-text">Sign In to Client Portal</span>
-                    <i class="fa-solid fa-arrow-right text-xs"></i>
+                    <i class="fa-solid fa-arrow-right rtl:rotate-180 text-xs"></i>
                 </button>
             </form>
 
@@ -125,7 +125,7 @@
 
             <!-- Social Login Buttons -->
             <div class="grid grid-cols-2 gap-3">
-                <button type="button" onclick="handleSSOLogin('Google')" class="w-full bg-stone-50 dark:bg-stone-950 hover:bg-stone-100 dark:hover:bg-stone-800 border border-stone-200 dark:border-stone-800 text-xs font-bold text-stone-700 dark:text-stone-200 py-2.5 rounded-xl flex items-center justify-center space-x-2 transition">
+                <button type="button" onclick="handleSSOLogin('Google')" class="w-full bg-stone-50 dark:bg-stone-950 hover:bg-stone-100 dark:hover:bg-stone-800 border border-stone-200 dark:border-stone-800 text-xs font-bold text-stone-700 dark:text-stone-200 py-2.5 rounded-xl flex items-center justify-center space-x-2 rtl:space-x-reverse transition">
                     <svg class="w-4 h-4" viewBox="0 0 24 24">
                         <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
                         <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
@@ -135,7 +135,7 @@
                     <span>Google</span>
                 </button>
 
-                <button type="button" onclick="handleSSOLogin('Apple')" class="w-full bg-stone-50 dark:bg-stone-950 hover:bg-stone-100 dark:hover:bg-stone-800 border border-stone-200 dark:border-stone-800 text-xs font-bold text-stone-700 dark:text-stone-200 py-2.5 rounded-xl flex items-center justify-center space-x-2 transition">
+                <button type="button" onclick="handleSSOLogin('Apple')" class="w-full bg-stone-50 dark:bg-stone-950 hover:bg-stone-100 dark:hover:bg-stone-800 border border-stone-200 dark:border-stone-800 text-xs font-bold text-stone-700 dark:text-stone-200 py-2.5 rounded-xl flex items-center justify-center space-x-2 rtl:space-x-reverse transition">
                     <i class="fa-brands fa-apple text-base"></i>
                     <span>Apple ID</span>
                 </button>
@@ -328,8 +328,8 @@
                 <div>
                     <label class="block text-xs font-bold text-stone-700 dark:text-stone-300 mb-1.5">Registered Email Address</label>
                     <div class="relative">
-                        <i class="fa-solid fa-envelope absolute left-4 top-3.5 text-xs text-stone-400"></i>
-                        <input type="email" id="reset-email" name="email" required pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" title="Please enter a valid email address (e.g. name@domain.com)" placeholder="name@modulariscabinets.com" class="w-full pl-10 pr-4 py-3 rounded-xl bg-stone-50 dark:bg-stone-950 border border-stone-200 dark:border-stone-800 text-xs text-stone-900 dark:text-white placeholder-stone-400 focus:outline-none focus:ring-2 focus:ring-amber-500 transition">
+                        <i class="fa-solid fa-envelope absolute left-4 rtl:left-auto rtl:right-4 top-3.5 text-xs text-stone-400"></i>
+                        <input type="email" id="reset-email" name="email" required pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" title="Please enter a valid email address (e.g. name@domain.com)" placeholder="name@modulariscabinets.com" class="w-full pl-10 pr-4 rtl:pl-4 rtl:pr-10 py-3 rounded-xl bg-stone-50 dark:bg-stone-950 border border-stone-200 dark:border-stone-800 text-xs text-stone-900 dark:text-white placeholder-stone-400 focus:outline-none focus:ring-2 focus:ring-amber-500 transition">
                     </div>
                 </div>
 
@@ -337,7 +337,7 @@
                     <button type="button" onclick="closeForgotPasswordModal()" class="w-1/2 py-3 rounded-xl border border-stone-200 dark:border-stone-700 text-stone-600 dark:text-stone-300 text-xs font-bold hover:bg-stone-100 dark:hover:bg-stone-800 transition">
                         Cancel
                     </button>
-                    <button type="submit" class="w-1/2 bg-amber-600 hover:bg-amber-500 text-white font-bold text-xs py-3 rounded-xl shadow-md transition flex items-center justify-center space-x-1.5">
+                    <button type="submit" class="w-1/2 bg-amber-600 hover:bg-amber-500 text-white font-bold text-xs py-3 rounded-xl shadow-md transition flex items-center justify-center space-x-1.5 rtl:space-x-reverse">
                         <i class="fa-solid fa-paper-plane text-xs"></i>
                         <span>Send Reset Link</span>
                     </button>

@@ -171,11 +171,11 @@ function setDirection(dir, notify = true) {
 
         if (ltrLabel && rtlLabel) {
             if (dir === 'rtl') {
-                ltrLabel.className = 'ltr-label text-stone-400 dark:text-stone-500 opacity-60 font-semibold';
-                rtlLabel.className = 'rtl-label font-extrabold text-amber-600 dark:text-amber-400';
+                ltrLabel.className = 'ltr-label text-stone-400 dark:text-stone-500 opacity-60 font-semibold leading-none';
+                rtlLabel.className = 'rtl-label font-extrabold text-amber-600 dark:text-amber-400 leading-none';
             } else {
-                ltrLabel.className = 'ltr-label font-extrabold text-amber-600 dark:text-amber-400';
-                rtlLabel.className = 'rtl-label text-stone-400 dark:text-stone-500 opacity-60 font-semibold';
+                ltrLabel.className = 'ltr-label font-extrabold text-amber-600 dark:text-amber-400 leading-none';
+                rtlLabel.className = 'rtl-label text-stone-400 dark:text-stone-500 opacity-60 font-semibold leading-none';
             }
         } else if (simpleLabel) {
             simpleLabel.textContent = dir === 'rtl' ? 'LTR' : 'RTL';
