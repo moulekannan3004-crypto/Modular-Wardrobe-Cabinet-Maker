@@ -1489,7 +1489,7 @@ function initServiceDetailsDynamic() {
             subtitle: 'Floating consoles, fluted acoustic timber backdrops, and concealed audiovisual cable infrastructure.',
             heading: 'Architectural Media Consoles & Living Joinery',
             text: 'Modern living room entertainment architecture engineered for seamless audiovisual integration. Featuring wall-hung floating credenzas with heavy-duty hidden brackets, CNC-fluted acoustic wooden wall slats, and tempered tinted glass display vitrines. Internal cable management chases keep power bricks, HDMI lines, and gaming consoles completely hidden.',
-            img: 'assets/tv-showcase-media-unit.jpg',
+            img: 'assets/tv-showcase-media-unit.png',
             features: [
                 { icon: 'fa-anchor', title: '100kg Heavy Cleat Wall', desc: 'Concealed steel bracket suspension engineered for ultra-heavy floating units.' },
                 { icon: 'fa-bars-staggered', title: 'CNC Fluted Feature Slats', desc: 'Acoustic sound-dampening fluted timber panels in natural oak and walnut.' },
