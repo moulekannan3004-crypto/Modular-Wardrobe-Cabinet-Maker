@@ -1821,10 +1821,91 @@ function initServiceDetailsDynamic() {
                 { tier: 'Full Apartment VR', size: '2-3 Rooms Interior', hardware: 'Complete 3D model, interactive VR walkthrough link', price: '$600' },
                 { tier: 'Villa Bespoke CAD', size: 'Entire Residence', hardware: 'Full architectural BIM/CAD drawings, 4K video render', price: '$1,200' }
             ]
+        },
+        'hanging': {
+            title: 'Wardrobe Hanging Configurations & Gown Zones',
+            subtitle: '160cm full-length gown drop clearances, double-tier suit rails, hydraulic pull-down lifts, and integrated sensor LEDs.',
+            heading: 'Engineered Wardrobe Hanging Architecture & Long Gown Clearances',
+            text: 'Optimize internal wardrobe hanging capacity with dedicated zones tailored to specific garment drops. Features 160cm vertical drop bays designed for evening gowns and winter overcoats to prevent hem creasing, paired with double-tier 105cm rails for suit jackets and shirts that effectively double storage capacity. Equipped with German gas-strut hydraulic pull-down lifts for effortless access to ceiling lofts and concealed motion-sensor 3000K warm LED illuminated hanging rails.',
+            img: 'assets/dual-hanging-gown-zones.png',
+            features: [
+                { icon: 'fa-arrows-up-down', title: '160cm Gown Clearance Bay', desc: 'Full length drop clearance prevents hem wrinkling for gowns and trench coats.' },
+                { icon: 'fa-layer-group', title: 'Double-Tier Suit Rails', desc: 'Double your garment capacity with 105cm upper and lower hanging levels.' },
+                { icon: 'fa-arrows-up-to-line', title: 'Hydraulic Pull-Down Lifts', desc: 'Gas-strut pull-down rods easily lower top-tier suits without step stools.' },
+                { icon: 'fa-lightbulb', title: 'Motion-Sensor LED Rails', desc: 'Integrated warm 3000K aluminum profiles with automatic door-switch sensors.' }
+            ],
+            specsTitle: 'Hanging Ergonomics & Rail Clearances',
+            specsDesc: 'Standardized DIN 68874 wardrobe hanging clearances:',
+            specs: [
+                { val: '160 cm (63")', label: 'Long Gowns & Overcoats' },
+                { val: '105 cm (41")', label: 'Double Suit & Shirt Rails' },
+                { val: '30 kg', label: 'Heavy-Duty Rail Rating' },
+                { val: '3000K Warm', label: 'LED Color Temperature' }
+            ],
+            packages: [
+                { tier: 'Dual-Tier Standard', size: '2-Door Hanging Bay', hardware: 'Heavy-duty oval chrome rails, soft-close flanges', price: '$220 / bay' },
+                { tier: 'Illuminated Suite', size: '3-Door Gown + Shirt', hardware: 'Integrated sensor LED rails, 160cm long-drop bay', price: '$360 / bay' },
+                { tier: 'Hydraulic Master', size: 'Full Height Lofts', hardware: 'German hydraulic pull-down lifts + dual LED rails', price: '$520 / bay' }
+            ]
+        },
+        'drawers': {
+            title: 'Internal Wardrobe Drawers & Linen Chests',
+            subtitle: 'Concealed Blum Tandembox drawer stacks, smoked glass fronts, and Italian velvet-padded accessory organizers.',
+            heading: 'Internal Soft-Close Drawer Stacks & Linen Chests',
+            text: 'Concealed drawer chest systems integrated behind hinged or sliding doors to preserve seamless minimalist exterior facades. Featuring Blum Tandembox 40kg dynamic load runners with silent Blumotion dampers, luxury smoked tempered glass faces for rapid garment identification, and customizable Italian velvet-lined jewelry inserts for watches, eyewear, and delicate knitwear.',
+            img: 'assets/island-units-jewellery-drawers.png',
+            features: [
+                { icon: 'fa-box-archive', title: 'Blum Tandembox Runners', desc: '40kg load-rated full-extension undermount slides with silent Blumotion damping.' },
+                { icon: 'fa-gem', title: 'Italian Velvet Jewelry Trays', desc: 'Felt-lined compartmentalized trays for watches, jewelry, ties, and cufflinks.' },
+                { icon: 'fa-glasses', title: 'Smoked Glass Faces', desc: 'Tempered tinted glass drawer fronts for elegant visibility without opening.' },
+                { icon: 'fa-cubes', title: 'Modular Linen Dividers', desc: 'Removable acrylic and wood dividers keeping folded apparel and linens organized.' }
+            ],
+            specsTitle: 'Drawer Engineering & Weight Specifications',
+            specsDesc: 'Built to withstand decades of heavy daily cycles:',
+            specs: [
+                { val: '40 kg (88 lbs)', label: 'Blum Dynamic Load Rating' },
+                { val: '150 - 250 mm', label: 'Ergonomic Drawer Depths' },
+                { val: '100% Full', label: 'Full-Extension Slide Travel' },
+                { val: '100,000', label: 'Cycle Durability Tested' }
+            ],
+            packages: [
+                { tier: 'Essential Chest', size: '3-Drawer Internal Stack', hardware: 'Full-extension soft-close slides, solid 18mm base', price: '$280 / set' },
+                { tier: 'Smoked Glass Suite', size: '4-Drawer Glass Stack', hardware: 'Smoked tempered glass fronts, Blumotion dampers', price: '$460 / set' },
+                { tier: 'Jewelry & Watch Master', size: '5-Drawer Luxury Chest', hardware: 'Italian velvet trays, LED side channels, lock niche', price: '$680 / set' }
+            ]
+        },
+        'organizers': {
+            title: 'Wardrobe Pull-Out Organizers & Shoe Racks',
+            subtitle: 'Cascading soft-close trouser pull-outs, 45° angled sliding shoe racks, and tie-belt lateral sliders.',
+            heading: 'Precision Trouser Racks, Shoe Shelves & Utility Organizers',
+            text: 'Transform wardrobe base compartments into high-capacity organized storage. Our full-extension undermount organizers feature anti-slip silicone trouser rods holding 15+ pairs without creasing, dual-tier 45-degree angled shoe shelves with brushed aluminum heel-stop lips, and lateral slide-out racks for belts, ties, and scarves.',
+            img: 'assets/modular-pull-out-shoe-racks.png',
+            features: [
+                { icon: 'fa-grip-lines', title: 'Crease-Free Trouser Rack', desc: 'Soft-close pull-out rack with anti-slip silicone ribs holding 15+ pairs cleanly.' },
+                { icon: 'fa-shoe-prints', title: '45° Angled Shoe Trays', desc: 'Dual-tier sliding shoe organizers with heel-stop lips accommodating up to 12 pairs.' },
+                { icon: 'fa-wand-magic-sparkles', title: 'Belt & Tie Lateral Sliders', desc: 'Slim 100mm side pull-outs equipped with multi-hook brass and chrome organizers.' },
+                { icon: 'fa-sliders', title: 'Full-Extension Undermounts', desc: 'Hidden concealed runners providing 100% visibility to rear footwear and accessories.' }
+            ],
+            specsTitle: 'Organizer Sizing & Storage Capacities',
+            specsDesc: 'Engineered for maximum garment preservation and accessibility:',
+            specs: [
+                { val: '15+ Trousers', label: 'Rack Capacity per 600mm' },
+                { val: '8-12 Pairs', label: 'Shoe Capacity per Tier' },
+                { val: '45° Ergonomic', label: 'Angled Shoe Tray Pitch' },
+                { val: '30 kg Tested', label: 'Slide Runner Capacity' }
+            ],
+            packages: [
+                { tier: 'Trouser Pull-Out', size: '600mm - 900mm Bay', hardware: '15-rod silicone anti-slip rack with soft-close slides', price: '$190' },
+                { tier: 'Sliding Shoe Matrix', size: 'Multi-Tier Shoe Tower', hardware: '4-tier 45° angled sliding trays with heel retainers', price: '$340' },
+                { tier: 'Complete Utility Suite', size: 'Full Organizer Fit-Out', hardware: 'Trouser pullout + shoe matrix + belt & tie slide rack', price: '$590' }
+            ]
         }
     };
 
     // Aliases
+    servicesData['hanging-configurations'] = servicesData['hanging'];
+    servicesData['drawer-options'] = servicesData['drawers'];
+    servicesData['organizer-specs'] = servicesData['organizers'];
     servicesData['entertainment'] = servicesData['tv'];
     servicesData['mandir'] = servicesData['pooja'];
     servicesData['false-ceiling'] = servicesData['ceiling'];
