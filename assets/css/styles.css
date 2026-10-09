@@ -88,6 +88,19 @@ header .rtl-toggle-btn {
     header a[href="contact.html"].hidden.sm\:inline-flex { padding-inline: 0.65rem; }
 }
 
+@media (max-width: 639px) {
+    header #mobile-menu-toggle,
+    header #client-sidebar-toggle,
+    header #admin-sidebar-toggle {
+        display: flex;
+        flex: 0 0 2.5rem;
+        width: 2.5rem;
+        height: 2.5rem;
+        position: relative;
+        z-index: 10;
+    }
+}
+
 /* Dark Mode Smooth Transitions */
 body {
     transition: background-color 0.3s ease, color 0.3s ease;
